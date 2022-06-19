@@ -77,8 +77,9 @@ For example, we don't have to evaluate  `4 * -3` to know that the answer is nega
 A short, sweet, and useful abstraction mapping in my opinion. 
 
 So to tie this back together with the mapping between the real world and the abstract state. 
-Just like there is a abstraction mapping between the integers and the set of signs, you can make a mapping from the real world to your abstract state, which only contains the details you are after.
-The operations and expressiveness in this more restricted domain still tell you useful things about the real world.
+Just like we can create an abstraction mapping between the integers and the set of signs, we can create an abstraction mapping from the real world to our abstract state.
+Our abstract state only contains the details we are after.
+However, the operations and expressiveness in this more restricted domain still tell us useful things about the real world.
 
 ## The concrete state
 >**The concrete state is the data types.**
