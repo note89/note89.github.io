@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 11:20:23 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 12:24:11 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sun, 19 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
 &lt;p&gt;What if I told you that while you are walking around all happy and content in these times of peace and great economic prosperity, your application state might be modeled wrong!&lt;/p&gt;
 &lt;p&gt;What if I told you I could help you with that, all while introducing another mnemonic to the world ?!?
 Feel intrigued? Then keep reading!&lt;/p&gt;
@@ -17,7 +17,7 @@ Feel intrigued? Then keep reading!&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/2fb2d/the_four_states.png&quot;
+    href=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -30,13 +30,13 @@ Feel intrigued? Then keep reading!&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;The four level of state&quot;
         title=&quot;The four level of state&quot;
-        src=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/f058b/the_four_states.png&quot;
-        srcset=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/c26ae/the_four_states.png 158w,
-/static/d41d8cd98f00b204e9800998ecf8427e/6bdcf/the_four_states.png 315w,
-/static/d41d8cd98f00b204e9800998ecf8427e/f058b/the_four_states.png 630w,
-/static/d41d8cd98f00b204e9800998ecf8427e/40601/the_four_states.png 945w,
-/static/d41d8cd98f00b204e9800998ecf8427e/78612/the_four_states.png 1260w,
-/static/d41d8cd98f00b204e9800998ecf8427e/2fb2d/the_four_states.png 1695w&quot;
+        src=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png&quot;
+        srcset=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/c26ae/the_four_states.png 158w,
+/static/d2971e31a2fb95d47f58557b400b81c2/6bdcf/the_four_states.png 315w,
+/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png 630w,
+/static/d2971e31a2fb95d47f58557b400b81c2/40601/the_four_states.png 945w,
+/static/d2971e31a2fb95d47f58557b400b81c2/78612/the_four_states.png 1260w,
+/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png 1695w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -501,9 +501,10 @@ Redundant if selecting them has no effect (noop).&lt;/p&gt;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;
-If you are like me and like to think deeply about software I can recommend taking the &lt;em&gt;Advanced software design course&lt;/em&gt;. That is where I learned the deeper foundations that underlay all software. And that led me to the ideas that underlay this article.
-&lt;strong&gt;The next batch of the Advanced Software Design course starts on the 23 of June.
-&lt;a href=&quot;https://jameskoppelcoaching.com/advanced-software-design-web-course/&quot;&gt;https://jameskoppelcoaching.com/advanced-software-design-web-course/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+If this article intrigued you and you like thinking deeply about software you should consider joining the &lt;em&gt;Advanced software design course&lt;/em&gt;. That is where I started as a student and learned the deeper foundations that underlay all software. That knowledge led me to the ideas that underlay this article.
+&lt;br&gt;
+&lt;strong&gt;The next batch of the Advanced Software Design course starts on the 23 of June. &lt;a href=&quot;https://jameskoppelcoaching.com/advanced-software-design-web-course/&quot;&gt;Click here to join&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;Introducing the State Fixagram™!&lt;/h2&gt;
 &lt;p&gt;I will leave you with this easy to follow &lt;strong&gt;Fixagram™&lt;/strong&gt;.
 Next time you find yourself with an invalid state, don’t fret! Just follow the &lt;strong&gt;Fixagram™&lt;/strong&gt;, and you will be alright.
