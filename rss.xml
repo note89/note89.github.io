@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 11:13:22 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 11:20:23 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
 &lt;p&gt;What if I told you that while you are walking around all happy and content in these times of peace and great economic prosperity, your application state might be modeled wrong!&lt;/p&gt;
 &lt;p&gt;What if I told you I could help you with that, all while introducing another mnemonic to the world ?!?
 Feel intrigued? Then keep reading!&lt;/p&gt;
@@ -17,7 +17,7 @@ Feel intrigued? Then keep reading!&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png&quot;
+    href=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/2fb2d/the_four_states.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -30,13 +30,13 @@ Feel intrigued? Then keep reading!&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;The four level of state&quot;
         title=&quot;The four level of state&quot;
-        src=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png&quot;
-        srcset=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/c26ae/the_four_states.png 158w,
-/static/d2971e31a2fb95d47f58557b400b81c2/6bdcf/the_four_states.png 315w,
-/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png 630w,
-/static/d2971e31a2fb95d47f58557b400b81c2/40601/the_four_states.png 945w,
-/static/d2971e31a2fb95d47f58557b400b81c2/78612/the_four_states.png 1260w,
-/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png 1695w&quot;
+        src=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/f058b/the_four_states.png&quot;
+        srcset=&quot;/static/d41d8cd98f00b204e9800998ecf8427e/c26ae/the_four_states.png 158w,
+/static/d41d8cd98f00b204e9800998ecf8427e/6bdcf/the_four_states.png 315w,
+/static/d41d8cd98f00b204e9800998ecf8427e/f058b/the_four_states.png 630w,
+/static/d41d8cd98f00b204e9800998ecf8427e/40601/the_four_states.png 945w,
+/static/d41d8cd98f00b204e9800998ecf8427e/78612/the_four_states.png 1260w,
+/static/d41d8cd98f00b204e9800998ecf8427e/2fb2d/the_four_states.png 1695w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -88,8 +88,9 @@ etc&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt
 &lt;p&gt;For example, we don’t have to evaluate  &lt;code class=&quot;language-text&quot;&gt;4 * -3&lt;/code&gt; to know that the answer is negative.&lt;/p&gt;
 &lt;p&gt;A short, sweet, and useful abstraction mapping in my opinion.&lt;/p&gt;
 &lt;p&gt;So to tie this back together with the mapping between the real world and the abstract state.
-Just like there is a abstraction mapping between the integers and the set of signs, you can make a mapping from the real world to your abstract state, which only contains the details you are after.
-The operations and expressiveness in this more restricted domain still tell you useful things about the real world.&lt;/p&gt;
+Just like we can create an abstraction mapping between the integers and the set of signs, we can create an abstraction mapping from the real world to our abstract state.
+Our abstract state only contains the details we are after.
+However, the operations and expressiveness in this more restricted domain still tell us useful things about the real world.&lt;/p&gt;
 &lt;h2&gt;The concrete state&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;The concrete state is the data types.&lt;/strong&gt;&lt;/p&gt;
