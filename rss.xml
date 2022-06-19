@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Jun 2022 12:14:53 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 11:13:22 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
 &lt;p&gt;What if I told you that while you are walking around all happy and content in these times of peace and great economic prosperity, your application state might be modeled wrong!&lt;/p&gt;
 &lt;p&gt;What if I told you I could help you with that, all while introducing another mnemonic to the world ?!?
 Feel intrigued? Then keep reading!&lt;/p&gt;
@@ -17,25 +17,26 @@ Feel intrigued? Then keep reading!&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a32d18ef09effae86fc8baeff6849102/cd536/the_four_states.png&quot;
+    href=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 39.24050632911392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABcUlEQVQY0zWR28qCQBSFe/9X6L6r3iCMIAoKRCs1gg6mDuroeMqZcU7un5L/u9o3i71Y3wwAGGPjDwBQSlFK5Q+ttTFGKSWl5JyP49h1HWOs7/u2bbXWMwBYrVa2bVNKAaDrOsuybNsOw7AsS6217/ue512vV2NMkiSbzWa73bquK6X8hgkh6/Xa932MMQA0TXM4HKIogh8IId/367oGAGPM6XS6XC593wPAzBhDKa3rGiE0DIMQwnVdx3GiKGqapm3b5/NZ//N6vYIgKIpiqjmjlBJC9vu953lhGC6Xy/l8fjwei6JI0zSO4/v9XhRFEAQIoTiOb7cbIaSqqmEYZhjj3W63WCzyPFdKhWHoOM75fM6yLI7jJEkwxlrrtm0551mWiR95nnPOv5+jKCrLchxHhNDj8bAs6/1+E0IYY0opjHFVVU3TjOPIGEvTtCzLz+fzrQ0AnHNKad/3WutJiZRSCDENprUWQkwiJ5dSyun+A+mfuHFdZQscAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 37.9746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABVElEQVQY0z3Rza6CMBAFYN5/5UP4Em7YYEiMYAiaSPG3TVFKG1AaKhQ7c3Mh9367mc2cyfG01t/vFwBwMgzDd+Kcgwkiwp95iX+8MAyDIHi9XuM4IuJms1mv11mWFUUBAJzzPM+zLKvr2lp7vV4550VRUEqNMd4wDEEQRFHEOUdE51w0GYYBEZVSURSdz2dE7PteCHG/3ymlhBCllGeM0VoXRWGMQUQhRBiGnHMppbVWSrnb7Rhjxhil1PF4PJ1OQojP5wMAntb6cDjMl33fXywWq9VqDlZVVRzH2+12P6mqKk3TPM+llE3T/P6cJMlyuUzTdBzHsizjON7v94SQ5/MppSSEPB4PSukcjTFW13XTNEop55x3uVwYYwCglLrdbr7vJ0nSdV1ZlgBQT97v9/9TSikp5Tx6fd9rrdu27SfW2q7r2radK3HO2cncDQDMXc5V/QCA3rZkYxAf2AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;The four level of state&quot;
         title=&quot;The four level of state&quot;
-        src=&quot;/static/a32d18ef09effae86fc8baeff6849102/f058b/the_four_states.png&quot;
-        srcset=&quot;/static/a32d18ef09effae86fc8baeff6849102/c26ae/the_four_states.png 158w,
-/static/a32d18ef09effae86fc8baeff6849102/6bdcf/the_four_states.png 315w,
-/static/a32d18ef09effae86fc8baeff6849102/f058b/the_four_states.png 630w,
-/static/a32d18ef09effae86fc8baeff6849102/40601/the_four_states.png 945w,
-/static/a32d18ef09effae86fc8baeff6849102/cd536/the_four_states.png 1114w&quot;
+        src=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png&quot;
+        srcset=&quot;/static/d2971e31a2fb95d47f58557b400b81c2/c26ae/the_four_states.png 158w,
+/static/d2971e31a2fb95d47f58557b400b81c2/6bdcf/the_four_states.png 315w,
+/static/d2971e31a2fb95d47f58557b400b81c2/f058b/the_four_states.png 630w,
+/static/d2971e31a2fb95d47f58557b400b81c2/40601/the_four_states.png 945w,
+/static/d2971e31a2fb95d47f58557b400b81c2/78612/the_four_states.png 1260w,
+/static/d2971e31a2fb95d47f58557b400b81c2/2fb2d/the_four_states.png 1695w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -71,7 +72,7 @@ Continuing with the washing machine, maybe the only interesting states for our p
 That is precisely what we did above with our mapping from the real world to the abstract state.&lt;/p&gt;
 &lt;p&gt;I first came across this idea of thinking of the abstraction mapping instead of “the abstraction” by reading Jimmy Koppel’s article &lt;a href=&quot;https://www.pathsensitive.com/2022/03/abstraction-not-what-you-think-it-is.html&quot;&gt;Abstraction: not what you think it is&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;I have been asked a few times about “what is a good abstraction?” so here is my current &lt;a href=&quot;https://matt.might.net/articles/intro-static-analysis/&quot;&gt;favorite example&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Imagine an mapping (abstraction mapping) from the integer
+&lt;p&gt;Imagine a mapping (abstraction mapping) from the integer
 &lt;code class=&quot;language-text&quot;&gt;... -3, -2, -1, 0, 1, 2, 3, ...&lt;/code&gt; to the set &lt;code class=&quot;language-text&quot;&gt;{-, 0, +}&lt;/code&gt;. This is the abstract domain.
 Negatives to &lt;code class=&quot;language-text&quot;&gt;{-}&lt;/code&gt;, positives to &lt;code class=&quot;language-text&quot;&gt;{+}&lt;/code&gt; and 0 to &lt;code class=&quot;language-text&quot;&gt;{0}&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We can also map the &lt;code class=&quot;language-text&quot;&gt;+&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;*&lt;/code&gt; operators to versions operating on the abstract domain&lt;/p&gt;
@@ -86,6 +87,9 @@ etc&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt
 &lt;p&gt;To perform a very simple static analysis of signs without having to evaluate a complete mathematical expression.&lt;/p&gt;
 &lt;p&gt;For example, we don’t have to evaluate  &lt;code class=&quot;language-text&quot;&gt;4 * -3&lt;/code&gt; to know that the answer is negative.&lt;/p&gt;
 &lt;p&gt;A short, sweet, and useful abstraction mapping in my opinion.&lt;/p&gt;
+&lt;p&gt;So to tie this back together with the mapping between the real world and the abstract state.
+Just like there is a abstraction mapping between the integers and the set of signs, you can make a mapping from the real world to your abstract state, which only contains the details you are after.
+The operations and expressiveness in this more restricted domain still tell you useful things about the real world.&lt;/p&gt;
 &lt;h2&gt;The concrete state&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;The concrete state is the data types.&lt;/strong&gt;&lt;/p&gt;
@@ -115,7 +119,7 @@ This is because if there is no way for your concrete state to represent illegal 
 Example: Abstract state says that a list can only be of even length.
 Most languages will not be able to express such a thing in a reasonable way in the data type.&lt;/li&gt;
 &lt;li&gt;A totally correct concrete state is not worth the performance impact.&lt;/li&gt;
-&lt;li&gt;A totally correct concrete state makes the code much harder to work for not enough gain in code correctness.&lt;/li&gt;
+&lt;li&gt;A totally correct concrete state makes the code much harder to work with, and the gains in correctness is not worth the price.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In all of these scenarios, it’s an active choice to have an incorrect concrete state. This decision must be documented and well known. Code can/will change, and the compiler will not save you here.&lt;/p&gt;
 &lt;p&gt;If you have not made an active choice, then make sure your concrete state is correct.&lt;/p&gt;
@@ -127,35 +131,33 @@ Most languages will not be able to express such a thing in a reasonable way in t
 &lt;p&gt;Now it’s time to talk about how to spot and how to fix faulty states.
 We will only look at the mapping between the &lt;code class=&quot;language-text&quot;&gt;abstract state&lt;/code&gt; and the &lt;code class=&quot;language-text&quot;&gt;concrete state&lt;/code&gt;. This is because any issues avoided or not avoided here will propagate onward.&lt;/p&gt;
 &lt;p&gt;There are four ways for the concrete state to be incorrect. I.e., not in a one-to-one mapping with the abstract state.
-(The name of each incorrect mapping refers to the &lt;code class=&quot;language-text&quot;&gt;concrete state.&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;// OR
-There are four incorrect mappings between the abstract state and the concrete state.
-The name of each incorrect mapping refers to the &lt;code class=&quot;language-text&quot;&gt;concrete state.&lt;/code&gt;
+(The name of each incorrect mapping refers to the &lt;code class=&quot;language-text&quot;&gt;concrete state.&lt;/code&gt;)
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/7c01a65b24c9be703a304a968e43a4b4/024d6/the_quadrant.png&quot;
+    href=&quot;/static/b541b25f06cf504e0268dcac73dd3456/e67dd/the_quadrant.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 68.35443037974683%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8UlEQVQoz4WSza6qMBSFz/u/jTkx0YExOvAnKkw0amwbEaGU2tICYilCb6DncM2d3DXcu193u9b+MsZkWXY4HBhjEEJCiDGmaRrzobquj8cjhDCKos/6l9YaQjifzyeTyWAwGI/HUsrn89ljnHNK6WKxGI1Gq9WKcx7H8Q+cJAnnXGudJElRFMYYpRSl1LaVUvYtxhhCSNEpiqK6rltYdCKEIIQghI/Ho2maJEks8Hq9OOdSSozx7XZjnfI8L8uyhTnnCCHOedJJCJGmaQ+XZen7PoQwTVNKKSEEYyylzLLsZ/JsNnNdFyEEADidTggh27PO3e/33W4HALherwAAa5vWuoXN//SP85+VFoYQxnHMOVdKCSH6N9tDaZru93uMcRiGdrL1tWmaNirHcabT6XA4nM/n39/fy+Xy/X73sJRyvV47jrPdbheLheu6hBDbaqPCGGdZRikVQthR/arUdR1F0fP5zPMcAMAYi6KIMSalbGF7FABwPp+Px+Pj8ajr2t5ir6eUaq1933dd1wZWFMVft2+32+Vy8TwvCALOeVVV/berqgqCwK4UYyyOY4yxECLP8xbOsmy9XtuowjC8dErTtPcsDMPNZnM+n4Mg8DwPIYQxVkq1cNM05a9er5dSqizLz3iqqtKdbEspVVWVjeoPIp8Obr2S4zMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 68.35443037974683%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACDUlEQVQoz02STW/jIBBA8///TG/toamrbqMoyl6iSm5JaptgjG3wBybGjk0CrGKyVt5pJOYxMwwLa+16vf76+gIAfHx8dF1nrTXG2P+4+O9EEAR9389Hi6qqdrvdn4mXl5c4juu6Vkq5Y6VUURRN0+x2u9fXV9/3q6qilLorFowxIUTf9xhja63WuizL0+nk5LZtKaVKqfP5TAjp+75pGs65EOImCyGyLMvz/HA4QAiVUn3fSymdLKUUExhjCGHTNIyxOWFBCEnT1FrLGCvLUinVtu0sCyGSJMmybBzHqqqklGma1nV9l9fr9Wq1ghAGQbDf7wEAGONxHOeZwzDcbre+7x+PxzAMf39/gyAYhuEma62NMUoprfXlcjHGaK3tA5fLxQUu83EXi6ZpKKVzkp54XJJrtZto25Zz7sreZACA53nPz8/v7++e5z09PeV57kwnc86Xy+Xn5+dqtXp7e/M87+fn5y5jjIuiiOMYAIAQIoQkSfL4VQghZVkKIeI45pznee6e9t72fr+v6xpCOAyDMUZK2bbtXJxSej6fEUIAAELI8XiUUnLOjTG3PUdRhDH2J7quG4bBbcJVTtPUGHO9XqMoghAyxsZx5JzfKn9/f3uehybIBELosW0AwGazwRgzxqIoCsMwSZJ72wghCGGe50VRpGmaZVlZltfrdZaLonD3MsYopW5m97f/AdmaCLZBSt4/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;the quadrant&quot;
         title=&quot;the quadrant&quot;
-        src=&quot;/static/7c01a65b24c9be703a304a968e43a4b4/f058b/the_quadrant.png&quot;
-        srcset=&quot;/static/7c01a65b24c9be703a304a968e43a4b4/c26ae/the_quadrant.png 158w,
-/static/7c01a65b24c9be703a304a968e43a4b4/6bdcf/the_quadrant.png 315w,
-/static/7c01a65b24c9be703a304a968e43a4b4/f058b/the_quadrant.png 630w,
-/static/7c01a65b24c9be703a304a968e43a4b4/40601/the_quadrant.png 945w,
-/static/7c01a65b24c9be703a304a968e43a4b4/024d6/the_quadrant.png 961w&quot;
+        src=&quot;/static/b541b25f06cf504e0268dcac73dd3456/f058b/the_quadrant.png&quot;
+        srcset=&quot;/static/b541b25f06cf504e0268dcac73dd3456/c26ae/the_quadrant.png 158w,
+/static/b541b25f06cf504e0268dcac73dd3456/6bdcf/the_quadrant.png 315w,
+/static/b541b25f06cf504e0268dcac73dd3456/f058b/the_quadrant.png 630w,
+/static/b541b25f06cf504e0268dcac73dd3456/40601/the_quadrant.png 945w,
+/static/b541b25f06cf504e0268dcac73dd3456/78612/the_quadrant.png 1260w,
+/static/b541b25f06cf504e0268dcac73dd3456/e67dd/the_quadrant.png 1801w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -166,28 +168,28 @@ The name of each incorrect mapping refers to the &lt;code class=&quot;language-t
 &lt;h2&gt;Missing&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 456px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 497px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/eb55407a12b7a3028766d9046b05a91b/7f664/missing.png&quot;
+    href=&quot;/static/98cad2589cab6149879700b9939b7a38/15d25/missing.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 71.51898734177216%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVQoz23STauqQBgH8PNt+wpt2rdt06pti6Kigln0SilCIqNmadoEJrkwCBGvmqOOcznNwTjd+1/IMMzPx+dxvugrZVlSSpMkGQ6HgiDkeY4x9n3fcZwoiu73e5Ik9J98Mcmw53n1er3dbs9mMwBAr9cbj8e1Wq3RaAAAKKWEkE9MKc2yjFJ6u91kWZ5Op/1+fzKZrNdrnucXi0Wn0wEAEELCMEyShFX6wa7rQggPh4OqqoqiGIZhWRZCaLVanU4nhBDP8xBC0zQty1IUBUL4xoqiPB6PqvMqu93uY4edUVWVfek3VlWV4SzLgiCozsmyTAgpiiLLsqIo2GgIIcfj8Y1Pp5PneWzazWaT47jglc1mk6bpR1lKqWmabPjfWNd1hsuyTNPUdV1JklRVHQwGiqJIkgQAsG27mjZC6I0hhFXPGOOqT13X8zwPw3C9XiOE/o/3+z3DcRz3ej22JoRomla9iC3Y83K5/MJRFBmG4ft+mqYVMAyDEHK9XouiYDus8i8siiLGuNvttlotAICu66Zpns9ny7LyPN9ut5qmGYaxWq3m87nv+wihKIp+sOd5PM9zHDcajZbLJcdxgiBACDVNcxxH13VRFDVNO7xiWZZt2xjj9/UkhFS/sSgKjHGapnEcB0EQhuGfV57P58dF+gvFxvgnxISAiwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 81.0126582278481%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKUlEQVQoz42TTW+qQBSG+1v7K/wFbrp049KktsZFF7CytwkL8SO0JBaBmY5QoIxRpCpfBb2CMzdxCNrbu7jv6uSc85x5c2bmiv5LhBAWHI9HFleZS11ddqdp2ul0bm9vfd9PkmQ+n7uuCyF0HMe27WpWNegbjDFut9uNRuP+/p7juLu7O47jrq+va7VavV5n8N8nE0L2+32WZbquy7IsSdLDw4MgCKPRaDweG4bR6/WazeZqtXp/f3ccZ7vdnuHtdjsYDN7e3izLQic5jjObzXieRwgBACaTCYTQ8zyM8XK5FEUxy7ISNk3TsqyfW5EkqSiKywyzrShKkiQljDGezWaU0qIoMMa73Y61AgA2mw2l9HA45HlOCMnznFI6nU6/vr5KeLPZKIrCgFar1e12Pc9L01RVVV3XLx2xACF0hn3fV1WV1fI8j6IIADCdTn+dpOs6z/ODwaCy7ThOGIYlbNs2QojV9vs980YpXSwW6/WaUirL8vPzcwUHQeC6bgmzPTOg0+lACFn88fGxXC5/2o7j2DTNEtY0LQxDwzDW63VRFNWTZBfjeV4QBNW2j8djHMeGYZSwruthGAqCcHNz8/T0NBwOTdOEEGKMfd8HALy8vLy+vgIAOI4DAKRpeoajKBJFURAEnucfHx/7J0mSpGmabdsAgH6/r2kahFBVVYSQ67qfn5/nt838EELYSvI8/31SHMdBECRJkqZplmWs4dvHIBei/yfW+QcjOGz6ZlE/cwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;missing&quot;
         title=&quot;missing&quot;
-        src=&quot;/static/eb55407a12b7a3028766d9046b05a91b/7f664/missing.png&quot;
-        srcset=&quot;/static/eb55407a12b7a3028766d9046b05a91b/c26ae/missing.png 158w,
-/static/eb55407a12b7a3028766d9046b05a91b/6bdcf/missing.png 315w,
-/static/eb55407a12b7a3028766d9046b05a91b/7f664/missing.png 456w&quot;
-        sizes=&quot;(max-width: 456px) 100vw, 456px&quot;
+        src=&quot;/static/98cad2589cab6149879700b9939b7a38/15d25/missing.png&quot;
+        srcset=&quot;/static/98cad2589cab6149879700b9939b7a38/c26ae/missing.png 158w,
+/static/98cad2589cab6149879700b9939b7a38/6bdcf/missing.png 315w,
+/static/98cad2589cab6149879700b9939b7a38/15d25/missing.png 497w&quot;
+        sizes=&quot;(max-width: 497px) 100vw, 497px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -195,12 +197,12 @@ The name of each incorrect mapping refers to the &lt;code class=&quot;language-t
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We have &lt;strong&gt;Missing&lt;/strong&gt; states when there exists abstract states that cannot be expressed by the concrete state.&lt;/p&gt;
+&lt;p&gt;We have &lt;strong&gt;Missing&lt;/strong&gt; states when abstract states exist that the concrete state cannot express.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;How to spot?&lt;/h3&gt;
-&lt;p&gt;Requirements that should be straightforward but are not, and it’s due to the fact that our our concrete-state is not expressive enough to include that case.&lt;/p&gt;
+&lt;p&gt;Requirements that should be straightforward but are not because our concrete state is not expressive enough to include that case.&lt;/p&gt;
 &lt;p&gt;The most common example is probably not having an &lt;code class=&quot;language-text&quot;&gt;Error&lt;/code&gt; state when one should.&lt;/p&gt;
-&lt;h3&gt;How to fix ?&lt;/h3&gt;
+&lt;h3&gt;How to fix?&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Add unique concrete states&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -221,28 +223,28 @@ The name of each incorrect mapping refers to the &lt;code class=&quot;language-t
 &lt;h2&gt;Illegal&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 596px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 484px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f12e8e7075ba87ef5aab817b73a0db92/699b7/Illegal.png&quot;
+    href=&quot;/static/3605ac863781006a654db36a87324b30/ff42b/Illegal.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 77.21518987341771%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB9klEQVQoz5WTy6+iMBTG75/v/q6MMTExcWuiCzQxJi4kgBICCKLIQxSlgBrxUSjS3oyd8THjZn6Lkz7O13P6Nf0if8AYE0LiOO52u0mSIIQeW0VRkE98PWQUCCHP861Wq1QqdTodhmHG47Gqqq9pj8FvMULofD5DCI/HY7VaZRjm+/u73W5XKpVer2dZ1uVyOd7JsuytsmEY0+nUMIz5fK5p2mAw0HVdkiRRFGezmWVZ8/l8Op3O7oiiCCF8ilmWvd1uj5ZutxvGWJZlx3EIIWma0j5pNAwjDEM6/SUejUbUkqIo8B1CiO/7lmXRJIwxhJDm2La92+0+iF+9VRSFZdk4jlerlaIozWaT+u/7/na7fYoFQcjznBCyWCzq9bokSaqqchwnCEIURQAAhFCSJPTQMAx933+KOY6jd47jWBRFehAAYLVa0V5OpxMAgI7DMNxsNm/if9sGAHieR1ds2+73+x8qY4wlSbper41GY7fb7ff7PM+LovA8LwgCAIBpmlmWxXEcBMF+vwcAvFXmeT7P83K5XKvVut2upmm6rquqejgcoigaDoe6rlP/XNcNgmC9Xj/FsixzHKdpmizLmqYpikLjZDIxTVNVVcMwTNN0HMd13eVy+fZURVGkaYoQyvOcxgcQwizLEEJZlqV3Xt35+2P8Fz80Bz5ZbbwQCwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 80.37974683544303%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6klEQVQoz6WSS8+iMBSG/eUu+Qeu3LhwYeJKExIxMcZgxAUS7uEmImAtFxGUREWcToY66Hy6m2dB2qbP255DG+iD/X4fx3E9/VWBvtF431GWJUKIYZjxeCyKYhRFSZLcKsIwRAg9/vKPXEfgkxmGIQii2Wx2Op12u02SpCAIWP558uPxgBDudjvP85IkGQwGrVZrOp2ORqPJZEJR1Gq1sizL8zwAAP7ilD+yYRiyLPu+77zh+/5isVBVFVQ4jmOa5raC4zjf958yx3G4pLoxeMCy7Ol0+qwLQmgYxlMWBKHuR1mWdUtUVT2fz1i73+9xHON1AIBpmk+Z5/nPk7Mso2naNE3XdXVd5ziu1+vh33E8Hr/ICKFutzscDkVRtG17NptpmhaG4e12QwgVRYHT0zS1bftLzYqiQAhxkGmaeZ7jcZqmAAAsZ1m22WxechAE79fGtRmGUdcsyzJJknj9p5znOU3Tuq4XRVGWJU5RFOV6va7Xaxx9qciy7HA4vK7NsuzlcqEoiiCIfr8vCIIsy7quC4JQlqWmaVwFy7Lz+VySpCiKLMt6ypqmLZdLx3F4nlcURZZlSZIMw8BtcxxHFMXtdovfFgDAdV3P815vG0Lo+35SASGMKoIggBVxHAcVeFuWZbiuBvoPfgNgcHFQnrjgSAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Illegal&quot;
         title=&quot;Illegal&quot;
-        src=&quot;/static/f12e8e7075ba87ef5aab817b73a0db92/699b7/Illegal.png&quot;
-        srcset=&quot;/static/f12e8e7075ba87ef5aab817b73a0db92/c26ae/Illegal.png 158w,
-/static/f12e8e7075ba87ef5aab817b73a0db92/6bdcf/Illegal.png 315w,
-/static/f12e8e7075ba87ef5aab817b73a0db92/699b7/Illegal.png 596w&quot;
-        sizes=&quot;(max-width: 596px) 100vw, 596px&quot;
+        src=&quot;/static/3605ac863781006a654db36a87324b30/ff42b/Illegal.png&quot;
+        srcset=&quot;/static/3605ac863781006a654db36a87324b30/c26ae/Illegal.png 158w,
+/static/3605ac863781006a654db36a87324b30/6bdcf/Illegal.png 315w,
+/static/3605ac863781006a654db36a87324b30/ff42b/Illegal.png 484w&quot;
+        sizes=&quot;(max-width: 484px) 100vw, 484px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -250,46 +252,97 @@ The name of each incorrect mapping refers to the &lt;code class=&quot;language-t
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;illegal&lt;/strong&gt; states are states which has no mapping to an abstract state&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;illegal&lt;/strong&gt; states are states which have no mapping to an abstract state&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;You might have heard illegal states being talked about before, usually expressed as “Make Illegal States Unrepresentable”.&lt;/p&gt;
 &lt;p&gt;There is a strong connection between &lt;strong&gt;Illegal&lt;/strong&gt; states and &lt;strong&gt;Redundant&lt;/strong&gt; states because sometimes it’s just a matter of perspective.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Are extra keys in a map just redundant states or illegal states?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;How to spot?&lt;/h3&gt;
 &lt;p&gt;Say you are using some program, and there and in the settings, you see the following text &lt;em&gt;“only applies if extraFx is activated”&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;If you use that setting anyway without activating &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt; and you get undefined behavior, then the application contains &lt;strong&gt;illegal&lt;/strong&gt; states. If the setting is just ignored when &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt; is not activated then you have &lt;strong&gt;redundant&lt;/strong&gt; states.&lt;/p&gt;
+&lt;p&gt;If you use that setting anyway without activating &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt; and you get undefined behavior, then the application contains &lt;strong&gt;illegal&lt;/strong&gt; states. If the setting is just ignored when &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt; is not activated, then you have &lt;strong&gt;redundant&lt;/strong&gt; states.&lt;/p&gt;
 &lt;h3&gt;How to fix?&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Remove concrete states&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Make illegal states unrepresentable by removing possible states from your concrete state.
-See the example in the redundant section.&lt;/p&gt;
-&lt;p&gt;Here is an example of illegal states in the &lt;a href=&quot;https://github.com/bitcoin/bitcoin/blob/2f71a1ea35667b3873197201531e7ae198ec5bf4/src/coins.h#L112-L126&quot;&gt;bitcoin codebase&lt;/a&gt;. These are avoided by careful coding in the interpretation of the concrete state. Can you think of ways to make the state stricter, and make bugs impossible?&lt;/p&gt;
+&lt;p&gt;Make illegal states unrepresentable by removing possible states from your concrete state.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;
+&lt;code class=&quot;language-text&quot;&gt;hyperBlur&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;extraRainEffects&lt;/code&gt; are options under &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  hyperBlur&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  extraRainEffects&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// (extraFx, hyperBlur, extraRainEffects)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// The states we have: 8&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;////////////////////&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  These are all illegal&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  &lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;///////////////////&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// the states we want: 5&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;// &amp;lt;-- Potentially also illegal depends on abstract state&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//     i.e does `extraFx` has some effect even without options ?&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Our new concrete state&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ExtraFxOptions&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   hyperBlur&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   extraRainEffects&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Settings&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+ extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Off &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ExtraFxOptions
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Even stricter concrete state without the (true,false,false) state&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Settings&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+ extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Off &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ExtraFx&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;NonEmptyList&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Options&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here is an example of illegal states in the &lt;a href=&quot;https://github.com/bitcoin/bitcoin/blob/2f71a1ea35667b3873197201531e7ae198ec5bf4/src/coins.h#L112-L126&quot;&gt;bitcoin codebase&lt;/a&gt;. These are avoided by careful coding in the interpretation of the concrete state. Can you think of ways to make the state stricter and make bugs impossible?&lt;/p&gt;
 &lt;h2&gt;Redundant&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 433px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 507px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3b1bf90c55c359e667c62f47703a2157/55fc0/redundant.png&quot;
+    href=&quot;/static/7542063ba02332f20ff73bbfdc0c1380/3ebb1/redundant.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 78.48101265822784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZklEQVQoz22TX0+rMBjG/ax+AT+A90YTNcbExBsvvN2tmca4DOOYSzBDRgcstPwpOJYtaAVWAQftietkJyfnd9W34en78LztDl9TVdXj42OSJKLM85wxJtZ1Xadpyv/HTrPa3d2FEMZxTAi5u7uLoqgsSwDA29ubLMsY4ziOwzAcDoecc3H0RswYOzg4aLVax8fHt7e3V1dX5+fnp6enFxcXh4eHR0dHe3t7+/v7rVbr+vpa2NmK67omhBiGYZpmFEWz2SzLMgghIcT3fdu2sywriiJbU9f1trPjOK+vr6PRyPwFrOn1esPhEABgWZamaeqa0WikKIqu6xuxLMviJPaLcDUYDCilIs5/onp+ft6I+/1+k20TgXA0m82aUlVVz/NE+fLyshErivL19dXs6rrueZ7jOPf39+12ezwea5pm2/bZ2ZkkScKIpmkbsaqqYpKMMWPNzc1Nr9frdruDwaAsS0qp+J3G2ng83trO87yxxzkvyzLLsm632+l0LMuCEC4WC8uy/u6xDUwkxBirqqppEoYhxphz/vn5qev65eUlQkh8NplMvr+/N+KqqkQ2fwcWBMF0Oq3rWlzbZiKcc4RQkiQ7YiSc85OTk3a7LW7ifD6fTqeu68ZxbJqmoiiu6/q+3+/3ZVlO0xQhVBTFj1iSpLIsJUnqdDoPDw+GYQAAXNfFGC8WC0qpZVkIofl8DiHEGOd5DgBYrVY/Yt/3n56eJpMJhDCKovAX27YNw3Acx/O8IAgwxkEQIITEDmNs+6qKoqCULpdLSmmapkmSLJdLQsj7+3scxx8fH4SQNE1Xq1XzJP8A3y1cX1SVl8wAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 79.74683544303798%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNklEQVQoz5WSTW+qQBSG/dX+hUZXLhpXJtq46KJJY1jZrloXolZlMMBxhDBWgeGjFqcqERFprnOD9qab+y4mZ86cZ87wHgpZlp1OpyzLgiD4+vriW57ha5qmx+Mx316rkGUZP6tUKk9PT0mSMMa63W5ylm3blFJN06IoOhwOs9ksTdNf4Eaj0Ww27+7uBEGoVqu1Wq1er5fL5Zubm1KpVCwW7+/vb29vPz8/81cU+B1pmoZhCACj0Wg+n1uWtVgsNE1brVayLBuGYdt2EASO4+z3+x+doygajUYYYwDAGE+nU4yxqqq9Xg8hZBgGACiKghDCGCOENE27wJ7nIYR4f/6k9CxJkuI4/sek0+kkyzLP/4F9359MJtcY/6TxeOy6LrfKNM1Wq8VrAOACf3x8qKrKL357exsMBqIoaprW6XQkSQIAXddFUXx8fOQ1uq5vt9tfOjPGKKXdbncwGAiCYJrm4XDIJ8wDQghj7ALLspzPLC+SJElV1el0CgDtdvv5+ZmfzufzC+x5nqIouWF5oOv6ZrPhmeVyaRgGj03TXK/Xf+HlcmlZliiKr6+vYRgyxuKzACCKouFw6Lru8XgMw5AQEsfxD9i2bdM0EUL1ev3h4WE4HI7HYz7t/X4PAKIoAoAkSf1+nzFGCLnA2+325eVlNptZluU4zmKxeH9/p5RijAkhjuPYZ1FKXdd1HIcQstvtLr9nkiS+73ueFwQBpdQ/a7VaBUHgX8nzvPV6nZtfuLb3f/UNlMNpRl6tVisAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;redundant&quot;
         title=&quot;redundant&quot;
-        src=&quot;/static/3b1bf90c55c359e667c62f47703a2157/55fc0/redundant.png&quot;
-        srcset=&quot;/static/3b1bf90c55c359e667c62f47703a2157/c26ae/redundant.png 158w,
-/static/3b1bf90c55c359e667c62f47703a2157/6bdcf/redundant.png 315w,
-/static/3b1bf90c55c359e667c62f47703a2157/55fc0/redundant.png 433w&quot;
-        sizes=&quot;(max-width: 433px) 100vw, 433px&quot;
+        src=&quot;/static/7542063ba02332f20ff73bbfdc0c1380/3ebb1/redundant.png&quot;
+        srcset=&quot;/static/7542063ba02332f20ff73bbfdc0c1380/c26ae/redundant.png 158w,
+/static/7542063ba02332f20ff73bbfdc0c1380/6bdcf/redundant.png 315w,
+/static/7542063ba02332f20ff73bbfdc0c1380/3ebb1/redundant.png 507w&quot;
+        sizes=&quot;(max-width: 507px) 100vw, 507px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -311,23 +364,20 @@ It’s easy to go from having &lt;strong&gt;Redundant&lt;/strong&gt; states to h
 or
 
 &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Mood&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Good &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Bad &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; AlsoGood&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The first kind is not as bad as the second because extra fields in records create a subtype of the previous type, so in many cases the code will function the same as long as nothing discriminates upon it. There however still are issues like for example a equality check that fails because of the value of a redundant field.&lt;/p&gt;
+&lt;p&gt;The first kind is not as bad as the second because extra fields in records create a subtype of the previous type, so in many cases the code will function the same as long as nothing discriminates upon it. There however still are issues like, for example, an equality check that fails because of the value of a redundant field.&lt;/p&gt;
 &lt;p&gt;The second kind leads to real pain in scenarios like this: you can flip an image either by writing &lt;code class=&quot;language-text&quot;&gt;new FlippedDrawable(image)&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;image.setFlipped(true)&lt;/code&gt;.
 Then, to check if an image is flipped, you need to look at both every time.&lt;/p&gt;
 &lt;h3&gt;How to spot?&lt;/h3&gt;
 &lt;p&gt;Continuing with settings menu example from illegal.
-Anytime an application has options that only apply in specific scenarios, but they are always possible to select, there are either illegal or redundant states.&lt;/p&gt;
+Anytime an application has options that only apply in specific scenarios, but they are always possible to select, there are either illegal or redundant states.
+Redundant if selecting them has no effect (noop).&lt;/p&gt;
 &lt;h3&gt;How to fix?&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Remove concrete states&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;
-&lt;code class=&quot;language-text&quot;&gt;hyperBlur&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;extraRainEffects&lt;/code&gt; are options under &lt;code class=&quot;language-text&quot;&gt;extraFx&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  hyperBlur&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  extraRainEffects&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;em&gt;Same example as in the illegal state, but seen from a different point of view.&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// (extraFx, hyperBlur, extraRainEffects)&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
@@ -341,63 +391,37 @@ Anytime an application has options that only apply in specific scenarios, but th
 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;////////////////////&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  These all map to the same abstract state&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  &lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  All of these map to the same abstract state &lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;//  As long as extraFx is false the other fields are ignored.&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;///////////////////&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// the states we want: 5&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;// &amp;lt;-- Potentially also overloaded depends on abstract state&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//     i.e does `extraFx` has some effect even without options&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Our new concrete state&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ExtraFxOptions&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-   hyperBlur&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-   extraRainEffects&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Settings&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
- extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Off &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ExtraFxOptions
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Even stricter concrete state without the (true,false,false) state&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/////////////////////////&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Settings&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
- extraFx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Off &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ExtraFx&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;NonEmptyList&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Options&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Same...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Overloaded&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 440px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 485px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/22d0a18d601b1d28cef814372f5b5794/48c0e/overloaded.png&quot;
+    href=&quot;/static/54ed4b8640134969f239afcc4306507a/44c61/overloaded.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 77.21518987341771%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsTAAALEwEAmpwYAAACP0lEQVQoz12TwY/xQBjG/cN7cnWVbPbkZBMHbDaCPdiTxcpWlhC2barGMK1uGiRESVFD0E7fL2t8Xd/3HNqZzvubeZ7OTAgAfN8HgHK5nM/nTdMEAMYYAGy3W9d14SLP8/iTUgp/FeKv1WolCMJ+vy8UCqvVShRFQkg6nSaEmKbpOM7r62ulUpFl+f39PZjrClNKS6VSrVbLZDKJROLu7u7x8fHt7S2ZTEYikXg8Ho1G7+/vHx4eBEEIrP3As9kMY1ytVp+fn1VVlSRJEIR2u/319SXLsqqqiqIghPr9Psa43+93Op3z+XyFJUlar9c8vOd55/OZMbZer5vNpuu6x+PRdV3f9xlj3K2iKJvN5hfmHW4mkKIoh8Ph9gsvQAg5jnOFZVnmK4/H41wuZ1nWbrcDgG63u91uuSOO8X0ZDoe84Arbtg0AGONwOCyKIg+czWYxxrZtB444PBqN+KQ/sCiKQeZbexjjdrtdr9dfXl7i8fjpdOKj8/l8sVj8D1NKn56eMMaEEEmScrmcqqqWZU0mE0IIuwgAdrudYRj//DDP8/b7fSqV0jRtPB4DgK7rPFvgKDgUuq7/wp7nFYvFj4+P5XJJKfV9n1KqqurpdEIIaZrmOM5isTAMYzqdbjab7+/vK9xoNCzLQgjFYrF8Pv/5+dlqtRBCg8GAMWaaZqvV6l0kSZKu68vl8ndl27ZFUZRlGSFECOHHiDe63W6v1xtcRAgxDEPTtPl8zq9HKEjCN5MxxhMGOf0bBaP8Vv0BCQYh/VNDhNkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 81.64556962025317%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACY0lEQVQoz52TzU/iQBjG/b+9Gq9ekERMxIMGiZFEvAiFA5FiKRTaSkuBdsS2UGCpLS3hw87HZpluXa/7nCYz83ufmeedOSKEYIwJIZPJhGVZCCHGGB1ECEEIQQgRQvggOpnoKBk9Pj4yDCMIAiEEQkgIsSwrCAK6GgQBhHCz2Uwmk8Qvhj3Pe3p6QghdXl4KgnBxcVEsFs/OzhiGqVarsixfXV2l0+nb29tisZhUj2GMcalUyufzlUqlUCicnp7e3Nz0er1cLpdOp+/u7nK5XCaTSaVSHMf9cAYA8Dwvy/Lr66uu66qqDgYDTdMqlcrgrzRNMwzj4+MDAPDy8hKGYQwLgjCbzWi9KIr2+30URdvtluO43W4HIYyiiEZFDfv9Pt3/BxZFcbFYJNkmm7rd7mq1ovM0cFpC13XXdWP47e1tPp8TQhRFOTk50TRtNBo5jsPzvO/7//aGFrVtm2Z+RB0cx6G9yWaziqLoug4AeH5+brfb4/HYNE3btpMmu647Ho9juNVqUZgWTgYcx4miyLLs/f39+fn5ZrOhq77vf8PJnYMgOD4+rtVq9Xqd53mGYVRVDcMQYxwEQfLsPM8zDCOGJUlar9eu64ZhyPP8er2mDgCA7Xa73+/pzekLJYR8fn7quh7DnU4HIVQul6+vr1VVtW3710HdbjeKIlEUFUUxDpJlWZKk5XIJAIjh9kEsy6ZSqYeHh2q12mg0ms2mIAi+7zuO02q1JEnq9Xocx3U6nff39+9j73Y7AIBlWbQH0+mUJmxZ1nA47Pf7w+HQsizTNJfLped5q9Xq6+vrx6/6D/0GmW1b8D2vU2sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;overloaded&quot;
         title=&quot;overloaded&quot;
-        src=&quot;/static/22d0a18d601b1d28cef814372f5b5794/48c0e/overloaded.png&quot;
-        srcset=&quot;/static/22d0a18d601b1d28cef814372f5b5794/c26ae/overloaded.png 158w,
-/static/22d0a18d601b1d28cef814372f5b5794/6bdcf/overloaded.png 315w,
-/static/22d0a18d601b1d28cef814372f5b5794/48c0e/overloaded.png 440w&quot;
-        sizes=&quot;(max-width: 440px) 100vw, 440px&quot;
+        src=&quot;/static/54ed4b8640134969f239afcc4306507a/44c61/overloaded.png&quot;
+        srcset=&quot;/static/54ed4b8640134969f239afcc4306507a/c26ae/overloaded.png 158w,
+/static/54ed4b8640134969f239afcc4306507a/6bdcf/overloaded.png 315w,
+/static/54ed4b8640134969f239afcc4306507a/44c61/overloaded.png 485w&quot;
+        sizes=&quot;(max-width: 485px) 100vw, 485px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -449,24 +473,26 @@ Anytime an application has options that only apply in specific scenarios, but th
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a07db147b53822aad653434b8036185e/0955e/MIRO.png&quot;
+    href=&quot;/static/d9b986ddf920ebf5c63c46b26d82acf9/719d0/MIRO.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 74.0506329113924%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVQoz31SW1PaQBTm9/oH+uBLpy8+tc50+lC1U8fL4HTQUsW7XBTpKApWAYEQINlkyZJAyH0hCdntJFH71u9hd8/O+eac830nQSOMx2PHcTzPm06nhBBKKaGEUBLer0AIOY7jum4QBPFPIn5ls9nDw0zxsri9lVTkSUgm/2jTqWsY1vnZeSqVur4uybKsaVoQBAnbtgEA2kQbTTRWZHtSrQWu79uZ1iA3NJ4Mg0ewyYE6dg3se4AXLMvEGCuKYtt2wjRNXdeRNKjeHiQ33x3+WqwU1m6P128y3zu5fT6f/XOQujlaL2Q+5k++siyr63rMdBwnIhvGCKFh8xm0WNDjPc+bzTyMZ3HPpmmZhoUtN3fxqXS0RSmV5aFt2xjjBMb47u7utlyeGAYvABGKEIoISY5t02hs27IYpv302GDEx4udZShIvX6P5/nZbJaYz+cQQgAAQkiW5UGEWI83wVRVlZCkDMfHP5e64HGi6pOJGgpGKQ0i0P+CkDChcZuUB/W3MCTzPF+pVLrdLsMwAIBqtWqaZuxWbJiiKJeFwjPDZHeTezufb+7ueY4Lyb7vsyxbr9UuC5el61Ihn89lc/1+z/c9QoOAzCklQ2XYqNc4ARb2Uqf7q6KEAM+/qK2q6lhVsWUKIhc3admOZdlvxYdI8Umgqdru2vsueIAQTSKEZEPXmW4vvfRhdXHhIP2lnN+o5rfvi0mmf9QYpBswXbrfrJY3tr4t7J0tD6QhhNB1XU3Twg2DEDaa7Vx6pXiS5GALwIcOU2rVcp3ySa2w2yymT3+s/C4ldSzYNkaSNBqNLMsKK3ueV6/Xr66uulwPCKDfByzLiSLyfP9tw4EwqFRrrWZHAKDT6bTbbY7jTNMM1Z7P51Fe5FnoAXmZNYzm0RkbSWJHySv+AmPAI3anxISFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 70.25316455696203%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVQozz2Se2/TMBTF81X5GID4CySEeAgQME1ICJgAaYINscK6rV0fi7qlY90KgzRrS7OmdZzYifNOGtc2pBU7si3ryj/p3HMtiYUODg70S/3813mnc8IYK0qM82IVWwgRJ7Esy5qmAQDEf0lpmmKMm81mo95s7B9WKjIJ4yhLOefLFzllScp8P6nXG5VKpd/ve55n2zbnXLJtG2OUpKkbwra6oY0/HR6tfv12V5afdZUPQ6Ws7Kwdye+GeiMMPYydJImDIIAQUkoljFGcpMPez9rn1c039/Y+PwcXHf20A3+rwWAcjyaD7+3RWWt/Y+XT21uXuu66rueRIAgKGCFkmqZlmmxGXRIm6VwI4QdBntOlbew40MIpE6326k95J8koNE1CSJ7nkud5tVpNURT9Uu/1VFX9raqqaZpszsSi6yiKfnTPOp2uolT3Np//0S81TTMMowiMFXlyxhildL4QX+gqUs75nBYusiis1e5SMVsWC7gwhjEhRAgxn8+X5xW8vCCEMMJJlh1tv5yAXhxneZ4XMOe82+1Wq9XS1la9Xt8ub5dKpSRJluQSHo1G5fK28v1k/cWD9Y+rrVZ7OW3Jdd3pdIoxBpY91HVo2TbCEFqU0qJnLmbpDBhmFCdxPC+vPR5Pz23bsSwYRZHkLDz3NO1HdafT3HNdkIYOMIZh5DCRc0GjzLPIBMI/X97fX9+8bSFsjI00TX3flzDGYRj2L/qvb1x7//TmVumJUl/Z33rU+PqwuXOvtntn99vtjfXrjb07yumr3kg1p9B13dlsVsBBEBwfHx/IcuesMtIvphAaYGpMJnk2o0GS+V5MvKNmq33SxsSfGmAw6Pf7AwBAGIZSlmXj8RgAQEjoOi6EENnI94OrUTHGkIOhCS3LwgshhAgh/37YX+eW6dO+qjNSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;MIRO&quot;
         title=&quot;MIRO&quot;
-        src=&quot;/static/a07db147b53822aad653434b8036185e/f058b/MIRO.png&quot;
-        srcset=&quot;/static/a07db147b53822aad653434b8036185e/c26ae/MIRO.png 158w,
-/static/a07db147b53822aad653434b8036185e/6bdcf/MIRO.png 315w,
-/static/a07db147b53822aad653434b8036185e/f058b/MIRO.png 630w,
-/static/a07db147b53822aad653434b8036185e/0955e/MIRO.png 901w&quot;
+        src=&quot;/static/d9b986ddf920ebf5c63c46b26d82acf9/f058b/MIRO.png&quot;
+        srcset=&quot;/static/d9b986ddf920ebf5c63c46b26d82acf9/c26ae/MIRO.png 158w,
+/static/d9b986ddf920ebf5c63c46b26d82acf9/6bdcf/MIRO.png 315w,
+/static/d9b986ddf920ebf5c63c46b26d82acf9/f058b/MIRO.png 630w,
+/static/d9b986ddf920ebf5c63c46b26d82acf9/40601/MIRO.png 945w,
+/static/d9b986ddf920ebf5c63c46b26d82acf9/78612/MIRO.png 1260w,
+/static/d9b986ddf920ebf5c63c46b26d82acf9/719d0/MIRO.png 1779w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -487,24 +513,25 @@ Next time you find yourself with an invalid state, don’t fret! Just follow the
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/cefb1544258ce48ee5496739b0bebb2a/c391c/fixagram.png&quot;
+    href=&quot;/static/d7860a7028f21cd21be1cd235625411e/0d6fe/fixagram.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 125.31645569620254%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAAAsTAAALEwEAmpwYAAADjklEQVQ4y12UW3OqShCF/f//xdp5Sl5SMamIsRTlphF0AEEYQBxuM8NNcE7h7OPJyfdkSS+6e/XS0fF4nEwm8/l8Nps9Pz/P5/PVaqWqqizLb29voiju93tFUSRJWq1Wy+VyOp1OJpPxeBzH8WixWIRhyBjDGC+Xy9PplCRJHMeMMVEUx+OxKIpRFEEIXdeNoojdsW3bsqyRpmlBEDDGiqJQFGU2mwmC8PHxUZbl+Xx+fX398+fP09MTn0KWZQDA5XIRRRFCOFJV9eXlRRCE2Ww2n8+lO/IdTdMAAJ7nhWF4vON5nuM4vu+/v7+naTqSJAkAcLvd+Dz8Q1EUfAXHcbbb7fV6Zf/CC2zbxhgP4qIo2A/6vj+fzwgh27Zd10UIxXHcdd3tTt/3jDHDMLIsG8b+Je66LssySikAwDAMSikhhGsenQ+HQ57ng2EYY/Z/HMfZbDaWZUmSZJomQuiX2LKsoihG2+2WEPJLnCSJZVlpmiKEgiBACP3aGQAwdN5sNlzMv8UYx3EcBIEkSbwaAKBpmmmal8uFENJ13X+GPTpzcZIkjuOoqkop5eYxxtbrtWVZyR3uvOd5w6l0Xa/rmjHWti1/ve/7aZr+3IIQYtt2GIa8kjGGEPJ9fzCMOxxFkSAIn5+f0+k0iqKqqnhdURQYY1EUZ7MZhJCbRykd4sl3I4QkSUIphRB2d7Ise5hXVRVCKMuysizTNL1er5RSwzBGsiwzxniS4zgOwzCO46ZpHvdLkiRNU/40TdM8z7uuK8tyEPPOTdNIkrTdbsMwdBzneDw+xAghRVF4pHm8GWOU0t1uN1qtVoyxqqrKO7qul2XZ9/0j7dzwOI4NwyB3qqrK8/xwOIzW6zXG2DRNeMfzPG7VQ8yp6zqKoiAIfN/3PA9CeDweBzEvpZTWdd3f4b+Bh/LhFsa4aRrukWmag2H8eqZpTqfTr68vfi0eEv4KSZIWi4WiKIIgAAD4zoNY0zRKadu2EMLT6QQA4Em6XC6/3OY5iaKIEFLX9d+/IS7mwbRtGwBQVRXvzBjLsqxt2yzLDMPgVyjLsq7rYefdbpdlWd/3+/1eVVXf9yGEYRg+Eoox1jTNdV0+muu6hJC/IUmSRJbl2+0GIfz+/t7tdrquf39/27ad5/n1em2ahi+CMSaEtG3LMyuK4ogx5vu+pmmHwyGKIoRQmqZZlp3PZ9d1DcPQdd38AZ9L13UAwD9y91k5BCe3PQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 119.62025316455697%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAIAAAB1KUohAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSklEQVQ4y4VUaU/rOhTs//8xIAFCSAgErWgrqtA2XUmdOvu+OI7tZq3fI47yuPfLmw+WsszxeM4cjzjnQRB8fHyMx+PHx8fn5+e3t7fpdDqfz19fXxeLhSRJ0+l00uHl5eX+/v729tZxHM75iHM+n8/Fw3a7XS6XWZZ5ntc0jaIoDw8PqqpaluU4jqIoURRxzn3flySpJ8uyjBDinGuaNpvNJEl6f3/HGLdte3Nzc3d39/T0tN1u1+u1pmlVVcVxfDgcevJkMhmPx5+fn7PZ7Ovra91B7vD9/Q0h1HVdURTY4Xw+r9fr3W7XkxeLhaZpvMP1euWcF0Uhy7Ku6wCA0+nE/wSlVPw/opSKMtcO4nOapr7vQwg1TYuiSBxq+IEQAgD4IRNC9vs957xt26F2mqYYY8/zdF2nlBJCfu9MCFFVtd/5eDwOgsXqed5utzMMAwBg23aWZX+Rz+fzD/lyuQjrBs2c87quT6cTpbRtW1VVkyT5S3ZPZoz9JjPGhLHiJefcsqzZbHY8Hj3PE/oppbqu97LF6a/Xa9M0VVVlWWYYRtM0g/8AAEppWZbCF0ophLAni2a0bSvL8msHTdPathVaqqoKw3AymSyXS4RQXdeMsf9aJQxLOoRh6Pt+WZZDe5IkKYoiTdM8z7Mso5Qyxnq3kyQRZRBCcRwnSWLbdlVVeZ6LnUXRKIowxnEcF0VBKe3Jpmn6vi9mS5Ik3/dN0zQMQ+zMOXdd93A4WJZl27ZlWZfLhTHWu62qahAEZVlSSvM8t23bNM22w+/Amh0YY4SQOI57t8MwhBCGYeg4Tthh6OpvcpZlcRyL2LquaxjGH/Gs69p1XXFCoWUIDITQ6eC6Luf8crn0rSKEiMFACK1Wq/l8LlbP84YZ2mw2siwvl8vVaoUxLsuyl10UhQgTQigIgiiK4jhumgZjLARjjIuicF3X932EkMisaZp1Xf/M8+FwKMsSYwwAgBACAJIkGYYBIeQ4jmVZQxcEuSiKkbi6EEJCv2EYtm0bhpGm6fV6bdtWJDlJEoRQFEWMMc75fr8nhPyQ8zzfbDbH41FRFADA+XyGEJ5OJ3GNaJoWBIEwLOjguu5qtSrLcsT/D2VZCiNE/kTPKKX/GvYPgAguW6UvdpkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;fixagram&quot;
         title=&quot;fixagram&quot;
-        src=&quot;/static/cefb1544258ce48ee5496739b0bebb2a/f058b/fixagram.png&quot;
-        srcset=&quot;/static/cefb1544258ce48ee5496739b0bebb2a/c26ae/fixagram.png 158w,
-/static/cefb1544258ce48ee5496739b0bebb2a/6bdcf/fixagram.png 315w,
-/static/cefb1544258ce48ee5496739b0bebb2a/f058b/fixagram.png 630w,
-/static/cefb1544258ce48ee5496739b0bebb2a/c391c/fixagram.png 673w&quot;
+        src=&quot;/static/d7860a7028f21cd21be1cd235625411e/f058b/fixagram.png&quot;
+        srcset=&quot;/static/d7860a7028f21cd21be1cd235625411e/c26ae/fixagram.png 158w,
+/static/d7860a7028f21cd21be1cd235625411e/6bdcf/fixagram.png 315w,
+/static/d7860a7028f21cd21be1cd235625411e/f058b/fixagram.png 630w,
+/static/d7860a7028f21cd21be1cd235625411e/40601/fixagram.png 945w,
+/static/d7860a7028f21cd21be1cd235625411e/0d6fe/fixagram.png 1115w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
