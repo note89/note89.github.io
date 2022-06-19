@@ -1,7 +1,7 @@
 ---
 title: State of emergency! The four ways your state might be wrong
-date: "2022-06-18" 
-description: ""
+date: "2022-06-19" 
+description: "Alert! Your state might already be infected! learn how and what todo about it in this article."
 ---
 
 # Alert! Your state might already be infected!
@@ -361,9 +361,10 @@ If you don't like avoiding the painter [MIRO](https://www.wikiwand.com/en/Joan_M
 ### M -> I ->  R -> O
 
 ![](MIRO.png)
-If you are like me and like to think deeply about software I can recommend taking the *Advanced software design course*. That is where I learned the deeper foundations that underlay all software. And that led me to the ideas that underlay this article.
-**The next batch of the Advanced Software Design course starts on the 23 of June.
-https://jameskoppelcoaching.com/advanced-software-design-web-course/**
+<br>
+If this article intrigued you and you like thinking deeply about software you should consider joining the *Advanced software design course*. That is where I started as a student and learned the deeper foundations that underlay all software. That knowledge led me to the ideas that underlay this article.
+<br>
+**The next batch of the Advanced Software Design course starts on the 23 of June. [Click here to join](https://jameskoppelcoaching.com/advanced-software-design-web-course/).**
 
 
 

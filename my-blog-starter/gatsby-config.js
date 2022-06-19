@@ -125,14 +125,14 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Nils Olof T:son Erikssons blog`,
-        short_name: `The Notes`,
+        short_name: `Note on software`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#fafafa`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/mirdin_logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
