@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jun 2022 12:24:11 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sun, 19 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Jun 2022 12:45:54 GMT</lastBuildDate><item><title><![CDATA[State of emergency! The four ways your state might be wrong]]></title><description><![CDATA[Alert! Your state might already be infected! What if I told you that while you are walking around all happy and content in these times of…]]></description><link>null/state-of-emergency/</link><guid isPermaLink="false">null/state-of-emergency/</guid><pubDate>Sun, 19 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Alert! Your state might already be infected!&lt;/h1&gt;
 &lt;p&gt;What if I told you that while you are walking around all happy and content in these times of peace and great economic prosperity, your application state might be modeled wrong!&lt;/p&gt;
 &lt;p&gt;What if I told you I could help you with that, all while introducing another mnemonic to the world ?!?
 Feel intrigued? Then keep reading!&lt;/p&gt;
@@ -50,7 +50,7 @@ Let’s dive in to see what they represent.&lt;/p&gt;
 &lt;p&gt;The real world is messy and full of more details than we can even conceive.
 Imagine writing software for a washing machine.
 The most apparent thing about it is that it has one or more knobs conveying different states.&lt;/p&gt;
-&lt;p&gt;But it has more than that; it has a color, air inside, and hinges, screws, all in different shapes, sizes, and conditions. The list goes on.&lt;/p&gt;
+&lt;p&gt;But it has more than that; it has a color, air inside, spin speed, and hinges, screws, all in different shapes, sizes, and conditions. The list goes on.&lt;/p&gt;
 &lt;h2&gt;The abstract state&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;The abstract state is a mapping from reality to a much simpler subset that still is useful to model what we are after.&lt;/strong&gt;&lt;/p&gt;
@@ -103,7 +103,7 @@ the abstract and the concrete state.&lt;/p&gt;
 &lt;span class=&quot;token comment&quot;&gt;// Off and running ?&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;State&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	running &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	running&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	isOn&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	temperature&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Celsius
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -123,8 +123,8 @@ Most languages will not be able to express such a thing in a reasonable way in t
 &lt;li&gt;A totally correct concrete state makes the code much harder to work with, and the gains in correctness is not worth the price.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In all of these scenarios, it’s an active choice to have an incorrect concrete state. This decision must be documented and well known. Code can/will change, and the compiler will not save you here.&lt;/p&gt;
-&lt;p&gt;If you have not made an active choice, then make sure your concrete state is correct.&lt;/p&gt;
-&lt;p&gt;This part touches on a much deeper topic of thinking about the logical level of your code. To learn more about that, attend the next cohort of &lt;a href=&quot;https://jameskoppelcoaching.com/advanced-software-design-web-course/&quot;&gt;the advanced software design course&lt;/a&gt; (one starts very soon!). For a primer read Jimmy’s article &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;the three level of software&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Unless you are making an intentional choice, make sure your concrete state corresponds precisely to your abstract state.&lt;/p&gt;
+&lt;p&gt;This part touches on a much deeper topic of thinking about the logical level of your code. To learn more about that, attend the next cohort of &lt;a href=&quot;https://jameskoppelcoaching.com/advanced-software-design-web-course/&quot;&gt;The Advanced Software Design Course&lt;/a&gt; (one starts very soon!). For a primer read Jimmy’s article &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;The Three Levels of Software&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;The goals of data modeling ?&lt;/h2&gt;
 &lt;p&gt;Make your mappings as close as possible to one-to-one between abstract and concrete and concrete and interpreted.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Now on to the bugs!&lt;/strong&gt;&lt;/p&gt;
@@ -219,7 +219,7 @@ We will only look at the mapping between the &lt;code class=&quot;language-text&
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; head &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;li&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; li&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;just&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;li&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;nothing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;// Function with stricter abstract state input&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Now the bug cannot exist so we don&apos;t need it in our state&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Now head can&apos;t be called with an empty list, so we don&apos;t need to handle that case&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;li&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; NonEmptyArray&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; li&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Illegal&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -362,7 +362,7 @@ It’s easy to go from having &lt;strong&gt;Redundant&lt;/strong&gt; states to h
    &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; extraField &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-or
+&lt;span class=&quot;token comment&quot;&gt;// or&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Mood&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Good &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Bad &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; AlsoGood&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The first kind is not as bad as the second because extra fields in records create a subtype of the previous type, so in many cases the code will function the same as long as nothing discriminates upon it. There however still are issues like, for example, an equality check that fails because of the value of a redundant field.&lt;/p&gt;
@@ -440,12 +440,6 @@ Redundant if selecting them has no effect (noop).&lt;/p&gt;
 &lt;li&gt;A second later, the data does pop up.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;If you have, then you have observed the effect of overloading.&lt;/p&gt;
-&lt;p&gt;Both Slack and Twitter have had this bug.
-&lt;a href=&quot;http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html&quot;&gt;How elm slays a common UI Antipattern&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;How to fix?&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Add unique concrete states&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Say you have a model like this&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;State&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   isLoading&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -456,9 +450,27 @@ Redundant if selecting them has no effect (noop).&lt;/p&gt;
 &lt;li&gt;Empty list because nothing was returned from the backend&lt;/li&gt;
 &lt;li&gt;Empty list because we have not asked for it yet&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If we ask ourselves what states should exist for data fetched from a backend, it becomes clear that these four states are a better abstract description of what is going on.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; NotAsked &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Loading &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Success&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Failure&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If we instead use this as our concrete state there would be a distinction between &lt;code class=&quot;language-text&quot;&gt;NotAsked&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Success&amp;lt;List&amp;lt;number&gt;&gt;&lt;/code&gt;, which there wasn’t before.&lt;/p&gt;
+&lt;p&gt;So we need extra contextual information to know how to interpret the state.
+It’s not possible from how the state is currently designed to make that distinction.&lt;/p&gt;
+&lt;p&gt;Both Slack and Twitter have had this bug. And you can read more about
+it in this excellent blog post.
+&lt;a href=&quot;http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html&quot;&gt;How elm slays a common UI Antipattern&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;How to fix?&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Add unique concrete states&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;How do we make it so we can differentiate these two abstract states ?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Empty list because nothing was returned from the backend&lt;/li&gt;
+&lt;li&gt;Empty list because we have not asked for it yet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;State&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  isLoading&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  data&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If we start by asking ourselves what states should exist for data fetched from a backend, it becomes clear that these four states are a better abstract description of what is going on.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;State&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; NotAsked &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Loading &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Success&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Failure&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So if we instead use that as our concrete state there would now be a distinction between &lt;code class=&quot;language-text&quot;&gt;NotAsked&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Success&amp;lt;List&amp;lt;number&gt;&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Depending on our abstract state requirements, we can take this further or be happy with this.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How would you change the model to allow for pagination while keeping the current data you already have?&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;I was promised a mnemonic! Where is it?&lt;/h2&gt;
