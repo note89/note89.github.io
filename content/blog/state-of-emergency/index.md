@@ -119,7 +119,7 @@ In all of these scenarios, it's an active choice to have an incorrect concrete s
 
 If you have not made an active choice, then make sure your concrete state is correct.
 
-This part touches on a much deeper topic of thinking about the logical level of your code. To learn more about that, attend the next cohort of [the advanced software design course](https://jameskoppelcoaching.com/advanced-software-design-web-course/) (one starts very soon!). For a primer read Jimmy's article [the three level of software](https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html).
+This part touches on a much deeper topic of thinking about the logical level of your code. To learn more about that, attend the next cohort of [The Advanced Software Design Course](https://jameskoppelcoaching.com/advanced-software-design-web-course/) (one starts very soon!). For a primer read Jimmy's article [The Three Levels of Software](https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html).
 
 ## The goals of data modeling ?
 Make your mappings as close as possible to one-to-one between abstract and concrete and concrete and interpreted.
@@ -369,7 +369,7 @@ If this article intrigued you and you like thinking deeply about software you sh
 
 
 ## Introducing the State Fixagram™!
-I will leave you with this easy to follow **Fixagram™**. 
+I will leave you with this easy-to-follow **Fixagram™**. 
 Next time you find yourself with an invalid state, don't fret! Just follow the **Fixagram™**, and you will be alright.
 **No need for a state of emergency!**
 
