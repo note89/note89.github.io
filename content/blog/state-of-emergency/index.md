@@ -29,7 +29,7 @@ The real world is messy and full of more details than we can even conceive.
 Imagine writing software for a washing machine.
 The most apparent thing about it is that it has one or more knobs conveying different states. 
 
-But it has more than that; it has a color, air inside, and hinges, screws, all in different shapes, sizes, and conditions. The list goes on. 
+But it has more than that; it has a color, air inside, spin speed, and hinges, screws, all in different shapes, sizes, and conditions. The list goes on. 
 
 ## The abstract state
 >**The abstract state is a mapping from reality to a much simpler subset that still is useful to model what we are after.**
@@ -95,7 +95,7 @@ Example
 // Off and running ?
 
 type State = {
-	running : boolean,
+	running: boolean,
 	isOn: boolean,
 	temperature: Celsius
 }
@@ -117,7 +117,7 @@ While this is always the preferred solution, there are reasons to not follow thi
 
 In all of these scenarios, it's an active choice to have an incorrect concrete state. This decision must be documented and well known. Code can/will change, and the compiler will not save you here.
 
-If you have not made an active choice, then make sure your concrete state is correct.
+Unless you are making an intentional choice, make sure your concrete state corresponds precisely to your abstract state.
 
 This part touches on a much deeper topic of thinking about the logical level of your code. To learn more about that, attend the next cohort of [The Advanced Software Design Course](https://jameskoppelcoaching.com/advanced-software-design-web-course/) (one starts very soon!). For a primer read Jimmy's article [The Three Levels of Software](https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html).
 
@@ -161,7 +161,7 @@ const head = <A>(li: A[]) => li[0]
 const head = <A>(li: A[]) => li.length > 0 ? just(li[0]) : nothing()
 
 // Function with stricter abstract state input
-// Now the bug cannot exist so we don't need it in our state
+// Now head can't be called with an empty list, so we don't need to handle that case
 const head <A>(li: NonEmptyArray<A>): li[0]
 ```
 ## Illegal
@@ -321,11 +321,6 @@ Have you ever used a piece of software, and the following occurs?
 
 If you have, then you have observed the effect of overloading.
 
-Both Slack and Twitter have had this bug.
-[How elm slays a common UI Antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html)
-
-### How to fix?
-> **Add unique concrete states**
 
 Say you have a model like this
 ```typescript
@@ -339,12 +334,33 @@ Then there is no way to differentiate these two abstract states
 * Empty list because nothing was returned from the backend
 * Empty list because we have not asked for it yet
 
-If we ask ourselves what states should exist for data fetched from a backend, it becomes clear that these four states are a better abstract description of what is going on.
+So we need extra contextual information to know how to interpret the state.
+It's not possible from how the state is currently designed to make that distinction.
+
+Both Slack and Twitter have had this bug. And you can read more about
+it in this excellent blog post.
+[How elm slays a common UI Antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html)
+
+### How to fix?
+> **Add unique concrete states**
+
+How do we make it so we can differentiate these two abstract states ?
+* Empty list because nothing was returned from the backend
+* Empty list because we have not asked for it yet
+
 ```typescript
-type state = NotAsked | Loading | Success<List<number>> | Failure<string>
+type State = {
+  isLoading: boolean,
+  data: List<number>
+}
 ```
 
-If we instead use this as our concrete state there would be a distinction between `NotAsked` and `Success<List<number>>`, which there wasn't before. 
+If we start by asking ourselves what states should exist for data fetched from a backend, it becomes clear that these four states are a better abstract description of what is going on.
+```typescript
+type State = NotAsked | Loading | Success<List<number>> | Failure<string>
+```
+
+So if we instead use that as our concrete state there would now be a distinction between `NotAsked` and `Success<List<number>>`. 
 
 Depending on our abstract state requirements, we can take this further or be happy with this. 
 
@@ -369,7 +385,7 @@ If this article intrigued you and you like thinking deeply about software you sh
 
 
 ## Introducing the State Fixagram™!
-I will leave you with this easy-to-follow **Fixagram™**. 
+I will leave you with this easy to follow **Fixagram™**. 
 Next time you find yourself with an invalid state, don't fret! Just follow the **Fixagram™**, and you will be alright.
 **No need for a state of emergency!**
 
