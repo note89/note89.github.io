@@ -265,7 +265,7 @@ type Person = {
    , extraField : any
 }
 
-or
+// or
 
 type Mood = Good | Bad | AlsoGood
 ```
