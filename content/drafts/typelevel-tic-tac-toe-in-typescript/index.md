@@ -141,7 +141,7 @@ But with that implementation Typescript fails to do type inferencinging later in
 
 With many of these more exotic recursive types, there is a limit to how far they will work and 
 sometimes there are issues, which means you will have to try something different.
-A recursive type in Typescript 4.5 has a max callstack of ![`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
+A recursive type in Typescript 4.5 has a max callstack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
 
 
 #### Arithmetic 
@@ -882,8 +882,8 @@ type CrashOrPass<T extends [unknown, "noError"]> = T[0];
 ```
 If we do not get a compile-time error the first value of the tuple is returned 
 which is just non-error type. 
-I know it's common in Erlang and Elixir to follow this type of pattern on the value level. 
-by returning `{:ok, data, :error, Error | nil}`.
+I know it's common in Erlang and [Elixir](https://elixirschool.com/en/lessons/intermediate/error_handling) to follow this type of pattern on the value level. 
+by returning `{:ok, data } | {:error, reason}`.
 
 
 
