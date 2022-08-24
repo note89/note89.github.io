@@ -246,7 +246,10 @@ then we turn that into a union and end up with `1 | 2 | 3`.
 
 `Coordiantes` have the type instance of  
 `"22" | "21" | "23" | "12" | "11" | "13" | "32" | "31" | "33"`. 
-Actually, the type of Column and Row is `2 | 1 | 3` and i don't really know why it's in that order, and that is why the order of `Coordinates` is like it is.  Maybe there is no guarantee that a union traversal is left to right in Typescript.
+
+*(Actually, the type of Column and Row is `2 | 1 | 3` and I don't really know why it's in that order,*
+*and that is why the order of `Coordinates` is like it is.*  
+*Maybe there is no guarantee that a union traversal is left to right in Typescript.)*
 
 
 ### Winning positions
@@ -314,23 +317,25 @@ type WinningPositions =
   | GetDiagonalPositions<Size>
 ```
 
-`GetRowPositions` and `GetColumnPositions` itterates through either row or column and then creates the Cartesian product between those values. 
-In code it would read something like 
+`GetRowPositions` and `GetColumnPositions` iterates through either row or column and
+then creates the Cartesian product between those values. 
+In code, it would read something like 
 ```typescript
 forEach(Row).map((r) => getCatesianProduct(Column, r))
 ```
 So the output is `["11", "21", "31"] | ["21", "22", "23"] ...` for `Row` for example. 
 When you do `R extends Row` in Typescript, that is "looping" over the union producing an output of type `Result1 | Result2 | Result3` etc. 
 
-With `GetDiagonalPositions` i do a two tricks. 
-First of i have two parameters that is not allowed to be used when calling the type-level function. This is so i can bind some values to those type parameters and reuse them in the body of the function. 
+With `GetDiagonalPositions` we do two tricks. 
+First of we have two parameters that are not allowed to be used when calling the type-level function. 
+This is so they can be used to bind the result a typelevel function to allow for reuse in the function body.
 
 Here we are generating two arrays `[1,2,3]` and `[3,2,1]` and then we do two `Zip` operations
 `Zip<[1,2,3],[1,2,3]>`  and `Zip<[1,2,3],[3,2,1]>` which produces `[[1,1],[2,2],[3,3]`
 and `[[1,3],[2,2],[3,1]]` We then turn all the tuples into string. Resulting in
 `["11", "22", "33"]` and `["13", "22", "31"]`.
 
-`WinningPositions` is just the union of all the above, giving us a complete union of all positions that are winning. A position  for me is a combination of  of coordinates, that might be a bit dodgy naming. I'm thinking of a chess position not being a square but the combination of pieces on squares.  This however is just a combination of coordinates, so maybe `GetWinningCoordinateCombinations` is a much better name.
+`WinningPositions` is just the union of all the above, giving us a complete union of all positions that are winning. A position here is just a combination of coordinates. A chess position is not just a square but the combination of pieces on squares. `WinningPositions` however is just a combination of coordinates, so maybe `GetWinningCoordinateTuples` is a much better name.
 
 ### Board
 
@@ -365,11 +370,11 @@ type GetWinner<B extends Board> =
 ```
 
 Here what we described in the previous section gets done. 
-We use the `WinningPositions` together with a board to look up the state of all those squares.
-We then see if any of those array of coordinates only contain one player
+We use the `WinningPositions` together with a board to look up the state of all those winning tuples.
+We then see if any of those tuples of coordinates only contain one player.
 
 `GetWinner` might not be the perfect name, because it gives back whatever is unique in a winning set of squares so for example it would return `Empty` for the initial board. 
-So the game starts out with `Empty` as a winner one could say. 
+*(So the game starts out with `Empty` as a winner one could say)*
 
 ### Round
 
@@ -505,7 +510,7 @@ type HasWon<
 > = P extends GetWinner<B["squares"]> ? true : false;
 ```
 
-`AvailableSquares` loops through the coordinates replaces every square with either the `Coordinate` or `never`
+`AvailableSquares` loops through the coordinates and replaces every square with either the `Coordinate` or `never`
 ```typescript
 {
  "11": never, 
@@ -513,8 +518,9 @@ type HasWon<
  ...
 }
 ```
-We then lookup all values for all keys with `[keyof B]` this produces an union like 
-`never | "12" | ... ` and `never` gets removed leaving only the squares that are possible to play.
+We then lookup all values for all keys with `[keyof B]` this produces a union like 
+`never | "12" | ... ` and since `never` represents the absence of a value.
+`never` gets removed from unions leaving only the squares that are possible to play.
 
 ### Extra functions from requirements
 ```typescript
@@ -557,9 +563,10 @@ type IsPositionOccupied<
 ```
 
 
-That is all the code related to the fundamentals of the game. I did add some extra code for producing that 'Game UI' to play the game in that is a bit nicer then the tests you will see.
-I will show that code last.
-
+That is all the code related to the fundamentals of the game!
+There is some extra code for the 'Game UI' to play the game in a nicer
+way than you will see in the tests.
+We will go through that code last.
 
 ### Test Cases
 
@@ -732,8 +739,10 @@ type WinCircleOutcome = Expect<Equal<
 
 ### UI Code
 
-I know it's a bit silly to call this a UI, but it gives you indications on how the game is going 
-and tells you when you are doing illegal things with red text so that is basically a UI for me. 
+I know it's a bit silly to call this a UI, but hey, it gives you visual indications
+of the state of the game and yells at what you are doing wrong if you 
+try to play the game incorrectly. 
+So that is a rudimentary UI. 
 
 ```typescript
 //
@@ -846,35 +855,61 @@ type SetError<T> = [T, T extends `${ERROR_ID}${string}` ? "error" : "noError"]
 type CrashOrPass<T extends [unknown, "noError"]> = T[0];
 ```
 
-I use `@ts-expect-error` to turn the type errors around. So it shows a error when it's actually type checks. that is useful because what i really would want is something like .
-So you would get a type error when the type does match but otherwise it lets it though.
+I use `@ts-expect-error` to turn the type errors around. So it shows an error when the types actually type check. 
+That is useful here, in the absence of something like "extends everything except X". 
 ```typescript
-type CrossHasWon<T doesNotExtend Winner<Cross,any,any>> = T
+type CrossHasWon<T extends Not<Winner<Cross,any,any>>> = T
 ```
 
-I kind of was able to simulate that a bit with with `SetError` and `CrashOrPass` which needs to be used together, i don't know how to put them together into one type-level function or even better get `GameLoop` to have this constraint by itself.
+We are kind of able to simulate that a bit with `SetError` and `CrashOrPass` which needs to be used together, I don't know how to put them together into one typelevel function or even better get `GameLoop` to have this constraint by itself. With more work it's probably possible.
 
-So what i have basically done is that `GameLoop` is a recursive function that ends when the game ends or gives custom errors like 
-`__ERROR__: Square '${Head extends string ? Head : never}' already taken` 
-It's really cool that you can just inject our `Head` into a string like that and get type errors like 
-![[Pasted image 20220823182016.png]]
+`GameLoop` is a recursive typelevel function that ends when the game ends or a error occurs.
+The errors give informative information like `__ERROR__: Square '${Head extends string ? Head : never}' already taken` 
+I think it's really cool that we can just inject `Head` into a string and get type errors like 
 ![](custom-error.png)
 
-But i don't just want to have this be the return type of the function i also want a compile time error. So the way i do that is in two steps
+To not just get a return type of a custom error but actually get a compile-time error highlighting it we wrap `GameLoop` in
+`SetError` and `CrashOrPass`.
 ```typescript
 type SetError<T> = [T, T extends `${ERROR_ID}${string}` ? "error" : "noError"]
 ```
-If the return type starts with `__Error__` then set the second value in the tuple to "crash".
+If the return type starts with `__Error__` then set the second value in the tuple to `"error"`.
 
-the next type-level function
+`CrashOrPass` then takes the return type from `SetError` and if the second value is not `"noError"`
+we get a compile time error, which is exactly what we want.
 ```typescript
 type CrashOrPass<T extends [unknown, "noError"]> = T[0];
 ```
-Gives a compile time error if the second argument is not `"pass"`. 
-So when we have `"crash"` we get a compile time error just like we want. 
+If we do not get a compile-time error the first value of the tuple is returned 
+which is just non-error type. 
+I know it's common in Erlang and Elixir to follow this type of pattern on the value level. 
+by returning `{:ok, data, :error, Error | nil}`.
 
 
-### Summary 
 
+### Closing thoughts.
+
+Thanks for reading this far! I hope you learned something on this journey. 
+Typescript is very powerful and you can basically do anything you want as long as you are willing to spend enough time. 
+It just gets more and more awkward to achieve the constraints on the typelevel.
+I would not say that this is any good practice in general, but knowing that something is possible could 
+make it worth exploring in cases where it would be worth the end result.
+
+A few years ago I was of the opinion that if you could have static guarantees you should. 
+Now I still want those guarantees but I think it's very prudent and acceptable to use something like 
+type guards
+```typescript
+if(isDog(x)){
+  //do something
+}
+```
+And write code that is still safe but does runtime checks,
+usually this lead to simpler solutions. 
+
+
+Don't forget to check out the next cohort of our course in Advanced Software Design.
+https://jameskoppelcoaching.com/advanced-software-design-web-course/
+
+Cheers!
 
  
