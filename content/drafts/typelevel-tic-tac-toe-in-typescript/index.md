@@ -1,26 +1,32 @@
 ---
 title: Typelevel Tic-Tac-Toe Overkill edition in Typescript
 date: "2022-08-23"
-description: "Typescript typesystem is very powerful, powerful enough to build a full functioning, dynamic size Tic Tac Toe Game"
+description: "Typescript typesystem is very powerful, powerful enough to build a fully functioning, dynamic size Tic Tac Toe Game"
 ---
 
 
 At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.
 
-You will get better from just playing but it takes much longer and your understanding on what you have learnt is much worse. You will learn what to do but have a harder time explaining what you have learned.   
+You will get better from just playing but it takes much longer and your understanding of what you have learned is much worse. You will learn what to do but have a harder time explaining what you have learned.   
 
-It's exactly how it's like for most software engineers, they practice by doing. Senior engineers that been through a lot gain intuition and they know that one design decision should be taken over another but they might have a hard time to explain why or justifying it except 'it feels better' or 'i have tried the other approach before and it never ends well'. But is there a more efficient way  ? Or do you have to spend 10 000 hours just reading and writing code to become enlightened and achieve the ranks of software wizard ?
+It's exactly how it normally is to work towards becoming a senior engineer. Senior engineers that have been through a lot gain intuition. They know that one design decision should be taken over another but they might have a hard time explaining exactly why. So do you really have to spend 10 000 hours just working on projects to 
+achieve mastery ?
 
-At Mirdin we believe there is a more effective way, We give students a series of short design exercises that takes just a few hours to finish but will contain a lot of opportunity for things to go wrong. Then we give the students immediate feedback on how their earlier design choices affected later requirements. With smaller groups or private students we design specific requirements that are meant to specifically poke holes at inflexible designs. 
 
-The Tic-Tac-Toe challenge is not exactly in this vain but instead gives students the challenge to write a Tic-Tac-Toe program that cannot go wrong, and produce compile time errors for as many incorrect uses as possible. Like playing with the same player twice for example. When i was a student at Mirdin a few years ago i decided to try to write Tic-Tac-Toe completely on the type-level in typescript. 
+At Mirdin we believe there is a more effective way.
+We try to give meaning behind every design decision to not have to use gut feeling or past experiences with similar design decisions to have an opinion on what direction to take.
 
-This proved to be very challenging but fun. I have a lot to thank the excellent Type-Challenges for helping me learn enough type level trickery to get it done. 
+One way we do this is by giving students a series of short design exercises that takes just a few hours to finish but will contain a lot of opportunities for things to go wrong. Then we give the students immediate feedback on how their earlier design choices affected later requirements. With smaller groups or private students, we design specific requirements for each implementation that are meant to poke holes at a student's design. 
+
+The Tic-Tac-Toe challenge is not exactly in this vain but instead gives students the challenge to write a Tic-Tac-Toe program that cannot go wrong, and produce compile time errors for as many incorrect uses as possible. For example, playing with the same player twice. 
+
+When I was a student at Mirdin a few years ago I decided to try to write Tic-Tac-Toe completely on the typelevel in Typescript. This proved to be very challenging but fun. I have now expanded on that initial attempt and written this post to explain how it works in the hope to teach some more advanced typelevel Typescript.
+And maybe also make you interested in doing something similar for fun.
+
+I have a lot to thank the excellent Type-Challenges for helping me learn enough type-level trickery to get it done. 
 https://github.com/type-challenges/type-challenges
 
-If you would like to have a stab at doing this yourself, here is the requirements. 
-
-### Code
+### Where to find the code
 To play along,  here is a Typescript playground of the code.
 https://tinyurl.com/typelevel-tic-tac-toe
 
@@ -29,7 +35,8 @@ https://github.com/note89/typelevel-tic-tac-toe/blob/master/tic-tac-toe.ts
 
 ## First A Demo!
 
-There is gonna be a lot of code so to peak you interest let me present you with the very rudimentary user interface for playing type-level Tic-Tac-Toe that is the end result. 
+There is gonna be a lot of code so to peak your interest let me present you with the end result.
+A UI for playing Tic-Tac-Toe on the typelevel where type errors are used display the state of the game and provide feedback for correct play.
 
 ```typescript
 // ##################################
@@ -57,6 +64,8 @@ There is gonna be a lot of code so to peak you interest let me present you with 
 
 ##  Requirements  
 
+If you would like to give this a try yourself, here are the requirements.
+
 Design an API for a Tic-Tac-Toe board, consisting of types
 representing states of the board, along with functions 
 `move`, `takeMoveBack`, `whoWonOrDraw`, and `isPositionOccupied`.
@@ -67,25 +76,24 @@ representing states of the board, along with functions
   - the game is not over
   - the player is the current player
   - the `move` is valid (i.e. not already played)
-* Calling `TakeMoveBack` on a board with no moves is a compile time error
-* Calling `WhoWonOrDraw` on a tic-tac-toe board but the game has not finished is a compile time error
+* Calling `TakeMoveBack` on a board with no moves is a compile-time error
+* Calling `WhoWonOrDraw` on a tic-tac-toe board but the game has not finished is a compile-time error
 * `IsPositionOccupied` works for in-play and completed games.
 
 ## Some extra design decisions
-I wanted the game to be derived from Size so you would be able to play on different boards. 
-To achieve this winning positions need to be calculated from Size instead of hard-coded. 
-This is possible but a bit fiddly. I have not yet achieved the ability to have two games of different size in the same project. To do that i would have to parameterize the program a bit more, i will try to do this in the a later version (famous last words). 
+I wanted the game to be possible to play on boards of any size, (3x3, 4x4, 5x5, etc).
+To achieve this winning positions need to be calculated from `Size` instead of hard-coded. 
+This is possible but a bit fiddly. I have not yet achieved the ability to have two games of different `Size` in the same project. To do that I would have to parameterize the program a bit more, this is something to try in a later version (famous last words). 
 
-## Show me the code ! 
+## Show me the code! 
 
-So the reason i wrote this in Typescript is because it's the language i know best but also it has a bunch of type level feature that very few mainstream typed languages have. 
+The reason this is written in Typescript is that it's the language I know best, and also the language I want to get better at the most but also Typescript has a bunch of typelevel features that very few other mainstream typed languages have. 
 
-I will go through the code basically top to bottom, except the "UI" code, i will take that last.
-There will be a lot of comments in the code ment for also explain the program, so i will reuse them here.
+We will go through the code top to bottom, except for the "UI" code, which will be left for last.
+There are a lot of comments in the code that are also meant to explain the program, so I will reuse them here.
 
 ### Utils
-
-Lets start with some utility functions that will be used in multiple other types.
+Let's start with some utility functions that will be used in multiple other types.
 
 ```typescript
 // CartesianProduct<X,Y>
@@ -96,8 +104,8 @@ type CartesianProductString<T extends ToStringableTypes, T2 extends ToStringable
 type ToStringableTypes = string | number | boolean | bigint;
 ```
 
-The `CartesianProduct` function is used to produce coordinates between `Rows` and `Columns` i wanted as much as possible of the types to be derived from a more basic set of values. so this is who we will create a 
-grid of possible coordinates for the board. 
+A goal in the program is that as much as possible of the types are derived from other more basic types. 
+The `CartesianProduct` function is used to produce coordinates between `Rows` and `Columns` for example.
 
 ```typescript
 // UnionToIntersection<X>
@@ -105,8 +113,9 @@ grid of possible coordinates for the board.
 type UnionToIntersection<U> = 
   (U extends any ? (k: U)=>void : never) extends ((k: infer I)=>void) ? I : never
 ```
-This is a bit of a interesting trick that you can encounter if a few different type-level functions (`Equal` for example).
-By using a a type as the parameter to a function the type that Typescript tries to find to reconcile `I` becomes a intersection of all the types in `U`. 
+This is a bit of an interesting trick that you can encounter if a few different type-level functions (`Equal` for example).
+But putting the type parameter in the argument position to a function we change how Typescript will reconcile the type for  `I`.
+`I` become an intersection of all the types in `U`. 
 
 ```typescript
 // Example: ToUnion<[1,2,3]> = 1 | 2 | 3
@@ -127,16 +136,25 @@ type StringConcatTuples<T extends [number, number][]> = {[Key in keyof T]: `${T[
 Zip is a quite simple recursive function looking very much like the code version would, there is some neater ways where you would infer both heads and tails at once. 
 https://github.com/type-challenges/type-challenges/issues/4495
 
-But with that implementation Typescript fails to do type inferenceing later in the program.
-`StringConcatTuples` is so we can use coordinates as keys, and do lookup from coordinate to a square.
+But with that implementation Typescript fails to do type inferencinging later in the program.
+`StringConcatTuples` is so we can use coordinates as keys, and do a lookup from coordinate to a square.
+
+With many of these more exotic recursive types, there is a limit to how far they will work and 
+sometimes there are issues, which means you will have to try something different.
+A recursive type in Typescript 4.5 has a max callstack of ![`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
 
 
 #### Arithmetic 
 
-To be able to derive the winning coordinates from  `Size` we need to be able to do some math. 
-like for example in a `3x3` game, `11,22,33` form a diagonal that if any player has that diagonal they win. in a `4x4` game the diagonal is `11,22,33,44`. 
-So we need the ability to do plus and minus, luckily that is very possible in typescript.
-The comments from the code tells most of the story.
+In a `3x3` game, `11,22,33` form a diagonal, in a `4x4` game the diagonal is `11,22,33,44`. 
+Any player that has one of these diagonals has won the game.
+
+To be able to derive diagonals and other winning positions from  `Size` we need the ability to do some
+math on the typelevel. Luckily that is very possible in Typescript.
+Our needs contain only the ability to do plus and minus one. This ability will allow us to perform 
+typelevel loops.
+
+The comments from the code tell most of the story of how this is done.
 
 
 ```typescript
@@ -176,7 +194,7 @@ type FromToDec<From extends number, To extends number, acc extends any[] = []> =
 
 
 
-## Data types
+## Capturing the concepts contained in Tic-Tac-Toe
 
 We need to define our essential concepts like `Circle`, `Cross` `Player`, `Square` etc.
 
@@ -216,15 +234,19 @@ type Column      = ToUnion<FromToInc<1,Size>>;
 type Row         = ToUnion<FromToInc<1,Size>>;
 type Coordinates = CartesianProductString<Column, Row>
 ```
-We use interfaces instead of `type` to get the type-level information (when you hover) to show `Circle` or `Nil`  etc. instead  `{__type: "Circle"}` which it would do with `type`.
-Makes it a bit more pretty, not much difference then that. 
+We use `interface` instead of `type` to get the type-level information 
+(when you hover / or read a compile time error) to show `Circle` or `Nil`  etc. 
+instead  `{__type: "Circle"}` which it would do with `type`.
+It makes it a bit more pretty (not much more difference than that). 
 
-The `GameSize` is set to `3` for this walk-though.
-The type of `Column` and `Row` is in this case `1 | 2 | 3`. First we generate number between `1` and `Size` which gives us`[1,2,3]` then we turn that into a union with and end up with `1 | 2 | 3`.
+The `GameSize` is set to `3` for this walk-through.
+The type of `Column` and `Row` is in this case `1 | 2 | 3`.
+First, we generate numbers between `1` and `Size` which gives us`[1,2,3]`
+then we turn that into a union and end up with `1 | 2 | 3`.
 
-`Coordiantes` has the type instance of  `"22" | "21" | "23" | "12" | "11" | "13" | "32" | "31" | "33"`. 
-
-Actually the type of Column and Row is `2 | 1 | 3` and i don't really know why it's in that order, and that is why the order of `Coordinates` is like it is.  Maybe there is no guarantee that a union traversal is left to right in Typescript.
+`Coordiantes` have the type instance of  
+`"22" | "21" | "23" | "12" | "11" | "13" | "32" | "31" | "33"`. 
+Actually, the type of Column and Row is `2 | 1 | 3` and i don't really know why it's in that order, and that is why the order of `Coordinates` is like it is.  Maybe there is no guarantee that a union traversal is left to right in Typescript.
 
 
 ### Winning positions
