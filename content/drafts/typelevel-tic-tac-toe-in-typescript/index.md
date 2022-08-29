@@ -343,7 +343,7 @@ So Part 1 gave use the result
 ```
 
 We are not replacing any type-parameter in PART2, so we can just 
-inline the results from calling `
+inline the results from calling `_PutUnionMembersIntoFunctionArgumentPosition<U>`.
 
 ```typescript
 (    (k: "a")  => void) 
@@ -355,42 +355,70 @@ inline the results from calling `
 (If you have not heard about `infer` before look at these docs.
 https://learntypescript.dev/09/l2-conditional-infer)
 
-We are saying here that there is a function  ((k: infer I) => void) that can be 
-either      (k: "a") => void 
-         or (k: "b") => void 
-         or (k: "c") => void
-It's not the argument to the function that can be "a" | "b" | "c".
-There are three separate functions with those argument, and we DON'T know which one we will have.
-Therefore ghe only SAFE argument to ((k: infer I) => void) the intersection of all possible arguments.
+We are saying here that there is a function  
+```typescript
+((k: infer I) => void) 
+```
+that can be either      
+```typescript
+     (k: "a") => void 
+  or (k: "b") => void 
+  or (k: "c") => void
+```
+**It's not the argument to the function that can be `"a" | "b" | "c"`.
+There are three separate functions with those argument, and we DON'T know which one we will have.**
+Therefore ghe only **SAFE** argument to 
+```typescript
+((k: infer I) => void) 
+```
+the intersection of all possible arguments.
 
 That might had been a bit confusing, so let's look at one example
 
+```typescript
 type T = (k: HasName) => void | (k: HasAge) => void
 const func : T = ...
+```
 
-If we now want to call func what argument do we need to give it ? 
-Well we don't know if T is (k: HasName) => void or (k: HasAge) => void.
-So we need to call func with an argument that is both. 
+If we now want to call `func` what argument do we need to give it ?
+
+Well we don't know if `T` is 
+```typescript
+   (k: HasName) => void 
+or (k: HasAge)  => void
+```
+So we need to call `func` with an argument **that is both**. 
+
+```typescript
 type Dog = HasName & HasAge
 const dog : Dog = createDog("Fido", 3)
 func(dog)
-
-Thank AnyHowStep for this answer that helped me write this section:
-https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507701193
-
 ```
-This is a bit of an interesting trick that you can encounter if a few different type-level functions (`Equal` for example).
+
+_Thank AnyHowStep for this [answer](
+https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507701193
+) that helped me write this section_
+
+### To Union
+
 
 ```typescript
 // Example: ToUnion<[1,2,3]> = 1 | 2 | 3
-//
-// Explanation: ToUnion<T>
-// Array has a index signature of `number`
-// type Array<T> = { [index: number]: T ....}
-// so by indexing with 'number' we get back T.
-// https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
 type ToUnion<T extends Array<any>> = T[number]
+```
 
+Array has a index signature of `number`
+```typescript
+// something like
+type Array<T> = { [index: number]: T ...}
+```
+So by indexing with `number` we get back `T`.
+See [index-signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures) for more info.
+
+`ToUnion` is purely to have a nicer API that explains better what is being done.
+
+### Zip
+```typescript
 // Zip two arrays together
 // Example: Zip<[1,2,3],["a","b","c"]> = [[1,"a"],[2,"b"],[3,"c"]]
 type Zip<T extends any[], U extends any[], Acc extends any[] = []> = 
@@ -398,27 +426,24 @@ type Zip<T extends any[], U extends any[], Acc extends any[] = []> =
   U extends [infer Head2, ...infer Tail2] ? 
   Zip<Tail, Tail2, [...Acc, [Head, Head2]]> : Acc  : Acc;
 
-// StringConcatTuples<T>
-// Join tuples together to strings
-// Example: StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
-//
-// Explanation: StringConcatTuples<T>
-// Here we are using a Mapped Types.
-// https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
-// It' allows you to loop over the members in a type
-// keyof gives us a type with a union of all the keys in T.
-type StringConcatTuples<T extends [number, number][]> = {[Key in keyof T]: `${T[Key][0]}${T[Key][1]}`};
 ```
-`ToUnion` is purely to have a nicer API that explains better what is being done.
 Zip is a quite simple recursive function looking very much like the code version would, there is some neater ways where you would infer both heads and tails at once. 
 https://github.com/type-challenges/type-challenges/issues/4495
 
 But with that implementation Typescript fails to do type inferencinging later in the program.
+
+### String Concat Tuples
+```typescript
+// Join tuples together to strings
+// Example: StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
+type StringConcatTuples<T extends [number, number][]> = 
+  {[Key in keyof T]: `${T[Key][0]}${T[Key][1]}`};
+```
 `StringConcatTuples` is so we can use coordinates as keys, and do a lookup from coordinate to a square.
 
-With many of these more exotic recursive types, there is a limit to how far they will work and 
-sometimes there are issues, which means you will have to try something different.
-A recursive type in Typescript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
+We use [mapped types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+since it allows us to loop over the members in a type
+`keyof` gives us a type that is the union of all the `keys` in `T`.
 
 
 #### Arithmetic 
@@ -431,7 +456,10 @@ math on the typelevel. Luckily that is very possible in Typescript.
 Our needs contain only the ability to do plus and minus one. This ability will allow us to perform 
 typelevel recursion.
 
-The comments from the code tell most of the story of how this is done.
+With many of these more exotic recursive types, there is a limit to how far they will work and 
+sometimes there are issues, which means you will have to try something different.
+A recursive type in Typescript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
+
 
 
 ```typescript
