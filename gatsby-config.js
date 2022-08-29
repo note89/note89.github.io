@@ -9,6 +9,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    process.env.NODE_ENV === "development" ? ({
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/drafts`,
+        name: `draft`,
+      },
+    }) :({}),
     {
       resolve: `gatsby-source-filesystem`,
       options: {
