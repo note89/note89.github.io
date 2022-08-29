@@ -34,7 +34,7 @@ This is going to be a post about advanced type-level programming.  I’ll be sho
 I showed it to Jimmy and he was dismissive . He’s a PL Ph. D. with 10 years in Haskell, and finds type-level programming easy and uninteresting. After finishing the whole post he had a funny reaction, and shared the draft with his friends.
 
 ![Jimmy says post is jaw dropping](./jaw_dropped.png)
-![Jimmy says he did not like the post at first, then loved it](./jimmy_comments.png)
+![Jimmy says he did not like the post at first, then loved it](./jimmy_comments_1.png)
 
 I hope you can have a similar experience but maybe get past the 'I Hate it' 
 quicker! 
@@ -44,12 +44,9 @@ It was also his idea to add the `___DISPLAY___` that i will show you in just a s
 Let's go! 
 
 
-### Where to find the code
-To play along,  here is a Typescript playground of the code.
-https://tiny.one/typelevel-tic-tac-toe
+### Where to find the code?
+The latest code can be found [here](https://github.com/note89/typelevel-tic-tac-toe/blob/master/tic-tac-toe.ts) just paste it into [typescript-playground](https://www.typescriptlang.org/play) to follow along.
 
-The latest code can also be found on Github.
-https://github.com/note89/typelevel-tic-tac-toe/blob/master/tic-tac-toe.ts
 
 ## First end-result demo!
 
@@ -117,8 +114,10 @@ The reason this is written in Typescript is that it's the language I know best, 
 We will go through the code top to bottom, except for the "UI" code, which will be left for last.
 There are a lot of comments in the code that are also meant to explain the program, so I will reuse them here.
 
-### Utils
+# Utils
 Let's start with some utility functions that will be used in multiple other types.
+
+## Cartesian Product
 
 ```typescript
 // CartesianProduct<X,Y>
@@ -126,191 +125,259 @@ Let's start with some utility functions that will be used in multiple other type
 // CartesianProduct<"a" | "b", "c" | "d"> = "ac" | "ad" | "bc" | "bd"
 type CartesianProductString<T1 extends ToStringableTypes,T2 extends ToStringableTypes > = `${T1}${T2}`;
 type ToStringableTypes = string | number | boolean | bigint;
-// -----------
-// Explanation: CartesianProduct<X,Y>
-// -----------
-// [The Algebra of algebraic data types](https://gist.github.com/gregberns/5e9da0c95a9a8d2b6338afe69310b945)
-// Is a great resource if you want to learn more about this
-//
-// `${T1}${T2}`
-// T1 and T2 can both be a union of different types.
-// Say
-// `${ "a" | "b" | "c" }${ "d" | "e" | "f" }` 
-// We have three choices for the first part of the string.
-// So a union of three members, with the first value fixed in each string is equivalent to the first type
-//  `a${"d"| "e" | "f"} | `b${"d" | "e" | "f"}` | `c{"d" | "e" | "f"}`
-// We now have three choices for the second part of the string
-// If we multiply them out, we get the cartesian product of the two initial types.
-// "ad"| "ae" | "af" | "bd" | "be" | "bf" | "cd" | "ce" | "cf"
+```
+```typescript
+type Cartesian...<T1 extends ... ,T2 extends ...> = ${T1}${T2}
+```
+`T1` and `T2` can both be a union with multiple members.
+Say
+```typescript
+T1 = "a" | "b" | "c" 
+T2 = "d" | "e" | "f"
+```
+which gives us 
 
-// After reading the algebra of algebraic data types, you can see that
-// we need a member from both T1 and T2, so we have T1 * T2 = choices to create our string
-// cartesian product of "a" | "b" | "c" and "d" | "e" | "f"  is 3 * 3 = 9 strings
-
-//  1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 9
-//  "ad"| "ae" | "af" | "bd" | "be" | "bf" | "cd" | "ce" | "cf"
-
-//  (1 * (1 + 1 + 1)) + (1 * (1 + 1 + 1)) + (1 * (1 + 1 + 1)) = 9
-//  `a${"d"| "e" | "f"} | `b${"d" | "e" | "f"}` | `c${"d" | "e" | "f"}`
-
-//  (1 + 1 + 1) * (1 + 1 + 1) = 9
-// `${ "a" | "b" | "c" }${ "d" | "e" | "f" }` 
-//  (3) * (3) = 9
+```typescript
+${ "a" | "b" | "c" }${ "d" | "e" | "f" }
 ```
 
+We have three choices for the first part of the string, and three choices for the second part.
+So for each choice we have three other choices to choose from
+```typescript
+`a${"d"| "e" | "f"}` | `b${"d" | "e" | "f"}` | `c{"d" | "e" | "f"}`
+```
+If we multiply the three choices for the second part, we get the cartesian product of the two initial types.
+```typescript
+"ad"| "ae" | "af" | "bd" | "be" | "bf" | "cd" | "ce" | "cf"
+```
+
+
+[The Algebra of algebraic data types](https://gist.github.com/gregberns/5e9da0c95a9a8d2b6338afe69310b945)
+Is a great resource if you want to learn more about this
+and after reading that, you can see that
+we need a member from both `T1` and `T2`, so we have `T1 * T2 choices`.
+So for our `T1` and `T2` of `"a" | "b" | "c"` and `"d" | "e" | "f"`  we have
+`3 * 3 = 9 possible pairs`
+
+```typescript
+// Algebraic refactoring
+ 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 9
+ "ad"| "ae" | "af" | "bd" | "be" | "bf" | "cd" | "ce" | "cf"
+
+ (1 * (1 + 1 + 1)) + (1 * (1 + 1 + 1)) + (1 * (1 + 1 + 1)) = 9
+ `a${"d"| "e" | "f"} | `b${"d" | "e" | "f"}` | `c${"d" | "e" | "f"}`
+
+ (1 + 1 + 1) * (1 + 1 + 1) = 9
+`${ "a" | "b" | "c" }${ "d" | "e" | "f" }` 
+ (3) * (3) = 9
+ ```
+
 A goal in the program is that as much as possible of the types are derived from other more basic types. 
-The `CartesianProduct` function is used to produce coordinates between `Rows` and `Columns` for example.
+The `CartesianProduct` function is used to produce coordinates between `Rows` and `Columns`, 
+```typescript
+// simplified
+type AllCoordinates = 
+  CartesianProduct<Columns,Rows> = Col1Row1 | Col2Row1 | ... | Col1Row2
+```
+
+## Union To Intersection
+This is going to be the longest explanation in the whole post (it even has a quiz!)
+so bear with me. I think this can be very instructive if you don't already know all this
+at a deep level. This was very useful for me to write if nothing else.
+
 
 ```typescript
 // UnionToIntersection<X>
 // Takes a union like `A | B | C` and returns an intersection like `A & B & C`
 type UnionToIntersection<U> = 
-     _PutUnionMembersIntoFunctionArgumentPosition<U> extends ((k: infer I)=>void) ? I : never
+  _PutUnionMembersIntoFunctionArgumentPosition<U> extends 
+      ((k: infer I)=>void) 
+          ?  I 
+          : never
 
-type _PutUnionMembersIntoFunctionArgumentPosition<U> = U extends any ? (k: U)=>void  : never;
-// -----------
-// Explanation: UnionToIntersection<U> 
-// Creator: Jcalz 
-// https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507673155
-// -----------
-// This one is worthy quite a bit of explanation. It has been somewhat of a debated topic,
-// if it's a hack or not, and if it should be included in official lib.d.ts or not.
-// I'm most certainly don't think this is a hack at all, if this would break in a future version of 
-// TypeScript, i would say that would break a lot of other things.
-//
-// Sources:
-// https://stackoverflow.com/questions/50374908/transform-union-type-to-intersection-type/50375286#50375286
-// https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507673155
-//
-//
-// ##############
-// ### PART 1 ###
-// ##############
-// PutUnionMembersIntoFunctionArgumentPosition<U> = U extends any ? (k: U)=>void : never
-// ##############
-//
-// This is using U as a 'naked' type parameter.
-// Seems this lingo is no longer part of the official docs, which is a shame,
-// will make it harder to understand, why things act like they do.
-// https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
-// 
-// Naked type parameters distributes over a union. 
-// this means the conditional part will be applied to each member of the union.
-// and the result will be a union of all applications of the conditional.
-// https://stackoverflow.com/questions/51651499/typescript-what-is-a-naked-type-parameter
-//
-// Let me show you. 
-//
-// PutUnionMembersIntoFunctionArgumentPosition<U> = U extends any ? (k: U)=>void : never
-// 
-// type ABC = "a" | "b" | "c"
-// PutUnionMembersIntoFunctionArgumentPosition<ABC>
-// 
-// Replace U with supplied type ABC, U is naked so do a replacement
-// for each member in ABC and make a union of the results.
-// 
-//   "a" extends any ? (k: "a")  => void : never 
-// | "b" extends any ? (k: "b")  => void : never 
-// | "c" extends any ? (k: "c")  => void : never
-// 
-// Which simplifies to 
-//   (k: "a")  => void  
-// | (k: "b")  => void  
-// | (k: "c")  => void
-// 
-// Many people (including myself in the past) think that a type parameter
-// get's inlined into the type level function like.
-//
-// PutUnionMembersIntoFunctionArgumentPosition<"a" | "b" | "c">
-// ("a" | "b" | "c") extends any ? (k: "a" | "b" | "c")  => void : never
-//
-//
-// --- THIS IS WRONG!---
-//
-//
-// To get that behavior, the type parameter need to be 'clothed'.
-//
-// Clothed example.
-// PutInFunctionArgumentPosition<U> = ([U] extends any ? (k: U)=>void : never)
-//
-// PutInFunctionArgumentPosition<ABC>
-//
-// Replace U with supplied type ABC, U is clothed so do the replacement
-// inline.
-// 
-// (["a" | "b" | "c"] extends any ? (k: "a" | "b" | "c")=>void : never)
-// 
-// Which simplifies to
-// (k: "a" | "b" | "c") => void
-//
-// #### QUIZ ####
-// To test yourself on the difference between naked and clothed,
-// Think of the results of Inline and calling the functions
-// with ABC and ABC3
-//
-// type ABC  = "a" | "b" | "c"
-// type ABC3 = ABC | 3
-//
-// type ABC_Inline_Extends_A      = ABC extends   "a"    ? (k: ABC) => void : never
-// type Naked_Extends_A<T>        =  T  extends   "a"    ? (k:  T ) => void : never
-// type Naked_Extends_String<T>   =  T  extends  string  ? (k:  T ) => void : never
-// type Clothed_Extends_String<T> = [T] extends [string] ? (k:  T ) => void : never
-//
-// #### QUIZ Answers ####
-// https://tinyurl.com/typescript-quiz
-//
-// _Note:_
-// _If we would just change the type of PutUnionMembersIntoFunctionArgumentPosition to be
-// (k: U) => void, we would have also gotten (k: "a" | "b" | "c") => void.
-// We need the U extends any ? to distribute the union._
-//
-// Moving on.
-// 
-// ##############
-// ### PART 2 ###
-// ##############
-// ...PART1 extends ((k: infer I)=>void) ? I : never
-// ##############
-// 
-// So Part 1 gave use the result
-//   (k: "a")  => void  
-// | (k: "b")  => void  
-// | (k: "c")  => void
-//
-// There is no type param that we are replacing here, so 
-// we can just inline this result. 
-// 
-// (    (k: "a")  => void) 
-//    | (k: "b")  => void) 
-//    | (k: "c")  => void)
-// ) extends ((k: infer I)=>void) ? I : never
-//
-// (If you have not heard about `infer` before look at these docs.
-// https://learntypescript.dev/09/l2-conditional-infer)
-//
-// We are saying here that there is a function  ((k: infer I) => void) that can be 
-// either      (k: "a") => void 
-//          or (k: "b") => void 
-//          or (k: "c") => void
-// It's not the argument to the function that can be "a" | "b" | "c".
-// There are three separate functions with those argument, and we DON'T know which one we will have.
-// Therefore ghe only SAFE argument to ((k: infer I) => void) the intersection of all possible arguments.
-// 
-// That might had been a bit confusing, so let's look at one example
-//
-// type T = (k: HasName) => void | (k: HasAge) => void
-// const func : T = ...
-// 
-// If we now want to call func what argument do we need to give it ? 
-// Well we don't know if T is (k: HasName) => void or (k: HasAge) => void.
-// So we need to call func with an argument that is both. 
-// type Dog = HasName & HasAge
-// const dog : Dog = createDog("Fido", 3)
-// func(dog)
-// 
-// Thank AnyHowStep for this answer that helped me write this section:
-// https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507701193
-//
+type _PutUnionMembersIntoFunctionArgumentPosition<U> = 
+      U extends any 
+        ? (k: U)=>void  
+        : never;
+```
+The creator of `UnionToIntersection` is as far as i know [Jcalz](
+https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507673155
+)
+
+It's not much code is it, but there is a lot to unpack! and it's worthy of a through 
+explanation.
+The function has been somewhat of a debated topic, if it's a hack or not?, and if it should be included in official `lib.d.ts` or not.
+I'm most certainly don't think this is a hack at all, if this would break in a future version of 
+TypeScript, i think that would break a lot of other things too.
+
+Sources where i learned about this function
+* https://stackoverflow.com/questions/50374908/transform-union-type-to-intersection-type/50375286#50375286
+* https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507673155
+
+
+There are two parts to the `UnionToIntersection` function and i will go through them separately now.
+
+### PART 1
+```typescript
+type _PutUnionMembersIntoFunctionArgumentPosition<U> = 
+      U extends any 
+        ? (k: U)=>void  
+        : never;
+```
+
+This is using `U` as a 'naked' type parameter.
+Seems this lingo is no longer part of the [official docs](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types), which is a shame,
+will make it harder to understand, why things act like they do.
+
+
+[Naked type parameters distributes over a union](https://stackoverflow.com/questions/51651499/typescript-what-is-a-naked-type-parameter
+). 
+This means the conditional part will be applied to each member of the union.
+and the result will be a union of all applications of the conditional.
+)
+
+Let me show you. 
+
+```typescript
+type _PutUnionMembersIntoFunctionArgumentPosition<U> = 
+      U extends any 
+        ? (k: U)=>void  
+        : never;
+
+type ABC = "a" | "b" | "c"
+type _ = _PutUnionMembersIntoFunctionArgumentPosition<ABC>
+```
+
+#### Replacement steps naked type param
+To Replace `U` with supplied type `ABC` in the body of `_PutUnionMembersIntoFunctionArgumentPosition` check if `U` is 'clothed' or 'naked'. 
+`U` is naked do a replacement for each member in `ABC` and make a union of the results.
+
+```typescript
+  "a" extends any ? (k: "a")  => void : never 
+| "b" extends any ? (k: "b")  => void : never 
+| "c" extends any ? (k: "c")  => void : never
+```
+
+Which simplifies to 
+```typescript
+  (k: "a")  => void  
+| (k: "b")  => void  
+| (k: "c")  => void
+```
+
+#### Common error
+Many people (including myself in the past) think that a type parameter
+get's inlined into the type level function like.
+
+```typescript
+_PutUnionMembersIntoFunctionArgumentPosition<"a" | "b" | "c">
+("a" | "b" | "c") extends any ? (k: "a" | "b" | "c")  => void : never
+```
+
+
+# **--------- THIS IS WRONG! --------**
+
+
+To get that behavior, the type parameter need to be 'clothed'.
+
+#### Clothed example
+
+```typescript
+_PutInFunctionArgumentPosition<U> = 
+    [U] extends [any] 
+        ? (k: U)=>void 
+        : never
+
+type ABC = "a" | "b" | "c"
+type _   = _PutInFunctionArgumentPosition<ABC>
+```
+
+#### Replacement steps clothed type param
+To Replace `U` with supplied type `ABC` in the body of `_PutInFunctionArgumentPosition` check if `U` is 'clothed' or 'naked'. 
+`U` is 'clothed' so do the replacement **inline**.
+
+```typescript
+(["a" | "b" | "c"] extends [any] ? (k: "a" | "b" | "c")=>void : never)
+```
+
+Which simplifies to
+```
+(k: "a" | "b" | "c") => void
+```
+
+### QUIZ 
+To test yourself on the difference between 'naked' and 'clothed',
+Think of the results of `Inline` and calling the functions
+with `ABC` and `ABC3`
+
+```typescript
+type ABC  = "a" | "b" | "c"
+type ABC3 = ABC | 3
+
+type ABC_Inline_Extends_A      = ABC extends   "a"    ? (k: ABC) => void : never
+type Naked_Extends_A<T>        =  T  extends   "a"    ? (k:  T ) => void : never
+type Naked_Extends_String<T>   =  T  extends  string  ? (k:  T ) => void : never
+type Clothed_Extends_String<T> = [T] extends [string] ? (k:  T ) => void : never
+```
+
+#### QUIZ Answers
+https://tinyurl.com/typescript-quiz
+
+_Note:_
+_If we would change the type of `_PutUnionMembersIntoFunctionArgumentPosition` to be
+`(k: U) => void`, we would also get `(k: "a" | "b" | "c") => void`.
+We need the `U extends any ?` to distribute the union._
+
+Moving on....
+
+### PART 2 ###
+```typescript
+...PART1 extends ((k: infer I)=>void) ? I : never
+```
+
+So Part 1 gave use the result
+```typescript
+  (k: "a")  => void  
+| (k: "b")  => void  
+| (k: "c")  => void
+```
+
+We are not replacing any type-parameter in PART2, so we can just 
+inline the results from calling `
+
+```typescript
+(    (k: "a")  => void) 
+   | (k: "b")  => void) 
+   | (k: "c")  => void)
+) extends ((k: infer I)=>void) ? I : never
+```
+
+(If you have not heard about `infer` before look at these docs.
+https://learntypescript.dev/09/l2-conditional-infer)
+
+We are saying here that there is a function  ((k: infer I) => void) that can be 
+either      (k: "a") => void 
+         or (k: "b") => void 
+         or (k: "c") => void
+It's not the argument to the function that can be "a" | "b" | "c".
+There are three separate functions with those argument, and we DON'T know which one we will have.
+Therefore ghe only SAFE argument to ((k: infer I) => void) the intersection of all possible arguments.
+
+That might had been a bit confusing, so let's look at one example
+
+type T = (k: HasName) => void | (k: HasAge) => void
+const func : T = ...
+
+If we now want to call func what argument do we need to give it ? 
+Well we don't know if T is (k: HasName) => void or (k: HasAge) => void.
+So we need to call func with an argument that is both. 
+type Dog = HasName & HasAge
+const dog : Dog = createDog("Fido", 3)
+func(dog)
+
+Thank AnyHowStep for this answer that helped me write this section:
+https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507701193
+
 ```
 This is a bit of an interesting trick that you can encounter if a few different type-level functions (`Equal` for example).
 
