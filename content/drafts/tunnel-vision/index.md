@@ -240,3 +240,17 @@ print("number is " + x)
 {x = 5, a number has been printed to the screen}
 
 ```
+
+# Next part. CODE!
+
+## Code looser input than spec
+![](code_looser_input.png)
+
+
+## Code stricter output than spec.
+![](code_stricter_output.png)
+
+
+## Weakest precondition ? 
+
+Means that the spec is exactly as wide as the input of the code.
