@@ -188,16 +188,12 @@ You probably have just thought about tunnels that are symetrical. for our needs 
 This analogy will take us pretty far but in reality (if anything is real) the shape a tunnel takes in is multidimensional. We will take it a bit further in the end to see a bit of this, but thinking in the simple 2D/3D plane is good enough for our needs. 
 
 
-### What travels through the tunnels ?
+### What is inside the tunnels, show me!?
 
-Here is where it gets funky... The Code!
+Here is where it gets funky... More tunnels!
 The Tunnels represents the "state space" you code is allowed to operate in. 
 
 If your specification expresses that you will let out numbers less then 5 and your code only let's out numbers less then 3 then that implementation is still valid. 
-
-
-
-
 
 
 A argument can take many shapes. 
@@ -241,7 +237,132 @@ print("number is " + x)
 
 ```
 
-# Next part. CODE!
+# PART 2, THE CODE!
+
+
+### Where is the Code ? 
+![](code_and_spec.gif)
+
+#### What if i told you there is no spec ? 
+The specification that we saw in the earlier post does not really 'exist'!.
+It's just an idea. 
+
+So the walls are not so solid as they seem, let's instead go inside the specification
+and look at what is really leading the water in there. 
+
+The code ! 
+
+The code needs to make sure it can collect the all the water from the specification 
+and lead it through the program. 
+
+The spec tells us the boundaries that our code can move in. 
+But it's the code that needs to follow the spec. 
+
+In the above animation you see how the water leaks out even though the specs 
+match. This is because the code does not respect the post condition and is to 
+loose in what it let's out. 
+
+This gives you the second level of flexibility. 
+If your specification for example says that the return type is async. 
+You have room to make a sync code implementation and just a async return value. 
+
+This is the interplay between specs and code. 
+
+If you have a specification that does not fit the code exactly you have room to move. 
+
+In Hoare Logic we talk about precondition strengthning and post-condition weakening, and how that relates to a form of modularity. 
+
+* The output of your precondition is the input of your code
+* The output of the code is the input to the postcondition.
+
+So the interplay between the precondition and the code is the same as between
+the postcondition of a spec and the precondition of the next spec. 
+
+This is where a lot of the inflexibility comes from. 
+You can always make your precondition wider but the code might need to change aswell. 
+
+If you have pretty forgiving code but a strict spec you could change the spec without changing the implementation. 
+
+example 
+Before
+```typescript
+{a and b are number}
+const add = (a,b) => a + b
+```
+
+After
+```typescript
+{a and b are positive number}
+const add = (a,b) => a + b
+```
+
+`positive number` implies `number`
+
+It's not strictly true sometimes you will have todo a selection to get out 
+the old value that your code needs 
+
+Before
+```typescript
+{defender is a Creature, attackNumber is a number}
+const applyDamage(defender, attackNumber) => ...
+```
+
+After
+```typescript
+{defender is a Creature, attacker is a Creature}
+const applyDamage(defender, attacker) => ...
+```
+
+There the code will have to do something like `attacker.getAttackValue()` to function like before.
+
+
+## What is stronger and what is weaker ? 
+
+You might ask yourself how you determine if you are strengthening or weakening you pre/postconditions.
+if the new value is a subset of the old value is strengthening.
+
+### From PRIME to NUMBER
+
+### CALLER
+
+if your function changes from only taking `prime numbers` to `numbers`. 
+That is a weakening, you are making the assertion tunnel(precondition) wider.
+All the old callers still work because their current values are a subtype of the current
+new type. The code however might need to change, since there now is more possible values
+that the function accepts. Chances are that this code might already work for number 
+since all prime number are numbers, and this means that the old spec was stricter
+then it 'had' to be. 
+
+[Venn diagram showing primes within number]()
+
+### CALLEE
+
+If you do this action to the postcondition all the old values beeing produced by
+the code still fits but other specs using the output might no longer work if there was 
+no room to play with there.
+
+If you change from `number` to `prime number` that is strengthening.
+Less values are allowed to be passed in, you are making the tunnel 
+
+
+### From Number to Prime
+### CALLER
+
+if we go the other way around. 
+And we have a spec that now accepts number and we want to change that to prime. 
+Now we are breaking the API for callers. 
+since their old numbers may not be prime. 
+
+Stronger    =>   Weaker
+`Prime`     =>   `Number`
+
+So we are now doing precondition strengthening.
+
+### CALLEE
+
+For callees the story is ofcourse opposite.
+we are making our output more narrow, into a strict subset. 
+So all callees and other specs that worked with our old version still works.
 
 ## Code looser input than spec
 ![](code_looser_input.png)
@@ -251,6 +372,67 @@ print("number is " + x)
 ![](code_stricter_output.png)
 
 
+## What is hoare logic 
+
+```
+{}
+```
+
+But you should really think about it more as 
+
+```typescript
+{potentially stricter preconditon}
+{real precondition}
+code
+{real postcondition}
+{potentially weaker postconditon}
+```
+
+This allows you to create a little barrier of flexbility if you like
+you can say that the two "potentially" assertions is the exact same as default.
+but you do have the ability to stretch things there and give more space to the implementation.
+```typescript
+-------------- SPECIFICATION -------------
+{potentially stricter preconditon}
+---------- ABSTRACTION BARRIER -----------
+------------------ CODE ------------------
+{real precondition}
+code
+{real postcondition}
+------------------ CODE ------------------
+---------- ABSTRACTION BARRIER -----------
+{potentially weaker postconditon}
+-------------- SPECIFICATION -------------
+```
+
 ## Weakest precondition ? 
 
 Means that the spec is exactly as wide as the input of the code.
+
+
+## Strongest postcondition ? 
+
+
+
+## Ok ok so what is the water ?
+The water as a whole represents all possible executions of the program. 
+Your code restricts it's flow and makes sure it does not leak. 
+The specification tells what bounds the code should be within. 
+
+A single water droplet is one execution, what you would see if you
+open a debugger. 
+
+
+
+## Error of modular reasoning
+
+> If we have bugs in the code but there is not execution around to see them
+> do we still have bugs ? 
+
+The answer is YES! because the current set of executions and the current
+layout of the code is not guaranteed. 
+The only thing that is guaranteed is if we follow the specification, or we will 
+have to change the specification . 
+
+Let me visualize a error of modular reasoning that does not lead to any bugs. 
+
