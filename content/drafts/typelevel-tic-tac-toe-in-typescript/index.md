@@ -114,8 +114,17 @@ The reason this is written in Typescript is that it's the language I know best, 
 We will go through the code top to bottom, except for the "UI" code, which will be left for last.
 There are a lot of comments in the code that are also meant to explain the program, so I will reuse them here.
 
+<!-- Good introduction, The gifs are great. Nice with a list of requirements, makes it clear what you are trying to achieve. -->
+
 # Utils
 Let's start with some utility functions that will be used in multiple other types.
+
+<!--  Utils -->
+<!-- Why are the utils presented first? Ofc they will be used by domain-specific components, but they can be used and explained without going into implementation details. -->
+
+<!-- The utils are very instructive, and the blogpost sets the stage for the utility of these fundamental concepts, however, it would help me to firstly know why they are needed. -->
+
+<!-- Union to intersection could be explained well by a diagram (venn diagram for example) -->
 
 ## Cartesian Product
 
@@ -205,8 +214,10 @@ https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507673155
 )
 
 It's not much code is it, but there is a lot to unpack! and it's worthy of a through 
+<!-- You are asking a rethorical q but it is not clear from the sturcture of the sentence. Maybe try: "Its not much code, is it? However, there is a lot to unpack" -->
 explanation.
 The function has been somewhat of a debated topic, if it's a hack or not?, and if it should be included in official `lib.d.ts` or not.
+<!-- I would prefer: "...,is it a hack or not? Should it be included in..." -->
 I'm most certainly don't think this is a hack at all, if this would break in a future version of 
 TypeScript, i think that would break a lot of other things too.
 
@@ -227,6 +238,8 @@ type _PutUnionMembersIntoFunctionArgumentPosition<U> =
 
 This is using `U` as a 'naked' type parameter.
 Seems this lingo is no longer part of the [official docs](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types), which is a shame,
+<!-- Seems like this lingo is no longer part official docs, which is a shame as its deduction will make it harder to understand why things work like they do -->
+<!-- You might just as well say that the concept is helpful, makes things easier to understand. -->
 will make it harder to understand, why things act like they do.
 
 
