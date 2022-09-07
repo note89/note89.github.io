@@ -1626,7 +1626,7 @@ Now we have everything we need to produce the final product.
 
 
 
-### Closing thoughts.
+### Closing thoughts
 
 Thanks for reading this far! I hope you learned something on this journey.  TypeScript is very powerful and you can basically do anything you want as long as you are willing to spend enough time. 
 It just gets more and more awkward to achieve the constraints on the typelevel.
