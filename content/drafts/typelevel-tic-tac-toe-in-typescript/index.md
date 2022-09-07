@@ -6,7 +6,7 @@ UI displaying the state of the game"
 ---
 
 
-At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.
+At [Mirdin](https://mirdin.com/) we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.
 
 You will get better from just playing but it takes much longer and your understanding of what you have learned is much worse. You will learn what to do but have a harder time explaining what you have learned.   
 
@@ -113,11 +113,178 @@ The reason this is written in Typescript is that it's the language I know best, 
 
 We will go through the code top to bottom, except for the "UI" code, which will be left for last.
 There are a lot of comments in the code that are also meant to explain the program, so I will reuse them here.
+<style>
+details{
+ background: #ededed; 
+ border-radius:5px; 
+ padding: 10px;
+ margin-bottom:10px;
+}
 
-# Utils
-Let's start with some utility functions that will be used in multiple other types.
+summary {
+  cursor: pointer;
+  user-select: none;
+}
 
-## Cartesian Product
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<div style="background:rgba(255,99,71,0.9);  padding: 10px; border-radius: 10px;">
+  <h4 style="color: yellow; margin: 0px; padding: 15px 0px;"><b>A Note about Utils</b></h4>
+  <div class="font" style="color: #fafafa; ">The code contains a quite extensive section of utility functions, 
+  Instead of going though all of them first, the explanation is inlined as a optional reading at first use. So if you are more interested in how to model the problem and would like to be able to take functions like `UnionToIntersection` for granted you can. 
+
+  But if you really want to know how that is implemented you can by clicking the arrow next to the section
+  </div>
+
+  <details>
+  <summary>Util name: Click here to expand</summary>
+    Here is an explanation.
+  </details>
+</div>
+
+
+
+## Capturing the concepts contained in Tic-Tac-Toe
+### Player
+
+
+```typescript
+type Player = Cross | Circle;
+  interface Circle { __type: "O";     }
+  interface Cross  { __type: "X";     }
+```
+
+We use `interface` instead of `type` to get the type-level information 
+(when you hover / or read a compile time error) to show `Circle`
+instead  `{__type: "Circle"}` which it would do with `type`.
+It makes it a bit more pretty (not much more difference than that). 
+
+### Square
+```typescript
+type Square = Player | Empty;
+  interface Empty  { __type: "Empty"; }
+
+```
+
+### Size
+```typescript
+// ##############################################
+type Size = GameSize;
+// ##############################################
+```
+
+The `GameSize` is set to `3` for this walk-through. </br>
+_(Size was here before i made the UI at the top therefore the redeclaration)_
+
+### Column & Row
+```typescript
+// Column and Row can potentially be different sizes
+// Note: winning on the diagonal will have to change 
+// If the game is not square.
+type Column      = ToUnion<FromToInc<1,Size>>;
+type Row         = ToUnion<FromToInc<1,Size>>;
+type Coordinates = CartesianProductString<Column, Row>
+```
+
+
+The type of `Column` and `Row` is (in this case) `1 | 2 | 3`.
+First, we generate numbers between `1` and `Size` which gives us`[1,2,3]`
+then we turn that into a union and end up with `1 | 2 | 3`.
+
+`Coordiantes` have the type instance of  
+`"22" | "21" | "23" | "12" | "11" | "13" | "32" | "31" | "33"`. 
+
+
+##### Utils used
+<!-- Arithmetic START -->
+<details>
+<summary>Arithmetic: FromToInc, FromToDec, PlusOne, MinusOne</summary>
+<h3>Arithmetic</h3>
+
+In a `3x3` game, `11,22,33` form a diagonal, in a `4x4` game the diagonal is `11,22,33,44`. 
+Any player that has one of these diagonals has won the game.
+
+To be able to derive diagonals and other winning positions from  `Size` we need the ability to do some
+math on the typelevel. Luckily that is very possible in Typescript.
+Our needs contain only the ability to do plus and minus one. This ability will allow us to perform 
+typelevel recursion.
+
+With many of these more exotic recursive types, there is a limit to how far they will work and 
+sometimes there are issues, which means you will have to try something different.
+A recursive type in Typescript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
+
+
+
+```typescript
+// MinusOne<N>
+// Defined between 1 and 1000
+// Take a number N
+// Check if length of empty array + 1 unknown element is equal to N
+// If it is, return length of array which then is one less then N.
+// If not, recursively call MinusOne with an array that is one element longer.
+type MinusOne<N extends number, Arr extends any[] = []> = [
+  ...Arr,
+  unknown
+]['length'] extends N
+  ? Arr['length']
+  : MinusOne<N, [...Arr, unknown]>
+
+// PlusOne<N>
+// Defined between 0 and 999
+// Start with an array of length 0 and check if it is equal to N
+// If it is add one element to the array and return it's length.
+// If not recursively call PlusOne with an array that is one element longer.
+// This way we get N + 1
+type PlusOne<N extends number, Arr extends any[] = []> = 
+  [...Arr]['length'] extends N
+    ? [...Arr, unknown]['length']
+    : PlusOne<N, [...Arr, unknown]>
+
+// FromToInc<Lower,Higher>
+// Gives back an Array of all numbers between Lower and Higher (inclusive)
+// Example: FromToInc<1,3> = [1,2,3]
+type FromToInc<From extends number, To extends number, acc extends any[] = []> = From extends PlusOne<To> ? acc : FromToInc<PlusOne<From>, To, [...acc, From]>;
+
+// FromToDec<Higher,Lower>
+// Gives back an Array of all numbers between Higher and Lower (inclusive)
+// Example: FromToDec<3,1> = [3,2,1]
+type FromToDec<From extends number, To extends number, acc extends any[] = []> = From extends MinusOne<To> ? acc : FromToDec<MinusOne<From>, To, [...acc, From]>;
+```
+</details>
+<!-- Arithmetic END -->
+
+<!-- UTIL ToUnion START -->
+<details>
+<summary style="cursor: pointer; user-select:none">To Union</summary>
+<h3>To Union</h3>
+
+```typescript
+// Example: ToUnion<[1,2,3]> = 1 | 2 | 3
+type ToUnion<T extends Array<any>> = T[number]
+```
+
+Array has a index signature of `number`
+```typescript
+// something like
+type Array<T> = { [index: number]: T ...}
+```
+So by indexing with `number` we get back `T`.
+See [index-signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures) for more info.
+
+`ToUnion` is purely to have a nicer API that explains better what is being done.
+
+</details>
+<!-- UTIL ToUnion END -->
+
+
+<!-- Cartesian Product START -->
+<details>
+<summary>Cartesian Product</summary>
+
+<h3>Cartesian Product</h3>
 
 ```typescript
 // CartesianProduct<X,Y>
@@ -179,8 +346,357 @@ The `CartesianProduct` function is used to produce coordinates between `Rows` an
 type AllCoordinates = 
   CartesianProduct<Columns,Rows> = Col1Row1 | Col2Row1 | ... | Col1Row2
 ```
+</details>
+<!-- Cartesian Product END -->
 
-## Union To Intersection
+
+
+#### _Side note_
+_Actually, the type of Column and Row is `2 | 1 | 3`._
+_When you define a union like `type A = 1 | 2 ` the type will become `A = 2 | 1` which on the typelevel is equivalent, however, in this application, we very much care about traversal order and numbers being in order so we need to do some extra tricks sometimes to combat this._
+_Maybe Typescript makes no guarantees on the order of union members, so by scrambling them on purpose
+it hinders people from depending on something that is not part of the spec._
+
+
+### Winning positions
+
+ The way we are going to see if a player has won yet
+ is by using the fact that we know what combination of
+ positions are winning, if a player has all of them they have won.
+ Steps:
+
+ 1. Create a union of all the winning positions
+    ```typescript
+    ["11", "12", "13"] | ["21", "22", "23"] | ... 
+    ```
+
+ 2. Check what the current state of all of them are
+    ```typescript
+    [Circle, Cross, Empty] | [Circle, Circle, Circle] ... 
+    ```
+
+ 3. Create an intersection those states, and remove the array/tuple
+    ```typescript
+    [Circle & Cross & Empty] | [Circle & Circle & Circle] | ... 
+    [never] | [Circle]
+    never | Circle
+    Circle
+    ```
+
+ Only time we get a value is when **all three are the same**
+
+ Now we can check if the player is the winner, 
+ by checking if the intersection contains a player.
+ ```typescript
+ PlayerCircle extends Intersection ? true : false
+ ```
+
+```typescript
+// WinningPositions
+// All the winning positions for a Tic-Tac-Toe game.
+// Example
+// ["11", "12", "13"] | ["21", "22", "23"] | ...
+type WinningPositions =
+  // Rows
+  | GetRowPositions<Column, Row>
+  // Columns
+  | GetColumnPositions<Column, Row>
+  // Diagonals
+  | GetDiagonalPositions<Size>
+
+// ###################################
+// #### Winning Positions Helpers ####
+// ###################################
+
+type GetRowPositions<C extends Column, R extends Row> = 
+    R extends Row 
+      ? [CartesianProductString<C, R>] 
+      : never;
+
+type GetColumnPositions<C extends Column, R extends Row> = 
+    C extends Column 
+      ? [CartesianProductString<C, R>] 
+      : never;
+
+type GetDiagonalPositions<S extends Size> = StringConcatTuples<Diagonals<S>>
+
+// Only first type parameter is allowed to be supplied
+type Diagonals<Size extends number, 
+              _FromToSize extends number[] = FromToInc<1,Size>, 
+              _SizeToFrom extends number[] = FromToDec<Size, 1>, 
+              > =  
+  | Zip<_FromToSize, _FromToSize> 
+  | Zip<_FromToSize, _SizeToFrom>
+
+
+```
+
+`WinningPositions` is just the union of all positions that are winning. A position for us is just a combination(array) of coordinates. _(A chess position is not just a bunch of squares but also the pieces on those squares so maybe `WinningPositions` is not the best name)._
+
+
+`GetRowPositions` and `GetColumnPositions` "iterates" through either row or column and
+then creates the Cartesian product between those values. 
+In code, it would read something like 
+```typescript
+forEach(Row).map((r) => getCatesianProduct(Column, r))
+```
+So the output is `["11", "21", "31"] | ["21", "22", "23"] ...` for `Row` for example. 
+When you do `R extends Row ? ... | ...` in Typescript, that is "looping" over `R` and creating a union of all the results.
+The details of this are discussed in great detail in the <a href="#union-to-intersection">`UnionToIntersection`</a> util explanation.
+
+`Diagonals`  have two parameters that are not allowed to be used when calling the type-level function. 
+This is so they can be used to bind the result of a typelevel function to allow for reuse in the function body.
+
+Here we are generating two arrays `[1,2,3]` and `[3,2,1]` and then we do two `Zip` operations
+```typescript 
+Zip<[1,2,3],[1,2,3]> 
+```  
+and 
+```typescript
+Zip<[1,2,3],[3,2,1]>
+``` 
+which produces `[[1,1],[2,2],[3,3]]`
+and `[[1,3],[2,2],[3,1]]` 
+
+We then turn each tuple into strings using `StringConcatTuples` in `GetDiagonalPositions`. Resulting in
+`["11", "22", "33"]` and `["13", "22", "31"]`.
+
+
+##### Utils used
+
+<!-- ZIP START -->
+<details>
+<summary>Zip</summary>
+<h3>Zip</h3>
+
+```typescript
+// Zip two arrays together
+// Example: Zip<[1,2,3],["a","b","c"]> = [[1,"a"],[2,"b"],[3,"c"]]
+type Zip<T extends any[], U extends any[], Acc extends any[] = []> = 
+  T extends [infer Head, ...infer Tail] ? 
+  U extends [infer Head2, ...infer Tail2] ? 
+  Zip<Tail, Tail2, [...Acc, [Head, Head2]]> : Acc  : Acc;
+
+```
+Zip is a quite simple recursive function looking very much like the code version would, there is some neater ways where you would infer both heads and tails at once. 
+https://github.com/type-challenges/type-challenges/issues/4495
+
+But with that implementation Typescript fails to do type inferencinging later in the program.
+</details>
+<!-- ZIP END -->
+
+<!-- String Concat Tuples START -->
+<details>
+<summary>String Concat Tuples</summary>
+<h3>String Concat Tuples</h3>
+
+```typescript
+// Join tuples together to strings
+// Example: StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
+type StringConcatTuples<T extends [number, number][]> = 
+  {[Key in keyof T]: `${T[Key][0]}${T[Key][1]}`};
+```
+`StringConcatTuples` is so we can use coordinates as keys, and do a lookup from coordinate to a square.
+
+We use [mapped types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+since it allows us to loop over the members in a type
+`keyof` gives us a type that is the union of all the `keys` in `T`.
+</details>
+<!-- String Concat Tuples END -->
+
+
+### Board
+
+```typescript
+// Fundamental data type of the game.
+// Board contains a mapping from Coordinate to Square
+// A Square is either Empty, Cross, or Circle.
+type Board = { [s in Coordinates]: Square };
+```
+
+## Game States
+```typescript
+// The game can be in one of three states:
+// 1. Round in progress
+// 2. Won
+// 3. Draw
+type GameStates = Round<any, any, any> | Draw<any, any> | Winner<any, any, any>
+```
+
+### Round
+```typescript
+// ###################################
+// ####           Round           ####
+// ###################################
+// 
+// A Round has a bunch of Squares and a Player that is next to move.
+// It also has a previous Round or Nil, to be able to allow for undoing moves.
+interface Round<
+  B extends Board,
+  P extends Player,
+  R extends Round<any, any, any> | Nil
+> extends HasPrevious<R> {
+  __tag: "round";
+  board: B;
+  nextToMove: P;
+}
+  interface Nil    { __type: "Nil";   }
+
+// We separate our HasPrevious interface from the Round interface
+// To be able to use it in other interfaces.
+// And have type level functions where the only constraint is that
+// it has the HasPrevious interface.
+interface HasPrevious<R> {
+  previous: R;
+```
+
+
+### Winner
+
+```typescript
+interface Winner<
+  S extends Player,
+  PrevR extends Round<any, any, any>,
+  Curr extends Board
+> extends HasPrevious<PrevR> {
+  __tag: "winner",
+  winningPosition: Curr;
+  winner: S;
+}
+
+```
+
+### Draw
+```typescript
+interface Draw<R extends Round<any, any, any>> extends HasPrevious<R> {__tag: "draw";}
+```
+
+
+#### Initial board & round
+
+```typescript
+type InitialBoard = { [key in keyof Board]: Empty };
+type InitialRound = Round<InitialBoard, Cross, Nil>;
+```
+
+#### Game State Helpers
+```typescript
+type GetBoard<R extends GameStates>
+                  = 
+                    R extends Draw<any, infer B>         ? B
+                  : R extends Round<infer B, any, any>   ? B
+                  : R extends Winner<any, any, infer B>  ? B
+                  : never;
+```
+
+## Game actions
+
+### Move
+There is only one action, it's to make a move.
+
+```typescript
+// ...
+// Last argument is not allowed to be passed in, but is used 
+// to reduce duplication in the function body.
+type Move<
+  CurrentRound extends Round<Board, P, any>,
+  P extends Player,
+  Position extends AvailableSquares<CurrentRound["board"]>,
+  _NextBoard extends Board = SetSquare<CurrentRound["board"], Position, P>,
+  _NextRound extends Round<any,any,any> = Round<_NextBoard, GetNextPlayer<P>, CurrentRound>
+> = 
+HasWon<P,_NextRound> extends true 
+  ? Winner<P, CurrentRound, _NextBoard>
+  : NoMoreSquares<_NextBoard> extends true
+    ? Draw<CurrentRound, _NextBoard>
+    : _NextRound
+```
+Move steps:
+1. Check if the position is part of `AvailableSquares[CurrentRound['board']]`
+2. Create two variables, which are the board and round after the move has been applied
+   `_NextBoard` and `_NextRound`
+3. Check if player has won in the `_NextRound`, if `true` return `Winner<P, ...>`
+4. Check if the game will have no more squares after this move, if true return `Draw<...>`
+5. Else return next Round.
+
+## Game state functions
+
+### Available Squares
+```typescript
+// Squares that are possible to play on
+type AvailableSquares<B extends Board> = {
+  [Coordinate in keyof B]: B[Coordinate] extends Empty ? Coordinate : never;
+}[keyof B];
+```
+
+`AvailableSquares` loops through the coordinates and replaces every square with either the `Coordinate` or `never`
+```typescript
+{
+ "11": never, 
+ "12": "12",
+ ...
+}
+```
+We then lookup all values for all keys with `[keyof B]` this produces a union like 
+`never | "12" | ... ` and since `never` represents the absence of a value.
+`never` gets removed from unions leaving only the squares that are possible to play.
+
+### Get next player
+Toggles between the players
+```typescript
+type GetNextPlayer<P extends Player> = P extends Cross ? Circle : Cross;
+
+```
+
+### Set square
+Find and replace what is on a square, by looping through all coordinates
+until we find the one we want to set.
+```typescript
+// Sets a Square to a Player
+type SetSquare<B extends Board, CoordinateToSet, Player> = {
+  [Coord in keyof B]: Coord extends CoordinateToSet ? Player : B[Coord];
+};
+```
+### No more squares
+
+If the `Board` extends `never` that means there was nothing in the union
+returned by `AvailableSquares<B>`, thus there are no more squares to play on.
+```typescript
+type NoMoreSquares<B extends Board> = AvailableSquares<B> extends never
+  ? true
+  : false;
+```
+### Get winner
+```typescript
+// If there is a winner in the Squares provided then the winner is returned.
+type GetWinner<B extends Board> =
+   UniqueInSequence<LookupCoordinates<WinningPositions,B>>
+
+// LookupPosition returns the state of the squares at each position listed
+// ["11", "12", "13"] | ... -> [Circle, Circle, Circle] | ...
+type LookupCoordinates<Coords extends Array<Coordinates>, B extends Board> =
+  { [Key in keyof Coords ]: B[Coords[Key]] }
+
+// If there is any Array that contains only the same element
+// then that element will be returned
+type UniqueInSequence<P extends Array<unknown>> =
+  P extends Array<unknown> ? UnionToIntersection<P[number]> : never
+
+```
+
+We use the `WinningPositions` together with a `Board` to look up the state of all those winning tuples.
+We then see if any of those tuples of coordinates only contain one player.
+
+`GetWinner` might not be the perfect name, because it gives back whatever is unique in a winning set of squares so for example it would return `Empty` for the initial board. 
+*(So the game starts out with `Empty` as a winner one could say)*
+
+#### Utils used
+
+<!-- Union To Intersection START -->
+<details id="union-to-intersection">
+<summary>Union To Intersection (very long!)</summary>
+<h3>Union To Intersection</h3>
+
 This is going to be the longest explanation in the whole post (it even has a quiz!)
 so bear with me. I think this can be very instructive if you don't already know all this
 at a deep level. This was very useful for me to write if nothing else.
@@ -398,459 +914,8 @@ func(dog)
 _Thank AnyHowStep for this [answer](
 https://github.com/microsoft/TypeScript/issues/29594#issuecomment-507701193
 ) that helped me write this section_
-
-### To Union
-
-
-```typescript
-// Example: ToUnion<[1,2,3]> = 1 | 2 | 3
-type ToUnion<T extends Array<any>> = T[number]
-```
-
-Array has a index signature of `number`
-```typescript
-// something like
-type Array<T> = { [index: number]: T ...}
-```
-So by indexing with `number` we get back `T`.
-See [index-signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures) for more info.
-
-`ToUnion` is purely to have a nicer API that explains better what is being done.
-
-### Zip
-```typescript
-// Zip two arrays together
-// Example: Zip<[1,2,3],["a","b","c"]> = [[1,"a"],[2,"b"],[3,"c"]]
-type Zip<T extends any[], U extends any[], Acc extends any[] = []> = 
-  T extends [infer Head, ...infer Tail] ? 
-  U extends [infer Head2, ...infer Tail2] ? 
-  Zip<Tail, Tail2, [...Acc, [Head, Head2]]> : Acc  : Acc;
-
-```
-Zip is a quite simple recursive function looking very much like the code version would, there is some neater ways where you would infer both heads and tails at once. 
-https://github.com/type-challenges/type-challenges/issues/4495
-
-But with that implementation Typescript fails to do type inferencinging later in the program.
-
-### String Concat Tuples
-```typescript
-// Join tuples together to strings
-// Example: StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
-type StringConcatTuples<T extends [number, number][]> = 
-  {[Key in keyof T]: `${T[Key][0]}${T[Key][1]}`};
-```
-`StringConcatTuples` is so we can use coordinates as keys, and do a lookup from coordinate to a square.
-
-We use [mapped types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
-since it allows us to loop over the members in a type
-`keyof` gives us a type that is the union of all the `keys` in `T`.
-
-
-#### Arithmetic 
-
-In a `3x3` game, `11,22,33` form a diagonal, in a `4x4` game the diagonal is `11,22,33,44`. 
-Any player that has one of these diagonals has won the game.
-
-To be able to derive diagonals and other winning positions from  `Size` we need the ability to do some
-math on the typelevel. Luckily that is very possible in Typescript.
-Our needs contain only the ability to do plus and minus one. This ability will allow us to perform 
-typelevel recursion.
-
-With many of these more exotic recursive types, there is a limit to how far they will work and 
-sometimes there are issues, which means you will have to try something different.
-A recursive type in Typescript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
-
-
-
-```typescript
-// MinusOne<N>
-// Defined between 1 and 1000
-// Take a number N
-// Check if length of empty array + 1 unknown element is equal to N
-// If it is, return length of array which then is one less then N.
-// If not, recursively call MinusOne with an array that is one element longer.
-type MinusOne<N extends number, Arr extends any[] = []> = [
-  ...Arr,
-  unknown
-]['length'] extends N
-  ? Arr['length']
-  : MinusOne<N, [...Arr, unknown]>
-
-// PlusOne<N>
-// Defined between 0 and 999
-// Start with an array of length 0 and check if it is equal to N
-// If it is add one element to the array and return it's length.
-// If not recursively call PlusOne with an array that is one element longer.
-// This way we get N + 1
-type PlusOne<N extends number, Arr extends any[] = []> = 
-  [...Arr]['length'] extends N
-    ? [...Arr, unknown]['length']
-    : PlusOne<N, [...Arr, unknown]>
-
-// FromToInc<Lower,Higher>
-// Gives back an Array of all numbers between Lower and Higher (inclusive)
-// Example: FromToInc<1,3> = [1,2,3]
-type FromToInc<From extends number, To extends number, acc extends any[] = []> = From extends PlusOne<To> ? acc : FromToInc<PlusOne<From>, To, [...acc, From]>;
-
-// FromToDec<Higher,Lower>
-// Gives back an Array of all numbers between Higher and Lower (inclusive)
-// Example: FromToDec<3,1> = [3,2,1]
-type FromToDec<From extends number, To extends number, acc extends any[] = []> = From extends MinusOne<To> ? acc : FromToDec<MinusOne<From>, To, [...acc, From]>;
-```
-
-
-## Capturing the concepts contained in Tic-Tac-Toe
-### Player
-
-
-```typescript
-type Player = Cross | Circle;
-  interface Circle { __type: "O";     }
-  interface Cross  { __type: "X";     }
-```
-
-We use `interface` instead of `type` to get the type-level information 
-(when you hover / or read a compile time error) to show `Circle`
-instead  `{__type: "Circle"}` which it would do with `type`.
-It makes it a bit more pretty (not much more difference than that). 
-
-### Square
-```typescript
-type Square = Player | Empty;
-  interface Empty  { __type: "Empty"; }
-
-```
-
-### Size
-```typescript
-// ##############################################
-type Size = GameSize;
-// ##############################################
-// (Size was here before i made the UI at the top therefore the redeclaration)
-// In a future version of the game, types will 
-// be parameterized by the size of the game.
-// So multiple games of different sizes can 
-// exist at the same time.
-// 
-// However even now everything is calculated from the Size
-// So 4x4 games are possible
-// ##############################################
-```
-
-The `GameSize` is set to `3` for this walk-through.
-
-### Column & Row
-```typescript
-// Column and Row can potentially be different sizes
-// Note: winning on the diagonal will have to change 
-// If the game is not square.
-type Column      = ToUnion<FromToInc<1,Size>>;
-type Row         = ToUnion<FromToInc<1,Size>>;
-type Coordinates = CartesianProductString<Column, Row>
-```
-
-The type of `Column` and `Row` is (in this case) `1 | 2 | 3`.
-First, we generate numbers between `1` and `Size` which gives us`[1,2,3]`
-then we turn that into a union and end up with `1 | 2 | 3`.
-
-`Coordiantes` have the type instance of  
-`"22" | "21" | "23" | "12" | "11" | "13" | "32" | "31" | "33"`. 
-
-#### _Side note_
-_Actually, the type of Column and Row is `2 | 1 | 3`._
-_When you define a union like `type A = 1 | 2 ` the type will become `A = 2 | 1` which on the typelevel is equivalent, however, in this application, we very much care about traversal order and numbers being in order so we need to do some extra tricks sometimes to combat this._
-_Maybe Typescript makes no guarantees on the order of union members, so by scrambling them on purpose
-it hinders people from depending on something that is not part of the spec._
-
-
-### Winning positions
-
- The way we are going to see if a player has won yet
- is by using the fact that we know what combination of
- positions are winning, if a player has all of them they have won.
- Steps:
-
- 1. Create a union of all the winning positions
-    ```typescript
-    ["11", "12", "13"] | ["21", "22", "23"] | ... 
-    ```
-
- 2. Check what the current state of all of them are
-    ```typescript
-    [Circle, Cross, Empty] | [Circle, Circle, Circle] ... 
-    ```
-
- 3. Create an intersection those states, and remove the array/tuple
-    ```typescript
-    [Circle & Cross & Empty] | [Circle & Circle & Circle] | ... 
-    [never] | [Circle]
-    never | Circle
-    Circle
-    ```
-
- Only time we get a value is when **all three are the same**
-
- Now we can check if the player is the winner, 
- by checking if the intersection contains a player.
- ```typescript
- PlayerCircle extends Intersection ? true : false
- ```
-
-```typescript
-// WinningPositions
-// All the winning positions for a Tic-Tac-Toe game.
-// Example
-// ["11", "12", "13"] | ["21", "22", "23"] | ...
-type WinningPositions =
-  // Rows
-  | GetRowPositions<Column, Row>
-  // Columns
-  | GetColumnPositions<Column, Row>
-  // Diagonals
-  | GetDiagonalPositions<Size>
-
-// ###################################
-// #### Winning Positions Helpers ####
-// ###################################
-
-type GetRowPositions<C extends Column, R extends Row> = 
-    R extends Row 
-      ? [CartesianProductString<C, R>] 
-      : never;
-
-type GetColumnPositions<C extends Column, R extends Row> = 
-    C extends Column 
-      ? [CartesianProductString<C, R>] 
-      : never;
-
-type GetDiagonalPositions<S extends Size> = StringConcatTuples<Diagonals<S>>
-
-// Only first type parameter is allowed to be supplied
-type Diagonals<Size extends number, 
-              _FromToSize extends number[] = FromToInc<1,Size>, 
-              _SizeToFrom extends number[] = FromToDec<Size, 1>, 
-              > =  
-  | Zip<_FromToSize, _FromToSize> 
-  | Zip<_FromToSize, _SizeToFrom>
-
-
-```
-
-`WinningPositions` is just the union of all positions that are winning. A position for us is just a combination(array) of coordinates. _(A chess position is not just a bunch of squares but also the pieces on those squares so maybe `WinningPositions` is not the best name)._
-
-
-`GetRowPositions` and `GetColumnPositions` iterates through either row or column and
-then creates the Cartesian product between those values. 
-In code, it would read something like 
-```typescript
-forEach(Row).map((r) => getCatesianProduct(Column, r))
-```
-So the output is `["11", "21", "31"] | ["21", "22", "23"] ...` for `Row` for example. 
-When you do `R extends Row ? ... | ...` in Typescript, that is "looping" over `R`.
-We discussed this above in the `UnionToIntersection` explanation.
-
-`Diagonals`  have two parameters that are not allowed to be used when calling the type-level function. 
-This is so they can be used to bind the result of a typelevel function to allow for reuse in the function body.
-
-Here we are generating two arrays `[1,2,3]` and `[3,2,1]` and then we do two `Zip` operations
-```typescript 
-Zip<[1,2,3],[1,2,3]> 
-```  
-and 
-```typescript
-Zip<[1,2,3],[3,2,1]>
-``` 
-which produces `[[1,1],[2,2],[3,3]]`
-and `[[1,3],[2,2],[3,1]]` 
-
-We then turn each tuple into strings using `StringConcatTuples` in `GetDiagonalPositions`. Resulting in
-`["11", "22", "33"]` and `["13", "22", "31"]`.
-
-### Board
-
-```typescript
-// Fundamental data type of the game.
-// Board contains a mapping from Coordinate to Square
-// A Square is either Empty, Cross, or Circle.
-type Board = { [s in Coordinates]: Square };
-```
-
-## Game States
-```typescript
-// The game can be in one of three states:
-// 1. Round in progress
-// 2. Won
-// 3. Draw
-type GameStates = Round<any, any, any> | Draw<any, any> | Winner<any, any, any>
-```
-
-### Round
-```typescript
-// ###################################
-// ####           Round           ####
-// ###################################
-// 
-// A Round has a bunch of Squares and a Player that is next to move.
-// It also has a previous Round or Nil, to be able to allow for undoing moves.
-interface Round<
-  B extends Board,
-  P extends Player,
-  R extends Round<any, any, any> | Nil
-> extends HasPrevious<R> {
-  __tag: "round";
-  board: B;
-  nextToMove: P;
-}
-  interface Nil    { __type: "Nil";   }
-
-// We separate our HasPrevious interface from the Round interface
-// To be able to use it in other interfaces.
-// And have type level functions where the only constraint is that
-// it has the HasPrevious interface.
-interface HasPrevious<R> {
-  previous: R;
-```
-
-
-### Winner
-
-```typescript
-interface Winner<
-  S extends Player,
-  PrevR extends Round<any, any, any>,
-  Curr extends Board
-> extends HasPrevious<PrevR> {
-  __tag: "winner",
-  winningPosition: Curr;
-  winner: S;
-}
-
-```
-
-### Draw
-```typescript
-interface Draw<R extends Round<any, any, any>> extends HasPrevious<R> {__tag: "draw";}
-```
-
-
-#### Initial board & round
-
-```typescript
-type InitialBoard = { [key in keyof Board]: Empty };
-type InitialRound = Round<InitialBoard, Cross, Nil>;
-```
-
-#### Game State Helpers
-```typescript
-type GetBoard<R extends GameStates>
-                  = 
-                    R extends Draw<any, infer B>         ? B
-                  : R extends Round<infer B, any, any>   ? B
-                  : R extends Winner<any, any, infer B>  ? B
-                  : never;
-```
-
-## Game actions
-
-### Move
-There is only one action, it's to make a move.
-
-```typescript
-// ...
-// Last argument is not allowed to be passed in, but is used 
-// to reduce duplication in the function body.
-type Move<
-  CurrentRound extends Round<Board, P, any>,
-  P extends Player,
-  Position extends AvailableSquares<CurrentRound["board"]>,
-  _NextBoard extends Board = SetSquare<CurrentRound["board"], Position, P>,
-  _NextRound extends Round<any,any,any> = Round<_NextBoard, GetNextPlayer<P>, CurrentRound>
-> = 
-HasWon<P,_NextRound> extends true 
-  ? Winner<P, CurrentRound, _NextBoard>
-  : NoMoreSquares<_NextBoard> extends true
-    ? Draw<CurrentRound, _NextBoard>
-    : _NextRound
-```
-Move steps:
-1. Check if the position is part of `AvailableSquares[CurrentRound['board']]`
-2. Create two variables, which are the board and round after the move has been applied
-   `_NextBoard` and `_NextRound`
-3. Check if player has won in the `_NextRound`, if `true` return `Winner<P, ...>`
-4. Check if the game will have no more squares after this move, if true return `Draw<...>`
-5. Else return next Round.
-
-## Game state functions
-
-### Available Squares
-```typescript
-// Squares that are possible to play on
-type AvailableSquares<B extends Board> = {
-  [Coordinate in keyof B]: B[Coordinate] extends Empty ? Coordinate : never;
-}[keyof B];
-```
-
-`AvailableSquares` loops through the coordinates and replaces every square with either the `Coordinate` or `never`
-```typescript
-{
- "11": never, 
- "12": "12",
- ...
-}
-```
-We then lookup all values for all keys with `[keyof B]` this produces a union like 
-`never | "12" | ... ` and since `never` represents the absence of a value.
-`never` gets removed from unions leaving only the squares that are possible to play.
-
-### Get next player
-Toggles between the players
-```typescript
-type GetNextPlayer<P extends Player> = P extends Cross ? Circle : Cross;
-
-```
-
-### Set square
-Find and replace what is on a square, by looping through all coordinates
-until we find the one we want to set.
-```typescript
-// Sets a Square to a Player
-type SetSquare<B extends Board, CoordinateToSet, Player> = {
-  [Coord in keyof B]: Coord extends CoordinateToSet ? Player : B[Coord];
-};
-```
-### No more squares
-
-If the `Board` extends `never` that means there was nothing in the union
-returned by `AvailableSquares<B>`, thus there are no more squares to play on.
-```typescript
-type NoMoreSquares<B extends Board> = AvailableSquares<B> extends never
-  ? true
-  : false;
-```
-### Get winner
-```typescript
-// If there is a winner in the Squares provided then the winner is returned.
-type GetWinner<B extends Board> =
-   UniqueInSequence<LookupCoordinates<WinningPositions,B>>
-
-// LookupPosition returns the state of the squares at each position listed
-// ["11", "12", "13"] | ... -> [Circle, Circle, Circle] | ...
-type LookupCoordinates<Coords extends Array<Coordinates>, B extends Board> =
-  { [Key in keyof Coords ]: B[Coords[Key]] }
-
-// If there is any Array that contains only the same element
-// then that element will be returned
-type UniqueInSequence<P extends Array<unknown>> =
-  P extends Array<unknown> ? UnionToIntersection<P[number]> : never
-
-```
-
-We use the `WinningPositions` together with a `Board` to look up the state of all those winning tuples.
-We then see if any of those tuples of coordinates only contain one player.
-
-`GetWinner` might not be the perfect name, because it gives back whatever is unique in a winning set of squares so for example it would return `Empty` for the initial board. 
-*(So the game starts out with `Empty` as a winner one could say)*
-
+</details>
+<!-- Union To Intersection END -->
 
 ### Has Won
 ```typescript

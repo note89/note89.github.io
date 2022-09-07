@@ -14,6 +14,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/drafts`,
         name: `draft`,
+        ignore: ["**/*.fragment.md"]
       },
     }) :({}),
     {
@@ -21,6 +22,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+        ignore: ["**/*.fragment.md"]
       },
     },
     {
@@ -34,6 +36,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: "gatsby-remark-embed-markdown",
+            options: {
+              // Example code links are relative to this dir.
+              // eg examples/path/to/file.js
+              directory: `${__dirname}/content/`,
+            }
+          },
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-images`,
