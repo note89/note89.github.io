@@ -1093,7 +1093,11 @@ type Equal<X, Y> =
 type Expect<T extends true> = T;
 
 ```
-### Test cases
+
+<details>
+<summary>Show Test Cases</summary>
+<h3>Test cases</h3>
+
 ```typescript
 // ##################################
 // #              TEST              #
@@ -1271,6 +1275,7 @@ type WinCircleOutcome = Expect<Equal<
 >>;
 
 ```
+</details>
 
 
 # UI 
@@ -1535,7 +1540,8 @@ type ShowBoard<B extends Board> = ShowUIBoard<ToUIBoard<B>>;
 // ToUIBoard
 // The particular board we want to show
 // Structurally, a UIBoard
-type ToUIBoard<B extends Board> = {[s in Coordinates]: ChangeSquare<B[s]>};
+type ToUIBoard<B extends Board> = 
+  {[s in Coordinates]: ChangeSquare<B[s]>};
 
 type ChangeSquare<S extends Square> = S extends Cross  ? X
                                     : S extends Circle ? O
