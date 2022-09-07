@@ -222,9 +222,11 @@ A recursive type in Typescript 4.5 has a max call stack of [`999`](https://githu
 // MinusOne<N>
 // Defined between 1 and 1000
 // Take a number N
-// Check if length of empty array + 1 unknown element is equal to N
-// If it is, return length of array which then is one less then N.
-// If not, recursively call MinusOne with an array that is one element longer.
+// Check if length of empty array + 1 unknown element 
+// is equal to N, if it is, return length of array 
+// which then is one less then N.
+// If not, recursively call MinusOne with an array 
+// that is one element longer.
 type MinusOne<N extends number, Arr extends any[] = []> = [
   ...Arr,
   unknown
@@ -234,9 +236,12 @@ type MinusOne<N extends number, Arr extends any[] = []> = [
 
 // PlusOne<N>
 // Defined between 0 and 999
-// Start with an array of length 0 and check if it is equal to N
-// If it is add one element to the array and return it's length.
-// If not recursively call PlusOne with an array that is one element longer.
+// Start with an array of length 0 and check if it is 
+// equal to N. 
+// If it is add one element to the array and return 
+// it's length.
+// If not recursively call PlusOne with an array that is 
+// one element longer.
 // This way we get N + 1
 type PlusOne<N extends number, Arr extends any[] = []> = 
   [...Arr]['length'] extends N
@@ -244,14 +249,26 @@ type PlusOne<N extends number, Arr extends any[] = []> =
     : PlusOne<N, [...Arr, unknown]>
 
 // FromToInc<Lower,Higher>
-// Gives back an Array of all numbers between Lower and Higher (inclusive)
+// Gives back an Array of all numbers 
+// between Lower and Higher (inclusive)
 // Example: FromToInc<1,3> = [1,2,3]
-type FromToInc<From extends number, To extends number, acc extends any[] = []> = From extends PlusOne<To> ? acc : FromToInc<PlusOne<From>, To, [...acc, From]>;
+type FromToInc<From extends number, 
+               To extends number, 
+               acc extends any[] = []> = 
+        From extends PlusOne<To> 
+          ? acc 
+          : FromToInc<PlusOne<From>, To, [...acc, From]>;
 
 // FromToDec<Higher,Lower>
-// Gives back an Array of all numbers between Higher and Lower (inclusive)
+// Gives back an Array of all numbers 
+// between Higher and Lower (inclusive)
 // Example: FromToDec<3,1> = [3,2,1]
-type FromToDec<From extends number, To extends number, acc extends any[] = []> = From extends MinusOne<To> ? acc : FromToDec<MinusOne<From>, To, [...acc, From]>;
+type FromToDec<From extends number, 
+              To extends number, 
+              acc extends any[] = []> = 
+        From extends MinusOne<To> 
+          ? acc 
+          : FromToDec<MinusOne<From>, To, [...acc, From]>;
 ```
 </details>
 <!-- Arithmetic END -->
@@ -418,15 +435,17 @@ type GetColumnPositions<C extends Column, R extends Row> =
       ? [CartesianProductString<C, R>] 
       : never;
 
-type GetDiagonalPositions<S extends Size> = StringConcatTuples<Diagonals<S>>
+type GetDiagonalPositions<S extends Size> = 
+    StringConcatTuples<Diagonals<S>>
 
 // Only first type parameter is allowed to be supplied
-type Diagonals<Size extends number, 
-              _FromToSize extends number[] = FromToInc<1,Size>, 
-              _SizeToFrom extends number[] = FromToDec<Size, 1>, 
-              > =  
-  | Zip<_FromToSize, _FromToSize> 
-  | Zip<_FromToSize, _SizeToFrom>
+type Diagonals<
+      Size extends number, 
+      _FromToSize extends number[] = FromToInc<1,Size>, 
+      _SizeToFrom extends number[] = FromToDec<Size, 1>, 
+      > =  
+    | Zip<_FromToSize, _FromToSize> 
+    | Zip<_FromToSize, _SizeToFrom>
 
 
 ```
@@ -471,8 +490,13 @@ We then turn each tuple into strings using `StringConcatTuples` in `GetDiagonalP
 
 ```typescript
 // Zip two arrays together
-// Example: Zip<[1,2,3],["a","b","c"]> = [[1,"a"],[2,"b"],[3,"c"]]
-type Zip<T extends any[], U extends any[], Acc extends any[] = []> = 
+// Example: 
+// Zip<[1,2,3],["a","b","c"]> = [[1,"a"],[2,"b"],[3,"c"]]
+type Zip<
+      T extends any[], 
+      U extends any[], 
+      Acc extends any[] = []
+      > = 
   T extends [infer Head, ...infer Tail] ? 
   U extends [infer Head2, ...infer Tail2] ? 
   Zip<Tail, Tail2, [...Acc, [Head, Head2]]> : Acc  : Acc;
@@ -492,7 +516,8 @@ But with that implementation Typescript fails to do type inferencinging later in
 
 ```typescript
 // Join tuples together to strings
-// Example: StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
+// Example: 
+// StringConcatTuples<[[1,2],[3,4]]> = ["12","34"]
 type StringConcatTuples<T extends [number, number][]> = 
   {[Key in keyof T]: `${T[Key][0]}${T[Key][1]}`};
 ```
@@ -520,7 +545,10 @@ type Board = { [s in Coordinates]: Square };
 // 1. Round in progress
 // 2. Won
 // 3. Draw
-type GameStates = Round<any, any, any> | Draw<any, any> | Winner<any, any, any>
+type GameStates = 
+  | Round<any, any, any> 
+  | Winner<any, any, any>
+  | Draw<any, any> 
 ```
 
 ### Round
@@ -529,8 +557,9 @@ type GameStates = Round<any, any, any> | Draw<any, any> | Winner<any, any, any>
 // ####           Round           ####
 // ###################################
 // 
-// A Round has a bunch of Squares and a Player that is next to move.
-// It also has a previous Round or Nil, to be able to allow for undoing moves.
+// A Round has a bunch of Squares and a Player that is next 
+// to move. It also has a previous Round or Nil, 
+// to be able to allow for undoing moves.
 interface Round<
   B extends Board,
   P extends Player,
@@ -542,10 +571,10 @@ interface Round<
 }
   interface Nil    { __type: "Nil";   }
 
-// We separate our HasPrevious interface from the Round interface
-// To be able to use it in other interfaces.
-// And have type level functions where the only constraint is that
-// it has the HasPrevious interface.
+// We separate our HasPrevious interface from the 
+// Round interface.To be able to use it in other interfaces.
+// And have type level functions where the only 
+// constraint is that it has the HasPrevious interface.
 interface HasPrevious<R> {
   previous: R;
 ```
@@ -568,7 +597,8 @@ interface Winner<
 
 ### Draw
 ```typescript
-interface Draw<R extends Round<any, any, any>> extends HasPrevious<R> {__tag: "draw";}
+interface Draw<R extends Round<any, any, any>> 
+    extends HasPrevious<R> {__tag: "draw";}
 ```
 
 
@@ -596,16 +626,18 @@ There is only one action, it's to make a move.
 
 ```typescript
 // ...
-// Last argument is not allowed to be passed in, but is used 
-// to reduce duplication in the function body.
+// Last two arguments are not allowed to be passed in, 
+// It's used to reduce duplication in the function body.
 type Move<
   CurrentRound extends Round<Board, P, any>,
   P extends Player,
   Position extends AvailableSquares<CurrentRound["board"]>,
-  _NextBoard extends Board = SetSquare<CurrentRound["board"], Position, P>,
-  _NextRound extends Round<any,any,any> = Round<_NextBoard, GetNextPlayer<P>, CurrentRound>
+  _NextBoard extends Board = 
+    SetSquare<CurrentRound["board"], Position, P>,
+  _NextRound extends Round<any,any,any> = 
+    Round<_NextBoard, GetNextPlayer<P>, CurrentRound>
 > = 
-HasWon<P,_NextRound> extends true 
+HasWon<P,_NextRound> extends true ?
   ? Winner<P, CurrentRound, _NextBoard>
   : NoMoreSquares<_NextBoard> extends true
     ? Draw<CurrentRound, _NextBoard>
@@ -625,7 +657,9 @@ Move steps:
 ```typescript
 // Squares that are possible to play on
 type AvailableSquares<B extends Board> = {
-  [Coordinate in keyof B]: B[Coordinate] extends Empty ? Coordinate : never;
+  [Coordinate in keyof B]: B[Coordinate] extends Empty ?
+        Coordinate 
+      : never;
 }[keyof B];
 ```
 
@@ -644,7 +678,8 @@ We then lookup all values for all keys with `[keyof B]` this produces a union li
 ### Get next player
 Toggles between the players
 ```typescript
-type GetNextPlayer<P extends Player> = P extends Cross ? Circle : Cross;
+type GetNextPlayer<P extends Player> = 
+  P extends Cross ? Circle : Cross;
 
 ```
 
@@ -654,7 +689,9 @@ until we find the one we want to set.
 ```typescript
 // Sets a Square to a Player
 type SetSquare<B extends Board, CoordinateToSet, Player> = {
-  [Coord in keyof B]: Coord extends CoordinateToSet ? Player : B[Coord];
+  [Coord in keyof B]: Coord extends CoordinateToSet ?
+      Player 
+    : B[Coord];
 };
 ```
 ### No more squares
@@ -662,25 +699,29 @@ type SetSquare<B extends Board, CoordinateToSet, Player> = {
 If the `Board` extends `never` that means there was nothing in the union
 returned by `AvailableSquares<B>`, thus there are no more squares to play on.
 ```typescript
-type NoMoreSquares<B extends Board> = AvailableSquares<B> extends never
-  ? true
-  : false;
+type NoMoreSquares<B extends Board> = 
+  AvailableSquares<B> extends never ? true : false;
 ```
 ### Get winner
 ```typescript
-// If there is a winner in the Squares provided then the winner is returned.
+// If there is a winner in the Squares provided then 
+// the winner is returned.
 type GetWinner<B extends Board> =
    UniqueInSequence<LookupCoordinates<WinningPositions,B>>
 
-// LookupPosition returns the state of the squares at each position listed
-// ["11", "12", "13"] | ... -> [Circle, Circle, Circle] | ...
-type LookupCoordinates<Coords extends Array<Coordinates>, B extends Board> =
-  { [Key in keyof Coords ]: B[Coords[Key]] }
+// LookupPosition returns the state of the squares 
+// at each position listed
+// ["11", "12", "13"] | ... -> [Circle, Circle, Circle] | ..
+type LookupCoordinates<
+        Coords extends Array<Coordinates>, 
+        B extends Board> =
+    { [Key in keyof Coords ]: B[Coords[Key]] }
 
 // If there is any Array that contains only the same element
 // then that element will be returned
 type UniqueInSequence<P extends Array<unknown>> =
-  P extends Array<unknown> ? UnionToIntersection<P[number]> : never
+  P extends Array<unknown> ? 
+    UnionToIntersection<P[number]> : never
 
 ```
 
@@ -704,7 +745,8 @@ at a deep level. This was very useful for me to write if nothing else.
 
 ```typescript
 // UnionToIntersection<X>
-// Takes a union like `A | B | C` and returns an intersection like `A & B & C`
+// Takes a union like `A | B | C` and 
+// returns an intersection like `A & B & C`
 type UnionToIntersection<U> = 
   _PutUnionMembersIntoFunctionArgumentPosition<U> extends 
       ((k: infer I)=>void) 
@@ -765,8 +807,11 @@ type _ = _PutUnionMembersIntoFunctionArgumentPosition<ABC>
 ```
 
 #### Replacement steps naked type param
-To Replace `U` with supplied type `ABC` in the body of `_PutUnionMembersIntoFunctionArgumentPosition` check if `U` is 'clothed' or 'naked'. 
-`U` is naked do a replacement for each member in `ABC` and make a union of the results.
+To Replace `U` with supplied type `ABC` in the body 
+of `_PutUnionMembersIntoFunctionArgumentPosition` 
+check if `U` is 'clothed' or 'naked'. 
+`U` is naked do a replacement for each member in 
+`ABC` and make a union of the results.
 
 ```typescript
   "a" extends any ? (k: "a")  => void : never 
@@ -786,12 +831,13 @@ Many people (including myself in the past) think that a type parameter
 get's inlined into the type level function like.
 
 ```typescript
-_PutUnionMembersIntoFunctionArgumentPosition<"a" | "b" | "c">
-("a" | "b" | "c") extends any ? (k: "a" | "b" | "c")  => void : never
+_PutUnionMembersIntoFunctionArgumentPosition<"a"|"b"|"c">
+("a" | "b" | "c") extends any ? 
+  (k: "a" | "b" | "c")  => void : never
 ```
 
 
-# **--------- THIS IS WRONG! --------**
+# **-------- THIS IS WRONG! --------**
 
 
 To get that behavior, the type parameter need to be 'clothed'.
@@ -809,11 +855,13 @@ type _   = _PutInFunctionArgumentPosition<ABC>
 ```
 
 #### Replacement steps clothed type param
-To Replace `U` with supplied type `ABC` in the body of `_PutInFunctionArgumentPosition` check if `U` is 'clothed' or 'naked'. 
+To Replace `U` with supplied type `ABC` in the body of 
+`_PutInFunctionArgumentPosition` check if `U` is 'clothed' or 'naked'. 
 `U` is 'clothed' so do the replacement **inline**.
 
 ```typescript
-(["a" | "b" | "c"] extends [any] ? (k: "a" | "b" | "c")=>void : never)
+(["a" | "b" | "c"] extends [any] ? 
+    (k: "a" | "b" | "c")=>void : never)
 ```
 
 Which simplifies to
@@ -830,10 +878,18 @@ with `ABC` and `ABC3`
 type ABC  = "a" | "b" | "c"
 type ABC3 = ABC | 3
 
-type ABC_Inline_Extends_A      = ABC extends   "a"    ? (k: ABC) => void : never
-type Naked_Extends_A<T>        =  T  extends   "a"    ? (k:  T ) => void : never
-type Naked_Extends_String<T>   =  T  extends  string  ? (k:  T ) => void : never
-type Clothed_Extends_String<T> = [T] extends [string] ? (k:  T ) => void : never
+type ABC_Inline_Extends_A      = ABC extends   "a"    ? 
+                                     (k: ABC) => void 
+                                    : never
+type Naked_Extends_A<T>        =  T  extends   "a"    ? 
+                                     (k:  T ) => void 
+                                    : never
+type Naked_Extends_String<T>   =  T  extends  string  ? 
+                                     (k:  T ) => void 
+                                    : never
+type Clothed_Extends_String<T> = [T] extends [string] ? 
+                                     (k:  T ) => void 
+                                    : never
 ```
 
 #### QUIZ Answers
@@ -925,7 +981,6 @@ type HasWon<
 > = P extends GetWinner<B["squares"]> ? true : false;
 ```
 
-
 ## Extra functions from requirements
 
 ### Who won or draw ?
@@ -934,15 +989,18 @@ who won or if it's a draw, only possible to call when the game state is
 either `Draw` or `Winner`
 
 ```typescript
-type WhoWonOrDraw<A extends Draw<any,any> | Winner<Player, any, any>> = (
+type WhoWonOrDraw<
+    A extends Draw<any,any> 
+  | Winner<Player, any, any>> = (
   state: A
 ) => A extends Winner<infer P, any, any>
   ? PlayerWinnerString<P>
   : DrawString;
   type DrawString = "The game was a draw";
 
-type PlayerWinnerString<P extends Player> = P extends Circle
-  ? CircleWonString
+type PlayerWinnerString<P extends Player> = 
+  P extends Circle ? 
+    CircleWonString
   : CrossWonString
   type CircleWonString = "Circle Won the game"
   type CrossWonString = "Cross Won the game"
@@ -954,7 +1012,10 @@ Any round except the initial round has a previous round.
 This function gives back that previous round.
 
 ```typescript
-type TakeMoveBack<R extends HasPrevious<Round<any, any, any>>> = R["previous"];
+type TakeMoveBack<
+        R extends HasPrevious<Round<any, any, any>>
+        > = 
+        R["previous"];
 ```
 
 ### Is position occupied?
@@ -976,44 +1037,42 @@ There is some extra code for the 'Game UI' to play the game in a nicer
 way than you will see in the tests.
 We will go through that code last.
 
-# Test Cases
+# Tests
+
+Note, since these are `typelevel` tests we want to be able
+to test that we do get `type-errors`, when we should while 
+allowing the program to compile.
+Typescript gives us this handy comment we can use to check for type errors.
+> `@ts-expect-error`
+<a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-ts-expect-error-comments" target="__blank">`@ts-expect-error`</a> gives an error if there is **no** error.
+
+### Test Utils
+
+We need some type-level utility functions to help us with 
+the game. `Equal` and `Expect` functions have been taken from 
+the excellent 
+<a href="https://github.com/type-challenges/type-challenges/blob/master/utils/index.d.ts" target="__blank">
+type-challenges 
+</a>
+repo.
+
+```typescript
+Equal<X,Y> 
+Check if two types are equal.
+```
+For full discussion around this <a href="https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650" target="__blank">TypeScript issue</a>
+
+> ...It relies on conditional types being deferred when T is not known. 
+> Assignability of deferred conditional types relies on an internal isTypeIdenticalTo check, 
+> which is only true for two conditional types if:
+> 
+>   * Both conditional types have the same constraint
+>   * The true and false branches of both conditions are the same type
+> <a href="https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-510924206">
+> - fatcerberus</a>
 
 
 ```typescript
-// ###################################
-// ####         TEST Cases        ####
-// ###################################
-//
-// Note, since these are type-level tests 
-// we want to check for type errors while we want the program to compile
-// Typescript gives us this handy comment we can use to check for type errors.
-// \@ts-expect-error 
-// This allows us to get errors if we don't get type errors.
-
-// ######################
-// ####  Test Utils  ####
-// ######################
-// 
-// We need some type-level utility functions to help us with the game.
-// Equal and Expect functions have been taken from the excellent type-challenges repo.
-// https://github.com/type-challenges/type-challenges/blob/master/utils/index.d.ts
-// 
-
-//  Equal<X,Y> 
-//  Check if two types are equal.
-//  ------------------------------------------------------------
-//  For full discussion around this type, see:
-//  https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
-// 
-// > ...It relies on conditional types being deferred when T is not known. 
-// > Assignability of deferred conditional types relies on an internal isTypeIdenticalTo check, 
-// > which is only true for two conditional types if:
-// > 
-// >   * Both conditional types have the same constraint
-// >   * The true and false branches of both conditions are the same type
-// > - https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-510924206
-// 
-
 type Equal<X, Y> = 
   (<T>() => T extends X ? 1 : 2) extends 
   (<T>() => T extends Y ? 1 : 2) ? true : false;
@@ -1022,16 +1081,37 @@ type Equal<X, Y> =
 // Give type-level error if T is not true
 type Expect<T extends true> = T;
 
+```
+### Test cases
+```typescript
 // ##################################
 // #              TEST              #
 // ##################################
 // #         Correct strings        #
 // ##################################
-type CircleWonStringTest = Expect<Equal<ReturnType<WhoWonOrDraw<WinCircleFinal>>, CircleWonString>>;
+type CircleWonStringTest = 
+  Expect<
+      Equal<
+          ReturnType<WhoWonOrDraw<WinCircleFinal>>, 
+          CircleWonString
+          >
+        >;
+
 type CrossWonStringTest = 
-Expect<Equal<ReturnType<WhoWonOrDraw<WinCrossFinal>>,  CrossWonString>>;
+  Expect<
+      Equal<
+          ReturnType<WhoWonOrDraw<WinCrossFinal>>, 
+          CrossWonString
+          >
+        >;
+
 type DrawStringTest = 
-Expect<Equal<ReturnType<WhoWonOrDraw<DrawFinal>>,      DrawString>>;
+  Expect<
+      Equal<
+          ReturnType<WhoWonOrDraw<DrawFinal>>, 
+          DrawString
+          >
+        >;
 
 // ##################################
 // #              TEST              #
@@ -1039,7 +1119,9 @@ Expect<Equal<ReturnType<WhoWonOrDraw<DrawFinal>>,      DrawString>>;
 // #         No double moves        #
 // ##################################
 // @ts-expect-error
-type NoDoubleMove = Move<Move<InitialRound, Cross, "33">, Cross, "13" >;
+type NoDoubleMove = Move<
+                      Move<InitialRound, Cross, "33">, 
+                                         Cross, "13">;
 
 // ##################################
 // #              TEST              #
@@ -1056,7 +1138,11 @@ type NoStartWithCircle = Move<InitialRound, Circle, "33">;
 // #      No taking a used square   #
 // ##################################
 // @ts-expect-error
-type NoTakingAUsedSquare = Move<Move<InitialRound, Cross, "33">,Circle, "33">
+type NoTakingAUsedSquare = 
+  Move<
+    Move<
+      InitialRound, Cross,  "33">, 
+                    Circle, "33">
 
 // ##################################
 // #              TEST              #
@@ -1078,10 +1164,24 @@ type NotToManyMovesBack = TakeMoveBack<InitialRound>;
 // ##################################
 type MoveOne      = Move<InitialRound, Cross, "33">;
 type BackToNormal = TakeMoveBack<MoveOne>;
-type Outcome      = Expect<Equal<InitialRound, BackToNormal>>;
+type Outcome      = Expect<
+  Equal<
+    InitialRound, 
+    BackToNormal
+  >>;
 
-type BackFromDraw = Expect<Equal<TakeMoveBack<DrawFinal>, DrawStep8>>;
-type BackFromWin = Expect<Equal<TakeMoveBack<WinCrossFinal>, WinCrossStep4>>;
+type BackFromDraw = Expect<
+                      Equal<
+                        TakeMoveBack<DrawFinal>, 
+                        DrawStep8
+                           >
+                          >;
+type BackFromWin = Expect<
+                      Equal<
+                        TakeMoveBack<WinCrossFinal>, 
+                        WinCrossStep4
+                            >
+                          >;
 
 // ##################################
 // #              TEST              #
@@ -1091,11 +1191,25 @@ type BackFromWin = Expect<Equal<TakeMoveBack<WinCrossFinal>, WinCrossStep4>>;
 type Test = Expect<
   Equal<IsPositionOccupied<WinCrossFinal, "12">, false>
 >;
-type Test2 = Expect<Equal<IsPositionOccupied<WinCrossFinal, "33">, true>>;
-type Test3 = Expect<Equal<IsPositionOccupied<InitialRound, "33">, false>>;
-// @ts-expect-error
-type Test4 = Expect<Equal<IsPositionOccupied<InitialRound, "33">, true>>;
 
+type Test2 = Expect<
+  Equal<
+    IsPositionOccupied<WinCrossFinal, "33">, 
+    true
+  >>;
+
+type Test3 = Expect<
+  Equal<
+    IsPositionOccupied<InitialRound, "33">, 
+    false
+  >>;
+
+// @ts-expect-error
+type Test4 = Expect<
+  Equal<
+    IsPositionOccupied<InitialRound, "33">, 
+    true
+  >>;
 
 // ##################################
 // #              TEST              #
@@ -1111,7 +1225,10 @@ type DrawStep6 = Move<DrawStep5, Circle, "11">;
 type DrawStep7 = Move<DrawStep6, Cross, "32">;
 type DrawStep8 = Move<DrawStep7, Circle, "31">;
 type DrawFinal = Move<DrawStep8, Cross, "21">;
-type DrawOutcome = Expect<Draw<any> extends DrawFinal ? true : false>;
+type DrawOutcome = Expect<
+  Draw<any> extends DrawFinal ? true : false
+  >;
+
 
 // ##################################
 // #              TEST              #
