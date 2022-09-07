@@ -1,7 +1,7 @@
 ---
-title: "Typescript Typelevel Tic-Tac-Toe: Overkill edition!"
+title: "TypeScript Typelevel Tic-Tac-Toe: Overkill edition!"
 date: "2022-08-23"
-description: "The Typescript typesystem is very powerful! Powerful enough to build a fully functioning, dynamically sized, Tic Tac Toe Game with a
+description: "The TypeScript typesystem is very powerful! Powerful enough to build a fully functioning, dynamically sized, Tic Tac Toe Game with a
 UI displaying the state of the game"
 ---
 
@@ -21,7 +21,7 @@ One way we do this is by giving students a series of short design exercises that
 
 The Tic-Tac-Toe challenge is not exactly in this vain but instead gives students the challenge to write a Tic-Tac-Toe program that cannot go wrong, and produce compile time errors for as many incorrect uses as possible. For example, playing with the same player twice. 
 
-When I was a student at Mirdin a few years ago I decided to try to write Tic-Tac-Toe completely on the typelevel in Typescript. This proved to be very challenging but fun. I have now expanded on that initial attempt and written this post to explain how it works in the hope to teach some more advanced typelevel Typescript.
+When I was a student at Mirdin a few years ago I decided to try to write Tic-Tac-Toe completely on the typelevel in TypeScript. This proved to be very challenging but fun. I have now expanded on that initial attempt and written this post to explain how it works in the hope to teach some more advanced typelevel TypeScript.
 And maybe also make you interested in doing something similar for fun.
 
 I have a lot to thank the excellent Type-Challenges for helping me learn enough type-level trickery to get it done. 
@@ -46,7 +46,10 @@ Let's go!
 
 ### Where to find the code?
 The latest code can be found [here](https://github.com/note89/typelevel-tic-tac-toe/blob/master/tic-tac-toe.ts) just paste it into [typescript-playground](https://www.typescriptlang.org/play) to follow along.
-
+</br>
+TypeScript Playground as of `2022-09-07` <a href="https://tinyurl.com/ts-tic-tac-toe">
+https://tinyurl.com/ts-tic-tac-toe
+</a>
 
 ## First end-result demo!
 
@@ -58,20 +61,29 @@ A UI for playing Tic-Tac-Toe on the typelevel where type errors are used display
 // ##################################
 // #          Play a Game           #
 // #              of                #
+// #--------------------------------#
+// #           Typelevel            #
 // #          Tic-Tac-Toe           #
+// #--------------------------------#
+// #              UI                #
+// #          STARTS HERE           #
 // ##################################
 // ##################################
 // 
 // This is my attempt of a decent UX (hehe).
-// 0. Select game board size (3x3, 4x4, 5x5, etc) 
+// 0. Select game board size (3 => 3x3, 4 => 4x4, etc) 
 // 1. Cross will be the first to move
-// 2. Just enter coordinates.
+// 2. Just enter coordinates as number 
+//    (13 => Coordinate(x=1, y=3))
 // 
 // The status checks below will turn RED 
 // To show what state the game is in.
 //
 // Illegal moves will be compile-time errors
 // with decent error messages.
+//
+// Hover ___DISPLAY__ for a visual representation
+// of the current state of the game.
 ```
 
 ### Display
@@ -109,7 +121,7 @@ This is possible but a bit fiddly. I have not yet achieved the ability to have t
 
 ## Show me the code! 
 
-The reason this is written in Typescript is that it's the language I know best, and also the language I want to get better at the most but also Typescript has a bunch of typelevel features that very few other mainstream typed languages have. 
+The reason this is written in TypeScript is that it's the language I know best, and also the language I want to get better at the most but also TypeScript has a bunch of typelevel features that very few other mainstream typed languages have. 
 
 We will go through the code top to bottom, except for the "UI" code, which will be left for last.
 There are a lot of comments in the code that are also meant to explain the program, so I will reuse them here.
@@ -208,13 +220,13 @@ In a `3x3` game, `11,22,33` form a diagonal, in a `4x4` game the diagonal is `11
 Any player that has one of these diagonals has won the game.
 
 To be able to derive diagonals and other winning positions from  `Size` we need the ability to do some
-math on the typelevel. Luckily that is very possible in Typescript.
+math on the typelevel. Luckily that is very possible in TypeScript.
 Our needs contain only the ability to do plus and minus one. This ability will allow us to perform 
 typelevel recursion.
 
 With many of these more exotic recursive types, there is a limit to how far they will work and 
 sometimes there are issues, which means you will have to try something different.
-A recursive type in Typescript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
+A recursive type in TypeScript 4.5 has a max call stack of [`999`](https://github.com/microsoft/TypeScript/pull/45711/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R15233)
 
 
 
@@ -371,7 +383,7 @@ type AllCoordinates =
 #### _Side note_
 _Actually, the type of Column and Row is `2 | 1 | 3`._
 _When you define a union like `type A = 1 | 2 ` the type will become `A = 2 | 1` which on the typelevel is equivalent, however, in this application, we very much care about traversal order and numbers being in order so we need to do some extra tricks sometimes to combat this._
-_Maybe Typescript makes no guarantees on the order of union members, so by scrambling them on purpose
+_Maybe TypeScript makes no guarantees on the order of union members, so by scrambling them on purpose
 it hinders people from depending on something that is not part of the spec._
 
 
@@ -460,7 +472,7 @@ In code, it would read something like
 forEach(Row).map((r) => getCatesianProduct(Column, r))
 ```
 So the output is `["11", "21", "31"] | ["21", "22", "23"] ...` for `Row` for example. 
-When you do `R extends Row ? ... | ...` in Typescript, that is "looping" over `R` and creating a union of all the results.
+When you do `R extends Row ? ... | ...` in TypeScript, that is "looping" over `R` and creating a union of all the results.
 The details of this are discussed in great detail in the <a href="#union-to-intersection">`UnionToIntersection`</a> util explanation.
 
 `Diagonals`  have two parameters that are not allowed to be used when calling the type-level function. 
@@ -505,7 +517,7 @@ type Zip<
 Zip is a quite simple recursive function looking very much like the code version would, there is some neater ways where you would infer both heads and tails at once. 
 https://github.com/type-challenges/type-challenges/issues/4495
 
-But with that implementation Typescript fails to do type inferencinging later in the program.
+But with that implementation TypeScript fails to do type inferencinging later in the program.
 </details>
 <!-- ZIP END -->
 
@@ -1041,8 +1053,7 @@ We will go through that code last.
 
 Note, since these are `typelevel` tests we want to be able
 to test that we do get `type-errors`, when we should while 
-allowing the program to compile.
-Typescript gives us this handy comment we can use to check for type errors.
+allowing the program to compile. TypeScript gives us this handy comment we can use to check for type errors.
 > `@ts-expect-error`
 <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-ts-expect-error-comments" target="__blank">`@ts-expect-error`</a> gives an error if there is **no** error.
 
@@ -1268,12 +1279,16 @@ I know it's a bit silly to call this a UI, but hey, it gives you visual indicati
 of the state of the game and yells at what you are doing wrong if you 
 try to play the game incorrectly. 
 So that is a rudimentary UI. 
+![](display.gif)
+![](states_of_game.gif)
+
+<details>
+<summary>UI Display Code that was shown at the beginning of the post</summary>
 
 ```typescript
-//
 // To play along
-// here is a Typescript playground of the code.
-// https://tinyurl.com/typelevel-tic-tac-toe
+// here is a TypeScript playground of the code.
+// https://tinyurl.com/ts-tic-tac-toe
 //
 // ##################################
 // ##################################
@@ -1291,7 +1306,8 @@ So that is a rudimentary UI.
 // This is my attempt of a decent UX (hehe).
 // 0. Select game board size (3 => 3x3, 4 => 4x4, etc) 
 // 1. Cross will be the first to move
-// 2. Just enter coordinates as number (13 => Coordinate(x=1, y=3))
+// 2. Just enter coordinates as number 
+//    (13 => Coordinate(x=1, y=3))
 // 
 // The status checks below will turn RED 
 // To show what state the game is in.
@@ -1339,27 +1355,32 @@ type GameStatus =  CrashOrPass<SetError<
 
 /**********@ts-expect-error*******/
 //   ##############################
-type _______GAME_YET_TO_START______ = GameYetToStart<GameStatus>
+type _______GAME_YET_TO_START______ = 
+        GameYetToStart<GameStatus>
 //   ##############################
 
 /**********@ts-expect-error*******/
 //   ##############################
-type ________GAME_IS_ONGOING_______ = GameIsOngoing<GameStatus>
+type ________GAME_IS_ONGOING_______ = 
+        GameIsOngoing<GameStatus>
 //   ##############################
 
 /**********@ts-expect-error*******/
 //   ##############################
-type ________GAME_IS_A_DRAW________ = TheGameIsADraw<GameStatus>
+type ________GAME_IS_A_DRAW________ = 
+        TheGameIsADraw<GameStatus>
 //   ##############################
 
 /**********@ts-expect-error*******/
 //   ##############################
-type ________CROSS_HAS_WON_________ = CrossHasWon<GameStatus>
+type ________CROSS_HAS_WON_________ = 
+         CrossHasWon<GameStatus>
 //   ##############################
 
 /**********@ts-expect-error*******/
 //   ##############################
-type _______CIRCLE_HAS_WON_________ = CircleHasWon<GameStatus>
+type _______CIRCLE_HAS_WON_________ = 
+        CircleHasWon<GameStatus>
 //   ##############################
 
 // ##################################
@@ -1375,29 +1396,23 @@ type _______CIRCLE_HAS_WON_________ = CircleHasWon<GameStatus>
 // ##################################
 
 ```
+</details>
 
 ### Ui Code
 #### UI Helpers
 ```typescript
-// ################################
-// ################################
-// ####        UI CODE         ####
-// ################################
-// ################################
-
-// ################################
-// ####       UI Helpers       ####
-// ################################
-
-// 'd' is just to hide the variable as much as possible in the UI above
+// 'd' is just to hide the variable as 
+// much as possible in the UI above
 type d = ShowBoard<GetBoard<GameStatus>>
 
-// These are functions give type errors when game is not in their state
-// Then we combine that with @ts-expect-error to flip that behavior
+// These are functions give type errors when the game is 
+// not in their state.Then we combine that with 
+// @ts-expect-error to flip that behavior
 type TheGameIsADraw<T extends Draw<any, any>> = T
 type CrossHasWon   <T extends Winner<Cross, any, any>>= T
 type CircleHasWon  <T extends Winner<Circle, any, any>> = T
-type GameIsOngoing <T extends Round<any, any, Round<any,any,any>>> = T
+type GameIsOngoing <T extends 
+                    Round<any, any, Round<any,any,any>>> = T
 type GameYetToStart<T extends InitialRound> = T
 
 ```
@@ -1443,12 +1458,16 @@ We are kind of able to simulate `X extends not<...>` (i.e type-error if X does e
 `GameLoop` is a recursive typelevel function that ends when the game ends or an error occurs.
 The errors give informative information like `__ERROR__: Square '${Head}' already taken` 
 I think it's really cool that we can just inject `Head` into a string and get type errors like 
-![](custom-error.png)
+![](custom-errors.png)
 
 To not just get a return type of a custom error but actually get a compile-time error highlighting it we wrap `GameLoop` in
 `SetError` and `CrashOrPass`.
 ```typescript
-type SetError<T> = [T, T extends GAME_ERROR<string> ? "error" : "noError"]
+type SetError<T> = [T, 
+                    T extends GAME_ERROR<string> ? 
+                        "error" 
+                      : "noError"
+                   ]
 ```
 If the return type that extends `GAME_ERROR<string>` then set the second value in the tuple to `"error"`.
 
@@ -1460,7 +1479,7 @@ type CrashOrPass<T extends [unknown, "noError"]> = T[0];
 If we do not get a compile-time error the first value of the tuple is returned 
 which is just non-error type. 
 
-_(In Typescript types propagate if possible even if there is a type-error, like here `T[0]` is not the part with the type-error so that propagates.  We use this to also show the error in `___DISPLAY___`)_
+_(In TypeScript types propagate if possible even if there is a type-error, like here `T[0]` is not the part with the type-error so that propagates.  We use this to also show the error in `___DISPLAY___`)_
 
 I know it's common in Erlang and [Elixir](https://elixirschool.com/en/lessons/intermediate/error_handling) to follow this type of pattern on the value level. 
 by returning `{:ok, data } | {:error, reason}`.
@@ -1579,7 +1598,6 @@ with the current row value, by using the Zip operation, where
 the second argument is just the `row` repeated column length times.
 
 ```typescript
-//  
 Zip([1,2,3], [3,3,3]) = [[1,3],[2,3],[3,3]]
 
 ```
@@ -1604,8 +1622,7 @@ Now we have everything we need to produce the final product.
 
 ### Closing thoughts.
 
-Thanks for reading this far! I hope you learned something on this journey. 
-Typescript is very powerful and you can basically do anything you want as long as you are willing to spend enough time. 
+Thanks for reading this far! I hope you learned something on this journey.  TypeScript is very powerful and you can basically do anything you want as long as you are willing to spend enough time. 
 It just gets more and more awkward to achieve the constraints on the typelevel.
 I would not say that this is any good practice in general, but knowing that something is possible could 
 make it worth exploring in cases where it would be worth the end result.
