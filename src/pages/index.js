@@ -4,8 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-deckDeckGoHighlightElement();
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+deckDeckGoHighlightElement()
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -29,39 +29,43 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <div style={{background: "#fafafa", paddingTop: "10px", paddingBottom: "10px"}}>
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+      <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+        <ol style={{ listStyle: `none` }}>
+          {posts.map(post => {
+            const title = post.frontmatter.title || post.fields.slug
 
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+            return (
+              <Link to={post.fields.slug} itemProp="url">
+                <li
+                  key={post.fields.slug}
+                  className="bg-slate-100 p-3 py-4 rounded-xl shadow-lg hover:bg-slate-50 cursor-pointer"
+                >
+                  <article
+                    className="post-list-item"
+                    itemScope
+                    itemType="http://schema.org/Article"
+                  >
+                    <header>
+                      <h2>
+                        <span itemProp="headline">{title}</span>
+                      </h2>
+                      <small>{post.frontmatter.date}</small>
+                    </header>
+                    <section>
+                      <p
+                        className="text-slate-800"
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                        itemProp="description"
+                      />
+                    </section>
+                  </article>
+                </li>
+              </Link>
+            )
+          })}
+        </ol>
       </div>
     </Layout>
   )
