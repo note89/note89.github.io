@@ -10,15 +10,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
-    process.env.NODE_ENV === "development"
-      ? {
-          resolve: `gatsby-source-filesystem`,
-          options: {
-            path: `${__dirname}/content/drafts`,
-            name: `draft`,
-          },
-        }
-      : {},
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -157,5 +148,17 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
+  ].concat(
+    process.env.NODE_ENV === "development"
+      ? [
+          {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              path: `${__dirname}/content/drafts`,
+              name: `draft`,
+            },
+          },
+        ]
+      : []
+  ),
 }
