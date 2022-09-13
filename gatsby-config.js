@@ -8,21 +8,22 @@ module.exports = {
     description: `A blog collecting my thoughts on software`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
-    process.env.NODE_ENV === "development" ? ({
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/drafts`,
-        name: `draft`,
-        ignore: ["**/*.fragment.md"]
-      },
-    }) :({}),
+    process.env.NODE_ENV === "development"
+      ? {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            path: `${__dirname}/content/drafts`,
+            name: `draft`,
+          },
+        }
+      : {},
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
-        ignore: ["**/*.fragment.md"]
       },
     },
     {
@@ -42,7 +43,7 @@ module.exports = {
               // Example code links are relative to this dir.
               // eg examples/path/to/file.js
               directory: `${__dirname}/content/`,
-            }
+            },
           },
           `gatsby-remark-prismjs`,
           {
@@ -74,7 +75,7 @@ module.exports = {
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
-          head: true
+          head: true,
         },
       },
     },
@@ -156,6 +157,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-postcss`,
   ],
 }
