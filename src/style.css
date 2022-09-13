@@ -69,9 +69,22 @@ img {
   --color-accent: #d1dce5;
 }
 
+.style-font-serif {
+  font-family: var(--fontFamily-serif);
+}
+
+.style-font-sans {
+  font-family: var(--fontFamily-sans);
+}
+
 .font {
   font-family: var(--font-serif);
 }
+
+.style-bold {
+  font-weight: var(--fontWeight-bold);
+}
+
 .bold {
   font-weight: var(--fontWeight-bold);
 }
