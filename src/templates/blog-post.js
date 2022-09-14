@@ -23,9 +23,18 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline" style={{fontSize: "var(--fontSize-8)"}}>{post.frontmatter.title}</h1>
+          <h1 itemProp="headline" style={{ fontSize: "var(--fontSize-8)" }}>
+            {post.frontmatter.title}
+          </h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        <iframe
+          src="http://localhost:8000/next-course-iframe/?mode=compact"
+          width="100%"
+          frameborder="0"
+          scrolling="no"
+          className="h-80 sm:h-56"
+        />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"

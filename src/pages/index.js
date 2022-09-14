@@ -29,6 +29,11 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
+      <iframe
+        src="http://localhost:8000/next-course-iframe/?mode=compact"
+        width="100%"
+        height={300}
+      />
       <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {

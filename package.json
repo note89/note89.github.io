@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.6.0",
+    "fitty": "^2.3.6",
     "gatsby": "^4.16.0",
     "gatsby-plugin-feed": "^4.16.0",
     "gatsby-plugin-gatsby-cloud": "^4.16.0",
@@ -33,6 +34,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
+    "tailwind-merge": "^1.6.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
