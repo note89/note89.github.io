@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.card{
+    display: grid;
+    grid-template-areas: "overlap";
+    transform-style: preserve-3d;
+}
+
+.card-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+    grid-area: overlap;
+    backface-visibility: hidden;
+}
