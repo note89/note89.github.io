@@ -1,6 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image"
 import * as React from "react"
-import { twMerge } from "tailwind-merge"
 
 export const Base = () => {
   return <Front />
@@ -17,7 +16,7 @@ const Front = () => {
           <div className="flex">
             <div className="pr-10">
               <StaticImage
-                placeholder="blurred"
+                placeholder="tracedSVG"
                 height={60}
                 layout="fixed"
                 alt="mirdin logo"

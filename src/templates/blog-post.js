@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-//import * as s from "../styles.css"
+import { toSelfUrl } from "../lib/selfUrl"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <p>{post.frontmatter.date}</p>
         </header>
         <iframe
-          src="http://localhost:8000/next-course-iframe/?mode=compact"
+          src={toSelfUrl("/next-course-iframe/?mode=base")}
           width="100%"
           frameborder="0"
           scrolling="no"

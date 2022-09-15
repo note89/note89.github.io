@@ -48,7 +48,7 @@ const Back = () => {
           </div>
           <div className="pl-4">
             <StaticImage
-              placeholder="blurred"
+              placeholder="tracedSVG"
               height={60}
               layout="fixed"
               alt="mirdin logo"
@@ -79,7 +79,7 @@ const Front = () => {
         <div className="flex">
           <div className="pr-10">
             <StaticImage
-              placeholder="blurred"
+              placeholder="tracedSVG"
               height={60}
               layout="fixed"
               alt="mirdin logo"

@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+import { toSelfUrl } from "../lib/selfUrl"
 deckDeckGoHighlightElement()
 
 const BlogIndex = ({ data, location }) => {
@@ -30,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <Bio />
       <iframe
-        src="http://localhost:8000/next-course-iframe/?mode=compact"
+        src={toSelfUrl("/next-course-iframe/?mode=base")}
         width="100%"
         className="h-80 sm:h-56"
       />

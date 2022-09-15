@@ -21,7 +21,10 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div style={{ background: "rgb(226,232,240)" }}>
+    <div
+      style={{ background: "rgb(226,232,240)" }}
+      className="w-screen h-screen"
+    >
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <header className="global-header">{header}</header>
         <main>{children}</main>
