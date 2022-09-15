@@ -17,6 +17,7 @@ export default function Page() {
       <iframe
         src={`${URL}/next-course-iframe/?mode=base`}
         width="100%"
+        style={{ maxWidth: "650px" }}
         className="h-80 sm:h-56"
       />
       <pre>
@@ -24,6 +25,7 @@ export default function Page() {
         <iframe
           src=${URL}/next-course-iframe/?mode=base
           width="100%"
+          style="maxWidth: 650px"
           className="h-80 sm:h-56"
         />
       `}
@@ -32,6 +34,7 @@ export default function Page() {
       <iframe
         src={`${URL}/next-course-iframe/?mode=flippy`}
         width="100%"
+        style={{ maxWidth: "650px" }}
         className="h-80 sm:h-56"
       />
       <pre>
@@ -39,6 +42,7 @@ export default function Page() {
         <iframe
           src=${URL}/next-course-iframe/?mode=flippy
           width="100%"
+          style="maxWidth: 650px"
           className="h-80 sm:h-56"
         />
       `}

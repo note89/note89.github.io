@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Note on software`,
+    title: `Note's on software`,
     author: {
       name: `Nils Olof T:son Eriksson (note)`,
       summary: `. I like to think about software, here are my thoughts.`,

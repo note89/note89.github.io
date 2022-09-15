@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Ad } from "../components/Ad"
 
-export default function Component() {
+export default function Page() {
   return <Ad />
 }

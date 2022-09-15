@@ -52,7 +52,7 @@ const Back = () => {
               height={60}
               layout="fixed"
               alt="mirdin logo"
-              src="../images/mirdin_the_code_quality_company.png"
+              src="../../images/mirdin_the_code_quality_company.png"
               className="mb-5"
             />
             <a
@@ -83,7 +83,7 @@ const Front = () => {
               height={60}
               layout="fixed"
               alt="mirdin logo"
-              src="../images/mirdin_the_code_quality_company.png"
+              src="../../images/mirdin_the_code_quality_company.png"
               className="mb-5"
             />
           </div>

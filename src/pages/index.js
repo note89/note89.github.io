@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }) => {
         className="h-80 sm:h-56"
       />
       <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-        <ol style={{ listStyle: `none` }}>
+        <ol style={{ listStyle: `none`, margin: "0px 5px 0px" }}>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
 

@@ -21,7 +21,7 @@ const Front = () => {
                 height={60}
                 layout="fixed"
                 alt="mirdin logo"
-                src="../images/mirdin_the_code_quality_company.png"
+                src="../../images/mirdin_the_code_quality_company.png"
                 className="mb-5"
               />
             </div>
@@ -41,7 +41,7 @@ const Front = () => {
 
 const NextCohort = () => {
   return (
-    <h2 className="text-yellow-400 m-0 pb-1 text-lg text-left sm:text-right">
+    <h2 className="text-yellow-400 m-0 pb-1 text-lg text-left">
       <div className="w-full ">
         <div>New cohort</div>
         <div className="flex flex-row items-end justify-between">

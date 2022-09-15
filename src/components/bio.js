@@ -43,9 +43,11 @@ const Bio = () => {
         alt="Profile picture"
       />
       {author?.name && (
-        <p>
-          My name is <strong>Nils Eriksson</strong>. I'm a software educator at <a href="https://jameskoppelcoaching.com/advanced-software-design-web-course/#register">James Koppel Coaching</a>.
-          I enjoy thinking deeply about software, this blog is a collection of my thoughts.
+        <p className="text-lg font-serif">
+          My name is <strong>Nils Eriksson</strong>. I'm a software educator at{" "}
+          <a href="https://mirdin.com/">Mirdin | The Code Quality Company</a>. I
+          enjoy thinking deeply about software, this blog is a collection of my
+          thoughts.
         </p>
       )}
     </div>
