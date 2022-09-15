@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 
-.card{
+.card {
+   	transition: 1s all ease-in-out;
     display: grid;
     grid-template-areas: "overlap";
     transform-style: preserve-3d;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
 .card-flipped {

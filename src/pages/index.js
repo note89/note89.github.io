@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
       <iframe
         src="http://localhost:8000/next-course-iframe/?mode=compact"
         width="100%"
-        height={300}
+        className="h-80 sm:h-56"
       />
       <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
         <ol style={{ listStyle: `none` }}>
