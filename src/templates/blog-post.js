@@ -11,6 +11,16 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
+  const Frame = () => (
+    <iframe
+      src={toSelfUrl("/next-course-iframe/?mode=base")}
+      width="100%"
+      frameborder="0"
+      scrolling="no"
+      className="h-80 sm:h-56"
+    />
+  )
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -28,13 +38,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <iframe
-          src={toSelfUrl("/next-course-iframe/?mode=base")}
-          width="100%"
-          frameborder="0"
-          scrolling="no"
-          className="h-80 sm:h-56"
-        />
+        <Frame />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -42,26 +46,30 @@ const BlogPostTemplate = ({ data, location }) => {
         <hr />
         <footer>
           <Bio />
+          <Frame />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav className="blog-post-nav bg-yellow-500 p-4 border border-solid border-yellow-400 border-4">
         <ul
+          className="bold"
           style={{
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
+            alignItems: `center`,
             listStyle: `none`,
             padding: 0,
+            gap: "1rem",
           }}
         >
-          <li>
+          <li className="m-0">
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li className="m-0">
             {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →

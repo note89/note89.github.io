@@ -43,7 +43,7 @@ const Bio = () => {
         alt="Profile picture"
       />
       {author?.name && (
-        <p className="text-lg font-serif">
+        <p className="text-md font-sans">
           My name is <strong>Nils Eriksson</strong>. I'm a software educator at{" "}
           <a href="https://mirdin.com/">Mirdin | The Code Quality Company</a>. I
           enjoy thinking deeply about software, this blog is a collection of my

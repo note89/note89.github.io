@@ -105,11 +105,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: var(--font-body);
-  font-size: var(--fontSize-2);
-  color: var(--color-text);
-}
+/* body { */
+  /* font-family: var(--font-body); */
+  /* font-size: var(--fontSize-2); */
+  /* color: var(--color-text); */
+/* } */
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
