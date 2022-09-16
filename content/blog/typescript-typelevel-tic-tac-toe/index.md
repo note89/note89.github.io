@@ -1,8 +1,8 @@
 ---
 title: "TypeScript Typelevel Tic-Tac-Toe: Overkill edition!"
 date: "2022-09-16"
-description: "The TypeScript typesystem is very powerful! Powerful enough to build a fully functioning, dynamically sized, Tic Tac Toe Game with a
-UI displaying the state of the game."
+description: "A fully functioning, dynamically sized, Tic Tac Toe Game with a
+UI, all on the typelevel. The TypeScript typesystem is very powerful!"
 ---
 
 
@@ -85,7 +85,7 @@ A UI for playing Tic-Tac-Toe on the typelevel where type errors are used to disp
 ```
 
 ### Display
-![](display.gif)
+![](display_2.gif)
 
 ### Current state highlighting
 ![](states_of_game.gif)
@@ -1292,7 +1292,7 @@ try to play the game incorrectly.
 So that is a rudimentary UI. 
 
 #### Display
-![](display.gif)
+![](display_2.gif)
 
 #### Current state highlighting
 ![](states_of_game.gif)

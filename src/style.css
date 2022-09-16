@@ -139,7 +139,7 @@ h6 {
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
   display: flex;
-  align-items: center;
+   align-items: center;
 }
 
 h2,
