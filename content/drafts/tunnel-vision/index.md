@@ -436,3 +436,12 @@ have to change the specification .
 
 Let me visualize a error of modular reasoning that does not lead to any bugs. 
 
+## insight
+
+Okey i think i just had insight. 
+
+A error of modular reasoning occurs IF and ONLY IF. 
+You some code uses a stronger postcondition then the specification guarantees. 
+But a specific, still spec compliant implementation gives. 
+
+OR the code uses a weaker precondition then the specification says. 
