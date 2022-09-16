@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Sep 2022 13:58:35 GMT</lastBuildDate><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>null/typelevel-tic-tac-toe-in-typescript/</link><guid isPermaLink="false">null/typelevel-tic-tac-toe-in-typescript/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Sep 2022 14:11:44 GMT</lastBuildDate><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>null/typelevel-tic-tac-toe-in-typescript/</link><guid isPermaLink="false">null/typelevel-tic-tac-toe-in-typescript/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
 &lt;p&gt;You will get better from just playing but it takes much longer and your understanding of what you have learned is much worse. You will learn what to do but have a harder time explaining what you have learned.&lt;/p&gt;
 &lt;p&gt;This is exactly how it normally is to work towards becoming a senior engineer. Senior engineers that have been through a lot gain intuition. They know that one design decision should be taken over another but they might have a hard time explaining exactly why. &lt;b&gt;So do you really have to spend 10 000 hours just working on projects to
 achieve mastery ?&lt;/b&gt;&lt;/p&gt;
@@ -87,9 +87,9 @@ quicker!&lt;/p&gt;
 TypeScript Playground as of &lt;code class=&quot;language-text&quot;&gt;2022-09-07&lt;/code&gt; &lt;a href=&quot;https://tinyurl.com/ts-tic-tac-toe&quot;&gt;
 &lt;a href=&quot;https://tinyurl.com/ts-tic-tac-toe&quot;&gt;https://tinyurl.com/ts-tic-tac-toe&lt;/a&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;First end-result demo!&lt;/h2&gt;
-&lt;p&gt;There is gonna be a lot of code so to peak your interest let me present you with the end-result.
-A UI for playing Tic-Tac-Toe on the typelevel where type errors are used display the state of the game and provide feedback for correct play.&lt;/p&gt;
+&lt;h2&gt;First: End result demo!&lt;/h2&gt;
+&lt;p&gt;There is gonna be a lot of code so to peak your interest let me present you with the end result.
+A UI for playing Tic-Tac-Toe on the typelevel where type errors are used to display the state of the game and provide feedback for correct play.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ##################################&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// ##################################&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// #          Play a Game           #&lt;/span&gt;
@@ -106,7 +106,7 @@ A UI for playing Tic-Tac-Toe on the typelevel where type errors are used display
 &lt;span class=&quot;token comment&quot;&gt;// This is my attempt of a decent UX (hehe).&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// 0. Select game board size (3 =&gt; 3x3, 4 =&gt; 4x4, etc) &lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// 1. Cross will be the first to move&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 2. Just enter coordinates as number &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. Just enter coordinates as a number xy&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;//    (13 =&gt; Coordinate(x=1, y=3))&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// &lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// The status checks below will turn RED &lt;/span&gt;
