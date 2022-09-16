@@ -136,9 +136,6 @@ summary {
   user-select: none;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 </style>
 
 <div style="background:rgba(255,99,71,0.8);  padding: 10px; border-radius: 10px;" >

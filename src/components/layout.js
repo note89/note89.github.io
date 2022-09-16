@@ -26,6 +26,7 @@ const Layout = ({ location, title, children }) => {
         background: "rgb(226,232,240)",
         width: "100%",
         height: "100%",
+        minHeight: "100vh",
       }}
     >
       <div className="global-wrapper" data-is-root-path={isRootPath}>
