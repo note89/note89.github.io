@@ -24,3 +24,8 @@
     grid-area: overlap;
     backface-visibility: hidden;
 }
+
+.custom-class {
+  fill: purple;
+  margin-left: 5px;
+}
