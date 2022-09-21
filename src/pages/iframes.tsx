@@ -14,31 +14,75 @@ export default function Page() {
   return (
     <>
       <h1>Base</h1>
-      <iframe
-        src={toSelfUrl("/next-course-iframe/?mode=base")}
-        width="100%"
-        title="Date of next cohort: Design base"
-        style={{ maxWidth: "650px" }}
-        className="h-80 sm:h-56"
-      />
+      <div className="mirdin--container">
+        <iframe
+          src={toSelfUrl("/next-course-iframe/?mode=base")}
+          width="100%"
+          title="Date of next cohort: Design base"
+          style={{ maxWidth: "650px" }}
+          className="mirdin--iframe"
+        />
+      </div>
+      <h2>Put this in your HTML</h2>
       <pre>
         {`
-        <iframe
-          src=${URL}/next-course-iframe/?mode=base
-          title="Date of next cohort: Design base"
-          width="100%"
-          style="maxWidth: 650px"
-          className="h-80 sm:h-56"
-        />
+        <div className="mirdin--container">
+          <iframe
+            src=${URL}/next-course-iframe/?mode=base
+            title="Date of next cohort: Design base"
+            width="100%"
+            style="maxWidth: 650px"
+            className="mirdin--iframe"
+          />
+        </div>
       `}
       </pre>
-      <h1>Flippy</h1>
+      <h2>Put this in your CSS</h2>
+      <pre>
+        {`
+.mirdin--container {
+  container-type: inline-size;
+}
+
+.mirdin--iframe {
+  height: 20rem;
+}
+
+/* ************************* */
+/* Fallback for old browsers */
+/* ************************* */
+@media (min-width: 640px) {
+  .mirdin--iframe {
+     height: 14rem;
+   } 
+ }
+
+@container (max-width: 501px){
+  .mirdin--iframe {
+    height: 20rem;
+  }
+}
+/* ************************* */
+/* Fallback END */
+/* ************************* */
+
+@container (min-width: 500px){
+  .mirdin--iframe {
+    height: 14rem;
+  }
+}
+
+        
+        `}
+      </pre>
+
+      <h1>Flippy (don't use yet)</h1>
       <iframe
         src={toSelfUrl("/next-course-iframe/?mode=flippy")}
         width="100%"
         title="Date of next cohort: Design flip-book"
         style={{ maxWidth: "650px" }}
-        className="h-80 sm:h-56"
+        className="mirdin--iframe"
       />
       <pre>
         {`
@@ -47,7 +91,7 @@ export default function Page() {
           title="Date of next cohort: Design flip-book"
           width="100%"
           style="maxWidth: 650px"
-          className="h-80 sm:h-56"
+          className="miridn--iframe"
         />
       `}
       </pre>

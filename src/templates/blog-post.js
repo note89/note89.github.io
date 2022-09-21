@@ -12,13 +12,15 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   const Frame = () => (
-    <iframe
-      src={toSelfUrl("/next-course-iframe/?mode=base")}
-      width="100%"
-      frameborder="0"
-      scrolling="no"
-      className="h-80 sm:h-56"
-    />
+    <div className="mirdin--container">
+      <iframe
+        src={toSelfUrl("/next-course-iframe/?mode=base")}
+        width="100%"
+        frameborder="0"
+        scrolling="no"
+        className="mirdin--iframe"
+      />
+    </div>
   )
 
   return (

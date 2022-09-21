@@ -1,0 +1,32 @@
+.mirdin--container {
+  container-type: inline-size;
+}
+
+.mirdin--iframe {
+  height: 20rem;
+}
+
+/* ************************* */
+/* Fallback for old browsers */
+/* ************************* */
+@media (min-width: 640px) {
+  .mirdin--iframe {
+     height: 14rem;
+   } 
+ }
+
+@container (max-width: 501px){
+  .mirdin--iframe {
+    height: 20rem;
+  }
+}
+/* ************************* */
+/* Fallback END */
+/* ************************* */
+
+@container (min-width: 500px){
+  .mirdin--iframe {
+    height: 14rem;
+  }
+}
+

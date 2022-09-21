@@ -13,3 +13,6 @@ import "./src/global.css"
 
 // custom CSS styles
 import "./src/style.css"
+
+// Mirdin Iframe
+import "./src/mirdin--iframe.css"

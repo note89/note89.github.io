@@ -30,11 +30,13 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <iframe
-        src={toSelfUrl("/next-course-iframe/?mode=base")}
-        width="100%"
-        className="h-80 sm:h-56"
-      />
+      <div className="mirdin--container">
+        <iframe
+          src={toSelfUrl("/next-course-iframe/?mode=base")}
+          width="100%"
+          className="mirdin--iframe"
+        />
+      </div>
       <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
         <ol style={{ listStyle: `none`, margin: "0px 5px 0px" }}>
           {posts.map(post => {
