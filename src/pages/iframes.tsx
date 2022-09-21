@@ -37,7 +37,15 @@ export default function Page() {
         </div>
       `}
       </pre>
-      <h2>Put this in your CSS</h2>
+      <h2>
+        Put this in your <pre>{` <head>...</head> `}</pre> or include CSS
+      </h2>
+      <pre>
+        {`
+<link href="https://cdn.jsdelivr.net/gh/note89/note89.github.io@live-iframe-v1/src/mirdin--iframe.css" rel="stylesheet" integrity="a/wyNIKmaSqrcKKexv86OKX9GC/UefBIiFJbXNkhRPoyjXEiHPqmxLcdV/O/gVKj" crossorigin="anonymous" />
+        `}
+      </pre>
+      <h2>IF You don't: Put this in your CSS</h2>
       <pre>
         {`
 .mirdin--container {
