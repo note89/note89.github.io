@@ -1,7 +1,7 @@
 ---
 title: "Tunnel Vision: How modularity lies beyond the code"
 date: "2022-08-29"
-description: "How Super Mario pipes can help you design better software"
+description: "How Super Mario can help you design better software"
 ---
 
 # Tunnel Vision: How modularity lies beyond the code
@@ -424,24 +424,74 @@ open a debugger.
 
 
 
-## Error of modular reasoning
 
-> If we have bugs in the code but there is not execution around to see them
+## An error of modular reasoning visualized 
+
+The main point of the [The three levels of software](https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html) is that programs that never goes wrong can still be wrong. How can this be ? And how can we create a mental model for it. 
+
+I will show you that it's maybe not so strange a concept after all and is just a natural emerging fact of the interplay between multiple subprograms/tunnels. 
+
+#### What is a stable guarantee ?
+Senior programmers talk about stable guarantees, what the mean about that is only depending on the specification and not a particular current implementation that might have some behavior that will not always be guaranteed. 
+
+#### Are these bugs ?
+> If we have bugs in our code but there is not execution around to see them
 > do we still have bugs ? 
 
-The answer is YES! because the current set of executions and the current
-layout of the code is not guaranteed. 
-The only thing that is guaranteed is if we follow the specification, or we will 
-have to change the specification . 
+The answer is YES! And i think many would agree on that
 
-Let me visualize a error of modular reasoning that does not lead to any bugs. 
+What about this 
 
-## insight
+> If no possible execution of our code can cause a bug, can we still have bugs ?
 
-Okey i think i just had insight. 
+Maybe! 
+The above line is probably too cryptic to be informative, just make it fit into 
+that word pattern. 
 
-A error of modular reasoning occurs IF and ONLY IF. 
-You some code uses a stronger postcondition then the specification guarantees. 
-But a specific, still spec compliant implementation gives. 
+Some alternative formulations would be. 
+> If our code depends on a particular implementation detail do we have a bug ?
 
-OR the code uses a weaker precondition then the specification says. 
+Yes!
+
+There are two ways to have an error of modular reasoning. 
+
+1. Depending on a stricter output than the specification guarantees.
+   Examples is the use after free bug. in SimCity where code used memory after it was freed, but the program still worked by coincidence because the current implementation of the memory manger in Windows was stricter than the specification. And did not touch the memory after it was freed. So code depending on it still worked. Until the next release of Windows.
+
+   In GO a similar issue is avoided by randomizing the order of map itterations to make developers not depend on the order of the keys. 
+   https://stackoverflow.com/questions/55925822/why-are-iterations-over-maps-random
+
+2. Depending on beeing able to use looser input than the specification guarantees.
+Maybe the current implementation is more forgiving than the specification guarantees. And depending on that is also an error of modular reasoning. 
+
+A simple example of this would be this code. 
+```typescript
+// Spec:
+// a, b are numbers between 1 and 10
+const add = (a,b) => a + b
+
+console.log(add(15,25))
+```
+
+Both of these errors is something that will only come up when code changes, so 
+no observable issues can be found in the current code.
+
+In some cases it's possible to embed the spec in the types and then, these type
+of logical error can be made into compile time errors. 
+
+
+### What does this mean visually ?
+
+This code has a error of modular reasoning. 
+The second function depends on the current implementation and not the specification. 
+
+![](error_of_modular_reasoning.gif)
+
+This should be a valid change but now we get a runtime error in our program. 
+![](error_of_modular_reasoning_2.gif)
+
+### Code -> Tunnel
+Show some code, then the same code but 'wrapped' in a tunnel to show how one can see this in regular programs.
+
+ 
+

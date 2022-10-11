@@ -45,9 +45,11 @@ const Bio = () => {
       {author?.name && (
         <p className="text-md font-sans">
           My name is <strong>Nils Eriksson</strong>. I'm a software educator at{" "}
-          <a href="https://mirdin.com/">Mirdin | The Code Quality Company</a>. I
-          enjoy thinking deeply about software, this blog is a collection of my
-          thoughts.
+          <a href="https://mirdin.com/" target="_blank">
+            Mirdin | The Code Quality Company
+          </a>
+          . I enjoy thinking deeply about software, this blog is a collection of
+          my thoughts.
         </p>
       )}
     </div>

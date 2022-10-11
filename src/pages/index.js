@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 import { toSelfUrl } from "../lib/selfUrl"
+import { Newsletter } from "../components/Newsletter"
 deckDeckGoHighlightElement()
 
 const BlogIndex = ({ data, location }) => {
@@ -39,40 +40,49 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
         <ol style={{ listStyle: `none`, margin: "0px 5px 0px" }}>
-          {posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
+          {posts
+            .map(post => {
+              const title = post.frontmatter.title || post.fields.slug
 
-            return (
-              <Link to={post.fields.slug} itemProp="url">
-                <li
-                  key={post.fields.slug}
-                  className="bg-slate-100 p-3 py-4 rounded-xl shadow-lg hover:bg-slate-50 cursor-pointer"
-                >
-                  <article
-                    className="post-list-item"
-                    itemScope
-                    itemType="http://schema.org/Article"
+              return (
+                <Link to={post.fields.slug} itemProp="url">
+                  <li
+                    key={post.fields.slug}
+                    className="bg-slate-100 p-3 py-4 rounded-xl shadow-lg hover:bg-slate-50 cursor-pointer"
                   >
-                    <header>
-                      <h2>
-                        <span itemProp="headline">{title}</span>
-                      </h2>
-                      <small>{post.frontmatter.date}</small>
-                    </header>
-                    <section>
-                      <p
-                        className="text-slate-800"
-                        dangerouslySetInnerHTML={{
-                          __html: post.frontmatter.description || post.excerpt,
-                        }}
-                        itemProp="description"
-                      />
-                    </section>
-                  </article>
-                </li>
-              </Link>
-            )
-          })}
+                    <article
+                      className="post-list-item"
+                      itemScope
+                      itemType="http://schema.org/Article"
+                    >
+                      <header>
+                        <h2>
+                          <span itemProp="headline">{title}</span>
+                        </h2>
+                        <small>{post.frontmatter.date}</small>
+                      </header>
+                      <section>
+                        <p
+                          className="text-slate-800"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              post.frontmatter.description || post.excerpt,
+                          }}
+                          itemProp="description"
+                        />
+                      </section>
+                    </article>
+                  </li>
+                </Link>
+              )
+            })
+            .reduce(
+              (acc, curr, i) =>
+                acc.concat(
+                  i == 1 ? [curr, <Newsletter className="m-[5px]" />] : [curr]
+                ),
+              []
+            )}
         </ol>
       </div>
     </Layout>

@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { toSelfUrl } from "../lib/selfUrl"
+import { Newsletter } from "../components/Newsletter"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -49,6 +50,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <footer>
           <Bio />
           <Frame />
+          <Newsletter />
         </footer>
       </article>
       <nav className="blog-post-nav bg-yellow-500 p-4 border border-solid border-yellow-400 border-4">
