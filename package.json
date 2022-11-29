@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.6.0",
+    "date-fns": "^2.29.3",
     "fitty": "^2.3.6",
     "gatsby": "^4.16.0",
     "gatsby-plugin-feed": "^4.16.0",
