@@ -1,4 +1,303 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Nov 2022 12:28:28 GMT</lastBuildDate><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>null/typescript-typelevel-tic-tac-toe/</link><guid isPermaLink="false">null/typescript-typelevel-tic-tac-toe/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Dec 2022 14:55:25 GMT</lastBuildDate><item><title><![CDATA[The Advent of Code 2022: Ai Edition]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+Have all been amazing and…]]></description><link>null/the-advent-of-code-ai-edition/</link><guid isPermaLink="false">null/the-advent-of-code-ai-edition/</guid><pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;Intro&quot; style=&quot;position:relative;&quot;&gt;Intro&lt;a href=&quot;#Intro&quot; aria-label=&quot;Intro permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+Have all been amazing and useful to me.&lt;/p&gt;
+&lt;p&gt;Yesterday I saw some tweets about using GPT chat, which I had not tried before to find bugs in code.
+I quickly tried it on some of the code examples we use in our courses as examples of hard-to-find bugs or
+code in need of refactoring and I was more than amazed that one code challenge that
+1/100 engineers find was found ‘easily’ by GPT chat and it also provided the suggested refactor to remove it.&lt;/p&gt;
+&lt;p&gt;Today The Advent Of Code started so I’m naturally curious how far I can come with minimal guidance of these code-writing Ais.&lt;/p&gt;
+&lt;p&gt;If you want to do the challenges yourself or with your Ai friend visit &lt;a href=&quot;https://adventofcode.com/2022/&quot;&gt;The Advent Of Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bots at my disposal&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/features/copilot&quot;&gt;CoPilot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://chat.openai.com/chat&quot;&gt;GPTchat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s Go!&lt;/p&gt;
+&lt;h2 id=&quot;Day-1&quot; style=&quot;position:relative;&quot;&gt;Day 1&lt;a href=&quot;#Day-1&quot; aria-label=&quot;Day 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://adventofcode.com/2022/day/1&quot;&gt;Question&lt;/a&gt;, &lt;a href=&quot;https://adventofcode.com/2022/day/1/input&quot;&gt;Input&lt;/a&gt;, Ai used:&lt;a href=&quot;https://chat.openai.com/chat&quot;&gt;GPTchat&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Day1-Challenge-1&quot; style=&quot;position:relative;&quot;&gt;Day1: Challenge 1&lt;a href=&quot;#Day1-Challenge-1&quot; aria-label=&quot;Day1 Challenge 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I wrote a little instruction on where to find the question that needed to be answered, that I wanted the answer printed, and please don’t use any libraries.&lt;/p&gt;
+&lt;p&gt;Then I just pasted the whole question in full to the GPT chat.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b0b501d46ec65d1dace9a610379bf8bf/5b587/inital-prompt.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAABXXAAAV1wEELLsZAAAA0UlEQVQY01WM4Y6DIBCEfSftVU8UUGQXRGUBTdNqru//FE3rn2sy+SYzyUyGhowNgAkwaoiIyU03tEnrYOyGGAdNQk698l0/q8F/RFy64iKzslLVr9IQR7cBvl+MXdEkO2523IxZZTdxOQnpaobFRf5Xlhciz0XT2l4tsp9Pym6qGVxLVVZDzaBmwBiWlcoL8TU+TQ1+0ASYEKOxK0DkfGz5yIU72bSGC3dG1uDXePE7hZ3CMS93ioenPa1PoneT0t88371/UDgW//iUu4bwc+1fe5BSSYASovQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;inital prompt&quot;
+        title=&quot;inital prompt&quot;
+        src=&quot;/static/b0b501d46ec65d1dace9a610379bf8bf/f058b/inital-prompt.png&quot;
+        srcset=&quot;/static/b0b501d46ec65d1dace9a610379bf8bf/c26ae/inital-prompt.png 158w,
+/static/b0b501d46ec65d1dace9a610379bf8bf/6bdcf/inital-prompt.png 315w,
+/static/b0b501d46ec65d1dace9a610379bf8bf/f058b/inital-prompt.png 630w,
+/static/b0b501d46ec65d1dace9a610379bf8bf/40601/inital-prompt.png 945w,
+/static/b0b501d46ec65d1dace9a610379bf8bf/5b587/inital-prompt.png 1010w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;And lo and behold, GPT produced the following program
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e157eb005442687b6238ae5682808e11/0f586/day_1_solution.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 108.86075949367088%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAABXXAAAV1wEELLsZAAACsElEQVQ4y41Ua1PaQBTd7CubkCwk6FRmAGeq+KGdflEY1I7SFkISqEAIeVDloaDt//8FnU0Q0KLTM2c292b2JGfv3V3w4+mPHc17N3fd3m3fm/7s390MJj1v2u3d9b2Z042blt9qj7bZtHynEzudGHyfL1rDW7s9spzQdqO2E9pJYNmB7Ubp1DUtO2g7oWUHKYHdGl1e2sXiUal8XCwJlsuVUrlSLlcOD09KpeM1i8Wjj0efTk6+VCqfr667bScETnd8Wr3OqIphGLlslnNd1zIIQYgkhCDYBQmA+nnLdmPgdOKzWoMCmGFqNpfjXHwgo2mQEPAGIITnF5btRiuxjLHGVCbLjDGZyimSWCQ0GQkh6ShJ0guxLpE9kuFYoQin1nYCigG8FiMgyZhQiAnCEEGEEHgb2+LxWbWh6Zphmvl8Xs1kKCWMMSSKtgOvxHG11sAYUVnGBCOMUmCMCSZYPAQopemY+n/xZybLB+Y+ZyolVFEUxlhaJKYolNJ3bdcaEgAGUgzIckzTVHVdYcYY+adnL8Sn1WvGZF3XKSGUJFbxyj2EMF3CGoQQCGH9orWxDQAwEvAs13XdMI21Pg22UgSljVi0CiMkP5dE1AZjOSmRaOu7rYqrtW8ZRA2q6qpmmnnTNLMJTNPknO/YKlvbU6wZYUlmokwQSuA/UD9vioNhu1H9orW/f1AolAqF0t7eB85NnjWzCXnW5NzQuZEEgjo3crn81ytHHMmm5dtu1PemfW/aG0zTYDCci1S8mQyGM8+f9waTvjfre1NvOO/c/Eqvl0TcicLxYxA9BtEyHD+OouUoXAbRhtH49yhc+MFDNH7yg4XtRhux2x2H4yfPn4up8dIPHoJo6YeLkeBzGtwn6aLnTdxunF5mK9vD0f1gOEsd+sGDk1xmzwy24hVT8V+9LbsWofqVugAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;day 1 solution&quot;
+        title=&quot;day 1 solution&quot;
+        src=&quot;/static/e157eb005442687b6238ae5682808e11/f058b/day_1_solution.png&quot;
+        srcset=&quot;/static/e157eb005442687b6238ae5682808e11/c26ae/day_1_solution.png 158w,
+/static/e157eb005442687b6238ae5682808e11/6bdcf/day_1_solution.png 315w,
+/static/e157eb005442687b6238ae5682808e11/f058b/day_1_solution.png 630w,
+/static/e157eb005442687b6238ae5682808e11/40601/day_1_solution.png 945w,
+/static/e157eb005442687b6238ae5682808e11/78612/day_1_solution.png 1260w,
+/static/e157eb005442687b6238ae5682808e11/0f586/day_1_solution.png 1498w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;code&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Read the input file and split it into lines&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;input.txt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; f&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  lines &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; f&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;read&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;strip&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Initialize variables to store the maximum Calories and the current Elf&apos;s Calories&lt;/span&gt;
+max_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+current_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Loop over the lines in the input&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; line &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; lines&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;# If the line is empty, update the maximum Calories and reset the current Elf&apos;s Calories&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; line&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    max_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;max_calories&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; current_calories&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    current_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Otherwise, add the Calories from the current line to the current Elf&apos;s Calories&lt;/span&gt;
+    current_calories &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Update the maximum Calories one final time&lt;/span&gt;
+max_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;max_calories&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; current_calories&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Print the result&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;max_calories&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# This program reads the input file line by line, and keeps track of the maximum number of Calories and the current Elf&apos;s Calories. Whenever it encounters an empty line, it updates the maximum Calories and resets the current Elf&apos;s Calories. At the end, it prints the final value of the maximum Calories, which is the answer to the problem.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;/br&gt;
+&lt;p&gt;I copied the code and ran it on my machine, I ran and produced a number!
+&lt;strong&gt;I pasted the number into The Advent Of Code as the answer and it was the correct answer!
+Wow…&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;Day1-Challenge-2&quot; style=&quot;position:relative;&quot;&gt;Day1: Challenge 2&lt;a href=&quot;#Day1-Challenge-2&quot; aria-label=&quot;Day1 Challenge 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;On the second part of the challenge I yet again just pasted the whole page of information,
+But this time I was way less precise in my instructions.&lt;/p&gt;
+&lt;p&gt;One of the features of GPT chat is that it remembers! So I wanted to use that
+and act as if I was basically talking to a human.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 370px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/75250dd3d11b7feb443031ddb619b91f/1efb2/remember.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 135.44303797468356%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAIAAADzvTiPAAAACXBIWXMAABXXAAAV1wEELLsZAAADMElEQVQ4y51UbY+jNhDOX7lvd+p1LxuweccGQyCYvBHAkEAghGySTXdbVer39p9XxNkk7bVRVWmExvY8nplnHtwTgfVvJohYEPGDgN4DpKIOJdn5Hg+AJTwAA2h/ezba9ueUbfp9A0D7HjmAtiRi8I/ggYAEEQ8EpOm+LDv9Z+NaPwDWN4n4fS3/CvrQ7n2f00CBqnma7unGyETUJhNV8xTFBSIeANsYmLvPz5KIhb9lPvfpLeKq3rweTr+17dtm+940P9XNezRf/SigJ4nsPz8bgtmH9q3sKyuCiCXZ1XRf0z1JdiC0AbQVxYWKqwno909f/L76BG3YcYZ7UCJQIoo6BB9ld23zDqEtihicQ3+ApPwK//j05UkdaqoLoC3JTo/Pg7jzojzGSRUndZJu8uVuOiums9VytZ/Py/F0xVhDwyxkbRSV2AqhRHRj1JMVV1ZcbI1Zts2ybZa3KWuK8hAn9TwqsnwXJ9Wiu66dzIqy2M+j0kQBlIim+xewicMk3VTVoVy/TmerOK6Xq32Wt4u4KsrDcvWyXO2q+tQ0J0qZZowk+R6MKMLhh1ETUb6DrTGyxlcfn30T0UtmTgyUCP9e7bLsvpdTbvyUo7rMkuyYiBpmoOm+box0Y2SYgYkod4yPpYl5TBcAoK1qXse2COw0277sf23bX7J8my9fyvU+TjdJUpflIWXtdvtWlMe6Pu1271X9SsgUQPvGtmVPCJkSd2bZ49m8nEedpazJ8pZlDcu2lDKMx8SZEWeGcHjpWVGHsuKic0m8Ko6MFutF3I09WqyTdDMKEi513sIF3Gnw7F2N13Le7454gKIOrwGq5l3K5hxKssPt+uuCM59AIoLINYv5RdxEYN3m3M0ThwaiAWWT6bJTYsgCyjw/Pi/ZeJITZ3aVAx/eBYxwaCKq6X5A2bo6ZnmbL9s0a6JFVdenJNkU5X7oRZru80jeyA2McJhmbVW/FuWxKPZF0Uk1y5o4qdfVcbnaNc1bFK01Y8Qz30bF73OGUTjOwzALaBpQ5o8Sz184bkS7HeYHiePO/8L2PWH3MrwX49m/CPbKa5f5wbP82Dp5/m/wo0f/v4D/BAbhpv9tWBrkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;remember&quot;
+        title=&quot;remember&quot;
+        src=&quot;/static/75250dd3d11b7feb443031ddb619b91f/1efb2/remember.png&quot;
+        srcset=&quot;/static/75250dd3d11b7feb443031ddb619b91f/c26ae/remember.png 158w,
+/static/75250dd3d11b7feb443031ddb619b91f/6bdcf/remember.png 315w,
+/static/75250dd3d11b7feb443031ddb619b91f/1efb2/remember.png 370w&quot;
+        sizes=&quot;(max-width: 370px) 100vw, 370px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I pasted this as my prompt
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/89d77a89b19c8ba164bf6abbe3b24279/73b94/my-promt-day-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAABXXAAAV1wEELLsZAAAAtklEQVQI1y2Oa47CMAyEe6WF5oG23cR2UkLeLYJSgbj/MVDKStbom5kfnk5pP52LUhEwIeVdC2AiKs1CMrZqiEiFTMv3KisVegbd+Oc0eCHtMLh242UY3e/ghCTGkQnighgH/g/IBTaWdOx1dzjqn4MKaY3pUednnV/L9V3qczovdprJlC8gFWMrmUqmTZAnwzh2PYOegbvcfLiHuPpwT2nzYU15+9qcNx/2Nj1ibD9iXI2t8mQ/NvJBJDpSIkYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;my promt day 2&quot;
+        title=&quot;my promt day 2&quot;
+        src=&quot;/static/89d77a89b19c8ba164bf6abbe3b24279/f058b/my-promt-day-2.png&quot;
+        srcset=&quot;/static/89d77a89b19c8ba164bf6abbe3b24279/c26ae/my-promt-day-2.png 158w,
+/static/89d77a89b19c8ba164bf6abbe3b24279/6bdcf/my-promt-day-2.png 315w,
+/static/89d77a89b19c8ba164bf6abbe3b24279/f058b/my-promt-day-2.png 630w,
+/static/89d77a89b19c8ba164bf6abbe3b24279/40601/my-promt-day-2.png 945w,
+/static/89d77a89b19c8ba164bf6abbe3b24279/73b94/my-promt-day-2.png 1004w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+… Drumroll!&lt;/p&gt;
+&lt;p&gt;The initial answer was this.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/38a301ef90cbe2dbf7dab526cde28084/60b3a/second_challange_first_answer.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 86.70886075949367%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAABXXAAAV1wEELLsZAAAB3klEQVQ4y5WTi27aMBSGjW/Hjo1zIUkpL1BItVWDSpOmEWgpENFyadp1RUP0Gaa9v7TFSSmV2o39+mXJlr6cc347aPLrZ3a/XSw28+Vmebtd3m5X+dMqf7pZbFa329nN+vIqH43vdrbbPJuts9kjGuU/Lid36WA+GC4qX1Tr8GI5GC7S4Xzn0VU+ntyP7OfG029oOn04O/tiTOD7kXXoeaHnR64bWDf2HQRxGDWj+DgdzsfZA8pm607SdV0TxWGjESittFbG1NH7whh/TWeTEj7pdKFG6o7yfd9zPcYYpRRjXHtLCCFKWX9wXcHtpEdQjTMmhJBSkkIF/F5lQugLnCQ9TbiRijGOMaZWhJCD4E7Ss81QW5Ngq7/MvA8/JqfnnueGUSGtFAAIKcrx/l25nXQ5wnWlgyDQWv9X5SIwe1Q2XKxFYpQyyuhzAJQQ9NzLK/ik/Ukpp9VqGWNc1xhjAKDgGduFRwipvQm3ky5CiHMupAQhhCUPbTs5PddaF0UdrbkUqg4AjLED4R4AV0o5ABIEA0H3VM5fibHyCb26Z0YpAJRRVWlVj5SUIRKCd5NjQvqphSfZ9w8fP4dh1GweR1Hs+0EcH/l+0GiEUXwkpcM4cBAv5uA4up9e//klfwNPKWEc7RwQOQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;second challange first answer&quot;
+        title=&quot;second challange first answer&quot;
+        src=&quot;/static/38a301ef90cbe2dbf7dab526cde28084/f058b/second_challange_first_answer.png&quot;
+        srcset=&quot;/static/38a301ef90cbe2dbf7dab526cde28084/c26ae/second_challange_first_answer.png 158w,
+/static/38a301ef90cbe2dbf7dab526cde28084/6bdcf/second_challange_first_answer.png 315w,
+/static/38a301ef90cbe2dbf7dab526cde28084/f058b/second_challange_first_answer.png 630w,
+/static/38a301ef90cbe2dbf7dab526cde28084/40601/second_challange_first_answer.png 945w,
+/static/38a301ef90cbe2dbf7dab526cde28084/60b3a/second_challange_first_answer.png 1179w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I yet again took the code and ran it on my machine.
+…
+It gave me an answer and I was hopeful!
+I pasted it into the website and… Wrong answer!
+No…
+What now ? do I just run it again and hope for a better result ?&lt;/p&gt;
+&lt;p&gt;That is not how I would have done it with a human programmer, let’s try the same here.
+The Advent Of Code gave me a hint that the answer was too low so I just told GPT chat the same thing.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2077c4b390229d530e49c51df0706913/f680b/my_comment.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 18.354430379746837%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAABXXAAAV1wEELLsZAAAAZElEQVQI133LUQrCQAyE4T2TldYmM8mCsEljwfvfRtAXRS18D8PA38CC3Q7Qd/uj9V5giIZqgAmmyHgNRShyXq6nyadz/9ZG3M1TkeRmVuYFJL2ecYLbUbys4yKxfnp/RFPw2wNZLTqrqlRnCwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;my comment&quot;
+        title=&quot;my comment&quot;
+        src=&quot;/static/2077c4b390229d530e49c51df0706913/f058b/my_comment.png&quot;
+        srcset=&quot;/static/2077c4b390229d530e49c51df0706913/c26ae/my_comment.png 158w,
+/static/2077c4b390229d530e49c51df0706913/6bdcf/my_comment.png 315w,
+/static/2077c4b390229d530e49c51df0706913/f058b/my_comment.png 630w,
+/static/2077c4b390229d530e49c51df0706913/40601/my_comment.png 945w,
+/static/2077c4b390229d530e49c51df0706913/f680b/my_comment.png 1108w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/59da81cbf7f9ba139fee1bd8fd3b9495/6d74e/second_part_correction.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 150%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAIAAACjcKk8AAAACXBIWXMAABXXAAAV1wEELLsZAAADXklEQVQ4y41VaXObSBCVmIsBBJKq5LWdPSQ7UjZVWTlftjaWq5JYggGBQNy6HJ3x/v+fsDWM7XhlO1ZX19AM9eh+3Y+hZC425nTluTPXn3v+3PFm7mjmjubD0WwoYn/ujhaev3D9+Si48YK55y8cd2oPJ6XBcmd920XjZZiuo2Qdxqs43ST5NkxWUbrhO8k6zrZJth16M4ERK3Pyknkd2VYaRMtxtAzCb+NoOY5X42gVxisRBOEyjFdRvPKCBc/sLzx/PrASk6WlAUttd8IfJ5s4XSfZNk63SbZL812cbdN8lxRpi8272zjdWHZagK3EGU4ns3+z6W0+vc0m3/3xjc9LWPFaeDm8ontfjkO+adkZB5ssZU7ujuaOO3VHc9ebWU7OnNyyM+ZkzMn7Ztw344EZ962kb8bXxa3J0h/gIFyOgpswXhds11ERCGfOpHD+Rmc4Hbozezi5A1t29uU6aHcu2p1uu93lK48veNzuvm13O50L4e1298OHvy8+fvqr+8/A4slLzJlcXtmqqmqaqmkapTLGWFXVcrlcesEQwn0zsuyMgz/1mKZqNcOo1+uGYVBKFUUBADwHLD8BXzEZYgqxbuj1eh1jJEkSAKBcLkuS9ErmyyumEqrJFCEEJAkhhDDmC7/g18EEIAwgQqj8yCRJelj5pQieAVeIohKKeUqes8iNZVlGCBFRBS8CQwifgm0ZEwwRLAwU9mKv/w/O+ag0TTd0o2rIsgwBEPUfOioZYl3VGo1GrVoT+Q8FX14xBCApSAqegqTg+SMuAsDregzuMblQBiGE62Cvz3edlh7Gvl82xuS4cXTyy3G1WlUUpfRT2wNbVKZ1VX9oePlle8K5xyBCqqpShSqK+jDqe/IEIih4C8HvgwGABVLRtAqEQLq3A7rdYzVu1aPGUb1Wx4WSRG+fHdi+whDibDEhCGMgSUJlh825x/SKYRhGtaLrmNKKju9lfJBIqKKIM0TGRHwAhTzEl4IJIWLl4oUQY/JoVJcWpbKiUEIwABLmDABCkBD8SmbLzj5/9ZutTqvVOTt/32x2zs7+bLY6zda78/P3b35tnZw2T99wPznlfnzyx2+/v707AAdWwpwJ/11kuzjdhckm4s5/EWHMN9P8tni0TfNbf7y0h1PHnYmj9z+QQACzkPGlzwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;second part correction&quot;
+        title=&quot;second part correction&quot;
+        src=&quot;/static/59da81cbf7f9ba139fee1bd8fd3b9495/f058b/second_part_correction.png&quot;
+        srcset=&quot;/static/59da81cbf7f9ba139fee1bd8fd3b9495/c26ae/second_part_correction.png 158w,
+/static/59da81cbf7f9ba139fee1bd8fd3b9495/6bdcf/second_part_correction.png 315w,
+/static/59da81cbf7f9ba139fee1bd8fd3b9495/f058b/second_part_correction.png 630w,
+/static/59da81cbf7f9ba139fee1bd8fd3b9495/40601/second_part_correction.png 945w,
+/static/59da81cbf7f9ba139fee1bd8fd3b9495/6d74e/second_part_correction.png 1085w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is pretty mindblowing, now only does the new solution work, but it also tells me
+what was wrong with the other one!&lt;/p&gt;
+&lt;p&gt;I have not even understood the challenge myself, since I have not even read it.
+But GPT3 chat was able to use my prompt to ‘reason about’ the previous answer and how to fix it.&lt;/p&gt;
+&lt;p&gt;Amazing.&lt;/p&gt;
+&lt;p&gt;Day one complete! See you tomorrow!&lt;/p&gt;
+&lt;h3 id=&quot;Day-2-stay-tuned&quot; style=&quot;position:relative;&quot;&gt;Day 2 (stay tuned)&lt;a href=&quot;#Day-2-stay-tuned&quot; aria-label=&quot;Day 2 stay tuned permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>null/typescript-typelevel-tic-tac-toe/</link><guid isPermaLink="false">null/typescript-typelevel-tic-tac-toe/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
 &lt;p&gt;You will get better from just playing but it takes much longer and your understanding of what you have learned is much worse. You will learn what to do but have a harder time explaining what you have learned.&lt;/p&gt;
 &lt;p&gt;This is exactly how it normally is to work towards becoming a senior engineer. Senior engineers that have been through a lot gain intuition. They know that one design decision should be taken over another but they might have a hard time explaining exactly why. &lt;b&gt;So do you really have to spend 10 000 hours just working on projects to
 achieve mastery ?&lt;/b&gt;&lt;/p&gt;
