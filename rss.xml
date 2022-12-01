@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Dec 2022 15:06:39 GMT</lastBuildDate><item><title><![CDATA[The Advent of Code 2022: Ai Edition]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Dec 2022 15:34:33 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and…]]></description><link>null/the-advent-of-code-ai-edition/</link><guid isPermaLink="false">null/the-advent-of-code-ai-edition/</guid><pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;Intro&quot; style=&quot;position:relative;&quot;&gt;Intro&lt;a href=&quot;#Intro&quot; aria-label=&quot;Intro permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and useful to me.&lt;/p&gt;
@@ -33,8 +33,8 @@ Yesterday I saw this tweet about using GPT chat.
 I quickly tried it on some of the code examples we use in our courses as examples of hard-to-find bugs or
 code in need of refactoring and I was more than amazed that one code challenge that
 1/100 engineers find was found ‘easily’ by GPT chat and it also provided the suggested refactor to remove it.&lt;/p&gt;
-&lt;p&gt;Today The Advent Of Code started so I’m naturally curious how far I can come with minimal guidance of these code-writing Ais.&lt;/p&gt;
-&lt;p&gt;If you want to do the challenges yourself or with your Ai friend visit &lt;a href=&quot;https://adventofcode.com/2022/&quot;&gt;The Advent Of Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Advent Of Code started so I’m naturally curious how far I can come with minimal guidance of these code-writing Ais.&lt;/p&gt;
+&lt;p&gt;If you want to do the challenges yourself or with your Ai friend visit &lt;a href=&quot;https://adventofcode.com/2022/&quot;&gt;Advent Of Code&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Bots at my disposal&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/features/copilot&quot;&gt;CoPilot&lt;/a&gt;&lt;/li&gt;
@@ -126,7 +126,7 @@ max_calories &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;/details&gt;
 &lt;/br&gt;
 &lt;p&gt;I copied the code and ran it on my machine, I ran and produced a number!
-&lt;strong&gt;I pasted the number into The Advent Of Code as the answer and it was the correct answer!
+&lt;strong&gt;I pasted the number into Advent Of Code as the answer and it was the correct answer!
 Wow…&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&quot;Day1-Challenge-2&quot; style=&quot;position:relative;&quot;&gt;Day1: Challenge 2&lt;a href=&quot;#Day1-Challenge-2&quot; aria-label=&quot;Day1 Challenge 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;On the second part of the challenge I yet again just pasted the whole page of information,
@@ -213,7 +213,7 @@ I pasted it into the website and… Wrong answer!
 No…
 What now ? do I just run it again and hope for a better result ?&lt;/p&gt;
 &lt;p&gt;That is not how I would have done it with a human programmer, let’s try the same here.
-The Advent Of Code gave me a hint that the answer was too low so I just told GPT chat the same thing.&lt;/p&gt;
+Advent Of Code gave me a hint that the answer was too low so I just told GPT chat the same thing.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
