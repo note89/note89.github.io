@@ -1,5 +1,5 @@
 ---
-title: "The Advent of Code 2022: Ai Edition"
+title: "Ai solves Advent of Code 2022"
 date: "2022-12-01"
 description: "I will try to solve all of the advent of code with as little human input as possible"
 ---
@@ -8,14 +8,22 @@ description: "I will try to solve all of the advent of code with as little human
 It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc. 
 Have all been amazing and useful to me. 
 
-Yesterday I saw some tweets about using GPT chat, which I had not tried before to find bugs in code. 
+
+</div>
+Yesterday I saw this tweet about using GPT chat.
+
+![](day1/tweet.png)
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">OMG WTF <a href="https://t.co/I2hE0e5ppq">pic.twitter.com/I2hE0e5ppq</a></p>&mdash; cts (@gf_256) <a href="https://twitter.com/gf_256/status/1598104835848798208?ref_src=twsrc%5Etfw">December 1, 2022</a></blockquote> 
+
+I had never tried GPT chat and this got me very keen in doing so!
 I quickly tried it on some of the code examples we use in our courses as examples of hard-to-find bugs or 
 code in need of refactoring and I was more than amazed that one code challenge that 
 1/100 engineers find was found 'easily' by GPT chat and it also provided the suggested refactor to remove it.
 
-Today The Advent Of Code started so I'm naturally curious how far I can come with minimal guidance of these code-writing Ais. 
+Today Advent Of Code started so I'm naturally curious how far I can come with minimal guidance of these code-writing Ais. 
 
-If you want to do the challenges yourself or with your Ai friend visit [The Advent Of Code](https://adventofcode.com/2022/). 
+If you want to do the challenges yourself or with your Ai friend visit [Advent Of Code](https://adventofcode.com/2022/). 
 
 
 **Bots at my disposal**
@@ -75,7 +83,7 @@ print(max_calories)
 </br>
 
 I copied the code and ran it on my machine, I ran and produced a number!
-**I pasted the number into The Advent Of Code as the answer and it was the correct answer!
+**I pasted the number into Advent Of Code as the answer and it was the correct answer!
 Wow...**
 
 
@@ -105,7 +113,7 @@ No...
 What now ? do I just run it again and hope for a better result ?
 
 That is not how I would have done it with a human programmer, let's try the same here. 
-The Advent Of Code gave me a hint that the answer was too low so I just told GPT chat the same thing.
+Advent Of Code gave me a hint that the answer was too low so I just told GPT chat the same thing.
 
 ![](day1/my_comment.png)
 ![](day1/second_part_correction.png)
