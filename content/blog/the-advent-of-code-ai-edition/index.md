@@ -32,6 +32,9 @@ If you want to do the challenges yourself or with your Ai friend visit [Advent O
 
 Let's Go!
 
+```toc
+# This code block gets replaced with the TOC
+``` 
 
 ## Day 1
 Times:
@@ -40,7 +43,7 @@ Challenge_2: 2 minutes
 
 [Question](https://adventofcode.com/2022/day/1), [Input](https://adventofcode.com/2022/day/1/input), Ai used:[GPTchat](https://chat.openai.com/chat)
 
-### Day1: Challenge 1
+### Day 1: Challenge 1
 I wrote a little instruction on where to find the question that needed to be answered, that I wanted the answer printed, and please don't use any libraries.
 
 Then I just pasted the whole question in full to the GPT chat.
@@ -85,13 +88,13 @@ print(max_calories)
 </details>
 </br>
 
-I copied the code and ran it on my machine, I ran and produced a number!
+I copied the code and ran it on my machine, it produced a number!...
 **I pasted the number into Advent Of Code as the answer and it was the correct answer!
 Wow...**
 
 
 
-#### Day1: Challenge 2
+### Day 1: Challenge 2
 
 On the second part of the challenge I yet again just pasted the whole page of information, 
 But this time I was way less precise in my instructions.
@@ -159,14 +162,14 @@ When you have an ongoing conversation with ChatGPT, it seems it loses its memory
 
 I still was a bit too loose and ended up having to do one last correction as you can see in the images or GIF below. 
 
-#### Challenge 1
+### Day 2: Challenge 1
 
 ![](day2/day_2.gif)
 ![](day2/my_prompt.png)
 ![](day2/first_answer.png)
 ![](day2/second_answer.png)
 
-#### Challenge 2
+### Day 2: Challenge 2
 I started with wishful thinking just adding the new requirements as is. 
 that did not produce the correct results.
 
