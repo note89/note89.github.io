@@ -34,6 +34,9 @@ Let's Go!
 
 
 ## Day 1
+Times:
+Challenge_1: 15 seconds
+Challenge_2: 2 minutes
 
 [Question](https://adventofcode.com/2022/day/1), [Input](https://adventofcode.com/2022/day/1/input), Ai used:[GPTchat](https://chat.openai.com/chat)
 
@@ -129,6 +132,67 @@ Amazing.
 Day one complete! See you tomorrow!
 
 
+## Day 2
+Results:
+* Challenge_1: 20 minutes
+* Challenge_2: hours
+* Tries: 30+ 
 
 
-### Day 2 (stay tuned)
+[Question](https://adventofcode.com/2022/day/2), [Input](https://adventofcode.com/2022/day/2/input), Ai used:[GPTchat](https://chat.openai.com/chat)
+
+
+Today it was certainly not faster to use the AI than to code oneself.
+It was hard to use the challenge text as is, I tried a few times.
+
+I did have more success when telling the AI it was a story about a programmer
+that got challenged by some elves.
+The main issue seems to have been mixing up what is actually supposed to be calculated.
+
+At first, I didn't want to understand the question myself, but it was hard to tell it what
+to do without actually reading the text and understanding the challenge myself.
+
+The mistakes the AI did, was to calculate the score for both players, and also
+reversing how the scores were calculated.
+
+When you have an ongoing conversation with ChatGPT, it seems it loses its memory after a few prompts, so I ended up restarting and reading the question myself. Then I only wrote down the relevant details of the challenge and skipped all the elf stuff.
+
+I still was a bit too loose and ended up having to do one last correction as you can see in the images or GIF below. 
+
+#### Challenge 1
+
+![](day2/day_2.gif)
+![](day2/my_prompt.png)
+![](day2/first_answer.png)
+![](day2/second_answer.png)
+
+#### Challenge 2
+I started with wishful thinking just adding the new requirements as is. 
+that did not produce the correct results.
+
+I then realized that I could use chatGTP to first summarize the challenge to only pick out the relevant details. 
+I would then give it the solution for the first part and tell it to change it to incorporate the new requirements.
+
+It became apparent that I probably would have to understand the problem myself so I could correct ChatGPT by either suggesting or expanding/contracting the original list of requirements.
+
+Like with any tool one need's to practice to learn what works and what does not. 
+
+So first summarize the new requirements. 
+
+
+![](day2/bullet.png)
+
+Then I cut them down a bit and made them much more specific before starting the dance 
+with the AI.
+
+At one point I asked GPT to create some functions to make it easier for me to point out where the changes should go and to hopefully get GPT to only change that part.
+Since i had run into scenarios where it changes more than i like, aka fix one part and break the next.
+
+![](day2/all.png)
+
+
+In the end, we got there but took quite a few detours. 
+Let's see how it goes tomorrow!
+
+
+## Day 3 (stay tuned)
