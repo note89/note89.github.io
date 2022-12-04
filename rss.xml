@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 03 Dec 2022 11:50:35 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 04 Dec 2022 10:58:44 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and…]]></description><link>null/the-advent-of-code-ai-edition/</link><guid isPermaLink="false">null/the-advent-of-code-ai-edition/</guid><pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;intro&quot; style=&quot;position:relative;&quot;&gt;Intro&lt;a href=&quot;#intro&quot; aria-label=&quot;intro permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and useful to me.&lt;/p&gt;
@@ -59,6 +59,11 @@ code in need of refactoring and I was more than amazed that one code challenge t
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#day-3--challenge-1&quot;&gt;Day 3 | Challenge 1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#day-3--challenge-2&quot;&gt;Day 3 | Challenge 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#day-4&quot;&gt;Day 4&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#day-4--challenge-1--2&quot;&gt;Day 4 | Challenge 1 &amp;#x26; 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -537,6 +542,54 @@ is the summary for part 2.&lt;/p&gt;
 /static/9db9e0ecd805e4ee0d3011157bc472d8/6bdcf/part2.png 315w,
 /static/9db9e0ecd805e4ee0d3011157bc472d8/f058b/part2.png 630w,
 /static/9db9e0ecd805e4ee0d3011157bc472d8/5205c/part2.png 833w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;day-4&quot; style=&quot;position:relative;&quot;&gt;Day 4&lt;a href=&quot;#day-4&quot; aria-label=&quot;day 4 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Challenge_1: 30 seconds&lt;/li&gt;
+&lt;li&gt;Challenge_2: 30 seconds&lt;/li&gt;
+&lt;li&gt;Prompts needed:
+&lt;ul&gt;
+&lt;li&gt;Part 1: 1&lt;/li&gt;
+&lt;li&gt;Part 2: 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wow! Today i wanted to try something a bit different.
+I thought that maybe ChatGPT knows better how to instruct ChatGPT than i do.
+So instead of trying to be the middle man i just said&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Write instructions for the following challenge in such a way that a large language model like yourself can take those instructions and produce a program that creates the right output when run. The program needs to read from a file called input.txt&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then for part 2 i wrote&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you then had to tell the language model your instructing, to do part two (see below) of the challenge how would you express that ?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That was all that was needed to solve today’s challenge.
+I will try a similar approach tomorrow, maybe i just got lucky today.&lt;/p&gt;
+&lt;h3 id=&quot;day-4--challenge-1--2&quot; style=&quot;position:relative;&quot;&gt;Day 4 | Challenge 1 &amp;#x26; 2&lt;a href=&quot;#day-4--challenge-1--2&quot; aria-label=&quot;day 4  challenge 1  2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 554.4303797468355%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAABvCAYAAADsbOAPAAAACXBIWXMAAAsTAAALEwEAmpwYAAALnUlEQVRo3tVYZ3MbRxJdIiwyEQhmkJTkkl32+epEiRRJgETOu8iJSZKpZH+8uv9f1VevZ3t3ATBI8n25D41JO296enoG/VprtYdUKhlULHWoXOlSqdzlOspqtU+lcscuC0WDS4xVqj2qVPtUqw+4Xq316fhtibTceZ3yhRaZnUtqtiZcusUwZ9TpXlHbmHK927smw5jx4mphtQAWO3ydJw0/x2/LlC8YdH7Rony+zYOQfKHN/Rd5VWLs/KLJYxf5FmVzDW7nzpW8fpMn7c1RkbK5OrXbU2q1JyzQptkas0ZSh7bucYhs19lyWQG+PamwNlj1wtIQpdJM9UtfsWTaY1AEIJCT06rS8PWbAmWzdRoMbsk0HbvBVr3+DZcQsSnsORjecolxEcyxAc+ydd6CbAlbhLHFNtAQ9lXS5BJ9ysZte4wPRbYsH2CAt3XhbFMmXFiHhj4oAQAoJHL4+sIBLBQM/gj1k9OKVVYtqVhStQXjR8elObEBT89qVG8MucRK6PsWAYi7zoB8KLkG2xAayuC3iBt0TsMzS8OzbO27AB1ZAHQOxeADkdvBtyXf5kVevyk+aQ4bEOi4lwBT0rGvH/cX1SKFomn1m+w+sjBMBg+xrx40hO+JL+Lyow5HlkcBjgwHl28AcnpW5YPEqasDtQBxdeqNkfXijO3XBfcbfbizuKtyb+H06vop3wU42vZdBjomyCQ8TeWKeu8g/BKdOzdE7rz77gPj1eG5AoTK6uXAgzlkUJR4WOv1IY/BC7AgSow1mmNuq/qIwW1AqIqVcG/fnpT5Sn2vLJ2y2k6btf0xX3T5IUDkJcGJL96A+27HozcFjYLla08BPnYFGVA6+JYUzR/a8pKGOJRGY2Q/qn8bUA4FYAD/W1t2bGgs2fCHT1ldvSE/BHjC5FW573Vx9+EFcvfNAVascEM5d8W+8O5nf7EPj4PUMQ/von2X8YJASzwOELRxpaSuSvVYoB8iQQAeFpyB/doAEP/JMhExjoDJIpgkY1w2XYs2x2zDV4eum4IJEAkvUDb5ARiovkqPwXE9oQAE/0EQRBBHx2XLhscl9TdqvcZ4sVVIZzovdMGwIyz5i8ABwvbynyx17c2rPB3hlFx/id8rAgjFtNLXr1SavaNWY0LN9owarRm1jEurPuVSBGPN9qWrT9Xb5hUZnWsqlnukVT98ptr4HXW7t9Ttvyezd0v94QfqDt5Tp/eOTKsfgnZv8J4FdfmmZV6R2b2hSm1IWqXUp0plSJ3+O5rMPtNg9AcNJx9pMLqj8fQTjacfeQHUuX98p74Z39F49pl6gw+8o5ZxRcUSNGyMqVwd8kqz6z954mjykUbTTzS9/MIT0cZiMiZ9I15YgbdNbLlPWrU+pkptRF1oePmZtZCJ0GBktQEuILOrr9Tp3dp2rTenBBylYX3MDdiItzhzQAHC4NNPrKEATq++2mPoR/3y5i8+RAaULTtafZrf1vhOAVoAY9f2RQFsmQ9FtiyGx2HALmKb/lDVMRnfyELqO/n2jt2mUOq6AdUk9kPzik8NgpVRwue4bl6x36nymgVgtcZE+SHA0MAAfAl+iAPquEolygfhXkbnhkHaHQG8mQfEKWE74sTs2P13lkhbOTF2Um/OqFwd8c4gOINKbey4TakymP+PsErhIJAjEfSfqBgc/QiU5C84e94krdacciUSiVI4HGFBPRSOkM/nJ59fV6VPJ78/QH49oEoWnXQ9QKFQmLxeHx08+4U0bPcs16BwOEyReIqCiVXyxcIUjkQomUxQIpmgYDBIHs8KaZr2qOxmXjiAHo+HYqurlEgmGQwLxONxisVilEgkuL0IsLKiFsFclJm9nxQg7ODnrfloRdPI6/Wy4EO/32+3A4EAt1FKXdd13sGChnXWBppA4ok4BXSdPE9scVHTOQ2hATTEqhBo5/V4uO9J0EVA2DAQjrJ2q6urtL6+Tmtra1wH+EMaPaghALEKDgBbj0ajXAIwEolwOxyNUSgao0AwwDZza34vIDpDoRADwOAAYeMHgxQOhSgQDJFXD9jbe1JDdAIEWqIEMDSEpnB0PRRmB04lk9zn0QPkhVcw2D2AOITNzU3KZDJsw2QySbu7u7S7u0PxRJL8q2sUisVpf2+PNjY3SY+nKRSLkdfrsTWdO2VRXQQ2wiKoswd4PVw+dtrzW/b4KJlKUyazS1tbW3zKqVSKNd7e3qbkWppiqXWub2xs2D6LNr73+by0m3nu2rLXx/bDVvGhnDg7ejzONozHEzYQ7IwFYWe5ls6WzxvWnVzhDwC6tpZWfuj1zZlC7q67fa8Nfda9FIFDw44i6JO6jInT33/1AmFaTSRZu3Q6zTaE/0EbvobWY7FYn9MQjwOebjzhiPNOEO665DSrYsDTJ0TldsBKO6RJvJcvgMV3uVOVqp4vgul3OSp4SErlHpWrA8pdtEgzjBGVK6Yd8iLElVAXTB51RLSLXFnlxNp2dglyfFwiDXGxTc1KpvpDWuIfeY6fn6K4zJcxAVkjSdmBWuQLhpXRVCGxynx2FhIZht22Q2RoKEE7JjgZyw6nCCSFioAdE4W/vD1ZTGUtJDEwKAAQlahQWjEhsvKzksCQvITkEqEtMOwUARpKKzUJmuatNKnK0ajsnKRVJZ8DrSQgWOLLAENiAslFMCawJNRNc2bbUyJ+ldrLLyXWFgB7THSEeikXUm4EbY7uoR2PEnBcP8lmSmYT25M0lJPZbLM5cueN+9N9zKROq3aaWeXAxGVM24XEA0DDhJHez5cPwaSKDm9j7tZQbYvTAUTGxX5wEbc9JUrTcq0BZStdyuWalM1hqzhRXCuDzvMGl9LH7QK0NrnkelG1IZivVf/zb6rffaXZ5DNd3f5Fk9kXDi4RraqY+iOTGwiCTQlAMY7YWn33B0e2pUqftEoZ9HXMYS1CYsTTdlRalXLIpYpUrcjVGnNkZHE9BO31Ma8AOoHVhDKAQkCgJRMfF8sClUAfvkegr5hUz+EpiKcvr/+0uYlwkIFFI9xMinmexVlQh2CHS4CgXIowKgFjEpDJAk3D902L7kJDpmblBWpma2at7hDGT0uAI2tRmWN0bxzio6jZrcPnLH4nnE9E6O/k8gufOrgKS/dmWUN8KFuW1SdCEC+/zHG9iWVb8BYAQiEX4IgbcBn2p96tzdqVv32w2z20hx94cYCBPUHgRjagMCm4jaJnipKhFHHaN4qagcJ1FV0TrjgHiAZWUqW7jmzThOrNid2Hds31PXZYtzTlQ0HlomDQ5uYebW0p2d7a5/b6+i7LxkaG2xubmXnZyNDOzjM6OHhJmcxz+u0fR1b0la1TOBwiPRShlaDOogcQ44CT6N9ELSA7u8+ccA58jmObdJrCsRhFolGOwBDrJJMp5oAPAd3LpBBNITgKBUMcvAtbQt3dFibljtKWAKGhO0iHBPw607TFaP8hWQIETQX/EBEeB22+m5qxDfUgs9Eo207F1zGO8ufjQqFr7tjwAZ7iYSAJyFECFHXw5lg8SaHVBOmW/byPMSmhFaKJx9ICH3LdpaXE19/EpEB4QBEQEkM71JlSpFIUjKcosppgIgTi44+AGYSsrT8AKOwddoSryIkHgyHyBCLkD4QomUgwVfMG0Q7Mabu0Zb91qhA5aWm7Jy7WPR7vPafs81MytUa7Ozv2geCQ0F5Lp/m2oL29vaO4YCpFqXTaZla4pg5gVqUI9vf3+AOcKCbv7ak2GBTs9uzggNtYDCAglygl57DEpCBCvhNsqwj5fX7yWATS9sUHSOQ88bFcRd3dMPM31HVXVkQEPuu+duLke44N66R5fRQMh/kZi0aQXQozw1SGd8kjV3B75wAP7JRf2oMXv9JPL3+nlz//Tj//8k+W5y9+pb39l7R/8JL2911yMC9IUaH812GWNPwPIMjBs16tjTnLpuIXPO942qfWn9HUVZ8XZOtaxjWzKc0d1i5L4ZtE4kSbBfwvZC5o/7vy/wX4X9O+7PiNUtdhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;part2&quot;
+        title=&quot;part2&quot;
+        src=&quot;/static/0e0c205c6a9b76b9dc7bc6d6d77e1e68/f058b/part2.png&quot;
+        srcset=&quot;/static/0e0c205c6a9b76b9dc7bc6d6d77e1e68/c26ae/part2.png 158w,
+/static/0e0c205c6a9b76b9dc7bc6d6d77e1e68/6bdcf/part2.png 315w,
+/static/0e0c205c6a9b76b9dc7bc6d6d77e1e68/f058b/part2.png 630w,
+/static/0e0c205c6a9b76b9dc7bc6d6d77e1e68/20982/part2.png 778w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
