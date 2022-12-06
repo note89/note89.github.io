@@ -132,6 +132,8 @@ code in need of refactoring and I was more than amazed that one code challenge t
 <li><a href="#day-4--challenge-1--2">Day 4 | Challenge 1 &#x26; 2</a></li>
 </ul>
 </li>
+<li><a href="#day-5">Day 5</a></li>
+<li><a href="#day-6-not-started">Day 6 (not started)</a></li>
 </ul>
 </div>
 <h2 id="day-1" style="position:relative;">Day 1<a href="#day-1" aria-label="day 1 permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
@@ -662,7 +664,170 @@ I will try a similar approach tomorrow, maybe I just got lucky today.</p>
         loading="lazy"
         decoding="async"
       />
-    </span></p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#281838;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" srcSet="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p class="text-md font-sans">My name is <!-- --><strong>Nils Eriksson</strong>. I&#x27;m a software educator at<!-- --> <!-- --><a href="https://mirdin.com/" target="_blank">Mirdin | The Code Quality Company</a>. I enjoy thinking deeply about software, this blog is a collection of my thoughts.<!-- --></p></div><div class="mirdin--container"><iframe src="https://note89.github.io//next-course-iframe/?mode=base" width="100%" frameborder="0" scrolling="no" class="mirdin--iframe"></iframe></div><div class="bg-sky-700 flex items-center flex-col rounded p-10 text-center"><h1 class="text-slate-200">Join our Newsletter</h1><p class="text-slate-200 max-w-[40ch]">Lessons on how to write better code directly in your inbox.<!-- --> <!-- --><b>Sign up and receive a free copy of 7 Mistakes That Cause Fragile Code.</b></p><div><link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+    </span></p>
+<h2 id="day-5" style="position:relative;">Day 5<a href="#day-5" aria-label="day 5 permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Results:</p>
+<ul>
+<li>Challenge_1: Ongoing</li>
+<li>Challenge_2: …</li>
+<li>Prompts needed:
+<ul>
+<li>Part 1: Ongoing</li>
+<li>Part 2: …</li>
+</ul>
+</li>
+</ul>
+<p>When I saw the question and input data i knew I was in trouble.
+The question does not really give a clear specification outside the example and
+looking at the input data itself so i knew it would be tricky.</p>
+<p>I tried for an hour or so with just the original question and follow up pointers.
+It was very hard for it to make something general.</p>
+<p>In the end i ran out of time i could use.
+I will throw in the towel and write a very precise spec, and see if it can generate and answer from that. I will even hint a bit on how to solve the question “make two parsers, parser one …” etc.</p>
+<p>So to be continued at some other point in time</p>
+<p>1 hour later more…
+Okey this will have to be a machine human collab.</p>
+<p>This prompt that i gave created this code</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Write a python program that consists of two parsers, one for stacks and one for moves. 
+
+Make sure to represent the concepts. 
+Move, Stack, and Block as classes in the code. 
+
+Move should have methods
+getFrom, getTo, getAmount
+
+Stack should have the regular operations that a stack datastructure has.
+pop, push, peek, plus id.
+
+Block only needs, getValue which is the character that was read
+
+The data is given in two parts separated by a blank row. 
+The first part gives all the block information and the second part all the moves. 
+
+After finding the part of the input that contains the blockpart do the following. 
+1. scan the last line of this input
+2. for each integer you find call a function create_stack
+3. create_stack will need to use the offset from the left and a index which is the integer that was found while scanning. 
+4. create_stack will use this offset and look at each previous line at that offset and read in the one letter character that is there, and make a block out of that containing that character. That block will be put on the stack. when there is no more lines to read from (going upwards) that stack is done. proceed to keep scanning until no more integers can be found. There does not have to be any blocks above the integer then that stack has no blocks.
+
+The second parser will create Move objects. 
+
+The input that comes after the block part + the empty line.
+STEPS
+1. filter out all characters that are not integers in the input.
+2. From the remaining integers, the first integer is the amount, the second one is the from, and the third one is the to. 
+3. create a Move object.
+
+
+Now write a main function that
+That reads a file called input.txt, runs the parsers on the input then goes on todo the following.
+
+for each Move in order
+1. find the Stack with the index/id of Move.getFrom()
+2. find the Stack with index/id of Move.getTo()
+3. pop Move.getAmount() number of Block from the 'from' Stack.
+4. push those blocks that was just popped onto the 'to' Stack. 
+
+After all these operations have been done. 
+
+Go through all Stacks in order, lowest to highest id. 
+and print whatever is on the top of each Stack to the terminal. 
+ 
+Make sure the program calls main()</code></pre></div>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> re
+
+<span class="token keyword">class</span> <span class="token class-name">Block</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">init</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  self<span class="token punctuation">.</span>value <span class="token operator">=</span> value
+
+  <span class="token keyword">def</span> <span class="token function">getValue</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>value
+
+<span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">init</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  self<span class="token punctuation">.</span>stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  self<span class="token punctuation">.</span><span class="token builtin">id</span> <span class="token operator">=</span> <span class="token builtin">id</span>
+
+  <span class="token keyword">def</span> <span class="token function">push</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> block<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>block<span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">pop</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> amount<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      popped_blocks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>amount<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          popped_blocks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> popped_blocks
+
+  <span class="token keyword">def</span> <span class="token function">peek</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+  <span class="token keyword">def</span> <span class="token function">getId</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> self<span class="token punctuation">.</span><span class="token builtin">id</span>
+<span class="token keyword">class</span> <span class="token class-name">Move</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">init</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> from_stack<span class="token punctuation">,</span> to_stack<span class="token punctuation">,</span> amount<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  self<span class="token punctuation">.</span>from_stack <span class="token operator">=</span> from_stack
+  self<span class="token punctuation">.</span>to_stack <span class="token operator">=</span> to_stack
+  self<span class="token punctuation">.</span>amount <span class="token operator">=</span> amount
+
+<span class="token keyword">def</span> <span class="token function">getFrom</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>from_stack
+
+<span class="token keyword">def</span> <span class="token function">getTo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>to_stack
+
+<span class="token keyword">def</span> <span class="token function">getAmount</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>amount
+
+<span class="token keyword">def</span> <span class="token function">create_stack</span><span class="token punctuation">(</span>offset<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  stack <span class="token operator">=</span> Stack<span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+  <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>offset<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  block_value <span class="token operator">=</span> input_lines<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>offset<span class="token punctuation">]</span>
+  block <span class="token operator">=</span> Block<span class="token punctuation">(</span>block_value<span class="token punctuation">)</span>
+  stack<span class="token punctuation">.</span>push<span class="token punctuation">(</span>block<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> stack
+
+<span class="token keyword">def</span> <span class="token function">parse_blocks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  stacks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  block_part <span class="token operator">=</span> input_lines<span class="token punctuation">[</span><span class="token punctuation">:</span>input_lines<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+  last_line <span class="token operator">=</span> block_part<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+  offsets <span class="token operator">=</span> <span class="token punctuation">[</span>m<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> m <span class="token keyword">in</span> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span><span class="token string">r'\d'</span><span class="token punctuation">,</span> last_line<span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token keyword">for</span> offset <span class="token keyword">in</span> offsets<span class="token punctuation">:</span>
+    index <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>last_line<span class="token punctuation">[</span>offset<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    stack <span class="token operator">=</span> create_stack<span class="token punctuation">(</span>offset<span class="token punctuation">,</span> index<span class="token punctuation">)</span>
+    stacks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>stack<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> stacks
+
+<span class="token keyword">def</span> <span class="token function">parse_moves</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  moves <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  move_part <span class="token operator">=</span> input_lines<span class="token punctuation">[</span>input_lines<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+  <span class="token keyword">for</span> line <span class="token keyword">in</span> move_part<span class="token punctuation">:</span>
+    move_parts <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    amount <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>move_parts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    from_stack <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>move_parts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    to_stack <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>move_parts<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    move <span class="token operator">=</span> Move<span class="token punctuation">(</span>from_stack<span class="token punctuation">,</span> to_stack<span class="token punctuation">,</span> amount<span class="token punctuation">)</span>
+    moves<span class="token punctuation">.</span>append<span class="token punctuation">(</span>move<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> moves
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">global</span> input_lines
+  <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'input.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    input_lines <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  stacks <span class="token operator">=</span> parse_blocks<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  moves <span class="token operator">=</span> parse_moves<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> move <span class="token keyword">in</span> moves<span class="token punctuation">:</span>
+    from_stack <span class="token operator">=</span> <span class="token punctuation">[</span>stack <span class="token keyword">for</span> stack <span class="token keyword">in</span> stacks <span class="token keyword">if</span> stack<span class="token punctuation">.</span>getId<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> move<span class="token punctuation">.</span>getFrom<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    to_stack <span class="token operator">=</span> <span class="token punctuation">[</span>stack <span class="token keyword">for</span> stack <span class="token keyword">in</span> stacks <span class="token keyword">if</span> stack<span class="token punctuation">.</span>getId<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> move<span class="token punctuation">.</span>getTo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    blocks <span class="token operator">=</span> from_stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>move<span class="token punctuation">.</span>getAmount<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> block <span class="token keyword">in</span> blocks<span class="token punctuation">:</span>
+        to_stack<span class="token punctuation">.</span>push<span class="token punctuation">(</span>block<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> stack <span class="token keyword">in</span> stacks<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span>peek<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>from this point i can ask for specific things and copy past them into the program to get the final product i hope.</p>
+<h2 id="day-6-not-started" style="position:relative;">Day 6 (not started)<a href="#day-6-not-started" aria-label="day 6 not started permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#281838;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" srcSet="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p class="text-md font-sans">My name is <!-- --><strong>Nils Eriksson</strong>. I&#x27;m a software educator at<!-- --> <!-- --><a href="https://mirdin.com/" target="_blank">Mirdin | The Code Quality Company</a>. I enjoy thinking deeply about software, this blog is a collection of my thoughts.<!-- --></p></div><div class="mirdin--container"><iframe src="https://note89.github.io//next-course-iframe/?mode=base" width="100%" frameborder="0" scrolling="no" class="mirdin--iframe"></iframe></div><div class="bg-sky-700 flex items-center flex-col rounded p-10 text-center"><h1 class="text-slate-200">Join our Newsletter</h1><p class="text-slate-200 max-w-[40ch]">Lessons on how to write better code directly in your inbox.<!-- --> <!-- --><b>Sign up and receive a free copy of 7 Mistakes That Cause Fragile Code.</b></p><div><link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	#mc_embed_signup{color:black clear:left; font:14px Helvetica,Arial,sans-serif;  width:300px;}
 	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
