@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>https://note89.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Dec 2022 10:19:33 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>https://note89.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Dec 2022 10:58:04 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and…]]></description><link>https://note89.github.io/the-advent-of-code-ai-edition/</link><guid isPermaLink="false">https://note89.github.io/the-advent-of-code-ai-edition/</guid><pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;intro&quot; style=&quot;position:relative;&quot;&gt;Intro&lt;a href=&quot;#intro&quot; aria-label=&quot;intro permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and useful to me.&lt;/p&gt;
@@ -67,7 +67,12 @@ code in need of refactoring and I was more than amazed that one code challenge t
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#day-5&quot;&gt;Day 5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#day-6-not-started&quot;&gt;Day 6 (not started)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#day-6&quot;&gt;Day 6&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#day-6--challenge-1&quot;&gt;Day 6 | Challenge 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#day-6--challenge-2&quot;&gt;Day 6 | Challenge 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h2 id=&quot;day-1&quot; style=&quot;position:relative;&quot;&gt;Day 1&lt;a href=&quot;#day-1&quot; aria-label=&quot;day 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
@@ -761,7 +766,77 @@ Make sure the program calls main()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;stack&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;peek&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getValue&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 main&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;from this point i can ask for specific things and copy past them into the program to get the final product i hope.&lt;/p&gt;
-&lt;h2 id=&quot;day-6-not-started&quot; style=&quot;position:relative;&quot;&gt;Day 6 (not started)&lt;a href=&quot;#day-6-not-started&quot; aria-label=&quot;day 6 not started permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>https://note89.github.io/typescript-typelevel-tic-tac-toe/</link><guid isPermaLink="false">https://note89.github.io/typescript-typelevel-tic-tac-toe/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
+&lt;h2 id=&quot;day-6&quot; style=&quot;position:relative;&quot;&gt;Day 6&lt;a href=&quot;#day-6&quot; aria-label=&quot;day 6 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Challenge_1: 10 seconds&lt;/li&gt;
+&lt;li&gt;Challenge_2: 10 seconds&lt;/li&gt;
+&lt;li&gt;Prompts needed:
+&lt;ul&gt;
+&lt;li&gt;Part 1: 1&lt;/li&gt;
+&lt;li&gt;Part 2: 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Redemption! I skipped doing this challenge on the 6th of December because I tried day 5 again.
+Today I did not have much time, but I just was curious to see what would happen if I just pasted the whole day 6 question.
+It produced a very small program and I was a bit suspicious (i had not read they challenge )
+But lo and behold it was the right answer!&lt;/p&gt;
+&lt;p&gt;For part two I did read the challenge and thought it could be summarized I like a sentence and was
+strongly considering doing just that. But I decided to paste the whole thing and hope for the best.
+It worked again!&lt;/p&gt;
+&lt;p&gt;Day 6 was solved in less than a minute. Very impressive
+The solution looks quite good as well, using a stream instead of reading in all of the input first.&lt;/p&gt;
+&lt;h3 id=&quot;day-6--challenge-1&quot; style=&quot;position:relative;&quot;&gt;Day 6 | Challenge 1&lt;a href=&quot;#day-6--challenge-1&quot; aria-label=&quot;day 6  challenge 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 169.62025316455694%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAIAAADQyG7qAAAACXBIWXMAABXXAAAV1wEELLsZAAAEQElEQVRIx5VUWXPTSBiU7SQkkGzCDbWAUyRFCEsC+NR9zaHRSBpZsg5LdmCXggSy//99azzB8QbzwFTX55bk1vR3jKRO14KIQRR7JLOdyLQC06KGSU2T6oYviDHnphVoOhkMQX/g9vpOr+9I4qc/cGUFCS4u51gQt993+vP7i/9ciTtd27RoEJY0KGhQ+DRfgPgZ8TMaFB4Z+37uuqzbs/8n7vZsTScQJY7LIEoM0x/KUFaQomJZgbIK5wTJChoMwc2duz1bN3yPZNhLxQ7EzwQRRgjJyJy7gHW61g3blmEGLK5pUARBEbGKBgVEI8dl2EsBiF0QC1+yglbYVlTsAGbZoW2HPDqhqmJV866ihhVO8FCGP4m7tmFRFtcsrlg8jUccSXqWpB/T8cdRMhuNZuJmxKqhDBZ6IbZMK4hYzeKa+BnCCcIJgDHEiQtix2UAxvwSjQBgy926si0ryHK4W8OisszLq+mebvhiTjSdqJrX6VrLnq/FquYhnEI0gjiBKME4MUyqaPwVcyXPuduzV4g7Xct2WZqejZIZi2uRoZgQjzcp82lB/CyMJhgnK2wbJg0iPmGiT0FYBtGEMd48Fk8RTkXmmuatECsqBvPaOG7kXhHOBeZng+cvzP9k24ni0ZTFdTya8t4k0ySZJTwLfik6F7EqDMvlCV2abThyQYy91AXcoQuY7US2E7qAmVbQH7iDIRjKcLVtyw6M+UnmDTPporaLuLraomBJyk1GrIr5kJc+zcNoEoaTIJz4fj4YghvK65xNO0jHZwnPdjbOPokMRQn460Y1RKMbnrm427M/dEzDpPxLQPMgLB03sp2IV5tHnrbthJYdWDbPXMyZgKRqRDF81fB13dcNqhtUVtBQRuL0D+VrLitYUT1VEzPHISGQwq8XXv2ZsVmc/h0nn5LxPzScYlJ6/uQGsF8SWvm0gjhDXi5BlGFS6CY9PZVP36snp+rbE/ntqXzyTjl9py5jMOSfRMuOkJdDnEGcSQCNCa1ev+k2pMZ2o7G3vbm3t7u+ti79Yr3/oHn+BKDxtfj4TUeSGnf3dp89+uP5sz8fPXh4e3NrtbijrxRLG5tbd3Z2N1ot6ddrlfivbqPVXNtYl5oNqdn8DbFPq6Pjzs7O9pOnj3fv33vw8OHW5uatjY3fsL22vv70yeO79+/d3tne2tne3L7T+OG/8WOtFr8+/sBzXmtKrYbUlDhakrTWWGu1ms3G8s7vblQbk3Iggxftw5cvj9oHx+3D4/2D4/YBj6+OTg4O37xov2rvH7X3Xz1/cahoHiYFxHMxxBlA45CdVbPL6ezf6eyyKM/r6fd6ellW34rJRT27rGffy+piUn8vq28eKcS2y+JZWZ1X04tJfZGXXybTi3zypazOOerzovoq+Dj/vBivK9suTD06CdgUkxyTnNASkwKR3CMFJoXnF9gv5o8KiMYApYBHjv8AKQTXQ7lJv24AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;part1&quot;
+        title=&quot;part1&quot;
+        src=&quot;/static/9fe2ef4b915167b0d276df519bcbee83/f058b/part1.png&quot;
+        srcset=&quot;/static/9fe2ef4b915167b0d276df519bcbee83/c26ae/part1.png 158w,
+/static/9fe2ef4b915167b0d276df519bcbee83/6bdcf/part1.png 315w,
+/static/9fe2ef4b915167b0d276df519bcbee83/f058b/part1.png 630w,
+/static/9fe2ef4b915167b0d276df519bcbee83/40601/part1.png 945w,
+/static/9fe2ef4b915167b0d276df519bcbee83/e2e58/part1.png 1069w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;day-6--challenge-2&quot; style=&quot;position:relative;&quot;&gt;Day 6 | Challenge 2&lt;a href=&quot;#day-6--challenge-2&quot; aria-label=&quot;day 6  challenge 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 144.30379746835442%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAIAAAAl5NuSAAAACXBIWXMAABXXAAAV1wEELLsZAAAETklEQVQ4y4WT+VPbRhTH1ybgYMdGko0xNGGAQBJytvjWfVgrre5jJfnCjm3CNNMfOtP//4eOJGqSppm++c6bt5I+7/u0WgGG1UXRYlnEcgbLIY43GUYfDOFgCIdZ/kEqzWg0ow1pCGgG2k7MCYYk25Jsq9DnBaPTlXp9pduTc/UHo8FQ7Q9GW/X6yk1bAO2O+OlXVoW+aSaaHuoIG0ZkWollJzrCyIhsZ6IhLEqWIFq8YIii1esr7Y7Y6Uqg05U6XYnlkCCavGDygsHxBscjjjeypSlKKTOk4ZDWaAYyrNYfKDmVwu2OKEmOjrCOsGklOopyf1GyaEZjOcRyepYRw2ocb/QHo0fndlcaqZ5hxpJsy4qjKK4o2fkWyLIjiFY+lCBasuL0+nJObp0lXjBlxR3Qar+v9DJ9u0O9vrItcuy7sZWRa9ljw0wQirLJsQp9Ffo6whAGUAs0PRzScOv5CN90RNuZzGb3cbKOolUy3sTxynGnXjAPw6XrzkK8sN0Jw2g3beFb/sFZN6IgXHj+3PfnGC/94Nb1ZrY79fy5582yRreajhlWH9LwEW53xJsbXlIcFfoQ+poWMtnpoRmNYbX86SED0ys0ZDlEP/inIwCGQ6xgcpl40eYFi2ERwyI6lU6zOsOhR7GISU9xKoZFQA3m8l9/et7Cx+sw2oTxJs3RBsd3OL4L8Nrxlq7/IMdfuMHSsKaGNVW1CIxgKGsYmRPDnqXKbpj2zLSmpjVD5kRRwxHEippK1WKox9kyHMEQjCBWtej6Xefs9NXl2ZuXl+8vLt5eXLx9efnu7PzNi9Ors/M35+fX5+fXFxdvr69/e/36Y7cv5y1SZ6jHRP1ot7hDlkrHVOW41Ww2m4eNRqNRL+/v7xSL4J8oFAoAgMtXH3QjnSiHE4JsAABqtWr9YL/ROKw3GiRJkgRJHBzkQB7FrNHV64/fwSR5CAAolyvVA5KiyJOTk3q9Dn6IvNHVq0cYQz2m6q3i7pMne3tp850nW7dvbX8Kk/VWtfK0RtWeVp+Vn1XBT+JHOIQoIYg6QVEnJ88bBFErV/azKO3t7ZfLpVLp/2CyUa5UTl/8ctCoVwmiXKvu12pPq5VKuby7u5tjhULhPzcsJrINK+0WwU4B7ICtCgVQLBb+/amuPnz3zqdnVwRBtY5aVLNFHR1TzeM0Hx23jp8/f3HWOGyR5CFJHVL1Zu2A+vBpoKHxAzyC2HLmXvDZ8Zde8Nn1F2G09vyl493a3sLxFl6wTHOYPuDjlW6M8zML8oMa4NV4eh8nd8n4S5TcJZP7ePwlnqQ1jjfj6T1ONmmdbBzvVtWi3DKHce7mh58DvAqjlRsss2Id4FWA11m9SZfR2rAefpUUztuE8WYy+zqZ/T67/RpP7pPp/e3yjyjZWM7ccma2O89eYe4FS8uZq1qUC4iyK8qupHjyyJcUX5S9NCueKHuC5PKiI0gOL25lC5KTI6Ls/g08aXxdQ1NULwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;part2&quot;
+        title=&quot;part2&quot;
+        src=&quot;/static/6d899327b835a715eb9250f060d8234e/f058b/part2.png&quot;
+        srcset=&quot;/static/6d899327b835a715eb9250f060d8234e/c26ae/part2.png 158w,
+/static/6d899327b835a715eb9250f060d8234e/6bdcf/part2.png 315w,
+/static/6d899327b835a715eb9250f060d8234e/f058b/part2.png 630w,
+/static/6d899327b835a715eb9250f060d8234e/40601/part2.png 945w,
+/static/6d899327b835a715eb9250f060d8234e/fbf08/part2.png 962w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TypeScript Typelevel Tic-Tac-Toe: Overkill edition!]]></title><description><![CDATA[At Mirdin we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different…]]></description><link>https://note89.github.io/typescript-typelevel-tic-tac-toe/</link><guid isPermaLink="false">https://note89.github.io/typescript-typelevel-tic-tac-toe/</guid><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://mirdin.com/&quot;&gt;Mirdin&lt;/a&gt; we help students to practice writing software. You might be familiar with how practicing guitar or some sport is very different from just playing/performing.&lt;/p&gt;
 &lt;p&gt;You will get better from just playing but it takes much longer and your understanding of what you have learned is much worse. You will learn what to do but have a harder time explaining what you have learned.&lt;/p&gt;
 &lt;p&gt;This is exactly how it normally is to work towards becoming a senior engineer. Senior engineers that have been through a lot gain intuition. They know that one design decision should be taken over another but they might have a hard time explaining exactly why. &lt;b&gt;So do you really have to spend 10 000 hours just working on projects to
 achieve mastery ?&lt;/b&gt;&lt;/p&gt;
