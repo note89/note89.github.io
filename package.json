@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "notes-on-software",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Nils Erikssons code blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Nils Eriksson <nils@mirdin.com>",
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.6.0",
     "date-fns": "^2.29.3",

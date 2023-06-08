@@ -81,13 +81,30 @@ const expressLink =
   "https://mirdin.com/the-advanced-software-design-express-course/"
 const regularLink = "https://mirdin.com/the-advanced-software-design-course/"
 
-const CurrentCourse = new Course({
-  titleElement: Regular,
-  link: regularLink,
-  startDate: new Date("2022-12-16"),
-  runningLength: 12,
-  highlightElement: RegularCourseHighlight,
-})
+const createExpressCourse = (date: Date) => {
+  return new Course({
+    titleElement: Express,
+    link: expressLink,
+    startDate: date,
+    runningLength: 5,
+    highlightElement: ExpressCourseHighlight,
+  })
+};
+
+const createRegularCourse = (date: Date) => {
+  return new Course({
+    titleElement: Regular,
+    link: regularLink,
+    startDate: date,
+    runningLength: 12,
+    highlightElement: RegularCourseHighlight,
+  })
+}
+
+
+// const CurrentCourse = createExpressCourse(new Date(2023, 0, 23))
+
+const CurrentCourse = createRegularCourse(new Date(2023, 4, 4))
 
 const Front = () => {
   return (
