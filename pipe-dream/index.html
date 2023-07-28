@@ -1,0 +1,609 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta data-react-helmet="true" name="twitter:description" content="How Super Mario can help you design better software"/><meta data-react-helmet="true" name="twitter:title" content="Stable APIs are a Pipe Dream"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:description" content="How Super Mario can help you design better software"/><meta data-react-helmet="true" property="og:title" content="Stable APIs are a Pipe Dream"/><meta data-react-helmet="true" name="description" content="How Super Mario can help you design better software"/><meta name="generator" content="Gatsby 4.16.0"/><style data-href="/styles.524fb0ea65a5e655d6ad.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}code,kbd,samp{font-family:monospace,monospace;font-size:1em}img{border-style:none}button,input,optgroup,select,textarea{line-height:1.15}button,input{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]::-webkit-search-decoration{-webkit-appearance:none}details{display:block}[hidden]{display:none}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#b3d4fc;text-shadow:none}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+/*
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+*/*,:after,:before{border:0 solid #e5e7eb}:after,:before{--tw-content:""}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{color:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%}@media (min-width:450px){.container{max-width:450px}}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.fixed{position:fixed}.absolute{position:absolute}.m-\[5px\]{margin:5px}.m-0{margin:0}.mx-2{margin-left:.5rem;margin-right:.5rem}.mb-8{margin-bottom:2rem}.mb-5{margin-bottom:1.25rem}.block{display:block}.flex{display:flex}.w-full{width:100%}.max-w-\[40ch\]{max-width:40ch}.cursor-pointer{cursor:pointer}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.rounded{border-radius:.25rem}.rounded-xl{border-radius:.75rem}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.border-4{border-width:4px}.border-solid{border-style:solid}.border-yellow-400{--tw-border-opacity:1;border-color:rgb(250 204 21/var(--tw-border-opacity))}.bg-orange-300{--tw-bg-opacity:1;background-color:rgb(253 186 116/var(--tw-bg-opacity))}.bg-sky-700{--tw-bg-opacity:1;background-color:rgb(3 105 161/var(--tw-bg-opacity))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity))}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8/var(--tw-bg-opacity))}.bg-neutral-900{--tw-bg-opacity:1;background-color:rgb(23 23 23/var(--tw-bg-opacity))}.p-2{padding:.5rem}.p-10{padding:2.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.py-4{padding-bottom:1rem;padding-top:1rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.py-6{padding-bottom:1.5rem;padding-top:1.5rem}.pr-3{padding-right:.75rem}.pb-2{padding-bottom:.5rem}.pb-1{padding-bottom:.25rem}.pl-4{padding-left:1rem}.pr-10{padding-right:2.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem}.text-lg,.text-xl{line-height:1.75rem}.text-lg{font-size:1.125rem}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21/var(--tw-text-opacity))}.text-neutral-200{--tw-text-opacity:1;color:rgb(229 229 229/var(--tw-text-opacity))}.text-neutral-300{--tw-text-opacity:1;color:rgb(212 212 212/var(--tw-text-opacity))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.drop-shadow-lg{--tw-drop-shadow:drop-shadow(0 10px 8px rgba(0,0,0,.04)) drop-shadow(0 4px 3px rgba(0,0,0,.1));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-text-decoration-color,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-text-decoration-color,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.card{display:grid;grid-template-areas:"overlap";grid-template-columns:1fr;grid-template-rows:1fr;transform-style:preserve-3d;transition:all 1s ease-in-out}.card-back,.card-flipped{transform:rotateY(180deg)}.card-back,.card-front{-webkit-backface-visibility:hidden;backface-visibility:hidden;grid-area:overlap}.custom-class{fill:purple;margin-left:5px}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity))}.hover\:bg-stone-900:hover{--tw-bg-opacity:1;background-color:rgb(28 25 23/var(--tw-bg-opacity))}.hover\:text-yellow-500:hover{--tw-text-opacity:1;color:rgb(234 179 8/var(--tw-text-opacity))}.hover\:drop-shadow-xl:hover{--tw-drop-shadow:drop-shadow(0 20px 13px rgba(0,0,0,.03)) drop-shadow(0 8px 5px rgba(0,0,0,.08));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:450px){.xs\:flex-row{flex-direction:row}.xs\:text-right{text-align:right}.xs\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:640px){.sm\:pr-10{padding-right:2.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}img{max-width:100%}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--blogpost-padding:15px;--maxWidth-wrapper:var(--maxWidth-2xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--fontFamily-sans:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:"ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji";--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem;--fontSize-8:3.583rem;--color-primary:#005b99;--color-text:#2e353f;--color-text-light:#4f5969;--color-heading:#1a202c;--color-heading-black:#000;--color-accent:#d1dce5;--background-color:#e2e8f0}.style-font-serif{font-family:var(--fontFamily-serif)}.style-font-sans{font-family:var(--fontFamily-sans)}.font{font-family:var(--font-serif)}.bold,.style-bold{font-weight:var(--fontWeight-bold)}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{height:100%}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);border:0;height:1px}h1,h2,h3,h4,h5,h6{align-items:center;display:flex;font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12)}h2,h3,h4,h5,h6{color:var(--color-heading);font-weight:var(--fontWeight-bold)}h1{color:var(--color-heading-black);font-size:var(--fontSize-6);font-weight:var(--fontWeight-black)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);padding:var(--spacing-0)}ol{list-style:decimal outside}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-4);margin-right:var(--spacing-0);padding:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-8);margin-top:calc(var(--spacing-8)/2)}blockquote{border-left:var(--spacing-1) solid var(--color-primary);color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}.global-wrapper{margin:var(--spacing-0) auto;max-width:calc(var(--maxWidth-wrapper) + var(--blogpost-padding));padding:var(--spacing-10) var(--spacing-5)}.global-wrapper[data-is-root-path=true] .bio{margin-bottom:var(--spacing-20)}.global-header{margin-bottom:var(--spacing-12)}.main-heading{font-size:var(--fontSize-7);margin:0}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.header-link-home{font-family:var(--font-heading);font-size:var(--fontSize-2);font-weight:var(--fontWeight-bold);text-decoration:none}.bio{display:flex;margin-bottom:var(--spacing-16)}.bio p,.bio-avatar{margin-bottom:var(--spacing-0)}.bio-avatar{border-radius:100%;margin-right:var(--spacing-4);min-width:50px}.blog-post{background-color:#fafafa;padding:var(--blogpost-padding)}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.gatsby-highlight{margin-bottom:var(--spacing-8)}@media (max-width:42rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}}.mirdin--container{container-type:inline-size}.mirdin--iframe{height:20rem}@media (min-width:640px){.mirdin--iframe{height:14rem}}@container (max-width: 501px){.mirdin--iframe{height:20rem}}@container (min-width: 500px){.mirdin--iframe{height:14rem}}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><style type="text/css">
+    .custom-class.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .custom-class.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .custom-class svg,
+    h2 .custom-class svg,
+    h3 .custom-class svg,
+    h4 .custom-class svg,
+    h5 .custom-class svg,
+    h6 .custom-class svg {
+      visibility: hidden;
+    }
+    h1:hover .custom-class svg,
+    h2:hover .custom-class svg,
+    h3:hover .custom-class svg,
+    h4:hover .custom-class svg,
+    h5:hover .custom-class svg,
+    h6:hover .custom-class svg,
+    h1 .custom-class:focus svg,
+    h2 .custom-class:focus svg,
+    h3 .custom-class:focus svg,
+    h4 .custom-class:focus svg,
+    h5 .custom-class:focus svg,
+    h6 .custom-class:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6YK6MBEL0X"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6YK6MBEL0X', {"send_page_view":false});
+      }
+      </script><link rel="alternate" type="application/rss+xml" title="Gatsby Starter Blog RSS Feed" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=77cd5232de819220c659b2bb53b0cf28" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=77cd5232de819220c659b2bb53b0cf28"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=77cd5232de819220c659b2bb53b0cf28"/><title data-react-helmet="true">Stable APIs are a Pipe Dream | Note&#x27;s on software</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="background:rgb(226,232,240);width:100%;height:100%;min-height:100vh"><div class="global-wrapper" data-is-root-path="false"><header class="global-header"><a class="header-link-home" href="/">Note&#x27;s on software</a></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline" style="font-size:var(--fontSize-8)">Stable APIs are a Pipe Dream</h1><p>June 09, 2023</p></header><div class="mirdin--container"><iframe src="https://note89.github.io//next-course-iframe/?mode=base" width="100%" frameborder="0" scrolling="no" class="mirdin--iframe"></iframe></div><section itemProp="articleBody"><h1 id="stop-breaking-your-apis-using-this-one-visual-trick" style="position:relative;">Stop Breaking Your APIs Using This One Visual Trick<a href="#stop-breaking-your-apis-using-this-one-visual-trick" aria-label="stop breaking your apis using this one visual trick permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2b09688371f2aa301dec55fe1556a6be/e5715/super_mario.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7AIyUhw9UICBYK6avoebu5NTo4qiFdfpKCdI+DIlYVqGmm5ZiYNY8C+NOFbGrot7t59bd00FDPU5JPrankgCdqZoAnyQmlz3CzLvv9+7P6uauVzb/TAehXkinLUDly8LAQFOOTj72RQS3dlvb+fXe5NlERT9GQzmpm4cAmqyZAIscI4Q4y9XE1trSiHtzfTojnjcYkEEmnzodmz4fmzUbhkImnjcRjkkur6qf1dnOQ0U/UE5Dt6mSAJGskQC6Fx+rPdbg0H58dDEWEF4rIls8HGA5FWQrE200Em0yFnAsEX06HHEpGjQQCnhrYEdLR0E/NL2ulgCIpYsAnh0knT/R3Mre4ttigmwFYiMEfzMEXysbbjldjlouZTYTbTc9kGI7hVQxTTq4uLBJTEU3Ny+vo40Ag5+FAoIbJYE63OXU1NXSH5Q5CoZFFJbGDIayHIZ7M5tICo0wE2BvCXqfEGFeHHMvmrCZS0hFOTwytamTAHqofgDFFiW0Rebo3HubggCMFRVzkAyn2Al/qQqBvwefIAeSSwaDzQWc0AiIzQZ1Qy6DNEI6Pj9EN7WokQB0o3gAsRksoEfj5thha2MHhR0TkoEOp+MNkMgRlL8MtioQjD0JercBn9oFgMYLhT0omzJBNT1DSTy1qpIAdIJyEEoeOXhE6vDfkZCOFkEkC6Y0EGZGEYl0DHxCBF4dClskEINGHHlwIIhaBoorf4x8Tk9KOj0zpZyGAGmUbgqQKDyQTOjq3d/s32FjYhoxIA5HGwleFz9ZNpeAaJaGaEh5RQ1jIxVjJlRuWdfb0UpORjk6MqachQBepmYA2CZBsFbq593z//LR39Zxa2GZfGCXeWSHc13/+Lv//8OjjHF0WUmRc17Cx8Dg6t5JTEU4OTGSiXYARZRNANsnQadU4tbT9PTt6fXupqCM/Oap/eevXVdIVVFEYVtLb2VS/+ytz76OwMjA3OncT1JLPT01iX9rABZ0KRKwMSmHPjp4RUadW63Cs6qhj8mugjg5Nh0hIFNKPFJKPBYdH15ZS62Vc8zSyOTn4UJGQTg6MpuPeQAVdSsUrTkkezcUYygAoisjgUCdjYDlyJSilG+6roT36rD/8bS4o3qId1iznHfHw75ipm8FTRg6RjehlX8AJGUvEKgyOXdEXlpVI2g3HnY5cndn49Og3baQtnJjqltWpWhcwaSC+/Cw4NCegYt/IHQwDD0aMzowo5mDACOIMgDfKWC1b9TGxDB7QR2COmUeJmQmKlYVHZ0BF+4BGO0BGM4AGZVFQop1YU9JQiSQORFGHi8wK5eNeAAfgzAD0StjsHLX0csxd0JYSyySDx+kChzIBR/3ASP/ACH8ACL/ACKzABV8ABNZFRkXXiwNLBYzNzCVj3wAJVkwEn0rbaN00Mi/fRYhowAbtQwhqhckkC0qhEUvf0kxgTwsfDUobHE7VUstVBccD6kxDWAgMDgtgn5uACBxMxOXMXGpdnxiZEodGmNDMT87LEJkO0mARILSY6z/eaj+dqn/d6b3cXi6Vm0VIBqrLwpxIi41LJKLeAARnS8K1DVRl19CRDZ/vFST2WFEXDZ6rFGPzFxhgkOTy2C5/3WGuFlxnkl7r08oLyMaPiMPNBouOyyEhW9ZuP2BeM533wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Dall-e super mario"
+        title="Dall-e super mario"
+        src="/static/2b09688371f2aa301dec55fe1556a6be/f058b/super_mario.png"
+        srcset="/static/2b09688371f2aa301dec55fe1556a6be/c26ae/super_mario.png 158w,
+/static/2b09688371f2aa301dec55fe1556a6be/6bdcf/super_mario.png 315w,
+/static/2b09688371f2aa301dec55fe1556a6be/f058b/super_mario.png 630w,
+/static/2b09688371f2aa301dec55fe1556a6be/e5715/super_mario.png 768w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<div style="font-style: italic; margin-top: -20px; padding-bottom: 10px;" class="text-sm text-center pb-4">
+DALL-E: "Super Mario" using green pipes as sunglasses in stained glass art
+</div>
+<p>The primary idea conveyed in <a href="https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html">The three levels of software</a> is</p>
+<blockquote>
+<p><strong>A program that never goes wrong can still be wrong.</strong></p>
+</blockquote>
+<p>People are often confused when they hear this statement, and rightly so, it does sound strange.
+So, here is my attempt to create a mental model that will make this statement intuitive.
+We will harness the power of the pipe to help us reason through program correctness and when changes are breaking or non-breaking.</p>
+<h2 id="pipes-and-software--the-three-levels" style="position:relative;">Pipes and Software | The Three Levels<a href="#pipes-and-software--the-three-levels" aria-label="pipes and software  the three levels permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Let’s start by defining the concepts that we want to visualize.
+Code exists on one of <a href="https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html">three levels</a>.</p>
+<ol>
+<li>The runtime level</li>
+<li>The code level</li>
+<li>The logical/specification level</li>
+</ol>
+<p>Let’s now use pipes and water to understand and visualize these three levels.</p>
+<p><img src="/2b76fa0c54123d9b91ccaa384c4c4191/normal.gif" alt="water through a pipe"></p>
+<p>When we think about a single run of a program on particular inputs, then that is the level of runtime. These specific inputs are represented by waterdrops in our animation above.</p>
+<blockquote>
+<p><strong>For one possible value my program is correct</strong></p>
+</blockquote>
+<p>At the level of code, however, we are looking at program correctness for all possible runs. In our animation, this is represented by the water (all waterdrops).
+(Code also guides the inputs/water through the program, and this is represented by pipes that
+live within the outer pipes)</p>
+<blockquote>
+<p><strong>For all possible values my program is correct</strong></p>
+</blockquote>
+<p>At the level of logic, we think about logical statements that are correct for all possible inputs and all possible implementations.</p>
+<p>This is the level of specification and it’s represented by the pipes in the above picture.
+We must learn to see the guarantees our functions need and generate (pre and post-conditions) as different from the current function implementation itself. More on that later.</p>
+<blockquote>
+<p><strong>For all possible values and all valid changes my program is correct</strong></p>
+</blockquote>
+<p>These ideas are very abstract, and when I first learned about them, I hoped there was some simple visual representation of what was going on. So I set a background task in my brain to work on this problem to find a good way to internalize this field of knowledge.
+After probably 12 months, with some failed visualizations on the way, I found something that is both simple, intuitive and accurate. And that is what I am sharing with you today.</p>
+<p>The Pipe!<img style="display: inline; padding-left: 5px" src="https://emojis.slackmojis.com/emojis/images/1643514786/7962/pipe.png?1643514786"></p>
+<h3 id="pipes--the-gaming-gimmick-turned-software-hack" style="position:relative;">Pipes | The Gaming Gimmick Turned Software Hack<a href="#pipes--the-gaming-gimmick-turned-software-hack" aria-label="pipes  the gaming gimmick turned software hack permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>The idea of pipes in a programming context is not exactly ground-breaking. If you’ve done a bit of Linux command line or functional programming, you’ve probably met the pipe operator.
+But here we are going to use it to reason about program correctness.</p>
+<p>So, in Pipe Land, as we said above, the three levels of code are represented by:</p>
+<ol>
+<li>Individual Water drops: The runtime level</li>
+<li>All the water: The code level</li>
+<li>Pipes: The logical/specification level</li>
+</ol>
+<p>This will give us a great visual and intuitive understanding of how these levels interact.</p>
+<p>With our Pipe visualization, you’ll see clearly why this can be the case (see bottom of the post).</p>
+<h3 id="speed-running-the-logical-level-of-code" style="position:relative;">Speed running the logical level of code<a href="#speed-running-the-logical-level-of-code" aria-label="speed running the logical level of code permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>Let’s take a simple TypeScript function:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
+<p><strong>Is this code correct?</strong>
+…Well, what does it even mean for code to be correct?
+If we don’t have a specification(what we want to achieve), we can’t say anything about correctness.</p>
+<p>We need a specification.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
+<span class="token comment">// add is a function that takes two numbers</span>
+<span class="token comment">// and returns those numbers numerically added together</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
+<p><strong>Is this code correct?</strong> By visual inspection, yes, the code is correct!</p>
+<p>What about this code?</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> hello_ <span class="token operator">=</span> <span class="token string">"hello_"</span>
+<span class="token keyword">const</span> world <span class="token operator">=</span> <span class="token string">"world"</span>
+<span class="token keyword">const</span> hello_world <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span>hello<span class="token punctuation">,</span> world<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hello_world<span class="token punctuation">)</span></code></pre></div>
+<p><strong>Is this code correct?</strong> and if not, where is the bug?</p>
+<p>First of we (again) forgot to say what the aim(specification) of the program is.
+We can probably guess that it’s to print <code class="language-text">"hello_world"</code> to the console,
+but we can’t say that for sure, so let’s add a specification.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
+<span class="token comment">// This program prints "hello_world" to the console</span>
+<span class="token keyword">const</span> hello_ <span class="token operator">=</span> <span class="token string">"hello_"</span>
+<span class="token keyword">const</span> world <span class="token operator">=</span> <span class="token string">"world"</span>
+<span class="token keyword">const</span> hello_world <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span>hello<span class="token punctuation">,</span> world<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hello_world<span class="token punctuation">)</span></code></pre></div>
+<p><strong>It produces the correct output, so it must be correct… right?</strong></p>
+<p>Not quite… this is where the logical level of code comes in.</p>
+<p>Let’s put the specification we have of <code class="language-text">add</code> in the code.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
+<span class="token comment">// This program prints "hello_world" to the console</span>
+<span class="token keyword">const</span> hello_ <span class="token operator">=</span> <span class="token string">"hello_"</span>
+<span class="token keyword">const</span> world <span class="token operator">=</span> <span class="token string">"world"</span>
+<span class="token comment">// Specification</span>
+<span class="token comment">// add is a function that takes two numbers</span>
+<span class="token comment">// and returns those numbers numerically added together</span>
+<span class="token keyword">const</span> hello_world <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span>hello<span class="token punctuation">,</span> world<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hello_world<span class="token punctuation">)</span></code></pre></div>
+<div>Did we follow the rules(specification) of the <code>add</code> function?</div>
+<p>
+<b>No we didn't!</b> but our program still produces the right results... here’s the catch!
+</p>
+<p>
+  <b>
+  The problem is that, when we said that the program works, we weren't able to do that just by thinking about the <u>specification</u> of `add`. We had to use the current <u>implementation</u> of `add` to reason about the correctness of the program.
+</b>
+</p>
+<p>At this point, you might be thinking,</p>
+<blockquote>
+<p>“So what? It works!”</p>
+</blockquote>
+<p>Well, imagine if we decide, to tweak the <code class="language-text">add</code> function. Perhaps our first implementation was a bit too basic and we want to improve it.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
+<span class="token comment">// add is a function that takes two numbers</span>
+<span class="token comment">// and returns those numbers numerically added together</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">!==</span> <span class="token string">"number"</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> b <span class="token operator">!==</span> <span class="token string">"number"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"inputs must be numbers"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span></code></pre></div>
+<blockquote>
+<p>Same sh…spec! different implementation!</p>
+</blockquote>
+<p>Whoops! Now our program springs a leak! At both the runtime and code level,
+we’ve got a problem and must go back and patch it up!
+Yet we didn’t change our specification, and both our old and new implementation of <code class="language-text">add</code> are correct.</p>
+<p><strong>So what just happened?</strong></p>
+<p><em>Let’s pause for a minute here to make sure we’re all on the same page.</em>
+<em>The runtime level corresponds to a single run of the program that fails.</em>
+<em>The code level is all possible executions of the program/function/etc, which you could find using exhaustive testing.</em></p>
+<h3 id="pipes-and-water--avoiding-errors-of-modular-reasoning" style="position:relative;">Pipes and water | Avoiding Errors of Modular Reasoning<a href="#pipes-and-water--avoiding-errors-of-modular-reasoning" aria-label="pipes and water  avoiding errors of modular reasoning permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>An <strong>“Error of modular reasoning”</strong>. That’s what we call a bug where a program works but doesn’t obey the specifications of code it uses. They’re a unique kind of bug that are hard to spot, appearing in programs that look like they’re functioning well until, one day, they suddenly break due to a logically correct change in some other part of the program.</p>
+<p>Modular reasoning is:</p>
+<blockquote>
+<p>Being able to make decisions about a module while looking only at its implementation, its interface and the interfaces of modules referenced in its implementation or interface.
+<a href="https://www.igi-global.com/dictionary/modular-reasoning/40536">-source</a></p>
+</blockquote>
+<p>So an error of modular reasoning occurs when we can’t verify the correctness of a program by just reading the code and looking at the specifications of the code it uses.
+Instead, we need to delve into specific implementation details that might give more guarantees or work with a broader set of values (like strings in our case) than what the specifications guarantee.
+Here is where you might hear a senior engineer saying:</p>
+<blockquote>
+<p>Yes, this code is correct (or at least it works!), but only under assumptions that aren’t stable guarantees.</p>
+</blockquote>
+<p>Every time you manage to get “a stable guarantee” into a PR review your seniority level goes up by one.</p>
+<h4 id="pre-and-post-conditions--laying-down-the-rules" style="position:relative;">Pre and post conditions | Laying Down the Rules<a href="#pre-and-post-conditions--laying-down-the-rules" aria-label="pre and post conditions  laying down the rules permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<div>
+Specifications contain two vital parts:
+<div style="font-size:12px; font-style:italic; padding-bottom:10px;">(there is some nuance depending on logical system but we will ignore that)</div>
+</div>
+<ol>
+<li><strong><em>Preconditions</em></strong><em>:</em> What must be true before a piece of code is called</li>
+<li><strong><em>Postconditions</em></strong><em>:</em> What holds true after a piece of code has been called</li>
+</ol>
+<p>Anything else is an implementation detail!</p>
+<div>
+Let's illustrate this with our <code>add</code> function:
+<div style="font-size:14px; font-style:italic; padding-bottom:10px">
+the <code>{}</code> brackets capture what needs/is true at a certain point in the program
+</div>
+</div>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">!==</span> <span class="token string">"number"</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> b <span class="token operator">!==</span> <span class="token string">"number"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"inputs must be numbers"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+<span class="token comment">// postcondition: {return value is a numerically added to b}</span></code></pre></div>
+<p>But better still is to think of it without the implementation details.
+Like this:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token comment">// postcondition: {return value is a numerically added to b}</span></code></pre></div>
+<p>This is the essence of the <code class="language-text">add</code> function! Any implementation that meets these conditions is valid.</p>
+<h3 id="hoare-logic-levelling-up-code-reasoning" style="position:relative;">Hoare logic: Levelling Up Code Reasoning<a href="#hoare-logic-levelling-up-code-reasoning" aria-label="hoare logic levelling up code reasoning permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>The logical statements I showed above are part of a formal method called Hoare Logic (plug: which we teach in our <a href="https://self-service.mirdin.com/offers/A7LiY2U7/checkout">course</a>).
+Hoare Logic allows us to reason about the correctness of our programs by examining the pre/postconditions and code.
+It gives us rules that tell us what the postconditions of a function are, given its preconditions and code, or conversely,
+the preconditions given the postcondition and code. This means that we can use Hoare Logic to
+think (and prove the correctness) about specifications.</p>
+<p>When I first took our Mirdin course (yes, I started as a student), I was blown away by Hoare Logic, and it was very useful in getting me away from the code and thinking about the design of the program instead. That said, there are a lot of rules in Hoare Logic but how do we go from thinking in rules to intuition from where the rules would be obvious?</p>
+<p>Let’s revisit our initial implementation of <code class="language-text">add</code>:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
+<span class="token comment">// postcondition: {return value is a numerically added to b}</span></code></pre></div>
+<p>Is one spec our code supports, <em>(<a href="https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html">many-to-many is the relationship between implementation and spec</a>)</em>
+but the current precondition is not the weakest that this implementation supports.
+The weakest precondition is that <code class="language-text">a</code> and <code class="language-text">b</code> are any values for which <code class="language-text">a + b</code> is defined.
+<em>(which in JS is number and string plus anything that can be cast to one of the two, which is basically anything🙃)</em>
+If we went with that type of generic precondition, <code class="language-text">concat</code> would be a better name.<br>
+To make our initial program correct on the logical level and not contain an error of modular reasoning,
+we can change the precondition to be:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a and b are both strings or numbers}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
+<span class="token comment">// postcondition: {</span>
+<span class="token comment">//    IF a and b are numbers</span>
+<span class="token comment">//        return is a numerically added to b</span>
+<span class="token comment">//    OTHERWISE</span>
+<span class="token comment">//        return is a string concatenated with b</span>
+<span class="token comment">//  }</span></code></pre></div>
+<h4 id="weak-and-strong-conditions" style="position:relative;">Weak and Strong Conditions<a href="#weak-and-strong-conditions" aria-label="weak and strong conditions permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<ul>
+<li><strong>A condition is <u>weaker</u> if it needs/gives <u>less</u> guarantees.</strong></li>
+<li><strong>A condition is <u>stronger</u> if it needs/gives <u>more</u> guarantees.</strong></li>
+</ul>
+<p>Some rules (don’t try to memorize them):</p>
+<ul>
+<li>If a new precondition is <u>weaker</u> than the old precondition, it is a non-breaking change.</li>
+<li>if a new postcondition is <u>stronger</u> than the old postcondition, it is a non-breaking change.</li>
+</ul>
+<p>Instead of memorizing the rules, we will now use pipes to drive them home and make it obvious.
+Then later you can derive the rules from your intuition.</p>
+<p>The bug in the code we had earlier was that we did not respect the specification of add,
+we used the implementation instead. However, one way to <strong><em>“solve”</em></strong> this is to change the specification to
+work with strings as well.</p>
+<p>
+<b>Will this be a breaking change or a non-breaking change?</b>
+</p>
+<p><em>think and answer before you continue</em></p>
+<details>
+<summary>Answer</summary>
+<b>It will be a <u>non-breaking</u> change</b>, because the new precondition is <u>weaker</u> than the old precondition.
+Before, we only accepted <code>number</code> as input, now we accept <code>number</code> or <code>string</code>.
+<pre class="language-typescript"><code class="language-typescript">{number} => {number || string}
+</code></pre>
+<p>The old precondition implies (logical implication, learn about it in the course) the new precondition, so all old callers that meet the
+old precondition will also meet the new precondition.</p>
+<pre class="language-typescript"><code class="language-typescript">{old_callers} => {number} => {number || string}
+</code></pre>
+</details>
+<p style="padding-top:20px;"><b>Okay, here comes the exciting part: how can we visualize all this?</b></p>
+<p><em>Next in the pipeline, pipes!</em></p>
+<h2 id="visualizing-with-pipes" style="position:relative;">Visualizing with Pipes!<a href="#visualizing-with-pipes" aria-label="visualizing with pipes permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Imagine pipes - like in Super Mario.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeUlEQVQ4y83T30uTURgH8Oecs3ejwiBoyyQwMrqIouhCI6e+s/LX3vd1zfkj0W7cHGtaQUFg4Ttzb1NjVqjo9pJp6UVtVP7AaM45/EEIUgQV4VX0F9iNN26eeNeFm1CE3gTfi3MezgfOcx4OgIsmJf4P2dg8v7lqo3CPQmtSxESSK67EmVS8oZRa1vZabh1odOjsTTq7U2d3am1KElsl2sbm/fUNxDoHbgpifBMjN4Vrq6dvpPFjwI2jmmWoXARuDIpGwOCHQhnOy1AWJKVPQW1+DPcpiOupuPlndqfWNAcl40z1N1KxrOKjTPErcu4R0fcRfZ+qbGpPeQg0l30gbcESBefq2a40yzJwYVz/A2q+ooolbHyL8n3ADgI7iIToLsssaKp6tmKl59tr6WZ9lgkyjeRYLT5ahY+YSGYpPpiHMwpwBksOczireh9zZSKBY0mvLcaVTmrnTzrImRac+5Dk9aEcCedIqhNOdNyOTt1UZ9+BNM4BIkWuWOqoxDhIlDQuXhglxneodgXXfQfzEjK/J4YhKJDhYlB9KQLpDie0/gFj6wIrk5LXyPIBV30GIYKEMMnvB30PGJ6puQnQWf+KDTIpeYMqP+LqLyDMImGG5A8ouHBEzU+CzrYN3AuFz3eGhW3iHV37P+z596cV4+CmuGGB9ePipDnzYZw3ALnKnBluErTWqwoWYwpxUWAkqnJT0rbOPKCMbaFoSGOcUNV8UtWtEFOUVMxrWD9mB0jxi93lU3Co6TqIVC3FSDsl7RQC3o6AtyPY3RHo7gp67k738mEfFx3mo8Nc5Ak/I3OhXi7Uw033CxG5dMxje+n1BryegLcz0N35C28O5kNjYSjAAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Super mario pipe"
+        title="Super mario pipe"
+        src="/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png"
+        srcset="/static/1a5903f50cbba20e3a5ce31a80f15498/c26ae/pixel_pipe.png 158w,
+/static/1a5903f50cbba20e3a5ce31a80f15498/6bdcf/pixel_pipe.png 315w,
+/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png 400w"
+        sizes="(max-width: 400px) 100vw, 400px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>The key feature of pipes is that they can stack on top of each other, each fitting into the next.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 525px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 126.58227848101265%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAABXXAAAV1wEELLsZAAAFA0lEQVQ4y4WUWUxUVxzGJ33RNKnRGmNqtFRc0hixCS6MLaCCTFpQRkVFVrFSpAWxLolb0VrUtlo1xqUirQiKUMcVFxS1tRbQal1Q61KIBitOmXvvueee9a5zmgFSfet5+HIezsnvn/y/73NBCDnnlDKbB0EH5ppNMHWsIMUcIcQ51zTNsi1KqWVZlFDTtDRNw5gghFyyLJmGfeJczfaTi3fWLa68Vpzz2SzvnITywzsh0CijQAF+v/9JW4s/8Pzh4weyIkGoaZoGIXRJckCnVvnxbQsPRBVWuD/9IertiF69B/TY/uMGCBDj7Fnbs9V7MldVJed+6Rk4pK/vbDkjOlABAMCFEBIi2Nbavub7vLUXJ2+66p007520jNmmblNKTNPUmVlRu23NpbjcXaNjPKM7Ah26rjPGKKUuSZIQ1mS/5mveWG3OOilyP5gzMLcgk3MmSRLUVAL5jZb6ap6+5lz8zMwk23EkSQIAKIriIoTYjoUU5vvzq3Jtus/IGTGpz4LCeUIIQolpGY4hmlpP/iTmFOx3JyZ+JISglHbBQ2RM0ItngbLGJQfprENadr/BPQsX5RNCushU0083VW5oSPDkD032JnVN9JLsCFsNkLKGpTtbp6w84hkwsmfJd6uFEBijoHBUGX3rW7CiNjZ93ZhBw/r6zlQY3NJ1HiJ3BDoMw7xwsX5RaULRvuj5W8aPjOvvnvDeoaP72p+/wAQDGZYf37q6Lm5RZcyY+CHN925BqHWCFReEqhCi+lTZEt/7xWc9xacTIicP6v1Wj5KtyxVJNS3T5HZzS9Mhml5yOWHqXLfj2JRSxhghxKUoim7oLQ+fLt+cW1jpXnnMk5A7PGriyKdtTxAKGYki/dqj+iqcvrQmZlLSOMoI7HRJyCQAAMoIBnrdg71VfOZZkefJG+bNmqA7WAWQUKxT6+r987tapqdvHJWWmSKEUKGKENI0zaWqKtcZlOipuzvKAt4aPDc6NSw5LY6bGEJNN7gSgDuOrVhxfOK8zeMj3OHH6isxohjjkLdDnw2m+NHh698cIClHzY8HR/ZKSZ2qm1xVVV3nKoBbD64s2h+dvWFseES/C1fOMMq7yaFUGUztIDXXvy7927vl9xnD3H2WLV0mhIAapIzqzLz9qKlCSV/38+RpOTG2ZSOMuskAANMyHt5t3eTLX1g+vnDvhNj08KycjGs3rygyCFkY67dbf6uh2atq4+OnjWWcaprWTVaAIoTY59v++ZGo9b8klvz6YWTCoDf6v1a0Li3gVwyT69RqvHd+T3tyxuYRcVOinKCNECKEdJEV23buNN8qWp/6yc5xBXujY9PCR40dfvPODYIJpZRi9rituXhHXnbBtJJNX1iWDSHEGIfI/62q9mZpOZx+QsxPLBw+I9PjCEMFkDGmqqphmETjQSdIKeWcQwgRQqE9y7KMKVL+Qafu7C71T62mWbEZYUmpsRpTFBkQQhRFIQTLiowxkiSJUgoAgBCGygBjbNkmkvmZ+3sO0JQjds670X29aQmOMAgO9VYos7b9qnbxu8sAE+RvUyoul1Tx2RWBjKHj3szKS6EMSZKMEAqNhnGXhh533l9GMlSO0Djxx+7ZayPc3rCwyNcXLskXQUFpN8dxnFeVMfayDDRNUxSlvf15fd2lhiuNjU0NLa1/AQBk+f/IlFLbthljQgjTMoLBoGEajuPwztPFCQaDryrn3DAMzvm/elh8rk8jgxIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Stacked pipes"
+        title="Stacked pipes"
+        src="/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png"
+        srcset="/static/7810717de9e7cd276a7e02b677a63e95/c26ae/painted_strait_pipes.png 158w,
+/static/7810717de9e7cd276a7e02b677a63e95/6bdcf/painted_strait_pipes.png 315w,
+/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png 525w"
+        sizes="(max-width: 525px) 100vw, 525px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>These pipes represent our different specifications. They take in inputs and produce outputs.
+If we want to change our pipes/specifications, there are two ways we can do it without disrupting old callers/pipes. The width of the pipes corresponds to the strength of the specification.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/aeda129797a25f2beeafa62a79e9d918/07e9f/pipe_dream_valid_changes_3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 129.1139240506329%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAIAAAA44esqAAAACXBIWXMAACMQAAAjEAFnL93WAAAEHElEQVQ4y42U32/bVBTH88qfwAODxz2NigokhNCEkEpBbGOr1I2+bFANBEOIF4REYYhpDIZI25WN9AcTaZu0jbr+DGlWbd2SOD+stGmbpG5qp0vatCRpzdw0ttPE9r0H2e7cjIfCV9a90rnn+Nx77udcE8a4WCzmcjmO4zDGsiZFUQBgZ2dHFEWMsaIo2Wy2UqkoiiJJku6AEDIBgN/v93g9BEEIgqAoCsZYFEWEUCAQSCaTkiTl83mGYViWBU0IIT3eJMsySZKEj3C5XPYB+/Td6UAg4HQ6C4WCx+OxWq2Tk5PxeHx1ddXtdpMkubCwwCQZAFCDFUXJ5XJ2u72vr89ms/X29prNZovFMjEx4XA4en7v6e/vHx0bHRwaGBm909nV2dbWynGcntyEECqXyzzPC5pEUeR5XhTFYrEoCEKhUCgWi1gGVMGAQeBFviDoadUz6xPGWB+rhRACAG6XDSQm4+zd+zH7n4H+6cAwlYjvb9sorzEalnKlDACzMaL+i+e+e/ja9YXX6z478sIrz3QPmgGgIlUOC5YkSbVISpSa64w3Wej3zv9SM+Z0AIC2JKvb1qW76pWQZRkhpNsBA8fnp9An3eunPuw4Fow81IPVM+uu8ES6Vb/Mvb09Bam0PN7Nj+1+ZGFOXrxVE0vMAoAsq5lUSLa3t8fHx+Px+HJimSTJTCZD07SO3db2Vi6by7Ar39x5u8V5/Lz5xbloSEGKWBL3CWNZtqury+v1RuYj4XA4FAoFg8HF6GKBK1odlou3XjL7T1/zvnXdX/9zsP5r24lXTz8/cK8dANQzl0qlWCxGkiRN0xRFhUIhhmZoeiWXy6fSyWHvr+2L9Tei77bOvnMzdqrp2tFLlxs3t9IYY5NeGIwxPC1ZljmOA8CoAs7VH4dxgws+sObPNF2uTf/F6A6mcrlsVAgAVNoE3vgFL/AIQWpzxbrZ6IYLn96uafnpknrJlbJasPn5ea/Xu7S0xDBMLBajadrlcmUymVQqtba+FolEKGoJJPhtrKUtVtfcVhtdDquXImtXFQ6HbTZbMBgcGRnx+/1zc3MkSXo8aoc+eDDj9fim77v+mL56xXHu+5k3vhp8s2Pg2+X1WQ1P2cQwzNTUlM/noyiKZVm/308QhM/nIwgilXpExZcTj6I/jDe2L9X1pM4036h9+cSzMws6ZBqeOlg6m0ZXSJJU1gQAGxsbfekLDuFcc8ex20OtB2dWqmSwaeCJNMLYQnai9PEQf/bslaMjkwNP4VnNdnWw1h8yYMjvpHsz73enT9Z/fsR9z6llrhxkfpIHVe9Cm1Xss3+vmX0NN+cbvhw67g27dbb3H4NDgrUXApVKpeRaIpVhco8zu8UdpOwvHdbPBxYtP8bqZ9Tlv7ddZZGNohgO/zdYT/gvh38A9ZVKjcrxVa4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="pipe dream valid changes 3"
+        title="pipe dream valid changes 3"
+        src="/static/aeda129797a25f2beeafa62a79e9d918/f058b/pipe_dream_valid_changes_3.png"
+        srcset="/static/aeda129797a25f2beeafa62a79e9d918/c26ae/pipe_dream_valid_changes_3.png 158w,
+/static/aeda129797a25f2beeafa62a79e9d918/6bdcf/pipe_dream_valid_changes_3.png 315w,
+/static/aeda129797a25f2beeafa62a79e9d918/f058b/pipe_dream_valid_changes_3.png 630w,
+/static/aeda129797a25f2beeafa62a79e9d918/40601/pipe_dream_valid_changes_3.png 945w,
+/static/aeda129797a25f2beeafa62a79e9d918/78612/pipe_dream_valid_changes_3.png 1260w,
+/static/aeda129797a25f2beeafa62a79e9d918/07e9f/pipe_dream_valid_changes_3.png 1301w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>However, the opposite alterations would always result in a breaking API change.
+This is a logical level statement; it remains a breaking change even if all actual current callers continue to function.</p>
+<p><em>Example: In the above image the third pipe(3) could now strengthen its precondition since there is space to do so, however, this would still be a breaking change because this pipe can be used in many other setups where such changes would not work. We need to respect every potential caller and think about the <strong>ghost pipes</strong> that need our current exact requirements.</em></p>
+<p><em>Ask yourself this, if you change a backend API, but you know all callers and control them, and the old callers will keep working under your new stricter API, is it still a breaking change?</em></p>
+<p>Let’s now look at a series of animations to work up this intuition.</p>
+<h3 id="specifications-composition" style="position:relative;">Specifications Composition<a href="#specifications-composition" aria-label="specifications composition permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<h4 id="base-spec" style="position:relative;">Base Spec<a href="#base-spec" aria-label="base spec permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>Recap, Here two specs are combined (logical-level). The water represents all possible runs (code-level),
+while each droplet symbolizes a single run (runtime-level).
+<img src="/2b76fa0c54123d9b91ccaa384c4c4191/normal.gif" alt="normal spec"></p>
+<p>We see the specs fit together and all the water passes through without any leakage so we have a working and correct program.</p>
+<h4 id="a-valid-change" style="position:relative;">A Valid Change<a href="#a-valid-change" aria-label="a valid change permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>In this scenario, let’s modify the specifications to accept a broader input range (weaker precondition) and return a narrower output range (stronger postcondition).</p>
+<p><img src="/6131bb1efefba20fa85b67967f69064b/constrained.gif" alt="spec that is more constrained"></p>
+<h4 id="a-breaking-change" style="position:relative;">A Breaking Change<a href="#a-breaking-change" aria-label="a breaking change permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>Now, let’s see what happens when we try to give fewer guarantees (weaker postcondition) and accept a narrower input range (stronger precondition). As depicted, this leads to “leakage” and hence, a malfunctioning program.</p>
+<p><img src="/28fccb836875e4e749df9b00bc25ae45/breaking_change.gif" alt="spec that don&#x27;t compose"></p>
+<h3 id="wheres-the-code" style="position:relative;">Where’s the Code?<a href="#wheres-the-code" aria-label="wheres the code permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>To visualize the code we need more pipes! The outer pipe creates a boundary within which your implementation must live. If your specification asserts that it will output numbers less than five and your code generates numbers less than three, that implementation is still valid.</p>
+<h3 id="what-if-i-told-you-there-is-no-spec" style="position:relative;">What If I Told You There Is No Spec?<a href="#what-if-i-told-you-there-is-no-spec" aria-label="what if i told you there is no spec permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p><strong>Specifications do not really <u>exist!</u> They are just an idea.</strong> </br>
+<em>Though the more powerful the language the more of it we can embed (see <a href="https://coq.inria.fr/">Coq</a> for full embedding).</em></p>
+<p>The specification pipes we’ve been seeing are not as rigid as they might appear, they are actually just air.
+So, what guides the input (the water)? </br></p>
+<p>The answer: <strong>THE CODE!</strong> </br></p>
+<p><em>Let’s have a look inside the pipes.</em></p>
+<p><img src="/117d89902fb327054e6ecfac8b9d70fd/where_is_the_code.gif" alt="Where is the code?"></p>
+<p>The code needs to make sure it <em>at least</em> can collect all the incoming water that the precondition wants to let in, and not spread it wider than the postcondition wants to let out.
+All while containing no leaks.</p>
+<p>The specification outlines the boundaries within which our code needs to live, but it’s the code that must adhere to the specification.</p>
+<p>In the below animation, you can see how the water leaks out even though the specifications match. This is because this implementation does not respect the postcondition and is too loose in what it lets out.</p>
+<h4 id="a-buggy-implementation" style="position:relative;">A buggy implementation<a href="#a-buggy-implementation" aria-label="a buggy implementation permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p><img src="/c68a4faa70b51cddde6dfbe97a700ed6/buggy_implementation.gif" alt="Buggy implementation"></p>
+<h3 id="the-interplay-between-specification-and-code" style="position:relative;">The interplay between specification and code<a href="#the-interplay-between-specification-and-code" aria-label="the interplay between specification and code permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>The interplay between specification and code is that if your specification does not give too many guarantees and accepts every value under the sun, then the code has more room to move.</p>
+<p>In Hoare Logic we talk about <strong>precondition strengthening</strong> and <strong>post-condition weakening</strong>, and how that relates to a form of modularity.</p>
+<ul>
+<li>The output of your precondition is the input of your code</li>
+<li>The output of the code is the input to the postcondition.</li>
+</ul>
+<p>So the relationship between the precondition and the code is the same as between the postcondition of one spec and the precondition of the next spec.</p>
+<p>This gives rise to much of the rigidity in software development. You can always broaden your precondition, but the implementation may also need to be modified. If your code is forgiving but your specification is strict, you can modify the specification without changing the implementation (as with <code class="language-text">add</code>).</p>
+<h3 id="comprehension-questions" style="position:relative;">Comprehension questions<a href="#comprehension-questions" aria-label="comprehension questions permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>The weaker we make a condition the wider the pipe gets, and the stronger we make a condition the narrower the pipe gets.</p>
+<p>When talking about Hoare Logic we sometimes talk about the weakest precondition and the strongest postcondition.
+To get the weakest precondition we need to know the code and the postcondition.
+To get the strongest postcondition we need to know the precondition and the code.</p>
+<p>So with this new understanding, what would it mean to have the weakest precondition or the strongest postcondition?</p>
+<details>
+  <summary>Answer | The Strongest Postcondition</summary>
+  <p>The strongest postcondition is the strongest guarantee that we can form from the current code and the precondition.</p>
+</details>
+<details>
+  <summary>Answer |The Weakest Precondition</summary>
+  <p>The weakest precondition is the least amount of guarantees we need from the input to still have the code imply the postcondition.</p>
+</details>
+<h2 id="visualizing-errors-of-modular-reasoning" style="position:relative;">Visualizing Errors Of Modular Reasoning<a href="#visualizing-errors-of-modular-reasoning" aria-label="visualizing errors of modular reasoning permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Let’s now revisit the statement from the start of the post <em>(the primary idea conveyed in <a href="https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html">The three levels of software</a>)</em></p>
+<blockquote>
+<p><strong>A program that never goes wrong can still be wrong.</strong></p>
+</blockquote>
+<p>Let’s now see how we can visualize this using our pipes. We will see that it’s maybe not so strange a concept after all and it is just a natural emerging fact of the interplay between multiple pipes<i>(specs)</i> and sub-pipes<i>(implementations)</i>.</p>
+<h3 id="two-types-of-errors-in-modular-reasoning" style="position:relative;">Two Types of Errors in Modular Reasoning<a href="#two-types-of-errors-in-modular-reasoning" aria-label="two types of errors in modular reasoning permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<ol>
+<li>
+<p><strong>Depending on a Stricter Output Than the Specification Guarantees</strong><br>
+<em>Example:</em> When the game SimCity was created, there was code that used memory after it was freed, but the program still worked by coincidence because the then current implementation of the memory manager in the Windows operating system was stricter than the specification. The Windows operating system did not touch the memory after it was freed. Everything worked until a new release of Windows years later. (Microsoft fixed this issue by patching Windows.
+<a href="https://www.joelonsoftware.com/2004/06/13/how-microsoft-lost-the-api-war/">Joel Spolsky, How Microsoft Lost The API War</a>)</p>
+</li>
+<li>
+<p><strong>Depending on Being Able to Use Looser Input Than the Specification Guarantees</strong><br>
+If the current implementation is more forgiving than the specification guarantees. Depending on that is also an error of modular reasoning.
+Like with our <code class="language-text">add</code> example, the behavior we got when calling the function with the wrong arguments is not a stable guarantee for future valid changes to the function’s implementation.</p>
+</li>
+</ol>
+<p>Both errors are something that will only come up when code you depend on changes,
+so there are no <strong><em>observable</em></strong> issues that can be found in the current code.</p>
+<p>Depending on the languages it’s possible to embed the spec or parts of it in the types. Then these types
+of logical errors will become compile-time errors. It’s also possible to check for specification violations at runtime, this is what design by contract does.</p>
+<h3 id="error-of-modular-reasoning-visualized" style="position:relative;">Error Of Modular Reasoning Visualized<a href="#error-of-modular-reasoning-visualized" aria-label="error of modular reasoning visualized permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>This code has an <strong>Error Of Modular Reasoning</strong>.
+The second function depends on the current implementation and not the specification.</p>
+<p><img src="/7ebb3d1ffa8997794eead46c786ede11/error_of_modular_reasoning.gif" alt=""></p>
+<p>Now if we do a valid non-breaking change to the first function, we still get a runtime error in our program.</p>
+<p><img src="/9fd6ceae319a126d1336905d1bd27c9e/error_of_modular_reasoning_2.gif" alt=""></p>
+<p>This is of course because the second function depends on implementation details of the first function, which are not stable guarantees (part of the spec).</p>
+<p>Thinking about the boundaries of pieces of code makes it much easier to point out where the bug is, and what code should be changed to fix it. In the above case, it’s clearly the second function that is incorrect.</p>
+<h3 id="stable-guarantees" style="position:relative;">Stable Guarantees<a href="#stable-guarantees" aria-label="stable guarantees permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>Senior programmers talk about stable guarantees. What this means is that we only depend on what is guaranteed by the specification. “What if there is no specification?” I hear you say. Well, most code do not have specifications, so what do we do then?
+All code has a specification even if it’s not written down. It’s just that the specification is implicit in the code and the specification might be different in different engineers’ minds.</p>
+<p><em>A Tale of two engineers:</em></p>
+<ul>
+<li>
+<p>“Hey! You broke the API! The returned list is not in the same order anymore”.</p>
+</li>
+<li>
+<p>“No this was not guaranteed by the API, you should not depend on that.”</p>
+</li>
+<li>
+<p>“Well it’s a reasonable thing to expect from a list, and altering it is a breaking change.”</p>
+</li>
+<li>
+<p>…etc!</p>
+</li>
+</ul>
+<p>So start talking about specs and align your team(s) on what is guaranteed or not for different parts of the system.</p>
+<h3 id="end" style="position:relative;">End<a href="#end" aria-label="end permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>Understanding the interplay between specifications and their implementations is key to good software engineering. It’s important to note that even when your code seems to work perfectly, it could still contain hidden errors due to issues in modular reasoning.</p>
+<blockquote>
+<p>Junior Engineer: “I have checked all the places where the code is used and it works!”</p>
+</blockquote>
+<blockquote>
+<p>Senior Engineer: “Well…”</p>
+</blockquote>
+<p>I hope that these pipes can help you visualize the logical level of software easier and help our students with Hoare Logic.</p>
+<p>Happy coding!</p>
+<h5 id="q--a" style="position:relative;">Q &#x26; A<a href="#q--a" aria-label="q  a permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h5>
+<p><strong>Question:</strong> “This code is untyped! if we had types you would not be able to call <code class="language-text">add</code> with strings in the first place. Are types on the logical level?”</p>
+<p><strong>Answer:</strong>
+Types embed some of the logical-level in the code-level. but not all <em>(that depends on the power of the type system though)</em></p>
+<p><strong>Question:</strong> “Should you make your implementation act as close as possible to the specification?”</p>
+<p><strong>Answer:</strong></p>
+<blockquote>
+<p>With a sufficient number of users of an API,
+it does not matter what you promise in the contract:
+all observable behaviors of your system
+will be depended on by somebody.
+— <a href="https://www.hyrumslaw.com/">Hyrum’s Law</a></p>
+</blockquote>
+<img src="https://imgs.xkcd.com/comics/workflow.png" style="margin:auto">
+<p>So what gives? if your code gives more guarantees than the spec says, then some users will surely depend on that.
+And if you change the code to be more in line with the spec, then you will break those users (boohoo).
+Go famously made their map iteration random, because a lot of users were writing code depending on iteration
+being in order. Something that was not guaranteed in the spec, but was the case in the implementation.
+So they randomized the iteration order, to just not imply that stricter spec. And be open to more optimizations in the future.
+<a href="https://stackoverflow.com/questions/55925822/why-are-iterations-over-maps-random">https://stackoverflow.com/questions/55925822/why-are-iterations-over-maps-random</a></p>
+<p>Is it totally possible to do similar things where, for example, your current implementation is sync but
+you don’t want to guarantee that in the future, you can make it trivially async now by wrapping the return value in a promise <em>(</em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><em>JS datatype</em></a><em>)</em>.
+Then you can change the implementation later, without breaking the spec.</p>
+<p>When you stake out your spec, you are creating space to move in.
+Do not give too many guarantees or be too nice with possible inputs from the get-go.
+You will have to honor that forever or break your API, <a href="https://www.codesimplicity.com/post/ways-to-create-complexity-break-your-api/">don’t do that</a>.
+This is basically counter to Postel’s law (a.k.a: ‘the robustness principle’), which to me sounds like a recipe for frail software (ironically enough).</p>
+<p><strong>Question:</strong> “Pre/post-conditions can be much more complex than can be represented with just water and pipes.”</p>
+<p><strong>Answer:</strong>
+Our current analogy takes us pretty far, but in reality (if anything is real) the shapes of the inputs/outputs are multi-dimensional.
+Thinking in the simple 2D plane is good enough for our needs. And the rules of logical implication
+in the 2D plane are the same as in the multidimensional space.</p>
+<h2 id="acknowledgments" style="position:relative;">Acknowledgments<a href="#acknowledgments" aria-label="acknowledgments permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Big thanks to <strong>JunHong (Nemo) Yap</strong>, <strong>Christofer Ärleryd</strong>, and <strong>Jimmy Koppel</strong> for their invaluable assistance in both writing and editing this post.</p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#281838;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" data-srcset="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/79977020e69335e5a24f2d04c9860414/d4bf4/profile-pic.avif 50w,/static/79977020e69335e5a24f2d04c9860414/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/79977020e69335e5a24f2d04c9860414/3faea/profile-pic.webp 50w,/static/79977020e69335e5a24f2d04c9860414/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg" srcSet="/static/79977020e69335e5a24f2d04c9860414/d24ee/profile-pic.jpg 50w,/static/79977020e69335e5a24f2d04c9860414/64618/profile-pic.jpg 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p class="text-md font-sans">My name is <!-- --><strong>Nils Eriksson</strong>. I&#x27;m co-founder and software educator at<!-- --> <!-- --><a href="https://mirdin.com/" target="_blank">Mirdin | The Code Quality Company</a>. I enjoy thinking deeply about software, this blog is a collection of my thoughts.<!-- --></p></div><div class="mirdin--container"><iframe src="https://note89.github.io//next-course-iframe/?mode=base" width="100%" frameborder="0" scrolling="no" class="mirdin--iframe"></iframe></div><div class="bg-sky-700 flex items-center flex-col rounded p-10 text-center"><h1 class="text-slate-200">Join our Newsletter</h1><p class="text-slate-200 max-w-[40ch]">Lessons on how to write better code directly in your inbox.<!-- --> <!-- --><b>Sign up and receive a free copy of 7 Mistakes That Cause Fragile Code.</b></p><div><link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{color:black clear:left; font:14px Helvetica,Arial,sans-serif;  width:300px;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" class="text-slate-300">
+    <form action="https://jameskoppelcoaching.us16.list-manage.com/subscribe/post?u=8b565c97b838125f69e75fb7f&amp;id=bfbb2fb86b&amp;f_id=004c7be0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+        
+        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group ">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input class="text-black" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name (optional)</label>
+	<input class="text-black"  type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group ">
+	<label for="mce-LNAME">Last Name (optional)</label>
+	<input class="text-black" type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+<div class="mc-field-group" style="display:none">
+	<label for="mce-SOURCE">Source </label>
+	<input type="text" value="note89.github.io" name="SOURCE" class="" id="mce-SOURCE">
+</div>
+	<div id="mce-responses" class="clear" style="padding-left: 0px; margin-left: 0px;">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response text-white" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8b565c97b838125f69e75fb7f_bfbb2fb86b" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="" class="text-black bg-orange-300 p-2"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='SOURCE';ftypes[3]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+</link></div></div></footer></article><nav class="blog-post-nav bg-yellow-500 p-4 border border-solid border-yellow-400 border-4"><ul class="bold" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;list-style:none;padding:0;gap:1rem"><li class="m-0"><a rel="prev" href="/the-advent-of-code-ai-edition/">← <!-- -->Ai solves Advent of Code 2022<!-- --></a></li><li class="m-0"></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <!-- --><a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/pipe-dream/";window.___webpackCompilationHash="4a8dd612a7b557fa4ce3";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-7fb96685d0f6c6172c25.js"],"app":["/app-568de610cf8c25119050.js"],"component---src-pages-404-js":["/component---src-pages-404-js-96132c648e29280318d8.js"],"component---src-pages-iframes-tsx":["/component---src-pages-iframes-tsx-e8e58ffb03498da08c78.js"],"component---src-pages-index-js":["/component---src-pages-index-js-77a71a77f265d3149eb6.js"],"component---src-pages-next-course-iframe-tsx":["/component---src-pages-next-course-iframe-tsx-9467bf55da532a7ae55f.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-3897250dfff831313131.js"]};/*]]>*/</script><script src="/polyfill-7fb96685d0f6c6172c25.js" nomodule=""></script><script src="/app-568de610cf8c25119050.js" async=""></script><script src="/framework-f5349226409af93ecf71.js" async=""></script><script src="/webpack-runtime-b47831864cb7d957aada.js" async=""></script></body></html>

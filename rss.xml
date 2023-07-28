@@ -1,4 +1,507 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Jul 2023 22:39:41 GMT</lastBuildDate><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 28 Jul 2023 11:08:39 GMT</lastBuildDate><item><title><![CDATA[Stable APIs are a Pipe Dream]]></title><description><![CDATA[Stop Breaking Your APIs Using This One Visual Trick  The primary idea conveyed in The three levels of software is A program that never goes…]]></description><link>null/pipe-dream/</link><guid isPermaLink="false">null/pipe-dream/</guid><pubDate>Fri, 09 Jun 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;stop-breaking-your-apis-using-this-one-visual-trick&quot; style=&quot;position:relative;&quot;&gt;Stop Breaking Your APIs Using This One Visual Trick&lt;a href=&quot;#stop-breaking-your-apis-using-this-one-visual-trick&quot; aria-label=&quot;stop breaking your apis using this one visual trick permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2b09688371f2aa301dec55fe1556a6be/e5715/super_mario.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7AIyUhw9UICBYK6avoebu5NTo4qiFdfpKCdI+DIlYVqGmm5ZiYNY8C+NOFbGrot7t59bd00FDPU5JPrankgCdqZoAnyQmlz3CzLvv9+7P6uauVzb/TAehXkinLUDly8LAQFOOTj72RQS3dlvb+fXe5NlERT9GQzmpm4cAmqyZAIscI4Q4y9XE1trSiHtzfTojnjcYkEEmnzodmz4fmzUbhkImnjcRjkkur6qf1dnOQ0U/UE5Dt6mSAJGskQC6Fx+rPdbg0H58dDEWEF4rIls8HGA5FWQrE200Em0yFnAsEX06HHEpGjQQCnhrYEdLR0E/NL2ulgCIpYsAnh0knT/R3Mre4ttigmwFYiMEfzMEXysbbjldjlouZTYTbTc9kGI7hVQxTTq4uLBJTEU3Ny+vo40Ag5+FAoIbJYE63OXU1NXSH5Q5CoZFFJbGDIayHIZ7M5tICo0wE2BvCXqfEGFeHHMvmrCZS0hFOTwytamTAHqofgDFFiW0Rebo3HubggCMFRVzkAyn2Al/qQqBvwefIAeSSwaDzQWc0AiIzQZ1Qy6DNEI6Pj9EN7WokQB0o3gAsRksoEfj5thha2MHhR0TkoEOp+MNkMgRlL8MtioQjD0JercBn9oFgMYLhT0omzJBNT1DSTy1qpIAdIJyEEoeOXhE6vDfkZCOFkEkC6Y0EGZGEYl0DHxCBF4dClskEINGHHlwIIhaBoorf4x8Tk9KOj0zpZyGAGmUbgqQKDyQTOjq3d/s32FjYhoxIA5HGwleFz9ZNpeAaJaGaEh5RQ1jIxVjJlRuWdfb0UpORjk6MqachQBepmYA2CZBsFbq593z//LR39Zxa2GZfGCXeWSHc13/+Lv//8OjjHF0WUmRc17Cx8Dg6t5JTEU4OTGSiXYARZRNANsnQadU4tbT9PTt6fXupqCM/Oap/eevXVdIVVFEYVtLb2VS/+ytz76OwMjA3OncT1JLPT01iX9rABZ0KRKwMSmHPjp4RUadW63Cs6qhj8mugjg5Nh0hIFNKPFJKPBYdH15ZS62Vc8zSyOTn4UJGQTg6MpuPeQAVdSsUrTkkezcUYygAoisjgUCdjYDlyJSilG+6roT36rD/8bS4o3qId1iznHfHw75ipm8FTRg6RjehlX8AJGUvEKgyOXdEXlpVI2g3HnY5cndn49Og3baQtnJjqltWpWhcwaSC+/Cw4NCegYt/IHQwDD0aMzowo5mDACOIMgDfKWC1b9TGxDB7QR2COmUeJmQmKlYVHZ0BF+4BGO0BGM4AGZVFQop1YU9JQiSQORFGHi8wK5eNeAAfgzAD0StjsHLX0csxd0JYSyySDx+kChzIBR/3ASP/ACH8ACL/ACKzABV8ABNZFRkXXiwNLBYzNzCVj3wAJVkwEn0rbaN00Mi/fRYhowAbtQwhqhckkC0qhEUvf0kxgTwsfDUobHE7VUstVBccD6kxDWAgMDgtgn5uACBxMxOXMXGpdnxiZEodGmNDMT87LEJkO0mARILSY6z/eaj+dqn/d6b3cXi6Vm0VIBqrLwpxIi41LJKLeAARnS8K1DVRl19CRDZ/vFST2WFEXDZ6rFGPzFxhgkOTy2C5/3WGuFlxnkl7r08oLyMaPiMPNBouOyyEhW9ZuP2BeM533wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Dall-e super mario&quot;
+        title=&quot;Dall-e super mario&quot;
+        src=&quot;/static/2b09688371f2aa301dec55fe1556a6be/f058b/super_mario.png&quot;
+        srcset=&quot;/static/2b09688371f2aa301dec55fe1556a6be/c26ae/super_mario.png 158w,
+/static/2b09688371f2aa301dec55fe1556a6be/6bdcf/super_mario.png 315w,
+/static/2b09688371f2aa301dec55fe1556a6be/f058b/super_mario.png 630w,
+/static/2b09688371f2aa301dec55fe1556a6be/e5715/super_mario.png 768w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;div style=&quot;font-style: italic; margin-top: -20px; padding-bottom: 10px;&quot; class=&quot;text-sm text-center pb-4&quot;&gt;
+DALL-E: &quot;Super Mario&quot; using green pipes as sunglasses in stained glass art
+&lt;/div&gt;
+&lt;p&gt;The primary idea conveyed in &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;The three levels of software&lt;/a&gt; is&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A program that never goes wrong can still be wrong.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;People are often confused when they hear this statement, and rightly so, it does sound strange.
+So, here is my attempt to create a mental model that will make this statement intuitive.
+We will harness the power of the pipe to help us reason through program correctness and when changes are breaking or non-breaking.&lt;/p&gt;
+&lt;h2 id=&quot;pipes-and-software--the-three-levels&quot; style=&quot;position:relative;&quot;&gt;Pipes and Software | The Three Levels&lt;a href=&quot;#pipes-and-software--the-three-levels&quot; aria-label=&quot;pipes and software  the three levels permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let’s start by defining the concepts that we want to visualize.
+Code exists on one of &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;three levels&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The runtime level&lt;/li&gt;
+&lt;li&gt;The code level&lt;/li&gt;
+&lt;li&gt;The logical/specification level&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let’s now use pipes and water to understand and visualize these three levels.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2b76fa0c54123d9b91ccaa384c4c4191/normal.gif&quot; alt=&quot;water through a pipe&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When we think about a single run of a program on particular inputs, then that is the level of runtime. These specific inputs are represented by waterdrops in our animation above.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For one possible value my program is correct&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At the level of code, however, we are looking at program correctness for all possible runs. In our animation, this is represented by the water (all waterdrops).
+(Code also guides the inputs/water through the program, and this is represented by pipes that
+live within the outer pipes)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For all possible values my program is correct&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At the level of logic, we think about logical statements that are correct for all possible inputs and all possible implementations.&lt;/p&gt;
+&lt;p&gt;This is the level of specification and it’s represented by the pipes in the above picture.
+We must learn to see the guarantees our functions need and generate (pre and post-conditions) as different from the current function implementation itself. More on that later.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For all possible values and all valid changes my program is correct&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;These ideas are very abstract, and when I first learned about them, I hoped there was some simple visual representation of what was going on. So I set a background task in my brain to work on this problem to find a good way to internalize this field of knowledge.
+After probably 12 months, with some failed visualizations on the way, I found something that is both simple, intuitive and accurate. And that is what I am sharing with you today.&lt;/p&gt;
+&lt;p&gt;The Pipe!&lt;img style=&quot;display: inline; padding-left: 5px&quot; src=&quot;https://emojis.slackmojis.com/emojis/images/1643514786/7962/pipe.png?1643514786&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;pipes--the-gaming-gimmick-turned-software-hack&quot; style=&quot;position:relative;&quot;&gt;Pipes | The Gaming Gimmick Turned Software Hack&lt;a href=&quot;#pipes--the-gaming-gimmick-turned-software-hack&quot; aria-label=&quot;pipes  the gaming gimmick turned software hack permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The idea of pipes in a programming context is not exactly ground-breaking. If you’ve done a bit of Linux command line or functional programming, you’ve probably met the pipe operator.
+But here we are going to use it to reason about program correctness.&lt;/p&gt;
+&lt;p&gt;So, in Pipe Land, as we said above, the three levels of code are represented by:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Individual Water drops: The runtime level&lt;/li&gt;
+&lt;li&gt;All the water: The code level&lt;/li&gt;
+&lt;li&gt;Pipes: The logical/specification level&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This will give us a great visual and intuitive understanding of how these levels interact.&lt;/p&gt;
+&lt;p&gt;With our Pipe visualization, you’ll see clearly why this can be the case (see bottom of the post).&lt;/p&gt;
+&lt;h3 id=&quot;speed-running-the-logical-level-of-code&quot; style=&quot;position:relative;&quot;&gt;Speed running the logical level of code&lt;a href=&quot;#speed-running-the-logical-level-of-code&quot; aria-label=&quot;speed running the logical level of code permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Let’s take a simple TypeScript function:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Is this code correct?&lt;/strong&gt;
+…Well, what does it even mean for code to be correct?
+If we don’t have a specification(what we want to achieve), we can’t say anything about correctness.&lt;/p&gt;
+&lt;p&gt;We need a specification.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// add is a function that takes two numbers&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// and returns those numbers numerically added together&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Is this code correct?&lt;/strong&gt; By visual inspection, yes, the code is correct!&lt;/p&gt;
+&lt;p&gt;What about this code?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello_world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Is this code correct?&lt;/strong&gt; and if not, where is the bug?&lt;/p&gt;
+&lt;p&gt;First of we (again) forgot to say what the aim(specification) of the program is.
+We can probably guess that it’s to print &lt;code class=&quot;language-text&quot;&gt;&quot;hello_world&quot;&lt;/code&gt; to the console,
+but we can’t say that for sure, so let’s add a specification.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// This program prints &quot;hello_world&quot; to the console&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello_world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;It produces the correct output, so it must be correct… right?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not quite… this is where the logical level of code comes in.&lt;/p&gt;
+&lt;p&gt;Let’s put the specification we have of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; in the code.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// This program prints &quot;hello_world&quot; to the console&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// add is a function that takes two numbers&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// and returns those numbers numerically added together&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello_world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;Did we follow the rules(specification) of the &lt;code&gt;add&lt;/code&gt; function?&lt;/div&gt;
+&lt;p&gt;
+&lt;b&gt;No we didn&apos;t!&lt;/b&gt; but our program still produces the right results... here’s the catch!
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;b&gt;
+  The problem is that, when we said that the program works, we weren&apos;t able to do that just by thinking about the &lt;u&gt;specification&lt;/u&gt; of `add`. We had to use the current &lt;u&gt;implementation&lt;/u&gt; of `add` to reason about the correctness of the program.
+&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;At this point, you might be thinking,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“So what? It works!”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well, imagine if we decide, to tweak the &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; function. Perhaps our first implementation was a bit too basic and we want to improve it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// add is a function that takes two numbers&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// and returns those numbers numerically added together&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;inputs must be numbers&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Same sh…spec! different implementation!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Whoops! Now our program springs a leak! At both the runtime and code level,
+we’ve got a problem and must go back and patch it up!
+Yet we didn’t change our specification, and both our old and new implementation of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; are correct.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So what just happened?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Let’s pause for a minute here to make sure we’re all on the same page.&lt;/em&gt;
+&lt;em&gt;The runtime level corresponds to a single run of the program that fails.&lt;/em&gt;
+&lt;em&gt;The code level is all possible executions of the program/function/etc, which you could find using exhaustive testing.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;pipes-and-water--avoiding-errors-of-modular-reasoning&quot; style=&quot;position:relative;&quot;&gt;Pipes and water | Avoiding Errors of Modular Reasoning&lt;a href=&quot;#pipes-and-water--avoiding-errors-of-modular-reasoning&quot; aria-label=&quot;pipes and water  avoiding errors of modular reasoning permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;An &lt;strong&gt;“Error of modular reasoning”&lt;/strong&gt;. That’s what we call a bug where a program works but doesn’t obey the specifications of code it uses. They’re a unique kind of bug that are hard to spot, appearing in programs that look like they’re functioning well until, one day, they suddenly break due to a logically correct change in some other part of the program.&lt;/p&gt;
+&lt;p&gt;Modular reasoning is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Being able to make decisions about a module while looking only at its implementation, its interface and the interfaces of modules referenced in its implementation or interface.
+&lt;a href=&quot;https://www.igi-global.com/dictionary/modular-reasoning/40536&quot;&gt;-source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So an error of modular reasoning occurs when we can’t verify the correctness of a program by just reading the code and looking at the specifications of the code it uses.
+Instead, we need to delve into specific implementation details that might give more guarantees or work with a broader set of values (like strings in our case) than what the specifications guarantee.
+Here is where you might hear a senior engineer saying:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yes, this code is correct (or at least it works!), but only under assumptions that aren’t stable guarantees.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Every time you manage to get “a stable guarantee” into a PR review your seniority level goes up by one.&lt;/p&gt;
+&lt;h4 id=&quot;pre-and-post-conditions--laying-down-the-rules&quot; style=&quot;position:relative;&quot;&gt;Pre and post conditions | Laying Down the Rules&lt;a href=&quot;#pre-and-post-conditions--laying-down-the-rules&quot; aria-label=&quot;pre and post conditions  laying down the rules permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;div&gt;
+Specifications contain two vital parts:
+&lt;div style=&quot;font-size:12px; font-style:italic; padding-bottom:10px;&quot;&gt;(there is some nuance depending on logical system but we will ignore that)&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Preconditions&lt;/em&gt;&lt;/strong&gt;&lt;em&gt;:&lt;/em&gt; What must be true before a piece of code is called&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Postconditions&lt;/em&gt;&lt;/strong&gt;&lt;em&gt;:&lt;/em&gt; What holds true after a piece of code has been called&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Anything else is an implementation detail!&lt;/p&gt;
+&lt;div&gt;
+Let&apos;s illustrate this with our &lt;code&gt;add&lt;/code&gt; function:
+&lt;div style=&quot;font-size:14px; font-style:italic; padding-bottom:10px&quot;&gt;
+the &lt;code&gt;{}&lt;/code&gt; brackets capture what needs/is true at a certain point in the program
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;inputs must be numbers&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But better still is to think of it without the implementation details.
+Like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the essence of the &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; function! Any implementation that meets these conditions is valid.&lt;/p&gt;
+&lt;h3 id=&quot;hoare-logic-levelling-up-code-reasoning&quot; style=&quot;position:relative;&quot;&gt;Hoare logic: Levelling Up Code Reasoning&lt;a href=&quot;#hoare-logic-levelling-up-code-reasoning&quot; aria-label=&quot;hoare logic levelling up code reasoning permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The logical statements I showed above are part of a formal method called Hoare Logic (plug: which we teach in our &lt;a href=&quot;https://self-service.mirdin.com/offers/A7LiY2U7/checkout&quot;&gt;course&lt;/a&gt;).
+Hoare Logic allows us to reason about the correctness of our programs by examining the pre/postconditions and code.
+It gives us rules that tell us what the postconditions of a function are, given its preconditions and code, or conversely,
+the preconditions given the postcondition and code. This means that we can use Hoare Logic to
+think (and prove the correctness) about specifications.&lt;/p&gt;
+&lt;p&gt;When I first took our Mirdin course (yes, I started as a student), I was blown away by Hoare Logic, and it was very useful in getting me away from the code and thinking about the design of the program instead. That said, there are a lot of rules in Hoare Logic but how do we go from thinking in rules to intuition from where the rules would be obvious?&lt;/p&gt;
+&lt;p&gt;Let’s revisit our initial implementation of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
+&lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Is one spec our code supports, &lt;em&gt;(&lt;a href=&quot;https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html&quot;&gt;many-to-many is the relationship between implementation and spec&lt;/a&gt;)&lt;/em&gt;
+but the current precondition is not the weakest that this implementation supports.
+The weakest precondition is that &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt; are any values for which &lt;code class=&quot;language-text&quot;&gt;a + b&lt;/code&gt; is defined.
+&lt;em&gt;(which in JS is number and string plus anything that can be cast to one of the two, which is basically anything🙃)&lt;/em&gt;
+If we went with that type of generic precondition, &lt;code class=&quot;language-text&quot;&gt;concat&lt;/code&gt; would be a better name.&lt;br&gt;
+To make our initial program correct on the logical level and not contain an error of modular reasoning,
+we can change the precondition to be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a and b are both strings or numbers}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
+&lt;span class=&quot;token comment&quot;&gt;// postcondition: {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//    IF a and b are numbers&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//        return is a numerically added to b&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//    OTHERWISE&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//        return is a string concatenated with b&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//  }&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;weak-and-strong-conditions&quot; style=&quot;position:relative;&quot;&gt;Weak and Strong Conditions&lt;a href=&quot;#weak-and-strong-conditions&quot; aria-label=&quot;weak and strong conditions permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A condition is &lt;u&gt;weaker&lt;/u&gt; if it needs/gives &lt;u&gt;less&lt;/u&gt; guarantees.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A condition is &lt;u&gt;stronger&lt;/u&gt; if it needs/gives &lt;u&gt;more&lt;/u&gt; guarantees.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some rules (don’t try to memorize them):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a new precondition is &lt;u&gt;weaker&lt;/u&gt; than the old precondition, it is a non-breaking change.&lt;/li&gt;
+&lt;li&gt;if a new postcondition is &lt;u&gt;stronger&lt;/u&gt; than the old postcondition, it is a non-breaking change.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Instead of memorizing the rules, we will now use pipes to drive them home and make it obvious.
+Then later you can derive the rules from your intuition.&lt;/p&gt;
+&lt;p&gt;The bug in the code we had earlier was that we did not respect the specification of add,
+we used the implementation instead. However, one way to &lt;strong&gt;&lt;em&gt;“solve”&lt;/em&gt;&lt;/strong&gt; this is to change the specification to
+work with strings as well.&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Will this be a breaking change or a non-breaking change?&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;think and answer before you continue&lt;/em&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Answer&lt;/summary&gt;
+&lt;b&gt;It will be a &lt;u&gt;non-breaking&lt;/u&gt; change&lt;/b&gt;, because the new precondition is &lt;u&gt;weaker&lt;/u&gt; than the old precondition.
+Before, we only accepted &lt;code&gt;number&lt;/code&gt; as input, now we accept &lt;code&gt;number&lt;/code&gt; or &lt;code&gt;string&lt;/code&gt;.
+&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;{number} =&gt; {number || string}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The old precondition implies (logical implication, learn about it in the course) the new precondition, so all old callers that meet the
+old precondition will also meet the new precondition.&lt;/p&gt;
+&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;{old_callers} =&gt; {number} =&gt; {number || string}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+&lt;p style=&quot;padding-top:20px;&quot;&gt;&lt;b&gt;Okay, here comes the exciting part: how can we visualize all this?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Next in the pipeline, pipes!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;visualizing-with-pipes&quot; style=&quot;position:relative;&quot;&gt;Visualizing with Pipes!&lt;a href=&quot;#visualizing-with-pipes&quot; aria-label=&quot;visualizing with pipes permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Imagine pipes - like in Super Mario.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeUlEQVQ4y83T30uTURgH8Oecs3ejwiBoyyQwMrqIouhCI6e+s/LX3vd1zfkj0W7cHGtaQUFg4Ttzb1NjVqjo9pJp6UVtVP7AaM45/EEIUgQV4VX0F9iNN26eeNeFm1CE3gTfi3MezgfOcx4OgIsmJf4P2dg8v7lqo3CPQmtSxESSK67EmVS8oZRa1vZabh1odOjsTTq7U2d3am1KElsl2sbm/fUNxDoHbgpifBMjN4Vrq6dvpPFjwI2jmmWoXARuDIpGwOCHQhnOy1AWJKVPQW1+DPcpiOupuPlndqfWNAcl40z1N1KxrOKjTPErcu4R0fcRfZ+qbGpPeQg0l30gbcESBefq2a40yzJwYVz/A2q+ooolbHyL8n3ADgI7iIToLsssaKp6tmKl59tr6WZ9lgkyjeRYLT5ahY+YSGYpPpiHMwpwBksOczireh9zZSKBY0mvLcaVTmrnTzrImRac+5Dk9aEcCedIqhNOdNyOTt1UZ9+BNM4BIkWuWOqoxDhIlDQuXhglxneodgXXfQfzEjK/J4YhKJDhYlB9KQLpDie0/gFj6wIrk5LXyPIBV30GIYKEMMnvB30PGJ6puQnQWf+KDTIpeYMqP+LqLyDMImGG5A8ouHBEzU+CzrYN3AuFz3eGhW3iHV37P+z596cV4+CmuGGB9ePipDnzYZw3ALnKnBluErTWqwoWYwpxUWAkqnJT0rbOPKCMbaFoSGOcUNV8UtWtEFOUVMxrWD9mB0jxi93lU3Co6TqIVC3FSDsl7RQC3o6AtyPY3RHo7gp67k738mEfFx3mo8Nc5Ak/I3OhXi7Uw033CxG5dMxje+n1BryegLcz0N35C28O5kNjYSjAAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Super mario pipe&quot;
+        title=&quot;Super mario pipe&quot;
+        src=&quot;/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png&quot;
+        srcset=&quot;/static/1a5903f50cbba20e3a5ce31a80f15498/c26ae/pixel_pipe.png 158w,
+/static/1a5903f50cbba20e3a5ce31a80f15498/6bdcf/pixel_pipe.png 315w,
+/static/1a5903f50cbba20e3a5ce31a80f15498/e17e5/pixel_pipe.png 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The key feature of pipes is that they can stack on top of each other, each fitting into the next.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 525px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 126.58227848101265%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAIAAAC+dZmEAAAACXBIWXMAABXXAAAV1wEELLsZAAAFA0lEQVQ4y4WUWUxUVxzGJ33RNKnRGmNqtFRc0hixCS6MLaCCTFpQRkVFVrFSpAWxLolb0VrUtlo1xqUirQiKUMcVFxS1tRbQal1Q61KIBitOmXvvueee9a5zmgFSfet5+HIezsnvn/y/73NBCDnnlDKbB0EH5ppNMHWsIMUcIcQ51zTNsi1KqWVZlFDTtDRNw5gghFyyLJmGfeJczfaTi3fWLa68Vpzz2SzvnITywzsh0CijQAF+v/9JW4s/8Pzh4weyIkGoaZoGIXRJckCnVvnxbQsPRBVWuD/9IertiF69B/TY/uMGCBDj7Fnbs9V7MldVJed+6Rk4pK/vbDkjOlABAMCFEBIi2Nbavub7vLUXJ2+66p007520jNmmblNKTNPUmVlRu23NpbjcXaNjPKM7Ah26rjPGKKUuSZIQ1mS/5mveWG3OOilyP5gzMLcgk3MmSRLUVAL5jZb6ap6+5lz8zMwk23EkSQIAKIriIoTYjoUU5vvzq3Jtus/IGTGpz4LCeUIIQolpGY4hmlpP/iTmFOx3JyZ+JISglHbBQ2RM0ItngbLGJQfprENadr/BPQsX5RNCushU0083VW5oSPDkD032JnVN9JLsCFsNkLKGpTtbp6w84hkwsmfJd6uFEBijoHBUGX3rW7CiNjZ93ZhBw/r6zlQY3NJ1HiJ3BDoMw7xwsX5RaULRvuj5W8aPjOvvnvDeoaP72p+/wAQDGZYf37q6Lm5RZcyY+CHN925BqHWCFReEqhCi+lTZEt/7xWc9xacTIicP6v1Wj5KtyxVJNS3T5HZzS9Mhml5yOWHqXLfj2JRSxhghxKUoim7oLQ+fLt+cW1jpXnnMk5A7PGriyKdtTxAKGYki/dqj+iqcvrQmZlLSOMoI7HRJyCQAAMoIBnrdg71VfOZZkefJG+bNmqA7WAWQUKxT6+r987tapqdvHJWWmSKEUKGKENI0zaWqKtcZlOipuzvKAt4aPDc6NSw5LY6bGEJNN7gSgDuOrVhxfOK8zeMj3OHH6isxohjjkLdDnw2m+NHh698cIClHzY8HR/ZKSZ2qm1xVVV3nKoBbD64s2h+dvWFseES/C1fOMMq7yaFUGUztIDXXvy7927vl9xnD3H2WLV0mhIAapIzqzLz9qKlCSV/38+RpOTG2ZSOMuskAANMyHt5t3eTLX1g+vnDvhNj08KycjGs3rygyCFkY67dbf6uh2atq4+OnjWWcaprWTVaAIoTY59v++ZGo9b8klvz6YWTCoDf6v1a0Li3gVwyT69RqvHd+T3tyxuYRcVOinKCNECKEdJEV23buNN8qWp/6yc5xBXujY9PCR40dfvPODYIJpZRi9rituXhHXnbBtJJNX1iWDSHEGIfI/62q9mZpOZx+QsxPLBw+I9PjCEMFkDGmqqphmETjQSdIKeWcQwgRQqE9y7KMKVL+Qafu7C71T62mWbEZYUmpsRpTFBkQQhRFIQTLiowxkiSJUgoAgBCGygBjbNkmkvmZ+3sO0JQjds670X29aQmOMAgO9VYos7b9qnbxu8sAE+RvUyoul1Tx2RWBjKHj3szKS6EMSZKMEAqNhnGXhh533l9GMlSO0Djxx+7ZayPc3rCwyNcXLskXQUFpN8dxnFeVMfayDDRNUxSlvf15fd2lhiuNjU0NLa1/AQBk+f/IlFLbthljQgjTMoLBoGEajuPwztPFCQaDryrn3DAMzvm/elh8rk8jgxIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Stacked pipes&quot;
+        title=&quot;Stacked pipes&quot;
+        src=&quot;/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png&quot;
+        srcset=&quot;/static/7810717de9e7cd276a7e02b677a63e95/c26ae/painted_strait_pipes.png 158w,
+/static/7810717de9e7cd276a7e02b677a63e95/6bdcf/painted_strait_pipes.png 315w,
+/static/7810717de9e7cd276a7e02b677a63e95/52211/painted_strait_pipes.png 525w&quot;
+        sizes=&quot;(max-width: 525px) 100vw, 525px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;These pipes represent our different specifications. They take in inputs and produce outputs.
+If we want to change our pipes/specifications, there are two ways we can do it without disrupting old callers/pipes. The width of the pipes corresponds to the strength of the specification.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/aeda129797a25f2beeafa62a79e9d918/07e9f/pipe_dream_valid_changes_3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 129.1139240506329%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAIAAAA44esqAAAACXBIWXMAACMQAAAjEAFnL93WAAAEHElEQVQ4y42U32/bVBTH88qfwAODxz2NigokhNCEkEpBbGOr1I2+bFANBEOIF4REYYhpDIZI25WN9AcTaZu0jbr+DGlWbd2SOD+stGmbpG5qp0vatCRpzdw0ttPE9r0H2e7cjIfCV9a90rnn+Nx77udcE8a4WCzmcjmO4zDGsiZFUQBgZ2dHFEWMsaIo2Wy2UqkoiiJJku6AEDIBgN/v93g9BEEIgqAoCsZYFEWEUCAQSCaTkiTl83mGYViWBU0IIT3eJMsySZKEj3C5XPYB+/Td6UAg4HQ6C4WCx+OxWq2Tk5PxeHx1ddXtdpMkubCwwCQZAFCDFUXJ5XJ2u72vr89ms/X29prNZovFMjEx4XA4en7v6e/vHx0bHRwaGBm909nV2dbWynGcntyEECqXyzzPC5pEUeR5XhTFYrEoCEKhUCgWi1gGVMGAQeBFviDoadUz6xPGWB+rhRACAG6XDSQm4+zd+zH7n4H+6cAwlYjvb9sorzEalnKlDACzMaL+i+e+e/ja9YXX6z478sIrz3QPmgGgIlUOC5YkSbVISpSa64w3Wej3zv9SM+Z0AIC2JKvb1qW76pWQZRkhpNsBA8fnp9An3eunPuw4Fow81IPVM+uu8ES6Vb/Mvb09Bam0PN7Nj+1+ZGFOXrxVE0vMAoAsq5lUSLa3t8fHx+Px+HJimSTJTCZD07SO3db2Vi6by7Ar39x5u8V5/Lz5xbloSEGKWBL3CWNZtqury+v1RuYj4XA4FAoFg8HF6GKBK1odlou3XjL7T1/zvnXdX/9zsP5r24lXTz8/cK8dANQzl0qlWCxGkiRN0xRFhUIhhmZoeiWXy6fSyWHvr+2L9Tei77bOvnMzdqrp2tFLlxs3t9IYY5NeGIwxPC1ZljmOA8CoAs7VH4dxgws+sObPNF2uTf/F6A6mcrlsVAgAVNoE3vgFL/AIQWpzxbrZ6IYLn96uafnpknrJlbJasPn5ea/Xu7S0xDBMLBajadrlcmUymVQqtba+FolEKGoJJPhtrKUtVtfcVhtdDquXImtXFQ6HbTZbMBgcGRnx+/1zc3MkSXo8aoc+eDDj9fim77v+mL56xXHu+5k3vhp8s2Pg2+X1WQ1P2cQwzNTUlM/noyiKZVm/308QhM/nIwgilXpExZcTj6I/jDe2L9X1pM4036h9+cSzMws6ZBqeOlg6m0ZXSJJU1gQAGxsbfekLDuFcc8ex20OtB2dWqmSwaeCJNMLYQnai9PEQf/bslaMjkwNP4VnNdnWw1h8yYMjvpHsz73enT9Z/fsR9z6llrhxkfpIHVe9Cm1Xss3+vmX0NN+cbvhw67g27dbb3H4NDgrUXApVKpeRaIpVhco8zu8UdpOwvHdbPBxYtP8bqZ9Tlv7ddZZGNohgO/zdYT/gvh38A9ZVKjcrxVa4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;pipe dream valid changes 3&quot;
+        title=&quot;pipe dream valid changes 3&quot;
+        src=&quot;/static/aeda129797a25f2beeafa62a79e9d918/f058b/pipe_dream_valid_changes_3.png&quot;
+        srcset=&quot;/static/aeda129797a25f2beeafa62a79e9d918/c26ae/pipe_dream_valid_changes_3.png 158w,
+/static/aeda129797a25f2beeafa62a79e9d918/6bdcf/pipe_dream_valid_changes_3.png 315w,
+/static/aeda129797a25f2beeafa62a79e9d918/f058b/pipe_dream_valid_changes_3.png 630w,
+/static/aeda129797a25f2beeafa62a79e9d918/40601/pipe_dream_valid_changes_3.png 945w,
+/static/aeda129797a25f2beeafa62a79e9d918/78612/pipe_dream_valid_changes_3.png 1260w,
+/static/aeda129797a25f2beeafa62a79e9d918/07e9f/pipe_dream_valid_changes_3.png 1301w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;However, the opposite alterations would always result in a breaking API change.
+This is a logical level statement; it remains a breaking change even if all actual current callers continue to function.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Example: In the above image the third pipe(3) could now strengthen its precondition since there is space to do so, however, this would still be a breaking change because this pipe can be used in many other setups where such changes would not work. We need to respect every potential caller and think about the &lt;strong&gt;ghost pipes&lt;/strong&gt; that need our current exact requirements.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ask yourself this, if you change a backend API, but you know all callers and control them, and the old callers will keep working under your new stricter API, is it still a breaking change?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let’s now look at a series of animations to work up this intuition.&lt;/p&gt;
+&lt;h3 id=&quot;specifications-composition&quot; style=&quot;position:relative;&quot;&gt;Specifications Composition&lt;a href=&quot;#specifications-composition&quot; aria-label=&quot;specifications composition permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;base-spec&quot; style=&quot;position:relative;&quot;&gt;Base Spec&lt;a href=&quot;#base-spec&quot; aria-label=&quot;base spec permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Recap, Here two specs are combined (logical-level). The water represents all possible runs (code-level),
+while each droplet symbolizes a single run (runtime-level).
+&lt;img src=&quot;/2b76fa0c54123d9b91ccaa384c4c4191/normal.gif&quot; alt=&quot;normal spec&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We see the specs fit together and all the water passes through without any leakage so we have a working and correct program.&lt;/p&gt;
+&lt;h4 id=&quot;a-valid-change&quot; style=&quot;position:relative;&quot;&gt;A Valid Change&lt;a href=&quot;#a-valid-change&quot; aria-label=&quot;a valid change permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;In this scenario, let’s modify the specifications to accept a broader input range (weaker precondition) and return a narrower output range (stronger postcondition).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/6131bb1efefba20fa85b67967f69064b/constrained.gif&quot; alt=&quot;spec that is more constrained&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;a-breaking-change&quot; style=&quot;position:relative;&quot;&gt;A Breaking Change&lt;a href=&quot;#a-breaking-change&quot; aria-label=&quot;a breaking change permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Now, let’s see what happens when we try to give fewer guarantees (weaker postcondition) and accept a narrower input range (stronger precondition). As depicted, this leads to “leakage” and hence, a malfunctioning program.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/28fccb836875e4e749df9b00bc25ae45/breaking_change.gif&quot; alt=&quot;spec that don&amp;#x27;t compose&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;wheres-the-code&quot; style=&quot;position:relative;&quot;&gt;Where’s the Code?&lt;a href=&quot;#wheres-the-code&quot; aria-label=&quot;wheres the code permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To visualize the code we need more pipes! The outer pipe creates a boundary within which your implementation must live. If your specification asserts that it will output numbers less than five and your code generates numbers less than three, that implementation is still valid.&lt;/p&gt;
+&lt;h3 id=&quot;what-if-i-told-you-there-is-no-spec&quot; style=&quot;position:relative;&quot;&gt;What If I Told You There Is No Spec?&lt;a href=&quot;#what-if-i-told-you-there-is-no-spec&quot; aria-label=&quot;what if i told you there is no spec permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Specifications do not really &lt;u&gt;exist!&lt;/u&gt; They are just an idea.&lt;/strong&gt; &lt;/br&gt;
+&lt;em&gt;Though the more powerful the language the more of it we can embed (see &lt;a href=&quot;https://coq.inria.fr/&quot;&gt;Coq&lt;/a&gt; for full embedding).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The specification pipes we’ve been seeing are not as rigid as they might appear, they are actually just air.
+So, what guides the input (the water)? &lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;The answer: &lt;strong&gt;THE CODE!&lt;/strong&gt; &lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Let’s have a look inside the pipes.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/117d89902fb327054e6ecfac8b9d70fd/where_is_the_code.gif&quot; alt=&quot;Where is the code?&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The code needs to make sure it &lt;em&gt;at least&lt;/em&gt; can collect all the incoming water that the precondition wants to let in, and not spread it wider than the postcondition wants to let out.
+All while containing no leaks.&lt;/p&gt;
+&lt;p&gt;The specification outlines the boundaries within which our code needs to live, but it’s the code that must adhere to the specification.&lt;/p&gt;
+&lt;p&gt;In the below animation, you can see how the water leaks out even though the specifications match. This is because this implementation does not respect the postcondition and is too loose in what it lets out.&lt;/p&gt;
+&lt;h4 id=&quot;a-buggy-implementation&quot; style=&quot;position:relative;&quot;&gt;A buggy implementation&lt;a href=&quot;#a-buggy-implementation&quot; aria-label=&quot;a buggy implementation permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/c68a4faa70b51cddde6dfbe97a700ed6/buggy_implementation.gif&quot; alt=&quot;Buggy implementation&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-interplay-between-specification-and-code&quot; style=&quot;position:relative;&quot;&gt;The interplay between specification and code&lt;a href=&quot;#the-interplay-between-specification-and-code&quot; aria-label=&quot;the interplay between specification and code permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The interplay between specification and code is that if your specification does not give too many guarantees and accepts every value under the sun, then the code has more room to move.&lt;/p&gt;
+&lt;p&gt;In Hoare Logic we talk about &lt;strong&gt;precondition strengthening&lt;/strong&gt; and &lt;strong&gt;post-condition weakening&lt;/strong&gt;, and how that relates to a form of modularity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The output of your precondition is the input of your code&lt;/li&gt;
+&lt;li&gt;The output of the code is the input to the postcondition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So the relationship between the precondition and the code is the same as between the postcondition of one spec and the precondition of the next spec.&lt;/p&gt;
+&lt;p&gt;This gives rise to much of the rigidity in software development. You can always broaden your precondition, but the implementation may also need to be modified. If your code is forgiving but your specification is strict, you can modify the specification without changing the implementation (as with &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&quot;comprehension-questions&quot; style=&quot;position:relative;&quot;&gt;Comprehension questions&lt;a href=&quot;#comprehension-questions&quot; aria-label=&quot;comprehension questions permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The weaker we make a condition the wider the pipe gets, and the stronger we make a condition the narrower the pipe gets.&lt;/p&gt;
+&lt;p&gt;When talking about Hoare Logic we sometimes talk about the weakest precondition and the strongest postcondition.
+To get the weakest precondition we need to know the code and the postcondition.
+To get the strongest postcondition we need to know the precondition and the code.&lt;/p&gt;
+&lt;p&gt;So with this new understanding, what would it mean to have the weakest precondition or the strongest postcondition?&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;Answer | The Strongest Postcondition&lt;/summary&gt;
+  &lt;p&gt;The strongest postcondition is the strongest guarantee that we can form from the current code and the precondition.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+  &lt;summary&gt;Answer |The Weakest Precondition&lt;/summary&gt;
+  &lt;p&gt;The weakest precondition is the least amount of guarantees we need from the input to still have the code imply the postcondition.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&quot;visualizing-errors-of-modular-reasoning&quot; style=&quot;position:relative;&quot;&gt;Visualizing Errors Of Modular Reasoning&lt;a href=&quot;#visualizing-errors-of-modular-reasoning&quot; aria-label=&quot;visualizing errors of modular reasoning permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let’s now revisit the statement from the start of the post &lt;em&gt;(the primary idea conveyed in &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;The three levels of software&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A program that never goes wrong can still be wrong.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Let’s now see how we can visualize this using our pipes. We will see that it’s maybe not so strange a concept after all and it is just a natural emerging fact of the interplay between multiple pipes&lt;i&gt;(specs)&lt;/i&gt; and sub-pipes&lt;i&gt;(implementations)&lt;/i&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;two-types-of-errors-in-modular-reasoning&quot; style=&quot;position:relative;&quot;&gt;Two Types of Errors in Modular Reasoning&lt;a href=&quot;#two-types-of-errors-in-modular-reasoning&quot; aria-label=&quot;two types of errors in modular reasoning permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Depending on a Stricter Output Than the Specification Guarantees&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;Example:&lt;/em&gt; When the game SimCity was created, there was code that used memory after it was freed, but the program still worked by coincidence because the then current implementation of the memory manager in the Windows operating system was stricter than the specification. The Windows operating system did not touch the memory after it was freed. Everything worked until a new release of Windows years later. (Microsoft fixed this issue by patching Windows.
+&lt;a href=&quot;https://www.joelonsoftware.com/2004/06/13/how-microsoft-lost-the-api-war/&quot;&gt;Joel Spolsky, How Microsoft Lost The API War&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Depending on Being Able to Use Looser Input Than the Specification Guarantees&lt;/strong&gt;&lt;br&gt;
+If the current implementation is more forgiving than the specification guarantees. Depending on that is also an error of modular reasoning.
+Like with our &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; example, the behavior we got when calling the function with the wrong arguments is not a stable guarantee for future valid changes to the function’s implementation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both errors are something that will only come up when code you depend on changes,
+so there are no &lt;strong&gt;&lt;em&gt;observable&lt;/em&gt;&lt;/strong&gt; issues that can be found in the current code.&lt;/p&gt;
+&lt;p&gt;Depending on the languages it’s possible to embed the spec or parts of it in the types. Then these types
+of logical errors will become compile-time errors. It’s also possible to check for specification violations at runtime, this is what design by contract does.&lt;/p&gt;
+&lt;h3 id=&quot;error-of-modular-reasoning-visualized&quot; style=&quot;position:relative;&quot;&gt;Error Of Modular Reasoning Visualized&lt;a href=&quot;#error-of-modular-reasoning-visualized&quot; aria-label=&quot;error of modular reasoning visualized permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This code has an &lt;strong&gt;Error Of Modular Reasoning&lt;/strong&gt;.
+The second function depends on the current implementation and not the specification.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/7ebb3d1ffa8997794eead46c786ede11/error_of_modular_reasoning.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now if we do a valid non-breaking change to the first function, we still get a runtime error in our program.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/9fd6ceae319a126d1336905d1bd27c9e/error_of_modular_reasoning_2.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is of course because the second function depends on implementation details of the first function, which are not stable guarantees (part of the spec).&lt;/p&gt;
+&lt;p&gt;Thinking about the boundaries of pieces of code makes it much easier to point out where the bug is, and what code should be changed to fix it. In the above case, it’s clearly the second function that is incorrect.&lt;/p&gt;
+&lt;h3 id=&quot;stable-guarantees&quot; style=&quot;position:relative;&quot;&gt;Stable Guarantees&lt;a href=&quot;#stable-guarantees&quot; aria-label=&quot;stable guarantees permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Senior programmers talk about stable guarantees. What this means is that we only depend on what is guaranteed by the specification. “What if there is no specification?” I hear you say. Well, most code do not have specifications, so what do we do then?
+All code has a specification even if it’s not written down. It’s just that the specification is implicit in the code and the specification might be different in different engineers’ minds.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A Tale of two engineers:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;“Hey! You broke the API! The returned list is not in the same order anymore”.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“No this was not guaranteed by the API, you should not depend on that.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“Well it’s a reasonable thing to expect from a list, and altering it is a breaking change.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;…etc!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So start talking about specs and align your team(s) on what is guaranteed or not for different parts of the system.&lt;/p&gt;
+&lt;h3 id=&quot;end&quot; style=&quot;position:relative;&quot;&gt;End&lt;a href=&quot;#end&quot; aria-label=&quot;end permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Understanding the interplay between specifications and their implementations is key to good software engineering. It’s important to note that even when your code seems to work perfectly, it could still contain hidden errors due to issues in modular reasoning.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Junior Engineer: “I have checked all the places where the code is used and it works!”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Senior Engineer: “Well…”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I hope that these pipes can help you visualize the logical level of software easier and help our students with Hoare Logic.&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;h5 id=&quot;q--a&quot; style=&quot;position:relative;&quot;&gt;Q &amp;#x26; A&lt;a href=&quot;#q--a&quot; aria-label=&quot;q  a permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt; “This code is untyped! if we had types you would not be able to call &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; with strings in the first place. Are types on the logical level?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;
+Types embed some of the logical-level in the code-level. but not all &lt;em&gt;(that depends on the power of the type system though)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt; “Should you make your implementation act as close as possible to the specification?”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With a sufficient number of users of an API,
+it does not matter what you promise in the contract:
+all observable behaviors of your system
+will be depended on by somebody.
+— &lt;a href=&quot;https://www.hyrumslaw.com/&quot;&gt;Hyrum’s Law&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&quot;https://imgs.xkcd.com/comics/workflow.png&quot; style=&quot;margin:auto&quot;&gt;
+&lt;p&gt;So what gives? if your code gives more guarantees than the spec says, then some users will surely depend on that.
+And if you change the code to be more in line with the spec, then you will break those users (boohoo).
+Go famously made their map iteration random, because a lot of users were writing code depending on iteration
+being in order. Something that was not guaranteed in the spec, but was the case in the implementation.
+So they randomized the iteration order, to just not imply that stricter spec. And be open to more optimizations in the future.
+&lt;a href=&quot;https://stackoverflow.com/questions/55925822/why-are-iterations-over-maps-random&quot;&gt;https://stackoverflow.com/questions/55925822/why-are-iterations-over-maps-random&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Is it totally possible to do similar things where, for example, your current implementation is sync but
+you don’t want to guarantee that in the future, you can make it trivially async now by wrapping the return value in a promise &lt;em&gt;(&lt;/em&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&quot;&gt;&lt;em&gt;JS datatype&lt;/em&gt;&lt;/a&gt;&lt;em&gt;)&lt;/em&gt;.
+Then you can change the implementation later, without breaking the spec.&lt;/p&gt;
+&lt;p&gt;When you stake out your spec, you are creating space to move in.
+Do not give too many guarantees or be too nice with possible inputs from the get-go.
+You will have to honor that forever or break your API, &lt;a href=&quot;https://www.codesimplicity.com/post/ways-to-create-complexity-break-your-api/&quot;&gt;don’t do that&lt;/a&gt;.
+This is basically counter to Postel’s law (a.k.a: ‘the robustness principle’), which to me sounds like a recipe for frail software (ironically enough).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt; “Pre/post-conditions can be much more complex than can be represented with just water and pipes.”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;
+Our current analogy takes us pretty far, but in reality (if anything is real) the shapes of the inputs/outputs are multi-dimensional.
+Thinking in the simple 2D plane is good enough for our needs. And the rules of logical implication
+in the 2D plane are the same as in the multidimensional space.&lt;/p&gt;
+&lt;h2 id=&quot;acknowledgments&quot; style=&quot;position:relative;&quot;&gt;Acknowledgments&lt;a href=&quot;#acknowledgments&quot; aria-label=&quot;acknowledgments permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Big thanks to &lt;strong&gt;JunHong (Nemo) Yap&lt;/strong&gt;, &lt;strong&gt;Christofer Ärleryd&lt;/strong&gt;, and &lt;strong&gt;Jimmy Koppel&lt;/strong&gt; for their invaluable assistance in both writing and editing this post.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Ai solves Advent of Code 2022]]></title><description><![CDATA[Intro It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and…]]></description><link>null/the-advent-of-code-ai-edition/</link><guid isPermaLink="false">null/the-advent-of-code-ai-edition/</guid><pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;intro&quot; style=&quot;position:relative;&quot;&gt;Intro&lt;a href=&quot;#intro&quot; aria-label=&quot;intro permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;It feels like every week a new mindblowing Ai assistant pops up, tools like D-alle, Whisper, Copilot etc.
 Have all been amazing and useful to me.&lt;/p&gt;
