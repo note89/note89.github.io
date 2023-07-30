@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 28 Jul 2023 11:41:29 GMT</lastBuildDate><item><title><![CDATA[Stable APIs are a Pipe Dream]]></title><description><![CDATA[Stop Breaking Your APIs Using This One Visual Trick  The primary idea conveyed in The three levels of software is A program that never goes…]]></description><link>null/pipe-dream/</link><guid isPermaLink="false">null/pipe-dream/</guid><pubDate>Fri, 28 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;stop-breaking-your-apis-using-this-one-visual-trick&quot; style=&quot;position:relative;&quot;&gt;Stop Breaking Your APIs Using This One Visual Trick&lt;a href=&quot;#stop-breaking-your-apis-using-this-one-visual-trick&quot; aria-label=&quot;stop breaking your apis using this one visual trick permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog collecting my thoughts on software]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 30 Jul 2023 11:49:28 GMT</lastBuildDate><item><title><![CDATA[Stable APIs are a Pipe Dream]]></title><description><![CDATA[Prelude A key step in becoming a senior programmer creating robust software is the idea of thinking of specification over code. Yes, this…]]></description><link>null/pipe-dream/</link><guid isPermaLink="false">null/pipe-dream/</guid><pubDate>Fri, 28 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;prelude&quot; style=&quot;position:relative;&quot;&gt;Prelude&lt;a href=&quot;#prelude&quot; aria-label=&quot;prelude permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A key step in becoming a senior programmer creating robust software is the idea of thinking of specification over code.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yes, this code is correct (or at least it works!), but only under assumptions that aren’t stable guarantees.
+— Senior Engineer to Junior Engineer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this post, I’ll use Super Mario pipes as a metaphor to visualize specifications and, with that, something called preconditions and postconditions. Pre and postconditions act as the ‘entrance’ and ‘exit’ guards that the data ‘flowing’ through the ‘pipe’ of your function is correct. This view offers an intuitive way to understand these essential aspects of programming.&lt;/p&gt;
+&lt;h1 id=&quot;stop-breaking-your-apis-using-this-one-visual-trick&quot; style=&quot;position:relative;&quot;&gt;Stop Breaking Your APIs Using This One Visual Trick&lt;a href=&quot;#stop-breaking-your-apis-using-this-one-visual-trick&quot; aria-label=&quot;stop breaking your apis using this one visual trick permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -33,6 +40,7 @@
 &lt;div style=&quot;font-style: italic; margin-top: -20px; padding-bottom: 10px;&quot; class=&quot;text-sm text-center pb-4&quot;&gt;
 DALL-E: &quot;Super Mario&quot; using green pipes as sunglasses in stained glass art
 &lt;/div&gt;
+&lt;/br&gt;
 &lt;p&gt;The primary idea conveyed in &lt;a href=&quot;https://www.pathsensitive.com/2018/01/the-three-levels-of-software-why-code.html&quot;&gt;The three levels of software&lt;/a&gt; is&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;A program that never goes wrong can still be wrong.&lt;/strong&gt;&lt;/p&gt;
@@ -82,18 +90,23 @@ But here we are going to use it to reason about program correctness.&lt;/p&gt;
 &lt;p&gt;With our Pipe visualization, you’ll see clearly why this can be the case (see bottom of the post).&lt;/p&gt;
 &lt;h3 id=&quot;speed-running-the-logical-level-of-code&quot; style=&quot;position:relative;&quot;&gt;Speed running the logical level of code&lt;a href=&quot;#speed-running-the-logical-level-of-code&quot; aria-label=&quot;speed running the logical level of code permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;22&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;22&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Let’s take a simple TypeScript function:&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Is this code correct?&lt;/strong&gt;
 …Well, what does it even mean for code to be correct?
 If we don’t have a specification(what we want to achieve), we can’t say anything about correctness.&lt;/p&gt;
 &lt;p&gt;We need a specification.&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// add is a function that takes two numbers&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// and returns those numbers numerically added together&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Is this code correct?&lt;/strong&gt; By visual inspection, yes, the code is correct!&lt;/p&gt;
 &lt;p&gt;What about this code?&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;hello_world.ts&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; add &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./add&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hello_world&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -101,7 +114,10 @@ If we don’t have a specification(what we want to achieve), we can’t say anyt
 &lt;p&gt;First of we (again) forgot to say what the aim(specification) of the program is.
 We can probably guess that it’s to print &lt;code class=&quot;language-text&quot;&gt;&quot;hello_world&quot;&lt;/code&gt; to the console,
 but we can’t say that for sure, so let’s add a specification.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;hello_world.ts&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; add &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./add&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// This program prints &quot;hello_world&quot; to the console&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
@@ -110,7 +126,10 @@ but we can’t say that for sure, so let’s add a specification.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;It produces the correct output, so it must be correct… right?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Not quite… this is where the logical level of code comes in.&lt;/p&gt;
 &lt;p&gt;Let’s put the specification we have of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; in the code.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;hello_world.ts&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; add &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./add&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// This program prints &quot;hello_world&quot; to the console&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hello_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello_&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; world &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt;
@@ -133,6 +152,7 @@ but we can’t say that for sure, so let’s add a specification.&lt;/p&gt;
 &lt;p&gt;“So what? It works!”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Well, imagine if we decide, to tweak the &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; function. Perhaps our first implementation was a bit too basic and we want to improve it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Specification&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// add is a function that takes two numbers&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// and returns those numbers numerically added together&lt;/span&gt;
@@ -145,7 +165,7 @@ but we can’t say that for sure, so let’s add a specification.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Same sh…spec! different implementation!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Whoops! Now our program springs a leak! At both the runtime and code level,
+&lt;p&gt;Whoops! Now our &lt;code class=&quot;language-text&quot;&gt;hello_world&lt;/code&gt; program where we use the &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; function springs a leak! This time at both the runtime and code level,
 we’ve got a problem and must go back and patch it up!
 Yet we didn’t change our specification, and both our old and new implementation of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; are correct.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;So what just happened?&lt;/strong&gt;&lt;/p&gt;
@@ -182,6 +202,7 @@ Let&apos;s illustrate this with our &lt;code&gt;add&lt;/code&gt; function:
 the &lt;code&gt;{}&lt;/code&gt; brackets capture what needs/is true at a certain point in the program
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -192,6 +213,7 @@ the &lt;code&gt;{}&lt;/code&gt; brackets capture what needs/is true at a certain
 &lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But better still is to think of it without the implementation details.
 Like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -203,17 +225,22 @@ It gives us rules that tell us what the postconditions of a function are, given 
 the preconditions given the postcondition and code. This means that we can use Hoare Logic to
 think (and prove the correctness) about specifications.&lt;/p&gt;
 &lt;p&gt;When I first took our Mirdin course (yes, I started as a student), I was blown away by Hoare Logic, and it was very useful in getting me away from the code and thinking about the design of the program instead. That said, there are a lot of rules in Hoare Logic but how do we go from thinking in rules to intuition from where the rules would be obvious?&lt;/p&gt;
-&lt;p&gt;Let’s revisit our initial implementation of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Let’s revisit our initial implementation of &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; together with the spec we have been using:
+Let’s take a closer look at our original implementation of the &lt;code class=&quot;language-text&quot;&gt;add&lt;/code&gt; function,
+along with the specification (pre/postconditions) we’ve been using:&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a is a number, b is a number}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
 &lt;span class=&quot;token comment&quot;&gt;// postcondition: {return value is a numerically added to b}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Is one spec our code supports, &lt;em&gt;(&lt;a href=&quot;https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html&quot;&gt;many-to-many is the relationship between implementation and spec&lt;/a&gt;)&lt;/em&gt;
-but the current precondition is not the weakest that this implementation supports.
-The weakest precondition is that &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt; are any values for which &lt;code class=&quot;language-text&quot;&gt;a + b&lt;/code&gt; is defined.
-&lt;em&gt;(which in JS is number and string plus anything that can be cast to one of the two, which is basically anything🙃)&lt;/em&gt;
-If we went with that type of generic precondition, &lt;code class=&quot;language-text&quot;&gt;concat&lt;/code&gt; would be a better name.&lt;br&gt;
+&lt;p&gt;The above spec is just one of many our code can support, showing a
+&lt;em&gt;(&lt;a href=&quot;https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html&quot;&gt;many-to-many relationship between implementation and specification.&lt;/a&gt;)&lt;/em&gt;
+However, it’s important to note that our current precondition (the rule about what must be true before the code is run) is not the weakest(most relaxed/flexible) condition that this implementation can handle.&lt;/p&gt;
+&lt;p&gt;The weakest precondition is that &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt; are any values for which &lt;code class=&quot;language-text&quot;&gt;a + b&lt;/code&gt; is defined.
+&lt;em&gt;(which in JS is number and string plus anything that can be cast(converted) to one of the two, which is pretty much anything🙃)&lt;/em&gt;
+If we went with such a generic precondition, &lt;code class=&quot;language-text&quot;&gt;concat&lt;/code&gt; would be a better name.&lt;br&gt;
 To make our initial program correct on the logical level and not contain an error of modular reasoning,
 we can change the precondition to be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-code-title&quot;&gt;add.ts&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// precondition: {a and b are both strings or numbers}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
 &lt;span class=&quot;token comment&quot;&gt;// postcondition: {&lt;/span&gt;
