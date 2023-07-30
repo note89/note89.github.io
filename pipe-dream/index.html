@@ -158,7 +158,7 @@ But here we are going to use it to reason about program correctness.</p>
 <h3 id="speed-running-the-logical-level-of-code" style="position:relative;">Speed running the logical level of code<a href="#speed-running-the-logical-level-of-code" aria-label="speed running the logical level of code permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>Let’s take a simple TypeScript function:</p>
 <div class="gatsby-code-title">add.ts</div>
-<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
 <p><strong>Is this code correct?</strong>
 …Well, what does it even mean for code to be correct?
 If we don’t have a specification(what we want to achieve), we can’t say anything about correctness.</p>
@@ -167,7 +167,7 @@ If we don’t have a specification(what we want to achieve), we can’t say anyt
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
 <span class="token comment">// add is a function that takes two numbers</span>
 <span class="token comment">// and returns those numbers numerically added together</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b</code></pre></div>
 <p><strong>Is this code correct?</strong> By visual inspection, yes, the code is correct!</p>
 <p>What about this code?</p>
 <div class="gatsby-code-title">hello_world.ts</div>
@@ -223,7 +223,7 @@ but we can’t say that for sure, so let’s add a specification.</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Specification</span>
 <span class="token comment">// add is a function that takes two numbers</span>
 <span class="token comment">// and returns those numbers numerically added together</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">!==</span> <span class="token string">"number"</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> b <span class="token operator">!==</span> <span class="token string">"number"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"inputs must be numbers"</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
@@ -271,7 +271,7 @@ the <code>{}</code> brackets capture what needs/is true at a certain point in th
 </div>
 <div class="gatsby-code-title">add.ts</div>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">!==</span> <span class="token string">"number"</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> b <span class="token operator">!==</span> <span class="token string">"number"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"inputs must be numbers"</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
@@ -282,7 +282,7 @@ the <code>{}</code> brackets capture what needs/is true at a certain point in th
 Like this:</p>
 <div class="gatsby-code-title">add.ts</div>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
 <span class="token comment">// postcondition: {return value is a numerically added to b}</span></code></pre></div>
 <p>This is the essence of the <code class="language-text">add</code> function! Any implementation that meets these conditions is valid.</p>
 <h3 id="hoare-logic-levelling-up-code-reasoning" style="position:relative;">Hoare logic: Levelling Up Code Reasoning<a href="#hoare-logic-levelling-up-code-reasoning" aria-label="hoare logic levelling up code reasoning permalink" class="custom-class after"><svg aria-hidden="true" height="22" version="1.1" viewBox="0 0 16 16" width="22"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
@@ -297,7 +297,7 @@ Let’s take a closer look at our original implementation of the <code class="la
 along with the specification (pre/postconditions) we’ve been using:</p>
 <div class="gatsby-code-title">add.ts</div>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a is a number, b is a number}</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
 <span class="token comment">// postcondition: {return value is a numerically added to b}</span></code></pre></div>
 <p>The above spec is just one of many our code can support, showing a
 <em>(<a href="https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html">many-to-many relationship between implementation and specification.</a>)</em>
@@ -309,7 +309,7 @@ To make our initial program correct on the logical level and not contain an erro
 we can change the precondition to be:</p>
 <div class="gatsby-code-title">add.ts</div>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// precondition: {a and b are both strings or numbers}</span>
-<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b
 <span class="token comment">// postcondition: {</span>
 <span class="token comment">//    IF a and b are numbers</span>
 <span class="token comment">//        return is a numerically added to b</span>
